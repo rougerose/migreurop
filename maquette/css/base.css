@@ -31,6 +31,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		Franklin demi : ITCFranklinGothicStd-Demi, ITC Franklin Gothic Std, font-weight: 600
 		Franklin heavy : ITCFranklinGothicStd-Hvy, ITC Franklin Gothic Std, font-weight: 800
 		Franklin book condensed : ITCFranklinGothicStd-BkCd, ITC Franklin Gothic Std, font-weight: 400, font-stretch: condensed
+		Franklin book condensed italique : ITCFranklinGothicStd-BkCdIt, ITC Franklin Gothic Std, font-weight: 400, font-stretch: condensed
 		Franklin medium condensed : ITCFranklinGothicStd-MdCd, ITC Franklin Gothic Std, font-weight: 500, font-stretch: condensed
 	*/
 
@@ -41,7 +42,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	strong { font-weight: normal; }
 
-	#langues li, #baseline { font-family: 'ITCFranklinGothicStd-BkCd', 'ITC Franklin Gothic Std'; font-weight: 200; font-stretch: condensed; }
+	#langues li { font-family: 'ITCFranklinGothicStd-BkCd', 'ITC Franklin Gothic Std'; font-weight: 200; font-stretch: condensed; }
+	#baseline { font-family: 'ITCFranklinGothicStd-BkCdIt', 'ITC Franklin Gothic Std'; font-stretch: condensed; font-weight: 200; font-style: italic; }
 
 	#langues li strong { font-family: 'ITCFranklinGothicStd-MdCd', 'ITC Franklin Gothic Std'; font-weight: 600; font-stretch: condensed; }
 
@@ -89,8 +91,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			background: rgb(63,63,69) url('../img/border-sprite.png') repeat-x left bottom;
 			padding:18px 0 0; }
 		#entete { position: relative;
-			margin: 1.5em 0 0; padding-bottom: .5em;  }
-			.entete { position: relative; border-bottom: 1px solid #bb1432; margin: 0 5px; }
+			margin: 1.5em 0 0; xpadding-bottom: .5em;  }
+			.entete { position: relative; }
 		#contenu { padding-top: 2.5em; margin: 0 5px; }
 
 		.article {
@@ -175,34 +177,59 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		#logo #baseline {
 			position: absolute; top: 0; left: 485px; margin-top: -1.5em;
 			color: rgb(87,87,95);
-			font-size: 36px; line-height: 36px; font-style: italic;
-			text-align: right; }
+			font-size: 36px; line-height: 36px; }
 
 
 /*	=entete > navigation
 	------------------------------------------------------ */
-	.navigation { margin-top: 1em; margin-bottom: 1.5em; position: relative; }
-	.navigation ul { list-style-type: none; }
+	.navigation {  }
+		.navigation ul {
+			float: left;
+			width: 100%;
+			margin: 18px 0 0; padding: 9px 0;
+			border: 1px solid #bb1432; border-width: 1px 0 1px; }
+			.navigation li {
+				font-size:11px; line-height: 11px;
+				text-transform: uppercase;
+				position: relative;
+				float: left;
+				margin-right: 10px; padding-right: 10px; }
+				.navigation li a, .navigation li strong { display: block; xfloat: left; }
+				/* drop-down menu */
+				.navigation li span { 
+					background: url('../img/icones-sprite.png') no-repeat -4px 0px; }
+				.navigation li div.ddm {
+					float: left;
+					position: absolute; z-index: 90; }
+					.navigation ul ul { margin: 0; padding: 0; border-width: 0; }
+						.navigation ul ul li { border-width: 0; }
+/*	.navigation {  }
+	.navigation ul {
+		list-style-type: none;
+		border: 1px solid #bb1432; border-width: 0 0 1px;
+		margin: 18px 0 0; padding: 9px 0; }
 		.navigation li {
-			font-size: 11px; line-height: 13px; text-transform: uppercase;
-			border-bottom: 1px solid #fff;
-			margin-bottom: 12px;
+			font-size: 12px; line-height: 13px; text-transform: uppercase;
+			float: left;
+			position: relative;
+			xborder-bottom: 1px solid #fff;
+			xmargin-top: 18px; xmargin-bottom: 12px; margin-right: 10px; padding-right: 10px;
 			-webkit-transition: border-color .6s ease-out;
 			   -moz-transition: border-color .6s ease-out;
 			     -o-transition: border-color .6s ease-out;
 			        transition: border-color .6s ease-out; }
 		.navigation li.on  { border-color: #bb1432; }
 		.navigation li:hover { border-color: #bb1432; }
-			.navigation li.on strong { color: #bb1432; border-bottom: 1px solid #bb1432; }
-			.navigation li a, .navigation li strong { display: inline-block; xfloat: left; }
-
+			.navigation li.on strong { color: #bb1432; xborder-bottom: 1px solid #bb1432; }
+			.navigation li a, .navigation li strong { display: block; float: left; }
+*/
 		/* drop-down menu */
-		.navigation .group > li {  }
+/*		.navigation .group > li {  }
 			.navigation li span {
 				background: url('../img/icones-sprite.png') no-repeat -4px 0px;
-				width: 9px; height: 12px;
-				float: right;
-				display: inline-block; margin-top: 1px;
+				width: 9px; height: 13px; line-height: 13px;
+				float: left; display: block;
+				xdisplay: inline-block; margin-top: 1px; margin-left: 5px;
 				cursor: pointer; }
 			.navigation li span:hover { background-position: -4px -16px; }
 			.navigation li span.opened { background-position: -4px -32px; }
@@ -212,8 +239,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 				border: 1px solid #f0f0f0;
 				border-top-color: #bb1432;
 				float: left;
-				padding: 1em 10px 0;
-				width: 470px;
+				xpadding: 1em 10px 0;
+				xwidth: 470px;
 				display: none;
 				-webkit-box-shadow: 1px 1px 2px #aaa;
 				   -moz-box-shadow: 1px 1px 2px #aaa;
@@ -232,7 +259,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 							margin-bottom: .5em; }
 							.navigation .ddm li li a { color: #333; }
 							.navigation .ddm li li a:hover { color: #bb1432; }
-
+*/
 /*	=slider
 	.sizeXL => slider sur 24 col
 	.sizeS => slider sur 8 col

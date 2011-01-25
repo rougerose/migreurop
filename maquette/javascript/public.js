@@ -89,7 +89,7 @@ $(document).ready(function(){
 			.css({ height:panneauHauteur });
 
 		if (slider.hasClass("sizeS")) {
-			
+
 		}
 
 		// ajustement du positionnement en hauteur des boutons de navigation
@@ -173,7 +173,7 @@ $(document).ready(function(){
 			// easing plugin
 			easingDown = "easeOutBounce", easingUp = "jswing";
 
-		$li.append("<span/>"); // $dropdown.filter(":first").show();
+		$li.append("<span/>");  $dropdown.filter(":first").show();
 
 		var $span = $li.find("> span").addClass("closed").hide();
 
