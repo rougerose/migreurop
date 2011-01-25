@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>#NOM_SITE_SPIP | R&eacute;sultats de votre recherche</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="shortcut icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+</head>
+<body>
+<a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="Migreurop" border="0" id="logo"></a>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+  <div id="ColonneDroite" class="Interieur">
+    <div id="Titre">
+      <h1>R&eacute;sultats de votre recherche&nbsp;: [&laquo;&nbsp;(#RECHERCHE)&nbsp;&raquo;]</h1>
+    </div>
+    <BOUCLE_exclusion_gestion_site(ARTICLES){type_mot=gestion site}{doublons}>
+    </BOUCLE_exclusion_gestion_site>
+    <div id="Corps" class="Recherche">
+      <p class="spip">&nbsp;</p>
+      <?php
+$NbResultsArticles = 0; // initialisation du comptage
+$MaxPts = 0;?>
+      <BOUCLE_CountArticles(ARTICLES){recherche}{par points}{inverse}>
+      <?
+$NbResultsArticles++; // bÍte incrÈmentation (basique mais efficace)
+if ($MaxPts==0) $MaxPts = #POINTS; // ?>
+      </BOUCLE_CountArticles><B_resultats_articles>
+      <h2 class="RubTitreArt">Dans les articles [<?php if ($NbResultsArticles == 1) {echo $NbResultsArticles;?> r&eacute;sultat<? } else {echo $NbResultsArticles;?> r&eacute;sultats<? } ?>]</h2>
+      <BOUCLE_resultats_articles(ARTICLES){recherche}{par points}{inverse}{doublons}>
+      [
+      <p class="Surtitre">(#SURTITRE)</p>
+      ]
+      <h3 class="RubTitreArt"><a href="#URL_ARTICLE" [title="(#INTRODUCTION|textebrut)"]>[(#TITRE|supprimer_numero)]</a></h3>
+      [
+      <p class="Soustitre">(#SOUSTITRE)</p>
+      ]
+      <p class="RubIntroArt">[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[&nbsp;la
+          suite&nbsp;]</a></p>
+      <p class="RubDateArt"><B_auteurs_articles><span class="Auteurs">par <BOUCLE_auteurs_articles(AUTEURS){id_article}{", "}>#NOM</BOUCLE_auteurs_articles> </span></B_auteurs_articles><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span></p>
+      </BOUCLE_resultats_articles>
+      </B_resultats_articles>
+      <?php
+$NbResultsBreves = 0; // initialisation du comptage
+$MaxPts = 0;?>
+      <BOUCLE_CountBreves(BREVES){recherche}{par points}{inverse}>
+      <?
+$NbResultsBreves++; // bÍte incrÈmentation (basique mais efficace)
+if ($MaxPts==0) $MaxPts = #POINTS; // ?>
+      </BOUCLE_CountBreves>
+      <B_resultats_breves>
+      <h2 class="RubTitreArt">Dans les br&egrave;ves [<?php if ($NbResultsBreves == 1) {echo $NbResultsBreves;?> r&eacute;sultat<? } else {echo $NbResultsBreves;?> r&eacute;sultats<? } ?>]</h2>
+      <BOUCLE_resultats_breves(BREVES){recherche}{par points}{inverse}{doublons}>
+      <h3 class="RubTitreArt">[<a href="#URL_BREVE">(#TITRE|supprimer_numero)</a>]</h3>
+      <p class="RubIntroArt">[(#INTRODUCTION|PtoBR)] <a href="#URL_BREVE">[&nbsp;la suite&nbsp;]</a></p>
+      <p class="RubDateArt"><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span></p>
+      </BOUCLE_resultats_breves>
+      </B_resultats_breves>
+      <?php
+$NbResultsRubriques = 0; // initialisation du comptage
+$MaxPts = 0;?>
+      <BOUCLE_CountRubriques(RUBRIQUES){recherche}{par points}{inverse}>
+      <?
+$NbResultsRubriques++; // bÍte incrÈmentation (basique mais efficace)
+if ($MaxPts==0) $MaxPts = #POINTS; // ?>
+      </BOUCLE_CountRubriques>
+      <B_resultats_rubriques>
+      <h2 class="RubTitreArt">Dans les rubriques [<?php if ($NbResultsRubriques == 1) {echo $NbResultsRubriques;?> r&eacute;sultat<? } else {echo $NbResultsRubriques;?> r&eacute;sultats<? } ?>]</h2>
+      <BOUCLE_resultats_rubriques(RUBRIQUES){recherche}{par points}{inverse}{doublons}>
+      <h3 class="RubTitreArt">[<a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a>]</h3>
+	  [<p class="RubIntroArt">(#INTRODUCTION|PtoBR) <a href="#URL_RUBRIQUE">&#091;&nbsp;la suite&nbsp;&#093;</a></p>]
+      </BOUCLE_resultats_rubriques>
+      </B_resultats_rubriques>
+      <?php
+$NbResultsSites = 0; // initialisation du comptage
+$MaxPts = 0;?>
+      <BOUCLE_CountSites(SITES){recherche}{par points}{inverse}>
+      <?
+$NbResultsSites++; // bÍte incrÈmentation (basique mais efficace)
+if ($MaxPts==0) $MaxPts = #POINTS; // ?>
+      </BOUCLE_CountSites>
+      <B_resultats_sites>
+      <h2 class="RubTitreArt">Dans les sites web r&eacute;f&eacute;renc&eacute;s [<?php if ($NbResultsSites == 1) {echo $NbResultsSites;?> r&eacute;sultat<? } else {echo $NbResultsSites;?> r&eacute;sultats<? } ?>]</h2>
+      <BOUCLE_resultats_sites(SITES){recherche}{par points}{inverse}>
+      <h3 class="RubTitreArt"><a href="#URL_SITE" [title="(#DESCRIPTIF|textebrut|entites_html)]">[(#NOM_SITE|supprimer_numero)]</a></h3>
+	  <p class="RubIntroArt">[(#INTRODUCTION|PtoBR) <br>]
+	  <span class="URLSites">&raquo;</span> <a href="#URL_SITE">#URL_SITE</a></p>
+      </BOUCLE_resultats_sites>
+      </B_resultats_sites>
+    </div>
+  </div>
+  <div id="ColonneMilieu">
+    <p class="Blanc">&nbsp;</p>
+  </div>
+  <div id="ColonneGauche">
+    <div id="Sommaire">
+      <hr class="Invisible">
+      <INCLURE{fond=menu}{id_rubrique}{lang=#ENV{lang}}>
+      <hr class="invisible">
+    </div>
+  </div>
+</div>
+</body>
+</html>

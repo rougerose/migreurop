@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<BOUCLE_principale(RUBRIQUES){id_rubrique}>
+<head>
+<title>#NOM_SITE_SPIP | [(#TITRE|supprimer_numero|textebrut)]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET">
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+<link rel="icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="shortcut icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+</head>
+<body>
+<a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="Migreurop" border="0" id="logo"></a>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+  <div id="ColonneDroite" class="Interieur">
+    <div id="Titre">
+      <h1>[(#TITRE|supprimer_numero)]</h1>
+    </div>
+    <div id="Corps" class="Manifestations"> 
+      [<div class="RubIntroArt">(#DESCRIPTIF|sinon{"<p class='Blanc'>&nbsp;</p>"})</div>]
+      [(#LOGO_RUBRIQUE||inserer_attribut{'alt','logo'}|inserer_attribut{'id','LogoRub'})]
+      <B_reguliers>
+      <h2>Manifestations r&eacute;guli&egrave;res</h2>
+      <div  class="RubTitreArt">
+        <BOUCLE_reguliers(ARTICLES){id_rubrique}{titre_mot=Rassemblements reguliers}{0,1}{doublons}>
+        <p class="RubIntroArt">[(#INTRODUCTION)] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+      </div>
+      </BOUCLE_reguliers>
+      </B_reguliers>
+      </BOUCLE_principale>
+      <B_prochaines_manif>
+      <h2>Les prochaines manifestations</h2>
+      <div class="RubIntroArt">
+        <BOUCLE_prochaines_manif(ARTICLES){id_rubrique}{jour_relatif<=0}{par date}{inverse}>
+        <BOUCLE_premierdumois(ARTICLES){id_article}{doublons}>
+        <h3 class="DateManif">[(#DATE|nom_mois)] [(#DATE|annee)]</h3>
+        [<p class="Surtitre">(#SURTITRE)</p>]
+        <h3 class="RubTitreArt"><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+        [<p class="Soustitre">(#SOUSTITRE)</p>]
+        <p class="RubIntroArt">[(#INTRODUCTION)] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+        </BOUCLE_premierdumois>
+        <BOUCLE_moisencours(ARTICLES){id_rubrique}{jour_relatif=0}{par date}{inverse}{doublons}>
+        [<p class="Surtitre">(#SURTITRE)</p>]
+        <h3 class="RubTitreArt"><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+        [<p class="Soustitre">(#SOUSTITRE)</p>]
+        <p class="RubIntroArt">[(#INTRODUCTION)] <a href="#URL_ARTICLE">[&nbsp;la
+            suite&nbsp;]</a></p>
+        </BOUCLE_moisencours>
+        </BOUCLE_prochaines_manif>
+      </div>
+      </B_prochaines_manif>
+      <B_manif_precedentes>
+      <h2>Manifestations pr&eacute;c&eacute;dentes</h2>
+      <div class="RubIntroArt">
+        <BOUCLE_manif_precedentes(ARTICLES){id_rubrique}{annee_relatif=0}{par date}{inverse}>
+        <BOUCLE_premier_dumois(ARTICLES){id_article}{doublons}>
+        <h3 class="DateManif">[(#DATE|nom_mois)] [(#DATE|annee)]</h3>
+        [<p class="Surtitre">(#SURTITRE)</p>]
+        <h3 class="RubTitreArt"><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+        [<p class="Soustitre">(#SOUSTITRE)</p>]
+        <p class="RubIntroArt">[(#INTRODUCTION|couper{50})] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+        </BOUCLE_premier_dumois>
+        <BOUCLE_mois_encours(ARTICLES){id_rubrique}{mois_relatif=0}{par date}{inverse}{doublons}>
+        [<p class="Surtitre">(#SURTITRE)</p>]
+        <h3 class="RubTitreArt"><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span> <a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h3>
+        [<p class="Soustitre">(#SOUSTITRE)</p>]
+        <p class="RubIntroArt">[(#INTRODUCTION|PtoBR|couper{50})] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+        </BOUCLE_mois_encours>
+        </BOUCLE_manif_precedentes>
+      </div>
+      </B_manif_precedentes>
+    </div>
+  </div>
+  <div id="ColonneMilieu">
+    <hr class="Invisible">
+    <div id="InfoContexte">
+      <BOUCLE_principale2(RUBRIQUES){id_rubrique}>
+      <h4>Les manifestations ann&eacute;e par ann&eacute;e</h4>
+      <ul>
+        <BOUCLE_annee_suivante(ARTICLES){id_rubrique}{annee_relatif<0}{par date}{inverse}{0,1}>
+        <li><a href="manif-archives.php?date=[(#DATE|annee)]">[(#DATE|annee)]</a></li>
+        </BOUCLE_annee_suivante>
+        <BOUCLE_annee_0(ARTICLES){id_rubrique}{annee_relatif=0}{par date}{inverse}{0,1}>
+        <li><a href="manif-archives.php?date=[(#DATE|annee)]">[(#DATE|annee)]</a></li>
+        </BOUCLE_annee_0>
+        <BOUCLE_annee_precedente(ARTICLES){id_rubrique}{annee_relatif>0}{par date}{inverse}{0,1}>
+        <li><a href="manif-archives.php?date=[(#DATE|annee)]">[(#DATE|annee)]</a></li>
+        <BOUCLE_recursive(boucle_annee_precedente)>
+        </BOUCLE_recursive>
+        </BOUCLE_annee_precedente>
+      </ul>
+    </div>
+  </div>
+  <div id="ColonneGauche">
+    <div id="Sommaire">
+      <hr class="Invisible">
+      <INCLURE{fond=menu}{id_rubrique}{lang=#ENV{lang}}>
+      <hr class="invisible">
+    </div>
+  </div>
+</div>
+</BOUCLE_principale2>
+</body>
+</html>

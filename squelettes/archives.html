@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<BOUCLE_meta(RUBRIQUES){id_rubrique}>
+<title>#NOM_SITE_SPIP | [(#TITRE|supprimer_numero|textebrut)]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET">
+[<meta name="description" content="(#DESCRIPTIF|textebrut|supprimer_tags)">]</BOUCLE_meta>
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+<link rel="icon" href="base/images/pajol_icone.png" type="image/png">
+</head><body>
+<BOUCLE_principale(RUBRIQUES){id_rubrique}>
+<a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="Migreurop" border="0" id="logo"></a>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+<div id="ColonneDroite" class="Interieur">
+  <BOUCLE_exclusion(ARTICLES){id_secteur}{type_mot=gestion site}{doublons}></BOUCLE_exclusion>
+  <div id="Titre">
+    <h1>[(#TITRE|supprimer_numero)]</h1>
+  </div>
+  <div id="Corps">
+    [<div class="RubIntroArt">(#DESCRIPTIF|sinon{"<p class='Blanc'>&nbsp;</p>"})</div>]
+	[(#LOGO_RUBRIQUE||inserer_attribut{'alt','logo'}|inserer_attribut{'id','LogoRub'})]
+    <B_articles>
+    <BOUCLE_articles(ARTICLES){id_rubrique}{par num titre, date}{inverse}{doublons}>
+    [<p class="RubSurtitre">(#SURTITRE)</p>]
+    <h2 class="RubTitreArt"><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></h2>
+    [<p class="RubSoustitre">(#SOUSTITRE)</p>]
+    <p class="RubIntroArt">[(#INTRODUCTION)] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+    <p class="RubDateArt"><B_auteurs_articles><span class="Auteurs">par <BOUCLE_auteurs_articles(AUTEURS){id_article}{", "}>#NOM</BOUCLE_auteurs_articles> </span></B_auteurs_articles><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span></p>
+    </BOUCLE_articles>
+    </B_articles>
+  </div>
+</div>
+<div id="ColonneMilieu">
+  <div id="InfoContexte">
+    <B_breves>
+    <hr class="Invisible">
+    <h4>Br&egrave;ves</h4>
+    <ul>
+      <BOUCLE_breves(BREVES){id_rubrique}{0,10}>
+      <li><a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a><br>
+        <span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span></li>
+      </BOUCLE_breves>
+    </ul>
+    </B_breves>
+    <B_doc>
+    <h4>Documents associ&eacute;s &agrave; la rubrique</h4>
+    <BOUCLE_doc(DOCUMENTS){id_rubrique}{mode=document}{descriptif!=image accueil}>
+    [<h5><a href="#URL_DOCUMENT">(#TITRE|supprimer_numero)</a></h5>]
+     <a href="#URL_DOCUMENT">[(#LOGO_DOCUMENT||inserer_attribut{'alt','Document associ&eacute;'}|inserer_attribut{'class','DocAssocies'}|inserer_attribut{'border','0'})]</a>
+    <p class="DocDescriptif">[(#DESCRIPTIF) ][| taille&nbsp;: (#TAILLE|taille_en_octets)]</p>
+    <div class="rien">&nbsp;</div>
+    </BOUCLE_doc>
+    </B_doc>
+  </div>
+  <p class="Blanc">&nbsp;</p>
+</div>
+<div id="ColonneGauche">
+  <div id="Sommaire">
+    <hr class="Invisible">
+    <INCLURE{fond=menu}{id_rubrique}{lang=#ENV{lang}}>
+    <hr class="invisible">
+  </div>
+</div>
+</div>
+</body>
+</html>
+</BOUCLE_principale>

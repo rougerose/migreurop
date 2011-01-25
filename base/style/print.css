@@ -1,0 +1,361 @@
+body {
+	font: 12pt Georgia, "Times New Roman", Times, serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+a, a:link, a:visited {
+	color: #330066;
+	text-decoration: underline;
+	font-weight: bold;
+}
+div#ColonneDroite {
+	float: none;
+	width: auto;
+}
+div#ColonneMilieuSommaire {
+	display: none;
+}
+div#ColonneMilieu {
+	font-size: 90%;
+	width: auto;
+}
+div#ColonneGauche {
+	display: none;
+}
+div.rien, p.rien {
+	clear: both;
+}
+.Invisible, .invisible {
+	display: none;
+}
+img#logo {
+	margin-bottom: 3em;
+}
+div#Sommaire {
+	display: none;
+}
+div#TitrePage {
+	margin-right: 7%;
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+}
+div#CorpsPage {
+}
+div.FondBlanc#CorpsPage {
+}
+div#InfoContexte {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+div#Chapo {
+	font-weight: bold;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+div#Texte {
+	text-align: justify;
+	margin-bottom: 2em;
+}
+div#Signatures {
+	margin-top: 2em;
+}
+div#Postscriptum {
+	margin-top: 2em;
+	text-align: justify;
+}
+div#Breves {
+}
+div#Sites {
+}
+div#SousRubriques {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+div#SitesArticles {
+	margin-top: 1em;
+	margin-bottom: 1.2em;
+}
+div#PiedDePage {
+	color: #333;
+	margin-top: 3em;
+	font: 100% Georgia, "Times New Roman", Times, serif;
+}
+div.SommaireTitreRub {
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+}
+div.SommaireContenuRub {
+}
+div.SommaireRubAlignG {
+	padding-bottom: 2.3em;
+}
+div.SommaireRubAlignD {
+	padding-bottom: 2.3em;
+}
+div#TitrePage h1, div.SommaireTitreRub h1 {
+	margin-bottom: 0pt;
+	margin-top: 0pt;
+	font-size: 16pt;
+}
+div.SommaireContenuRub h2 {
+	font-size: 120%;
+	margin-top: 0pt;
+	margin-left: 5pt;
+	margin-bottom: 0.5em;
+}
+h2.RubTitreArt {
+	font-size: 120%;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+}
+h2#Calendrier {
+	text-transform: uppercase;
+	color: #900;
+}
+div.SommaireContenuRub h3 {
+	margin-top: 0pt;
+	margin-left: 10pt;
+	font-size: 110%;
+	margin-bottom: 0.5em;
+}
+h3.RubTitreArt {
+	font-size: 110%;
+	margin-bottom: 0pt;
+	margin-left: 5pt;
+}
+h3.spip {
+	color: #306;
+	font-size: 110%;
+	margin-bottom: 0pt;
+	margin-left: 8pt;
+	margin-top: 1em;
+}
+div#Breves h3, div#Postscriptum h4 {
+	font-size: 110%;
+	margin-bottom: 0.3em;
+	padding-bottom: 0.2em;
+}
+div#Sites h3 {
+	font-size: 110%;
+	margin-top: 0.5em;
+	margin-bottom: 0pt;
+	margin-left: 5pt;
+}
+div#SousRubriques h3 {
+	font-size: 110%;
+	margin-bottom: 0.3em;
+	margin-left: 3pt;
+}
+div#SitesArticles h4 {
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-size: 100%;
+	padding: 3pt;
+}
+div#InfoContexte h4 {
+	margin-bottom: 0em;
+	font-size: 100%;
+}
+/*h4.spip {
+	margin-bottom: 0px;
+	font-size: 120%;
+	font-weight: bold;
+}*/
+div#Breves h4, div#SousRubriques h4 {
+	margin-bottom: 0pt;
+	margin-left: 7pt;
+	font-size: 100%;
+	margin-top: 0pt;
+}
+div#InfoContexte h5 {
+	margin-bottom: 0.3em;
+	font: 90% Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 0.3em;
+	margin-left: 5pt;
+}
+div#InfoContexte ul, div#SitesArticles ul {
+	margin: 0pt;
+	padding: 0pt;
+	font: 80% Verdana, Helvetica, Arial, sans-serif;
+}
+div#InfoContexte li, div#SitesArticles li {
+	list-style: square inside;
+	margin-top: 5pt;
+	margin-left: 5pt;
+}
+div#InfoContexte li.Niveau2 {
+	list-style-type: disc;
+	margin-left: 10pt;
+	list-style-position: inside;
+}
+div#Sommaire ul {
+}
+div#Sommaire li {
+}
+p.Surtitre {
+	font-size: 100%;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	color: #333;
+}
+p.Soustitre {
+	font-size: 100%;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	margin-left: 7pt;
+	font-style: italic;
+	color: #333;
+}
+div#SousRubriques p.Surtitre {
+	margin-left: 7pt;
+}
+div#SousRubriques p.Soustitre {
+	margin-left: 10pt;
+}
+p.RubIntroArt {
+	margin-top: 0.5em;
+	margin-left: 10pt;
+	margin-bottom: 1.2em;
+}
+div.RubIntroArt {
+	margin-top: 0.5em;
+	margin-bottom: 1.8em;
+	margin-left: 10pt;
+}
+div.RubTexteArt {
+	margin-top: 0.5em;
+	margin-bottom: 1.3em;
+}
+div.RubNotesArt {
+	margin-left: 10pt;
+	margin-bottom: 1em;
+}
+div.Texte {
+	line-height: 1.4em;
+	font-size: 12pt;
+}
+span.Date {
+	color: #333;
+	margin-top: 0.3em;
+	font-weight: normal;
+	font-size: 90%;
+}
+h3 span.Date {
+	font-size: 90%;
+	font-weight: normal;
+}
+p.Date {
+	color: #F30;
+	text-align: right;
+	font-size: 90%;
+}
+p.spip_note {
+	margin-top: 5pt;
+	margin-bottom: 0pt;
+	margin-left: 5pt;
+	font-size: 80%;
+}
+p.DocDescriptif {
+	margin-left: 5pt;
+	font-size: 80%;
+}
+p.Blanc {
+	height: 80px;
+}
+p.spip {
+	margin-left: 15pt;
+	margin-top: 0.4em;
+	line-height: 1.4em;
+}
+p.Auteurs {
+	text-align: center;
+	margin-top: 0px;
+	font-weight: bold;
+}
+p.Calendrier {
+	font-size: 90%;
+	margin-top: 1.5em;
+}
+img.DocAssocies {
+	margin-right: 7pt;
+	margin-left: 5pt;
+	margin-top: 7pt;
+}
+div.formulaire {
+	margin-left: 5pt;
+	font-size: 90%;
+}
+input.forml {
+	padding: 3pt;
+	margin-top: 5pt;
+	margin-bottom: 5pt;
+}
+input.spip_bouton {
+	color: #FFF;
+	background: #63F;
+	padding: 3pt;
+	margin-top: 5px;
+	margin-bottom: 5pt;
+	text-align: center;
+	font-size: 10pt;
+}
+input#Recherche {
+	font: 10pt Geneva, Arial, Helvetica, sans-serif;
+}
+fieldset {
+}
+ul.SignaturesGauche {
+	margin-right: 3%;
+}
+ul.SignaturesDroite {
+	margin-left: 1%;
+}
+ul.SignaturesGauche li, ul.SignaturesDroite li {
+	margin-top: 5px;
+	list-style: none;
+}
+/* debut styles pour le menu principal */
+.secteuroff, .rubriqueoff {
+	font-weight: normal;
+}
+.secteuron, .rubriqueon {
+	font-weight: bold;
+}
+.secteur, .rubrique {
+	font-weight: bold;
+}
+div#Sommaire table {
+	font-size: 10px;
+}
+td.Gauche {
+	vertical-align: top;
+	width: 15px;
+	padding-bottom: 4px;
+}
+table#Sommaire1 {
+	margin-bottom: 1.5em;
+}
+/* fin styles menu principal */
+.spip_surligne {
+	background: #FF8080;
+}
+.spip_encadrer {
+	margin-left: 10px;
+	border: 1px dotted #63F;
+	padding: 10px;
+	margin-top: 1em;
+}
+img.LogoAuteur {
+	float: right;
+	margin: 3px 8px;
+}
+img#LogoRubArt {
+	margin-bottom: 0.8em;
+}
+#ColonneDroite a:link:after, #ColonneDroite a:visited:after {
+ content: " (" attr(href) ") ";
+ font-size: 90%;
+} 
+#ColonneDroite a[href^="/"]:after {
+   content: " (http://www.pajol.eu.org" attr(href) ") ";
+   } 

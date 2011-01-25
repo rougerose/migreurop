@@ -1,0 +1,76 @@
+<!-- Debut menu principal - repris sur modele de http://www.uzine.net/spip_contrib/article.php3?id_article=103 -->
+<?php
+// r»cup»ration de la hi»rarchie courante
+$hierarchie = array();
+<BOUCLE_principale(RUBRIQUES){id_rubrique}><BOUCLE_hierarchie(HIERARCHIE){id_rubrique}>
+		$hierarchie[] = #ID_RUBRIQUE;</BOUCLE_hierarchie>
+	$hierarchie[] = #ID_RUBRIQUE;
+	$actuelle = #ID_RUBRIQUE;</BOUCLE_principale>
+
+// inclusion du script de gestion des layers de SPIP
+$flag_ecrire = false;
+include 'base/js/inc_layer.php';
+afficher_script_layer();
+?>
+<table border="0" cellpadding="0" cellspacing="0" id="Sommaire1">
+ <tr>
+  <td class="Gauche"><img src="base/images/menu-rubrique-seule.png" alt="-" width="12" height="14"></td>
+  <td><a href="#URL_SITE_SPIP"><:accueil_site:></a></td>
+ </tr><BOUCLE_secteurs(RUBRIQUES){id_parent=0}{par titre}{lang_select=non}><?php $id = #ID_RUBRIQUE; ?><BOUCLE_nb_rubriques(RUBRIQUES){id_parent}{lang_select=non}><?php ${'nb'.$id} = #TOTAL_BOUCLE; ?></BOUCLE_nb_rubriques>
+ <tr>
+  <td class="Gauche"><?php
+			if ($nb#ID_RUBRIQUE > 0) {
+				if (in_array(#ID_RUBRIQUE, $hierarchie)) {
+					echo bouton_block_visible('rub#ID_RUBRIQUE');
+				} else {
+					echo bouton_block_invisible('rub#ID_RUBRIQUE');
+				}
+			} else {
+				echo '<img src="base/images/menu-rubrique-seule.png" alt="-">';
+			}
+			?></td>
+  <td><a href="#URL_RUBRIQUE" class="secteur<?php echo (#ID_RUBRIQUE == $actuelle ? '' : (in_array(#ID_RUBRIQUE, $hierarchie) ? 'on' : 'off')); ?>">[(#TITRE|supprimer_numero)]</a><?php
+			if ($nb#ID_RUBRIQUE > 0) {
+				if (in_array(#ID_RUBRIQUE, $hierarchie)) {
+					echo debut_block_visible('rub#ID_RUBRIQUE');
+				} else {
+					echo debut_block_invisible('rub#ID_RUBRIQUE');
+				}
+				?><table border="0" cellpadding="0" cellspacing="0"><BOUCLE_rubriques(RUBRIQUES){id_parent}{par titre}{lang_select=non}><?php $id = #ID_RUBRIQUE; ?><BOUCLE_nb_sous_rubriques(RUBRIQUES){id_parent}{lang_select=non}><?php ${'nb'.$id} = #TOTAL_BOUCLE; ?></BOUCLE_nb_sous_rubriques>
+    <tr>
+     <td class="Gauche"><?php
+							if ($nb#ID_RUBRIQUE > 0) {
+								if (in_array(#ID_RUBRIQUE, $hierarchie)) {
+									echo bouton_block_visible('rub#ID_RUBRIQUE');
+								} else {
+									echo bouton_block_invisible('rub#ID_RUBRIQUE');
+								}
+							} else {
+								echo '<img src="base/images/menu-rubrique-seule.png" alt="-">';
+							}
+							?></td>
+     <td> <a href="#URL_RUBRIQUE" class="rubrique<?php echo (#ID_RUBRIQUE == $actuelle ? '' : (in_array(#ID_RUBRIQUE, $hierarchie) ? 'on' : 'off')); ?>">[(#TITRE|supprimer_numero)]</a><?php
+							if ($nb#ID_RUBRIQUE > 0) {
+								if (in_array(#ID_RUBRIQUE, $hierarchie)) {
+									echo debut_block_visible('rub#ID_RUBRIQUE');
+								} else {
+									echo debut_block_invisible('rub#ID_RUBRIQUE');
+								}
+								?><table border="0" cellpadding="0" cellspacing="0"><BOUCLE_sous_rubriques(BOUCLE_rubriques)></BOUCLE_sous_rubriques>
+      </table><?php
+								echo fin_block('rub#ID_RUBRIQUE');
+							}
+							?></td>
+    </tr><?php
+					echo fin_block('rub#ID_RUBRIQUE');
+					?></BOUCLE_rubriques>
+   </table><?php
+			}
+			?></td>
+ </tr></BOUCLE_secteurs>
+</table>
+<!-- fin menu principal -->
+<ul>
+ <li><a href="#URL_PAGE{contact}"><:contact:></a></li>
+ <li class="Recherche"><a href="http://pajol.eu.org/article201.html"><:recherche:></a></li>
+</ul>

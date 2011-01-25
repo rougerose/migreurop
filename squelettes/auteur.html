@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<BOUCLE_principale(AUTEURS){id_auteur}{tout}>
+<title>#NOM_SITE_SPIP | #NOM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="shortcut icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+</head>
+<body>
+<a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="Migreurop" border="0" id="logo"></a>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+<div id="ColonneDroite" class="Interieur">
+  <div id="Titre"> [<img src="IMG/(#LOGO_AUTEUR|fichier)" alt="logo de l'auteur" class="LogoAuteur">]
+    <h1>#NOM</h1>
+  </div><BOUCLE_exclusion_gestion_site(ARTICLES){type_mot=gestion site}{doublons}></BOUCLE_exclusion_gestion_site>
+  <div id="Corps">
+    <div id="Texte" class="Texte"> 
+	<p class="spip">&nbsp;</p>
+      [<p class="spip">Site web : <strong><a href="#URL_SITE">(#NOM_SITE)</a></strong></p>]
+      [<p class="spip">(#BIO)</p>]
+      <h2 class="Inter">Lui envoyer un mail</h2>
+      [(#EMAIL|?{"","<p class='spip'>&nbsp;<br>Nous sommes d&eacute;sol&eacute;, cet auteur n'a pas d'adresse mail</p>"})]
+      [(#FORMULAIRE_ECRIRE_AUTEUR)]
+      
+      <B_articles>
+      <h2 class="Inter">Ses articles publi&eacute;s sur <em>PAJOL</em></h2><BOUCLE_articles(ARTICLES){id_auteur}{par date}{inverse}{doublons}>
+      <h3 class="RubTitreArt"><a href="#URL_ARTICLE" [title="(#INTRODUCTION|textebrut|couper{90})"]>[(#TITRE|supprimer_numero)]</a></h3>
+      <p class="RubIntroArt">[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[ la suite ]</a></p>
+	  <p class="RubDateArt"><span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp; |</span></p>
+	  </BOUCLE_articles></B_articles>
+    </div>
+  </div>
+</div>
+<div id="ColonneMilieu">
+  <hr class="Invisible">
+  <div id="InfoContexte"> 
+    [<h4>Notes</h4>
+    (#NOTES)]
+  </div>
+</div>
+<div id="ColonneGauche">
+  <div id="Sommaire">
+    <hr class="Invisible">
+    <INCLURE{fond=menu}{id_rubrique}{lang=#ENV{lang}}>
+    <hr class="invisible">
+  </div>
+</div>
+</div>
+</body></BOUCLE_principale>
+</html>

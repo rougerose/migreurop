@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>#NOM_SITE_SPIP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET">
+<meta name="description" content="Migreurop est un réseau européen et africain de militants et chercheurs dont l'objectif est de faire connaître
+et de lutter contre la généralisation de l'enfermement des étrangers et la multiplication des camps, dispositif au coeur de la politique d'externalisation de l'Union européenne.">
+<meta name="keywords" content="camps, sans papiers, étrangers, migrations, externalisation">
+<META name="verify-v1" content="pFOb0yojr8t+wSjx4ORpd0bGalu/sL6sR3VS8qEL7DA=" />
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+<link rel="icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="shortcut icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.migreurop.org/spip.php?page=backend" />
+</head>
+<body>
+<!-- Tout ce qui ne sera pas affiche -->
+<BOUCLE_exclusion(ARTICLES){type_mot=gestion site}{doublons}></BOUCLE_exclusion>
+<BOUCLE_exclu_Ressources(ARTICLES){id_secteur=182}{doublons}></BOUCLE_exclu_Ressources>
+<table style="width:100%;">
+	<tr>
+		<td style="width:30%;"><a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="migreurop" border="0" id="logo"></a></td>
+		<td style="width:20%;"></td>
+		<td style="width:50%;"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><a href="article1776.html"><img src="base/images/d/Migreurop-rapport_2010.jpg" width="150" height="129" alt="Migreurop Rapport 2010"></a></td>
+		<td><p><strong>Aux fronti&egrave;res de l&rsquo;Europe : contr&ocirc;les, enfermement et expulsions.</strong> Le deuxi&egrave;me rapport du r&eacute;seau Migreurop sur les violations des droits humains aux fronti&egrave;res (2009-2010) est <a href="article1776.html">maintenant disponible</a>.</p></td>
+	</tr>
+</table>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+  <div id="ColonneDroite" class="Sommaire">
+    <div id="CorpsPage">
+      <BOUCLE_presentation_site(ARTICLES){titre_mot=presentation site}{0,1}>
+      <div id="Presentation">
+        <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+      </div>
+      </BOUCLE_presentation_site>
+
+      [(#REM) Boucle Multilingue derniers articles. d'apres: http://www.spip-contrib.net/Liste-multilingue-d-articles
+
+		trad_lang_pref, trad_lang_pref2: exclure les traductions des 10 dernier articles dans la langue forcee ]
+
+      <BOUCLE_exclure_trad_pref(ARTICLES) {par date} {inverse} {id_secteur != 192} {lang} {0,10} >
+        <BOUCLE_traductions_pref(ARTICLES){traduction}{exclus}{doublons trad_lang_pref} {doublons trad_lang_pref2}>
+	    </BOUCLE_traductions_pref>
+      </BOUCLE_exclure_trad_pref>
+
+      [(#REM) trad_lang_autres: exclure les traductions des 5 dernier articles, autres que les 10 derniers
+              dans la langue forcee, dans d'autres langues que la langue forcee ou que la langue d'origine,
+              si pas de trad en langue forcee ]
+
+      <BOUCLE_exclure_trad(ARTICLES) {par date} {inverse} {doublons trad_lang_pref2} {id_secteur != 192}{0,10}>
+        <BOUCLE_lang_pref_ex(ARTICLES) {traduction} {lang = #ENV{lang}}>
+                <BOUCLE_sel_trad_ex(ARTICLES) {traduction}{exclus}{doublons trad_lang_autres}>
+                </BOUCLE_sel_trad_ex>
+        </BOUCLE_lang_pref_ex>
+        </B_lang_pref_ex>
+                <BOUCLE_lang_origine_ex(ARTICLES)
+                        {traduction}{origine_traduction}>
+                        <BOUCLE_sel_art_ex(ARTICLES){traduction}{exclus}{doublons trad_lang_autres}>
+                        </BOUCLE_sel_art_ex>
+                </BOUCLE_lang_origine_ex>
+        <//B_lang_pref_ex>
+       </BOUCLE_exclure_trad>
+
+      [(#REM) inclure les dix articles plus recents, si possible dans la langue forcee ]
+      <BOUCLE_article_une(ARTICLES) {par date} {inverse} {doublons trad_lang_pref} {doublons trad_lang_autres}
+									{id_secteur != 192} {0,10}>
+        <BOUCLE_lang_pref(ARTICLES) {traduction} {lang = #ENV{lang}}>
+			[(#REM)  si l'article existe dans la langue forcee ]
+                <INCLURE{fond=article_une}{id_article}{lang=#ENV{lang}}
+								{gauche=#_article_une:COMPTEUR_BOUCLE|alterner{'D','G'}}>
+        </BOUCLE_lang_pref>
+        </B_lang_pref>
+                <BOUCLE_lang_origine(ARTICLES) {traduction}{origine_traduction}>
+      [(#REM)           si l'article n'existe pas dans la langue forcee,
+                        si l'article a des traductions on prend l'originale ]
+                        <INCLURE{fond=article_une}{id_article}{lang=#ENV{lang}}
+									{gauche=#_article_une:COMPTEUR_BOUCLE|alterner{'D','G'}}>
+                </BOUCLE_lang_origine>
+      [(#REM)           si l'article n'existe pas dans la langue forcee,
+                        si l'article est monolingue ]
+                        <INCLURE{fond=article_une}{id_article}{lang=#ENV{lang}}
+									{gauche=#_article_une:COMPTEUR_BOUCLE|alterner{'D','G'}}>
+                <//B_lang_origine>
+        <//B_lang_pref>
+      </BOUCLE_article_une>
+
+
+    </div>
+  </div>
+  <div id="ColonneMilieuSommaire">
+    <div id="InfoContexte">
+      <hr class="Invisible">
+      <B_manif>
+      <h4>Prochaines manifestations</h4>
+      <ul>
+        <BOUCLE_manif(ARTICLES){id_rubrique=5}{par date}{inverse}{age<=0}>
+        <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a><br>
+          <span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span>
+          </BOUCLE_manif>
+      </ul>
+      </B_manif>
+      <B_breves>
+      <h4><:breves:></h4>
+      <ul>
+        <BOUCLE_breves(BREVES){tout}{par date}{inverse}{titre_mot=affichage}>
+        <li><a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a><br>
+          <span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span>
+          </BOUCLE_breves>
+      </ul>
+      </B_breves>
+    </div>
+    <B_image_accueil>
+    <BOUCLE_image_accueil(DOCUMENTS){descriptif=image accueil desactivee}{0,1}>
+    <img src="#URL_DOCUMENT" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImageAccueil" [alt="(#TITRE|textebrut)"]>
+    </BOUCLE_image_accueil>
+    </B_image_accueil>
+    <p class="Blanc">&nbsp;</p>
+    <div class="rien">&nbsp;</div>
+  </div>
+  <div id="ColonneGauche">
+    <div id="Sommaire">
+      <hr class="Invisible">
+	#MENU_LANG<br />
+      <INCLURE{fond=menu}{lang=#ENV{lang}}>
+      <hr class="Invisible">
+      <div id="PiedDePage">
+        <p><a href="#URL_SITE_SPIP">#NOM_SITE_SPIP</a> <:realise:></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

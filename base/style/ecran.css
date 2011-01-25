@@ -1,0 +1,8 @@
+/* importation des styles 
+--------------------- */
+@import url("styles.css");
+
+/* Styles pour les anciens navigateurs
+------------------------------- */
+body {
+}

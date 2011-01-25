@@ -1,0 +1,18 @@
+<?php
+
+// This is a SPIP language file  --  Ceci est un fichier langue de SPIP
+
+$GLOBALS[$GLOBALS['idx_lang']] = array(
+
+// C
+'contact' => 'Contatto',
+
+// D
+'documents_rubrique' => 'Documenti della sezione :',
+
+// R
+'recherche' => 'Ricerca'
+'reseau_mireurop' => 'La rete Migreurop',
+);
+
+?>

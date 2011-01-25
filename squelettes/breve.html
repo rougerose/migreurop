@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<BOUCLE_principale(BREVES){id_breve}>
+<head>
+<title>#NOM_SITE_SPIP | [(#TITRE|supprimer_numero|textebrut)]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="[(#INTRODUCTION|textebrut|couper{190})]">
+<meta name="keywords" content="<BOUCLE_motscles_meta(MOTS){id_breve}{","}>[(#TITRE|textebrut)]</BOUCLE_motscles_meta>">
+<link rel="icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="shortcut icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+</head>
+<body>
+<a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="Migreurop" border="0" id="logo"></a>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+<div id="ColonneDroite" class="Interieur">
+  <div id="Titre"> [<img src="IMG/(#LOGO_BREVE|fichier)" alt="logo" id="LogoRubArt">]
+    <h1>[(#TITRE|supprimer_numero)]</h1>
+  </div>
+  <div id="Corps" class="TexteNoir">
+    <p class="Auteurs"><span class="Date">| publi&eacute; le [(#DATE|affdate)] |</span></p>
+    <div id="Texte" class="Texte">
+	#TEXTE
+	</div>
+    [<div id="Postscriptum" class="Texte">
+      <h4>Sur le web</h4>
+      <p class="spip"><a href="#URL_SITE">(#NOM_SITE)</a></p>
+    </div>]
+     </div>
+</div>
+<div id="ColonneMilieu">
+  <hr class="Invisible">
+  <div id="InfoContexte">
+    <B_themes>
+    <h4>Th&egrave;mes associ&eacute;s</h4>
+    <ul>
+      <BOUCLE_themes(MOTS){id_breve}{type!=Gestion affichage}{type!=Gestion site}>
+      <li><a href="#URL_MOT">#TITRE</a></li>
+      </BOUCLE_themes>
+    </ul>
+    </B_themes>
+    [<h4>Notes</h4>
+    (#NOTES)]
+  </div>
+</div>
+<div id="ColonneGauche">
+  <div id="Sommaire">
+    <hr class="Invisible">
+    <INCLURE{fond=menu}{id_rubrique}{lang=#ENV{lang}}>
+    <hr class="invisible">
+  </div>
+</div>
+</div>
+</body>
+</html>
+</BOUCLE_principale>

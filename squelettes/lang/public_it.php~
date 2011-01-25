@@ -1,0 +1,20 @@
+<?php
+
+// This is a SPIP language file  --  Ceci est un fichier langue de SPIP
+// ajouts ou surcharges pour migreurop, Daniel
+
+$GLOBALS[$GLOBALS['idx_lang']] = array(
+
+// R
+'realise' => '&egrave; realizzato con',
+
+// S
+'suite' => 'leggere pi&ugrave;',
+
+// T
+'traductions' => 'Traduzioni:'
+
+);
+
+
+?>

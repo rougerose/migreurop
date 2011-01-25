@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>#NOM_SITE_SPIP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET">
+<meta name="description" content="Migreurop est un réseau européen et africain de militants et chercheurs dont l'objectif est de faire connaître 
+et de lutter contre la généralisation de l'enfermement des étrangers et la multiplication des camps, dispositif au coeur de la politique d'externalisation de l'Union européenne.">
+<meta name="keywords" content="camps, sans papiers, étrangers, migrations, externalisation">
+<META name="verify-v1" content="pFOb0yojr8t+wSjx4ORpd0bGalu/sL6sR3VS8qEL7DA=" />
+<script type="text/javascript" src="base/js/clear.js"></script>
+<link rel="stylesheet" href="base/style/ecran.css" type="text/css" media="screen">
+<link rel="icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="shortcut icon" href="base/images/pajol_icone.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.migreurop.org/spip.php?page=backend" />
+</head>
+<body>
+<!-- Tout ce qui ne sera pas affiche -->
+</BOUCLE_exclusion>
+</BOUCLE_exclu_Ressources>
+<!-- <table width=100%><tr><td width="19%"><a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="migreurop" border="0" id="logo"></a></td>
+<td width="18%"><a href="http://www.syllepse.net/lng_FR_srub_25_iprod_352-Guerre-aux-migrants.html" target="_blank"><img src="IMG/jpg/couv-migreurop.jpg" alt="livre noir" border="0" id="logo"></a><br></td>
+<td width="63%">Parution aux Editions Syllepse de <a href="rubrique177.html">Guerre aux migrants - le livre noir de Ceuta et Melilla</a><br>
+par le r&eacute;seau migreurop (coord. Anne-Sophie Wender, Emmanuel Blanchard), 236p, 10&euro;</td>
+</tr></table> -->
+<table width=100%><tr><td width="19%"><a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="migreurop" border="0" id="logo"></a></td>
+<td width="18%">&nbsp</td>
+<td width="63%">30 janvier-7 f&eacute;vrier 2009 <a href="http://www.migreurop.org/rubrique276.html">Campagne de visites parlementaires</a> dans les lieux d'enfermement des &eacute,trangers</td>
+</tr></table>
+<div class="rien">&nbsp;</div>
+<div id="Enveloppe">
+  <div id="ColonneDroite" class="Sommaire">
+    <div id="CorpsPage">
+      
+      <div id="Presentation">
+        <p>[(#INTRODUCTION|PtoBR)] <a href="#URL_ARTICLE">[&nbsp;la suite&nbsp;]</a></p>
+      </div>
+      </BOUCLE_presentation_site>
+
+      [(#REM) Boucle Multilingue derniers articles. d'apres: http://www.spip-contrib.net/Liste-multilingue-d-articles
+
+		trad_lang_pref, trad_lang_pref2: exclure les traductions des 10 dernier articles dans la langue forcee ]
+
+      
+        
+	    </BOUCLE_traductions_pref>
+      </BOUCLE_exclure_trad_pref>
+
+      [(#REM) trad_lang_autres: exclure les traductions des 5 dernier articles, autres que les 10 derniers 
+              dans la langue forcee, dans d'autres langues que la langue forcee ou que la langue d'origine, 
+              si pas de trad en langue forcee ]
+
+      
+        
+                
+                </BOUCLE_sel_trad_ex>
+        </BOUCLE_lang_pref_ex>
+        </B_lang_pref_ex>
+                
+                        
+                        </BOUCLE_sel_art_ex>
+                </BOUCLE_lang_origine_ex>
+        <//B_lang_pref_ex>
+       </BOUCLE_exclure_trad>
+
+      [(#REM) inclure les dix articles plus recents, si possible dans la langue forcee ]
+      
+        
+			[(#REM)  si l'article existe dans la langue forcee ]
+                
+        </BOUCLE_lang_pref>
+        </B_lang_pref>
+                
+      [(#REM)           si l'article n'existe pas dans la langue forcee,
+                        si l'article a des traductions on prend l'originale ]
+                        
+                </BOUCLE_lang_origine>
+      [(#REM)           si l'article n'existe pas dans la langue forcee,
+                        si l'article est monolingue ]
+                        
+                <//B_lang_origine>
+        <//B_lang_pref>
+      </BOUCLE_article_une>
+
+
+    </div>
+  </div>
+  <div id="ColonneMilieuSommaire">
+    <div id="InfoContexte">
+      <hr class="Invisible">
+      <B_manif>
+      <h4>Prochaines manifestations</h4>
+      <ul>
+        <=0}>
+        <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a><br>
+          <span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span>
+          </BOUCLE_manif>
+      </ul>
+      </B_manif>
+      <B_breves>
+      <h4><:breves:></h4>
+      <ul>
+        
+        <li><a href="#URL_BREVE">[(#TITRE|supprimer_numero)]</a><br>
+          <span class="Date">|&nbsp;[(#DATE|affdate)]&nbsp;|</span>
+          </BOUCLE_breves>
+      </ul>
+      </B_breves>
+    </div>
+    <B_image_accueil>
+    
+    <img src="#URL_DOCUMENT" width="#LARGEUR" height="#HAUTEUR" border="0" id="ImageAccueil" [alt="(#TITRE|textebrut)"]>
+    </BOUCLE_image_accueil>
+    </B_image_accueil>
+    <p class="Blanc">&nbsp;</p>
+    <div class="rien">&nbsp;</div>
+  </div>
+  <div id="ColonneGauche">
+    <div id="Sommaire">
+      <hr class="Invisible">
+	#MENU_LANG<br />
+      
+      <hr class="Invisible">
+      <div id="PiedDePage">
+        <p><a href="#URL_SITE_SPIP">#NOM_SITE_SPIP</a> <:realise:></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
