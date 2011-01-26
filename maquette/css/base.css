@@ -41,7 +41,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	strong { font-weight: normal; }
 
-	#langues li, #baseline { font-family: 'ITCFranklinGothicStd-BkCd', 'ITC Franklin Gothic Std'; font-weight: 200; font-stretch: condensed; }
+	#langues li, #baseline,
+	span.m, span.a { font-family: 'ITCFranklinGothicStd-BkCd', 'ITC Franklin Gothic Std'; font-weight: 200; font-stretch: condensed; }
 
 	#langues li strong { font-family: 'ITCFranklinGothicStd-MdCd', 'ITC Franklin Gothic Std'; font-weight: 600; font-stretch: condensed; }
 
@@ -50,11 +51,14 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	#nav .ddm li li,
 	#contenu h1, #contenu h2, #contenu h3, #contenu h4, #contenu h5, #contenu h6,
-	.ui-tabs .ui-tabs-nav li { font-family: 'ITCFranklinGothicStd-Med', 'ITC Franklin Gothic Std'; font-weight: 500; }
+	.ui-tabs .ui-tabs-nav li,
+	.reperes li { font-family: 'ITCFranklinGothicStd-Med', 'ITC Franklin Gothic Std'; font-weight: 500; }
+
+	span.j { font-family: 'ITCFranklinGothicStd-Book', 'ITC Franklin Gothic Std'; font-weight: 400; }
 
 
 	h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-	h2 { font-size: 20px; line-height: 24px; margin-bottom: 0.75em; }
+	h2 { font-size: 20px; line-height: 20px; margin-bottom: 0.75em; }
 	h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
 	h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
 	h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
@@ -67,15 +71,20 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	------------------------------------------------------ */
 	a {
 		color: #000; text-decoration: none; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:#053d54; }
+
 	a:visited {}
 	a:hover { color: #ba1432; border-color: #bb1432; }
 	a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
 	.sliderNav a:active, .slider a:focus { top: 0; }
 	a:active { outline: none; }
 
+
+
 /*	=transitions css3
 	------------------------------------------------------ */
-	a, #nav li {
+	a, #nav li, .entry-content,
+	.reperes li {
 		-webkit-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
 		   -moz-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
 		     -o-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
@@ -90,7 +99,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			padding:18px 0 0; }
 		#entete { position: relative;
 			margin: 1.5em 0 0; padding-bottom: .5em;  }
-			.entete { position: relative; border-bottom: 1px solid #bb1432; margin: 0 5px; }
+			.entete { position: relative; border-bottom: 1px solid #D21E0C; margin: 0 5px; }
 		#contenu { padding-top: 2.5em; margin: 0 5px; }
 
 		.article {
@@ -184,7 +193,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	.navigation { margin-top: 1em; margin-bottom: 1.5em; position: relative; }
 	.navigation ul { list-style-type: none; }
 		.navigation li {
-			font-size: 11px; line-height: 13px; text-transform: uppercase;
+			font-size: 13px; line-height: 13px; xtext-transform: uppercase;
 			border-bottom: 1px solid #fff;
 			margin-bottom: 12px;
 			-webkit-transition: border-color .6s ease-out;
@@ -240,7 +249,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	.slider {
 		position: relative; z-index: 10; }
 	.sizeXL {
-		border-bottom: 3px double #bb1432;
+		border-bottom: 3px double #D21E0C;
 		margin: 0 5px 1.5em; padding-bottom: 3em;
 		width: 950px;  }
 
@@ -312,7 +321,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 				.sizeXL .panneau .img {
 					float: left;
 					width: 630px; overflow: hidden; }
-				.sizeS .panneau .img {  }
+				.sizeS .panneau .img { margin-bottom: 1em; }
 					.sizeS .panneau .img img { padding: 10px; }
 					.sizeXL .panneau .img a { display: block; }
 				.sizeXL .panneau .entry-content {
@@ -367,33 +376,49 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=hentry
 	------------------------------------------------------ */
 	.hfeed {}
-		.hfeed .entry-content p { margin-bottom: 1em; }
+			.hfeed .entry-content p { margin-bottom: 1em; }
+		.entry-content:hover a { color: #bb1432; }
 
 /*	=meta infos des articles
 	------------------------------------------------------ */
-	ul.meta-publi { border-top: 1px dotted #ddd; padding-top: 9px; }
+	.meta-publi { border-top: 1px dotted #ddd; padding-top: 9px; }
 		.meta-publi li {
 			display: inline;
 			font-size: 12px; color: #858591; }
 		.meta-publi li:first-child { border-right: 1px solid #999; margin-right: 9px; padding-right: 9px; }
 		.meta-publi li a {
-			font-style: italic; color: #3F3F45; }
+			font-style: italic; color: #3f3f45; }
 		.meta-publi li a:hover { color: #bb1432; }
 
 /*	=hentry en liste, contenu principal (sommaire, rubriques)
 	------------------------------------------------------ */
 	.liste { }
-		.liste > div { margin-bottom: 36px; padding-bottom: 9px; border-bottom: 1px solid #6E0619; }
+		.liste > div { margin-bottom: 36px; padding-bottom: 9px; border-bottom: 1px solid #ccc; }
 		.liste > div:nth-child(2n-1) { clear: left; }
 			.liste img.logoObjet { margin-right: 10px; float: left; }
 
 /*	=hentry en liste, contenu secondaire (.acote)
 	------------------------------------------------------ */
-	.acote li.hentry { margin-bottom: 18px; }
-		.acote .hentry h3 { font-size: 14px; margin: .5em 0 0;  }
-		.acote .hentry .entry-content p { font-size: 12px; }
-			.acote li.hentry p span.suite { display: inline; }
-		.acote .hentry .entry-content .meta-publi { xdisplay: none; }
+	.acote li.hentry { margin-bottom: 18px; clear: left; }
+		.acote .hentry h3 { font-size: 14px; margin: 0;  }
+		.acote .hentry p { font-size: 12px; }
+		.acote .hentry .meta-publi { display: none; }
+
+/*	=hentry, contenu secondaire, avec une date de publication
+	------------------------------------------------------ */
+	.acote li.hentry p.info-publi {
+		float: left;
+		text-align: center;
+		margin-right: 5px; }
+		.acote li.hentry .info-publi .value span { display:block; color: #858591; }
+		span.j { font-size: 24px; line-height: 20px; }
+		span.m {
+			font-size: 10px; line-height: 9px;
+			padding-top: 4px; }
+	.acote li.hentry > div {
+		overflow: hidden;
+		border-left: 1px solid #ddd;
+		padding-left: 5px; }
 
 
 /*	=point de suite
@@ -401,15 +426,44 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	span.suite {
 		display: block; margin-top: .5em;
 		font-style: italic; text-align: left; }
-	span.suite:before { content:'\2014\20'; color: #ba1432; }
+	span.suite:before { content:'\2014\20'; color: #EE3A02; font-weight: bold; }
 
 /*	=Acote
 	------------------------------------------------------ */
-	.acote h2 { font-size: 16px; color: #6E0619; text-transform: uppercase; }
+	.acote h2 { font-size: 18px; color: #bb1432; text-transform: uppercase; }
 
 /*	=box
 	------------------------------------------------------ */
-	.box { border-bottom: 1px dotted #6E0619; margin-bottom: 36px; }
+	.box { border-bottom: 1px solid #ccc; margin-bottom: 36px; }
+		.box h3 { font-size: 14px; margin: 0; }
+		.box p { font-size: 12px; }
+
+/*	=Points de repères
+	------------------------------------------------------ */
+	.reperes .item { margin-bottom: 1.5em; }
+		.reperes h3:before { content:'\25A0\20'; color: #bb1432; }
+		.reperes p { margin-bottom: 0; }
+		.reperes p + p { margin-top: 1.5em; }
+		.reperes span.suite { display: inline; }
+		.reperes p + ul { margin-top: .5em; overflow:hidden; }
+			.reperes li {
+				border: 1px solid #fff; border-color: #fff #fff #eee;
+				margin-top: 1px; padding-top: 2px;
+				-webkit-border-radius: 3px;
+				   -moz-border-radius: 3px;
+				        border-radius: 3px; }
+				.reperes li a {
+					display: block;
+					padding-left: 16px;
+					width: 100%;
+					background: url('../img/icones-listes-sprite.png') no-repeat 0 0px; }
+			.reperes li:hover {
+				background: #bb1432 url('../img/icones-listes-sprite.png') no-repeat right -62px;
+				color: #fff;
+				border-color: #C81535 #7b0c22 #7b0c22 #C81535; }
+				.reperes li:hover a { background-image: none; }
+				.reperes li:hover a, .reperes li:hover:before { color: #fff; }
+
 
 /*	=spip admin
 	------------------------------------------------------ */
