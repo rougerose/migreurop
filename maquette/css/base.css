@@ -100,7 +100,13 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		#entete { position: relative;
 			margin: 1.5em 0 0; padding-bottom: .5em;  }
 			.entete { position: relative; border-bottom: 1px solid #D21E0C; margin: 0 5px; }
-		#contenu { padding-top: 2.5em; margin: 0 5px; }
+		#contenu { padding-top: 2.5em; }
+			#contenu > div.section:last-child { border-bottom: 1px solid #D21E0C; }
+		#fil { xmargin-bottom: 1.5em; }
+		#pied {
+			color:#fff;
+			background: rgb(63,63,69) url('../img/border-sprite.png') repeat-x left top;
+			padding-top: 3em; }
 
 		.article {
 			float: left; display: inline;
@@ -456,13 +462,29 @@ Visual design, layout and cascading style sheets may not be reused without permi
 					display: block;
 					padding-left: 16px;
 					width: 100%;
-					background: url('../img/icones-listes-sprite.png') no-repeat 0 0px; }
+					background: url('../img/icones-listes-sprite.png') no-repeat 0 0; }
 			.reperes li:hover {
 				background: #bb1432 url('../img/icones-listes-sprite.png') no-repeat right -62px;
 				color: #fff;
 				border-color: #C81535 #7b0c22 #7b0c22 #C81535; }
 				.reperes li:hover a { background-image: none; }
 				.reperes li:hover a, .reperes li:hover:before { color: #fff; }
+
+/*	=fil d'Ariane
+	------------------------------------------------------ */
+	.ariane ul { margin:1.5em 0; }
+		.ariane li {
+			font-size: 14px;
+			float: left;
+			margin-right: 4px; padding-left: 16px;
+			background: url('../img/icones-listes-sprite.png') no-repeat left 3px; }
+		.ariane li strong { color: #bb1432; }
+
+/*	=pied de page
+	------------------------------------------------------ */
+	.pied {
+
+		xmargin-top: 3em; }
 
 
 /*	=spip admin
