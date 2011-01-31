@@ -50,7 +50,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	#formulaire_recherche .bouton { font-family: 'ITCFranklinGothicStd-Demi', 'ITC Franklin Gothic Std'; font-weight: 600; }
 
 	#nav .ddm li li,
-	#contenu h1, #contenu h2, #contenu h3, #contenu h4, #contenu h5, #contenu h6,
+	h1, h2, h3, h4, h5, h6,
 	.ui-tabs .ui-tabs-nav li,
 	.reperes li { font-family: 'ITCFranklinGothicStd-Med', 'ITC Franklin Gothic Std'; font-weight: 500; }
 
@@ -69,12 +69,15 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=liens
 	------------------------------------------------------ */
-	a {
-		color: #000; text-decoration: none; }
+	a { color: #000; text-decoration: none; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:#053d54; }
+	.pied a { color: rgb(189,189,207); color: rgb(210,210,230); }
+
+	.intro:hover a, .meta-publi:hover a { color: #1A79A0; }
 
 	a:visited {}
-	a:hover { color: #ba1432; border-color: #bb1432; }
+	a:hover, .pied h3 a:hover, .intro a:hover, .meta-publi a:hover { color: #ba1432; border-color: #bb1432; }
+
 	a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
 	.sliderNav a:active, .slider a:focus { top: 0; }
 	a:active { outline: none; }
@@ -102,10 +105,11 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			.entete { position: relative; border-bottom: 1px solid #D21E0C; margin: 0 5px; }
 		#contenu { padding-top: 2.5em; }
 			#contenu > div.section:last-child { border-bottom: 1px solid #D21E0C; }
-		#fil { xmargin-bottom: 1.5em; }
+		#fil { background: #fff url('../img/border-sprite.png') repeat-x left bottom; }
 		#pied {
 			color:#fff;
-			background: rgb(63,63,69) url('../img/border-sprite.png') repeat-x left top;
+			border-top: 2px solid #333;
+			background: rgb(63,63,69) url('../img/xborder-sprite.png') repeat-x left top;
 			padding-top: 3em; }
 
 		.article {
@@ -383,7 +387,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	------------------------------------------------------ */
 	.hfeed {}
 			.hfeed .entry-content p { margin-bottom: 1em; }
-		.entry-content:hover a { color: #bb1432; }
+
 
 /*	=meta infos des articles
 	------------------------------------------------------ */
@@ -482,9 +486,40 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=pied de page
 	------------------------------------------------------ */
-	.pied {
+	.pied { }
+		.pied .groupe { width: 640px; float: left; margin-left: 5px; }
+		.pied .colonne { margin-right: 50px; margin-bottom: 1.5em; }
+		.pied .colonne:last-child { margin-right: 40px; }
+			.pied .about { margin-right: 25px; }
+			.pied .vcard { border-left: 1px solid #fff /*rgb(110,110,120)*/; padding-left: 24px; padding: 21px 0 21px 24px; }
+		.pied .reseau { clear: both; margin-right: 50px; }
+			.pied h2 { margin-bottom: .5em; }
+			.pied ul { margin-bottom: 3em; }
+				.pied li { font-size: 14px; }
+					.pied .follow li a { background: url('../img/pied-icones-sprite.png') no-repeat 0 0px; padding-left: 22px; }
+				.pied .follow .list a { background-position: 0 -160px; }
+				.pied .follow .facebook a { background-position: 0 -96px; }
+				.pied .follow .feed a { background-position: 0 -128px; }
+			.pied span.suite { display:inline; }
+		.pied .news a:before { content:'\2014\20'; color: #EE3A02; font-weight: bold; }
 
-		xmargin-top: 3em; }
+
+/*	=vcard
+	------------------------------------------------------ */
+	.vcard h3 {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		padding-left: 22px; margin: 0; }
+	.vcard p { margin: 0; }
+	.vcard a {
+		display: block;
+		background: url('../img/pied-icones-sprite.png') no-repeat 0 0px;
+		padding-left: 22px; }
+		.vcard .adr a { background-position: 0 -191px; }
+		.vcard .mail a { background-position: 0 -29px; }
+		.vcard .url a { background-position: 0 -61px; }
+	.vcard span.type { display: none; }
+
+
 
 
 /*	=spip admin
