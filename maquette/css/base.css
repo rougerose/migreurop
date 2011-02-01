@@ -113,6 +113,9 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			background: rgb(63,63,69) url('../img/xborder-sprite.png') repeat-x left top;
 			padding-top: 3em; }
 
+
+		.colonne { float: left; margin-right: 30px; }
+
 		/* contenu sur deux colonnes */
 		.principal {
 			float: left; display: inline;
@@ -124,10 +127,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			width: 310px; }
 
 		/* tailles des colonnes */
-		.principal .colonne {
-			float: left;
-			margin-right: 30px;
-			width: 270px; }
+		.principal .colonne, .pied .colonne { width: 270px; }
 
 		.principal .articles, .principal .sousrubriques {
 			clear: left;
@@ -377,7 +377,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	#contenu h1 {
 		font-size: 28px;
 		color: #bb1432;
-		margin: 0 5px 1em; }
+		margin: 0 5px 1em;
+		width: 790px; }
 
 	/* logo d'objet */
 	.logoObjet {
@@ -407,6 +408,20 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			margin-bottom: 1em; }
 		.sousrubriques li { margin-bottom: 3em; }
 		.sousrubriques h3 { margin-bottom: .5em; }
+
+/*	=objet article
+	------------------------------------------------------ */
+	.article .logoObjet { float: left; margin-right: 15px; }
+	div.meta-publi { margin: 0 5px 3em 645px; width: 310px; }
+	p.info-publi, dl.traductions {
+		color: #858591;
+		font-size: 12px; line-height: 14px;
+		margin: 0 0 .5em; }
+	dl.traductions dt, dl.traductions dd ul li { float: left; margin-right: 5px; }
+	dl.traductions dd ul li {
+		border-right: 1px solid #ccc;
+		padding-right: 5px;}
+	dl.traductions dd ul li:last-child { border-right: none; }
 
 
 /*	=contenus associés aux objets
@@ -449,15 +464,17 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	.hfeed {}
 			.hfeed .entry-content p { margin-bottom: 1em; }
 
+	#contenu .hentry h1 { margin-bottom: .5em; }
+
 
 /*	=meta infos des articles
 	------------------------------------------------------ */
-	.meta-publi { border-top: 1px dotted #ddd; padding-top: 9px; }
+	ul.meta-publi { border-top: 1px dotted #ddd; padding-top: 9px; }
 		.meta-publi li {
 			display: inline;
 			font-size: 12px; color: #858591; }
-		.meta-publi li:first-child { border-right: 1px solid #999; margin-right: 9px; padding-right: 9px; }
-		.meta-publi li a {
+		ul.meta-publi li:first-child { border-right: 1px solid #999; margin-right: 9px; padding-right: 9px; }
+		ul.meta-publi li a {
 			font-style: italic; color: #3f3f45; }
 		.meta-publi li a:hover { color: #bb1432; }
 
