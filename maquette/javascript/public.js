@@ -2,11 +2,11 @@ $(document).ready(function(){
 	/**
 	 * Grille de mise en page ajoutée aux boutons d'administration de spip
 	 */
-	$("#conteneur").append("<div id='spip-admin' class='spip-admin-float'><a id='grille' class='spip-admin-boutons' href='#'>Grille</a></div>");
+/*	$("#conteneur").append("<div id='spip-admin' class='spip-admin-float'><a id='grille' class='spip-admin-boutons' href='#'>Grille</a></div>");
 	$("#grille").click(function(){
 		$(".container_24").toggleClass("grille");
 	});
-
+*/
 	/**
 	* Animation du bloc Recherche
 	*/
@@ -89,7 +89,7 @@ $(document).ready(function(){
 			.css({ height:panneauHauteur });
 
 		if (slider.hasClass("sizeS")) {
-			
+
 		}
 
 		// ajustement du positionnement en hauteur des boutons de navigation
