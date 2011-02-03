@@ -42,26 +42,28 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	strong { font-weight: normal; }
 	.texte strong { font-weight: bold; }
 
-	#langues li, #baseline,
-	span.m, span.a { font-family: 'ITCFranklinGothicStd-BkCd', 'ITC Franklin Gothic Std'; font-weight: 200; font-stretch: condensed; }
+	#langues li { font-family: 'ITCFranklinGothicStdBookConde'; }
 
-	#langues li strong { font-family: 'ITCFranklinGothicStd-MdCd', 'ITC Franklin Gothic Std'; font-weight: 600; font-stretch: condensed; }
+	#langues li strong,
+	span.m, span.a { font-family: 'ITCFranklinGothicStdMediumCon', sans-serif; }
+
+	#baseline { font-family: 'ITCFranklinGothicStdMediumCon', sans-serif; }
 
 	#nav li, #nav li strong,
 	#menuNav li, #menuNav strong,
-	#formulaire_recherche .bouton { font-family: 'ITCFranklinGothicStd-Demi', 'ITC Franklin Gothic Std'; font-weight: 600; }
-
+	#formulaire_recherche .bouton,
 	h1, h2, h3, h4, h5, h6,
 	.ui-tabs .ui-tabs-nav li,
-	.reperes li { font-family: 'ITCFranklinGothicStd-Med', 'ITC Franklin Gothic Std'; font-weight: 500; }
-
-	span.j { font-family: 'ITCFranklinGothicStd-Book', 'ITC Franklin Gothic Std'; font-weight: 400; }
+	.reperes li { font-family: 'ITCFranklinGothicStdMedium', sans-serif; }
 
 
-	h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-	h2 { font-size: 20px; line-height: 20px; margin-bottom: 0.75em; }
-	h3 { font-size: 18px; line-height: 18px; margin-bottom: 1em; }
-	h4 { font-size: 16px; line-height: 1.25; margin-bottom: 1.25em; }
+	span.j { font-family: 'ITCFranklinGothicStdBook', sans-serif; }
+
+
+	h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; font-weight: normal; }
+	h2 { font-size: 20px; line-height: 20px; margin-bottom: 0.75em; font-weight: normal; }
+	h3 { font-size: 18px; line-height: 18px; margin-bottom: 1em; font-weight: normal; }
+	h4 { font-size: 16px; line-height: 1.25; margin-bottom: 1.25em; font-weight: normal; }
 	h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
 	h6 { font-size: 1em; font-weight: bold; }
 
