@@ -60,12 +60,18 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
 	h2 { font-size: 20px; line-height: 20px; margin-bottom: 0.75em; }
-	h3 { font-size: 1.5em; line-height: 18px; margin-bottom: 1em; }
-	h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
+	h3 { font-size: 18px; line-height: 18px; margin-bottom: 1em; }
+	h4 { font-size: 16px; line-height: 1.25; margin-bottom: 1.25em; }
 	h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
 	h6 { font-size: 1em; font-weight: bold; }
 
 	p { font-size: 14px; margin: 0 0 1.5em; }
+
+	/* titrailles des textes */
+	.texte h2 { color: #bb1432; }
+	.texte h3 { color: #bb1432; }
+
+
 
 
 /*	=liens
@@ -73,6 +79,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	a { color: #000; text-decoration: none; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:#053d54; }
 	.pied a { color: rgb(189,189,207); color: rgb(210,210,230); }
+
+	.texte a { font-weight: bold; }
 
 	.intro:hover a, .meta-publi:hover a { color: #1A79A0; }
 
@@ -196,7 +204,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=entete > logo
 	------------------------------------------------------ */
-	#logo {  }
+	#logo { margin-bottom: 1.5em; }
 		#logo h1 { margin-bottom: 0; }
 		#logo #baseline {
 			position: absolute; top: 0; left: 485px; margin-top: -1.5em;
@@ -608,7 +616,9 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		.vcard .url a { background-position: 0 -61px; }
 	.vcard span.type { display: none; }
 
-
+/*	=index maquette statique
+	------------------------------------------------------ */
+	#index #langues { height: 2em; }
 
 
 /*	=spip admin
