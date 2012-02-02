@@ -1,6 +1,6 @@
 <!-- Debut menu principal - repris sur modele de http://www.uzine.net/spip_contrib/article.php3?id_article=103 -->
 <?php
-// r»cup»ration de la hi»rarchie courante
+// rÂ»cupÂ»ration de la hiÂ»rarchie courante
 $hierarchie = array();
 <BOUCLE_principale(RUBRIQUES){id_rubrique}><BOUCLE_hierarchie(HIERARCHIE){id_rubrique}>
 		$hierarchie[] = #ID_RUBRIQUE;</BOUCLE_hierarchie>
@@ -73,4 +73,9 @@ afficher_script_layer();
 <ul>
  <li><a href="#URL_PAGE{contact}"><:contact:></a></li>
  <li class="Recherche"><a href="http://pajol.eu.org/article201.html"><:recherche:></a></li>
+</ul>
+
+<ul id="socialnetwork" class="cf">
+	<li>[<a href="http://www.facebook.com/pages/Migreurop/128796677138595">(#CHEMIN{base/images/FaceBook_32x32.png}|balise_img{Facebook})</a>]</li>
+	<li>[<a href="https://twitter.com/#!/Migreurop">(#CHEMIN{base/images/Twitter_32x32.png}|balise_img{Twitter})</a>]</li>
 </ul>
