@@ -1,4 +1,4 @@
-/* 
+/*
 -------------------------------------------------------------
 Feuille de style ecran PAJOL [http://pajol.eu.org]
 Version du 2 aout 2004
@@ -79,12 +79,16 @@ div#InfoContexte {
 	margin-top: 0px;
 }
 
-/* Entete des pages 
+/* Entete des pages
 ----------------------------------- */
-img#logo {
+img#logo, h1#logo img {
 	float: left;
 	margin:10px 0 15px 25px;
 }
+
+h1#logo { 
+	float: left; }
+
 /* Menu principal
 ----------------------------------- */
 div#Sommaire {
@@ -127,6 +131,32 @@ td.Gauche {
 table#Sommaire1 {
 	margin-bottom: 1.5em;
 }
+
+/* Icones FB & Tw
+---------------------------------------------------- */
+#sommaire #socialnetwork {
+	margin: 20px 0; }
+	#socialnetwork li {
+		list-style: none;
+		margin-right: 10px;
+		float: left; }
+		#socialnetwork li a { display: block; }
+
+/* Float
+---------------------------------------------------- */
+.cf:before,
+.cf:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0; }
+.cf:after { clear: both; }
+.cf { zoom: 1; }
+
 
 /* Regles communes de mise en page
 ---------------------------------------------------- */
@@ -199,6 +229,7 @@ p.Auteurs {
 span.Auteurs {
 }
 div#PiedDePage {
+	clear: both;
 	margin-top: 3em;
 	font-family: Geneva, Arial, Helvetica, sans-serif;
 	font-size: 90%;
@@ -335,7 +366,7 @@ input#Recherche {
 
 /* Regles specifiques de mise en page
 ------------------------------------------------------- */
-/* Squelette Sommaire  
+/* Squelette Sommaire
 ====================== */
 
 
@@ -409,7 +440,7 @@ div#Sommaire li.Recherche {
 }
 
 
-/* Squelette Article 
+/* Squelette Article
 ==================== */
 
 div#Titre {
@@ -482,7 +513,7 @@ div#InfoContexte li.Niveau2 {
 	list-style-position: inside;
 }
 
-/* Squelette Rubrique 
+/* Squelette Rubrique
 ====================== */
 
 div.Interieur div.RubIntroArt {

@@ -16,19 +16,15 @@ et de lutter contre la généralisation de l'enfermement des étrangers et la mu
 <body>
 <!-- Tout ce qui ne sera pas affiche -->
 <BOUCLE_exclusion(ARTICLES){type_mot=gestion site}{doublons}></BOUCLE_exclusion>
-<BOUCLE_exclu_Ressources(ARTICLES){id_secteur=182}{doublons}></BOUCLE_exclu_Ressources>
-<table style="width:100%;">
+<BOUCLE_exclu_Ressources(ARTICLES){id_secteur IN 182}{doublons}></BOUCLE_exclu_Ressources>
+<table style="width:80%; margin-top: 1em;">
 	<tr>
-		<td style="width:30%;"><a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="migreurop" border="0" id="logo"></a></td>
-		<td style="width:20%;"></td>
-		<td style="width:50%;"></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td><a href="article1776.html"><img src="base/images/d/Migreurop-rapport_2010.jpg" width="150" height="129" alt="Migreurop Rapport 2010"></a></td>
-		<td><p><strong>Aux fronti&egrave;res de l&rsquo;Europe : contr&ocirc;les, enfermement et expulsions.</strong> Le deuxi&egrave;me rapport du r&eacute;seau Migreurop sur les violations des droits humains aux fronti&egrave;res (2009-2010) est <a href="article1776.html">maintenant disponible</a>.</p></td>
+		<td style="width:350px;"><a href="#URL_SITE_SPIP"><img src="base/images/logo-migreurop.png" alt="migreurop" border="0" id="logo"></a></td>
+		<td style="width:200px"><a href="article2049.html"><img src="base/images/rapport2011-couverture.jpg" alt="Rapport 2011"></a></td>
+		<td><p><strong><a href="article2049.html">Aux bords de l&rsquo;Europe : l'externalisation des contr&ocirc;les migratoires</a></strong> troisi&egrave;me rapport du r&eacute;seau Migreurop (2010-2011)</p></td>
 	</tr>
 </table>
+
 <div class="rien">&nbsp;</div>
 <div id="Enveloppe">
   <div id="ColonneDroite" class="Sommaire">
@@ -68,7 +64,7 @@ et de lutter contre la généralisation de l'enfermement des étrangers et la mu
 
       [(#REM) inclure les dix articles plus recents, si possible dans la langue forcee ]
       <BOUCLE_article_une(ARTICLES) {par date} {inverse} {doublons trad_lang_pref} {doublons trad_lang_autres}
-									{id_secteur != 192} {0,10}>
+									{id_secteur !IN 192,212} {0,10}>
         <BOUCLE_lang_pref(ARTICLES) {traduction} {lang = #ENV{lang}}>
 			[(#REM)  si l'article existe dans la langue forcee ]
                 <INCLURE{fond=article_une}{id_article}{lang=#ENV{lang}}
