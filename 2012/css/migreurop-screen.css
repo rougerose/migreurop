@@ -306,7 +306,7 @@ a.none:active, a.none:focus { outline: none; }
 .article .documents_portfolio {
    margin-top: 2em;
 }
-.article .dcouments_portfolio a {  }
+.article .documents_portfolio a { margin-bottom: 1em; }
 
 
 /* ======================== */
