@@ -1,0 +1,123 @@
+[(#REM) slider ]
+   [(#REM) dev : une liste d'articles pré-définis ]
+      #SET{selection_slider,#ARRAY{0,2089,1,2076}}
+
+[(#REM) section : slider sur 4 colonnes ]
+
+#INCLURE{fond=inclure/slider,lang,selection=#GET{selection_slider},compo=sommaire,titre-niveau=h2}
+
+#SET{2colonnes,#ARRAY{1,2111,2,2106,3,2102}}
+#SET{1colonne,#ARRAY{1,2098,2,2096,3,2081,4,2071,5,2064,6,2087,7,2060}}
+
+[(#REM) section: contenu-principal sur 2 colonnes ]
+
+<div class="contenu-principal sommaire">
+
+   [(#REM) section: articles sur 2 colonnes ]
+   <B_articles_2colonnes>
+   <div class="liste articles majeur">
+      #ANCRE_PAGINATION
+      <ul class="liste-items">
+         <BOUCLE_articles_2colonnes(ARTICLES){id_article IN #GET{2colonnes}}{lang}{pagination 5}>
+         #INCLURE{fond=inclure/article-resume,id_article}
+         </BOUCLE_articles_2colonnes>
+      </ul>
+      [<p class="pagination">(#PAGINATION)</p>]
+   </div>
+   </B_articles_2colonnes>
+
+   [(#REM) section: articles sur 1 colonne en grille ]
+   <B_articles_1colonne>
+   <div class="liste articles sommaire grille cf">
+      #ANCRE_PAGINATION
+      <ul class="liste-items">
+         <BOUCLE_articles_1colonne(ARTICLES){id_article IN #GET{1colonne}}{lang}{pagination 10}>
+         [(#INCLURE{fond=inclure/article-resume,id_article,compteur=[(#COMPTEUR_BOUCLE|alterner{c1,c2})]})]
+         </BOUCLE_articles_1colonne>
+      </ul>
+      [<p class="pagination">(#PAGINATION)</p>]
+   </div>
+   </B_articles_1colonne>
+</div><!-- .contenu-principal -->
+
+[(#REM) section : contenu-secondaire sur 2 colonnes]
+<div class="contenu-secondaire sommaire">
+
+   <div class="box">
+      [(#REM) slider 2 colonnes ]
+      #SET{selection_slider,#ARRAY{0,2122,1,2121}}
+      <BOUCLE_portfolios(RUBRIQUES){id_rubrique=438}>
+      <h2>#TITRE</h2>
+      #INCLURE{fond=inclure/slider,lang,selection=#GET{selection_slider},compo=extra,titre-niveau=h3}
+      </BOUCLE_portfolios>
+   </div><!-- .box -->
+
+   <div class="box">
+      #SET{selection_cartes,#ARRAY{0,2123,1,2124}}
+      <BOUCLE_cartes(RUBRIQUES){id_rubrique=266}>
+      <h2>#TITRE</h2>
+      #INCLURE{fond=inclure/slider,lang,selection=#GET{selection_cartes},compo=extra,titre-niveau=h3}
+      </BOUCLE_cartes>
+   </div><!-- .box -->
+
+   <div class="box liste articles rapports">
+      <BOUCLE_publications(RUBRIQUES){id_rubrique=389}>
+      <h2>#TITRE</h2>
+      <B_articles_publications>
+      <ul class="liste-items hfeed">
+         <BOUCLE_articles_publications(ARTICLES){branche}{lang}{!par date}{0,4}>
+         <li class="item item-logo hentry cf">
+            [(#SET{titre_b,#TITRE|texte_backend})]
+            [<a href="#URL_ARTICLE">(#LOGO_ARTICLE
+               |image_reduire{60,0}|inserer_attribut{alt,#GET{titre_b}}|inserer_attribut{class,logo}
+               |sinon{#CHEMIN{images/rapport-faux-logo.png}|balise_img{#GET{titre_b},logo}|image_reduire{60,0}})</a>]
+            <div>
+               <h3 class="entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
+               [<p class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{100}|PtoBR) <a class="lire-la-suite" href="#URL_ARTICLE"><:zpip:lire_la_suite:></a></p>]
+               <ul class="meta-publi clearfix">
+                  <li class="info-publi updated published"><span class="value" title="[(#DATE|date_822)]">[(#DATE|affdate{'d/m/Y'})]</span></li>
+               </ul>
+            </div>
+         </li>
+         </BOUCLE_articles_publications>
+         <li class="suite"><a href="#URL_RUBRIQUE" class="lire-la-suite">Voir tous les rapports</a></li>
+      </ul>
+      </B_articles_publications>
+      </BOUCLE_publications>
+   </div><!-- .box -->
+<!--
+   <div class="box cp">
+      <BOUCLE_cp(RUBRIQUES){id_rubrique=189}>
+      <h2>#TITRE</h2>
+      <ul class="hfeed">
+         <BOUCLE_cp_articles(ARTICLES){id_rubrique}{lang}{!par date}{0,3}>
+         <li class="hentry">
+            <p class="info-publi updated published"><span class="value" title="[(#DATE|date_822)]"><span class="j">[(#DATE|affdate{d})]</span> <span class="m a">[(#DATE|affdate{m/Y})]</span></span></p>
+            <div>
+               <h3 class="entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
+               [<div class="#EDIT{intro} introduction entry-content">
+                  <p>(#INTRODUCTION{100}|PtoBR) <a class="lire-la-suite" href="#URL_ARTICLE"><:zpip:lire_la_suite:></a></p>
+               </div>]
+            </div>
+         </li>
+         </BOUCLE_cp_articles>
+         <li><h3><a href="#URL_RUBRIQUE">Voir tous les communiqués</a></h3></li>
+      </ul>
+      </BOUCLE_cp>
+   </div>
+-->
+
+   <div class="box liste articles fiches grille">
+      <BOUCLE_pays(RUBRIQUES){id_rubrique=321}>
+      <h2>#TITRE</h2>
+      <ul class="liste-items">
+         <BOUCLE_fiche_pays(ARTICLES){id_rubrique}{lang}{par hasard}{0,8}>
+         <li class="item[ (#COMPTEUR_BOUCLE|alterner{c1,c2})]"><h3><a href="#URL_ARTICLE">#TITRE</a></h3></li>
+         </BOUCLE_fiche_pays>
+         <li class="suite"><a href="#URL_RUBRIQUE" class="lire-la-suite">Voir tous les pays</a></li>
+      </ul>
+      </BOUCLE_pays>
+   </div><!-- .box -->
+
+
+</div><!-- .contenu-secondaire sommaire -->

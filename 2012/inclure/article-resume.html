@@ -1,0 +1,14 @@
+<BOUCLE_articles(ARTICLES){id_article}{statut?}{lang}>
+<li class="item hentry #ENV{compteur}">
+   <h2 class="entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+   [<div class="#EDIT{intro} introduction entry-content">
+      <p>(#INTRODUCTION{300}|PtoBR) <a class="lire-la-suite" href="#URL_ARTICLE"><:zpip:lire_la_suite:></a></p>
+   </div>]
+   <ul class="meta-publi clearfix">
+      <li class="info-publi updated published"><span class="value" title="[(#DATE|date_822)]">[(#DATE|affdate{'d/m/Y'})]</span></li>
+      <BOUCLE_parent(RUBRIQUES){id_rubrique}>
+      <li class="titre-rubrique"><a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{20})]</a></li>
+      </BOUCLE_parent>
+   </ul>
+</li>
+</BOUCLE_articles>
