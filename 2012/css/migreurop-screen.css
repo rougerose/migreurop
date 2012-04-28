@@ -48,6 +48,9 @@ body { background-color: #3a3a3a; }
 .contenu-principal.sommaire,
 .contenu-secondaire.sommaire { width: 486px; float: left; }
 
+
+
+
 /* 1 colonne */
 .grille .item,
 .grille .box { float: left; width: 234px; }
@@ -121,6 +124,22 @@ body { background-color: #3a3a3a; }
       .p_rubrique .menu-liste h2 { margin-bottom: 0; font-size: 18px; line-height: 20px; }
       .p_rubrique .menu-liste li ul { margin-top: .5em; }
       .p_rubrique .menu-liste li li { margin-left: 10px; }
+
+
+/* article */
+.contenu-principal.article { width: 738px; position: relative; float: right; margin-bottom: 4em; }
+.contenu-principal.article .cartouche > div { margin-left: 0; }
+.article .cartouche .info-publi, .article .cartouche .traductions { width: 738px; }
+.article .cartouche .traductions { font-family: 'Asap',sans-serif; font-size: 12px; text-align: right; color: #abadb0; }
+.cartouche .traductions .on { color:#d10c13 ; }
+
+.contenu-principal.article .texte { width: 486px; margin-top: 2em; }
+.contenu-principal.article .texte p { text-align: justify;}
+
+/*
+   TODO bricolage à corriger
+*/
+.page_article #navigation { top: 6em; }
 
 
 /* =================== */
@@ -282,6 +301,12 @@ a.none:active, a.none:focus { outline: none; }
 /* = Liste documents = */
 /* =================== */
 .liste.documents { display: none; }
+.article .liste.documents {  }
+
+.article .documents_portfolio {
+   margin-top: 2em;
+}
+.article .dcouments_portfolio a {  }
 
 
 /* ======================== */
