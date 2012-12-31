@@ -1,0 +1,16 @@
+<paquet
+   prefix="migreurop"
+   categorie="squelette"
+   version="2.0.0"
+   etat="dev"
+   compatibilite="[3.0.0-dev;["
+   logo="img/migreurop-128.png"
+>
+   <nom>Migreurop</nom>
+   <auteur lien='http://rouge-rose.net'>christophe le drean</auteur>
+   <licence>GNU/GPL</licence>
+   <necessite nom="Z5" compatibilite="[2.0.0;]" />
+   <necessite nom="Zcore" compatibilite="[2.0.0;]" />
+   <utilise nom="menus" compatibilite="[1.2.4;]" />
+   <chemin path="" />
+</paquet>

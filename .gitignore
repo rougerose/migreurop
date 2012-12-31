@@ -2,12 +2,5 @@
 .DS_Store
 
 # projet spip : tous les fichiers et dossiers sont ignores
-/*
 
 # excepte
-!/2012
-!.gitignore
-!/squelettes
-!/base
-!README
-!/maquette
