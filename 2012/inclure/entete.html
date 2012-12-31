@@ -1,9 +1,0 @@
-[(#ENV{composition}|match{^(sommaire)$}|?{
-	'<h1 id="logo">'
-	,<p id="logo"><a href="#URL_SITE_SPIP" rel="start home" title="<:accueil_site:>">})]
-	[(#LOGO_SITE_SPIP|image_reduire{450,0}|inserer_attribut{alt,#NOM_SITE_SPIP|textebrut})]
-[(#ENV{composition}|match{^(sommaire)$}|?{
-	'</h1>'
-	,'</a></p>'})]
-[<p id="baseline">(#SLOGAN_SITE_SPIP|PtoBR)</p>]
-
