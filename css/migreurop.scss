@@ -3,9 +3,9 @@
     YOUR-PROJECT.CSS
 \*------------------------------------*/
 /**
- * 
+ *
  * sass --watch your-project.scss:your-project.min.css --style compressed
- * 
+ *
  * Here we set up some variables, include the inuit.css framework, then add our
  * project-specific components afterwards.
  */
@@ -14,10 +14,17 @@
 /**
  * Setup
  */
-@import "vars";
-@import "inuit.css/inuit";
+ @import "vars";
+ @import "inuit.css/inuit";
 
 
 /**
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
+ @import "ui/page";
+ @import "ui/header";
+ @import "ui/nav";
+ @import "ui/logo";
+
+ @import "ui/spipadmin";
+ @import "ui/boxshadow";

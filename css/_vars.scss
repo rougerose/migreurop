@@ -65,9 +65,10 @@ $micro-size:        10px!default;
 /**
  * Brand stuff
  */
-$brand-color:       #4a8ec2!default;
-$brand-face:        "Helvetica Neue", sans-serif!default;
+$brand-color:       #bb1622!default;
+$brand-face:        "Open sans", "Helvetica Neue", sans-serif!default;
 
+$mono-family :      Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace!default;
 
 /**
  * inuit.css will work these next ones out for you.
@@ -76,4 +77,5 @@ $brand-face:        "Helvetica Neue", sans-serif!default;
  */
 $base-spacing-unit: $base-line-height!default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
+$quater-spacing-unit: $base-spacing-unit / 4!default;
 $line-height-ratio: $base-line-height / $base-font-size;
