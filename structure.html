@@ -1,0 +1,18 @@
+[(#VAL{_Z_DOCTYPE}|defined|?{#VAL{_Z_DOCTYPE}|constant}|sinon{<!DOCTYPE HTML>})][
+(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
+<!--[if lt IE 7]>      <html class="[(#GET{class})] no-js lt-ie9 lt-ie8 lt-ie7" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if IE 7]>         <html class="[(#GET{class})] no-js lt-ie9 lt-ie8" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if IE 8]>         <html class="[(#GET{class})] no-js lt-ie9" lang="#LANG" dir="#LANG_DIR"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="[(#GET{class})] no-js" lang="#LANG" dir="#LANG_DIR"> <!--<![endif]-->
+   <head>[
+      (#REM) Debut du head particulier a chaque page
+      pour inserer un title, des css particulieres(mais surchargees), ou des js *inline*
+      ]<INCLURE{fond=head/#ENV{type-page},env}>[
+      (#REM) Partie commune a toutes les pages, sans env
+      ]<INCLURE{fond=inclure/head}>[
+      (#REM) Fin du head particulier a chaque page, pour inserer des js specifiques par exemple
+      pour inserer des js *externes*
+      ]<INCLURE{fond=head_js/#ENV{type-page},env}>
+   </head>
+   <INCLURE{fond=body,env}>
+</html>

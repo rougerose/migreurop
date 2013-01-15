@@ -9,6 +9,8 @@
    <nom>Migreurop</nom>
    <auteur lien='http://rouge-rose.net'>christophe le drean</auteur>
    <licence>GNU/GPL</licence>
+   <pipeline nom="insert_head_css" inclure="migreurop_pipelines.php" />
+   <pipeline nom="insert_head" inclure="migreurop_pipelines.php" />
    <necessite nom="Z5" compatibilite="[2.0.0;]" />
    <necessite nom="Zcore" compatibilite="[2.0.0;]" />
    <utilise nom="menus" compatibilite="[1.2.4;]" />

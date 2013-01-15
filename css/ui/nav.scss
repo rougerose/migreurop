@@ -1,0 +1,71 @@
+/*   =BARRENAV
+   ------------------------------------------------------ */
+   .barrenav {
+      background-color: #1d2326;
+   }
+   .barrenav .nav {position: relative;}
+   .barrenav .nav ul {margin-left: 0;}
+   .barrenav .item {
+      @include font-size(12px);
+      font-weight: 700;
+      text-transform: uppercase;
+   }
+   .nav > .item {
+      position: relative;
+      padding-right: $base-spacing-unit;
+   }
+   .barrenav a {
+      color: #fff; color: rgba(255,255,255,0.9);
+      text-shadow: 0 0 4px rgba(68,68,68,0.6);
+      @include vendor(transition, all 0.2s);
+   }
+   .barrenav a:hover {
+      color: #fff; color: rgba(255,255,255,1);
+      text-shadow: 0 0 4px rgba(255,255,255,0.3);
+      text-decoration: none;}
+   .nav > .item > a {
+      padding: $quater-spacing-unit;
+      padding-right: 0;
+   }
+   .barrenav .item.on a {
+      @include arrow(bottom, center, #1d2326);
+   }
+   .barrenav .ouvrir {
+      width: 14px; height: 14px;
+      position: absolute; top: 0; right: 6px;
+      cursor: pointer;
+      @include arrow(bottom, center, rgba(255,255,255,0.6));
+   }
+   .barrenav .ouvrir:after, .barrenav .ouvrir:before {
+      @include vendor(transition, all 0.2s);
+   }
+   .barrenav .ouvrir.active:after,
+   .barrenav .ouvrir.active:before,
+   .barrenav .ouvrir:hover:after,
+   .barrenav .ouvrir:hover:before {border-top-color: #fff;}
+   .barrenav .dropdown {
+      background-color: #1d2326;
+      list-style: none;
+      text-align: left;
+      white-space: nowrap;
+      width: auto;
+      padding: $half-spacing-unit;
+      position: absolute; right: -9999px; top: -9999px;
+      opacity: 0;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      @include vendor(transition, opacity 0.5s ease-in);
+      @include arrow(top, right, #1d2326);
+      @include vendor(border-radius, 2px);
+   }
+   /* surcharge inuitcss: position de la fleche */
+   .barrenav .dropdown:after,
+   .barrenav .dropdown:before {right: 12px;}
+   /* surcharge inuitcss : taille de la fleche */
+   .barrenav .ouvrir:after,
+   .barrenav .ouvrir:before,
+   .barrenav .dropdown:after,
+   .barrenav .dropdown:before {border-width: $quater-spacing-unit; margin-left: -$quater-spacing-unit;}
+   .barrenav .dropdown.active {
+      right: -6px; top: 120%;
+      opacity: 1;
+   }

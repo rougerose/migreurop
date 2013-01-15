@@ -1,0 +1,16 @@
+/*   =PAGE
+   ------------------------------------------------------ */
+   html{
+       font-family:$brand-face;
+       font-weight:300;
+       color:#555;
+       background-color:#fff;
+   }
+   .container{
+       margin:0 auto;
+       width: 1024px;
+       padding-left:$base-spacing-unit;
+       @include media-query(desk) {
+          width: 1190px;
+       }
+   }
