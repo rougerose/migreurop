@@ -1,14 +1,9 @@
 <body>
    <header role="banner">
-      <INCLURE{fond=navs/barrenav-maquette,env}>
+      <INCLURE{fond=navs/barrenav,env}>
       <INCLURE{fond=header/#ENV{type-page},env} />
    </header>
-   <div class="gw">
-      <div class="g one-whole">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-         <INCLURE{fond=content/#ENV{type-page},env} />
-
-      </div>
-   </div>
+   <div class="container page">
+      <INCLURE{fond=content/#ENV{type-page},env} />
+   </div><!-- .container -->
 </body>
