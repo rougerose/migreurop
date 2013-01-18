@@ -4,3 +4,5 @@
 # projet spip : tous les fichiers et dossiers sont ignores
 
 # excepte
+/css/migreurop.css
+/javascript/migreurop_public-ck.js
