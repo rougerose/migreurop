@@ -1,0 +1,27 @@
+[(#REM) test sur le contexte. Si ouverture, il s'agit d'afficher l'article dans le slider. ]
+<BOUCLE_article(ARTICLES){id_article}>
+<li class="hentry">
+   <article>
+      [(#ENV{contexte}|=={ouverture}|oui)<div class="calque">]
+      <header>
+         [(#SOUSTITRE|oui)<hgroup>]
+            <h1 class="entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h1>
+            [<h2 class="soustitre">(#SOUSTITRE)</h2>]
+         [(#SOUSTITRE|oui)</hgroup>]
+         <ul class="meta-publi">
+            <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+            <li class="category"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+            </BOUCLE_rubrique>
+            <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
+            <B_auteurs><li class="byline author vcard"><:migreurop:by:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>
+         </ul>
+      </header>
+      <div class="entry-content">
+         [(#INTRODUCTION)]
+         <p class="suite"><a href="#URL_ARTICLE"><:migreurop:more:></a></p>
+      </div>
+      [(#ENV{contexte}|=={ouverture}|oui)</div><!-- .calque -->
+      [(#LOGO_ARTICLE|#URL_ARTICLE)]]
+   </article>
+</li>
+</BOUCLE_article>

@@ -9,8 +9,6 @@
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
 [(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
 #INSERT_HEAD_CSS
-
-
 [(#CHEMIN{inc-theme-head.html}|oui)
 #INCLURE{fond=inc-theme-head,env}
 ][(#REM) Balise permettant aux plugins d'inserer des appels javascript ou css ;
@@ -19,9 +17,8 @@
 	si l'option est cochee dans Configuration
 ]
 #INSERT_HEAD
-
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]><script src="#CHEMIN{javascript/html5.js}"></script><![endif]-->
 [(#REM) Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons ][
-   <link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />][
-   <link rel="shortcut icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />]
+<link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />][
+<link rel="shortcut icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />]

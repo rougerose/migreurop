@@ -5,7 +5,7 @@
    function migreurop_insert_head($flux){
       $js = find_in_path('javascript/migreurop_public.js');
       if ($js) {
-         $flux .= "\n".'<script src="'.$js.'" type="text/javascript"></script>'."\n";
+         $flux .= '<script src="'.$js.'" type="text/javascript"></script>'."\n";
       }
       return $flux;
    }
@@ -18,7 +18,6 @@
       if ($css) {
          $flux .= "<link rel='stylesheet' href='$css'>\n";
       }
-
       return $flux;
    }
 

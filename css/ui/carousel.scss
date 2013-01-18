@@ -1,0 +1,27 @@
+.slider {
+   overflow: hidden;
+   width: 100%;
+}
+.slider.slider-ouverture {
+   height: 500px;
+}
+   .panels {
+      list-style: none;
+      position: relative;
+      margin-left: 0;
+      width: 200%;
+   }
+      .panels > li {
+         width: 50%;
+         float: left;
+      }
+
+
+
+
+.calque {display: none;}
+.slider img {
+   display: block;
+   width: 100%;
+   max-width: 100%;
+}

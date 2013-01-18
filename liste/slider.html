@@ -1,0 +1,21 @@
+[(#REM)
+   VARIABLES
+   =====================================
+   selection:     tableau des identifiants articles ou images
+   contexte:      ouverture (sommaire, rubrique) ou portfolio (article)
+   type-page:     squelette dans lequel est inclus le slider
+][
+   (#SET{articles_slider, #ENV{selection,''}}) ][
+   (#SET{contexte,#ENV{contexte,ouverture}}) ][
+   (#SET{type-page,#ENV{type-page,sommaire}}) ]
+
+<div class="slider slider-#GET{contexte} #GET{type-page}">
+   <ul class="panels">
+      <BOUCLE_ouverture(ARTICLES){id_article IN #GET{articles_slider}}{si #GET{contexte}|=={ouverture}}>
+      [(#INCLURE{fond=inclure/article-resume,id_article,env})]
+      </BOUCLE_ouverture>
+      <BOUCLE_portfolio(ARTICLES){id_article IN #GET{articles_slider}}{si #GET{contexte}|=={portfolio}}>
+
+      </BOUCLE_portfolio>
+   </ul><!-- .panels -->
+</div><!-- .slider -->

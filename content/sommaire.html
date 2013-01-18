@@ -1,0 +1,11 @@
+[(#SET{articles_slider,#ARRAY})][(#SET{articles_selection,#ARRAY})]
+<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}>
+[(#LOGO_ARTICLE|oui) [(#SET_PUSH{articles_slider,#ID_ARTICLE})] ]
+[(#LOGO_ARTICLE|non) [(#SET_PUSH{articles_selection,#ID_ARTICLE})] ]
+</BOUCLE_selection>
+
+[(#GET{articles_slider}|oui)
+   #INCLURE{fond=liste/slider,selection=#GET{articles_slider},type-page=#ENV{type-page},contexte=ouverture}
+][(#GET{articles_selection}|oui)
+
+]

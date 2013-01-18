@@ -1,9 +1,18 @@
-$(window).load(function(){
-   /*
-   *
-   *  Menu principal en version dropdown
-   *
-   */
+// ===================
+// = Plugin Carousel =
+// ===================
+$.fn.carousel = function(){
+   return this.each(function(){
+      var carousel = $(this),
+      conteneur = carousel.children(".panels");
+      console.log(conteneur);
+   });
+};
+
+$(document).ready(function(){
+   // ======================================
+   // = Menu principal en version dropdown =
+   // ======================================
    $("#barrenav .nav").each(function(){
       var $items = $(this).children(".item"),
       $haschild = $items.children("ul").before('<span class="ouvrir" />').parent().addClass("haschild"),
@@ -28,7 +37,7 @@ $(window).load(function(){
       // fermer le menu dropdown éventuellement ouvert lors d'un clic dans la page
       $("html").click(function(){$dropdown.removeClass("active");});
    });
-});
 
+});
 
 
