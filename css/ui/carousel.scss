@@ -1,8 +1,8 @@
-.slider {
+.carousel {
    overflow: hidden;
    width: 100%;
 }
-.slider.slider-ouverture {
+.carousel.carousel-ouverture {
    height: 500px;
 }
    .panels {
@@ -20,7 +20,7 @@
 
 
 .calque {display: none;}
-.slider img {
+.carousel img {
    display: block;
    width: 100%;
    max-width: 100%;

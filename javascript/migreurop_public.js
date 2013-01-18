@@ -5,7 +5,7 @@ $.fn.carousel = function(){
    return this.each(function(){
       var carousel = $(this),
       conteneur = carousel.children(".panels");
-      console.log(conteneur);
+      //console.log(conteneur);
    });
 };
 

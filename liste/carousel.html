@@ -3,19 +3,19 @@
    =====================================
    selection:     tableau des identifiants articles ou images
    contexte:      ouverture (sommaire, rubrique) ou portfolio (article)
-   type-page:     squelette dans lequel est inclus le slider
+   type-page:     squelette dans lequel est inclus le carousel
 ][
-   (#SET{articles_slider, #ENV{selection,''}}) ][
+   (#SET{articles_carousel, #ENV{selection,''}}) ][
    (#SET{contexte,#ENV{contexte,ouverture}}) ][
    (#SET{type-page,#ENV{type-page,sommaire}}) ]
 
-<div class="slider slider-#GET{contexte} #GET{type-page}">
+<div class="carousel carousel-#GET{contexte} #GET{type-page}">
    <ul class="panels">
-      <BOUCLE_ouverture(ARTICLES){id_article IN #GET{articles_slider}}{si #GET{contexte}|=={ouverture}}>
+      <BOUCLE_ouverture(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={ouverture}}>
       [(#INCLURE{fond=inclure/article-resume,id_article,env})]
       </BOUCLE_ouverture>
-      <BOUCLE_portfolio(ARTICLES){id_article IN #GET{articles_slider}}{si #GET{contexte}|=={portfolio}}>
+      <BOUCLE_portfolio(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={portfolio}}>
 
       </BOUCLE_portfolio>
    </ul><!-- .panels -->
-</div><!-- .slider -->
+</div><!-- .carousel -->
