@@ -9,6 +9,6 @@
       'by' => 'Par',
 
       // M
-      'more' => 'La suite',
+      'more' => 'La suite'
    );
 ?>

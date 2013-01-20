@@ -3,9 +3,9 @@
 
    // javascript
    function migreurop_insert_head($flux){
-      $js = find_in_path('javascript/migreurop_public.js');
-      if ($js) {
-         $flux .= '<script src="'.$js.'" type="text/javascript"></script>'."\n";
+      $js = array('javascript/jquery.tr.min.js','javascript/migreurop_public.js');
+      foreach ($js as $f) {
+         $flux .= '<script src="'.find_in_path($f).'" type="text/javascript"></script>'."\n";
       }
       return $flux;
    }

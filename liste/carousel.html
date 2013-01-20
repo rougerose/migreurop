@@ -9,7 +9,7 @@
    (#SET{contexte,#ENV{contexte,ouverture}}) ][
    (#SET{type-page,#ENV{type-page,sommaire}}) ]
 
-<div class="carousel carousel-#GET{contexte} #GET{type-page}">
+<div class="carousel[ carousel-(#GET{contexte})][ (#GET{type-page})]" lang="#LANG">
    <ul class="panels">
       <BOUCLE_ouverture(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={ouverture}}>
       [(#INCLURE{fond=inclure/article-resume,id_article,env})]

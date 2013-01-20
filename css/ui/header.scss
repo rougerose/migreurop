@@ -1,9 +1,11 @@
 /*   =HEADER
    ------------------------------------------------------ */
    header[role=banner] {
-      /*position: absolute;
-      top: 0;
-      z-index: 999;*/
       width: 100%;
+   }
+   /* un carousel d'images en ouverture */
+   .ouverture {
+      position: absolute; top: 0;
+      z-index: 99;
    }
 

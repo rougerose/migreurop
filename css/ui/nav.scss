@@ -1,7 +1,7 @@
 /*   =BARRENAV
    ------------------------------------------------------ */
    .barrenav {
-      background-color: #1d2326;
+      background-color: $noir-bleu;
       position: fixed;
       width: 100%;
    }
@@ -30,7 +30,7 @@
       padding-right: 0;
    }
    .barrenav .item.on a {
-      @include arrow(bottom, center, #1d2326);
+      @include arrow(bottom, center, $noir-bleu);
    }
    .barrenav .ouvrir {
       width: 14px; height: 14px;
@@ -50,7 +50,7 @@
       @inclure vendor(box-shadow, 0 0 5px rgba(0,0,0,0.3));
       @include vendor(border-radius, 2px);
       @include vendor(transition, opacity 0.5s ease-in);
-      @include arrow(top, right, #1d2326);
+      @include arrow(top, right, $noir-bleu);
    }
    .barrenav .ouvrir:after, .barrenav .ouvrir:before {
       @include vendor(transition, all 0.2s);

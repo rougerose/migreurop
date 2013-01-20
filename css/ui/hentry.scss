@@ -1,0 +1,22 @@
+/*   =HENTRY
+   ------------------------------------------------------ */
+.hentry {
+   .entry-title {
+      @include font-size($h4-size);
+      a {font-weight: 400;}
+   }
+}
+.hentry.resume {
+   .meta-publi {
+      margin: 0;
+      border-top: 1px solid darken(rgba($noir-bleu,0.5),5%);
+   }
+   .meta-publi > li {
+      @include font-size(12px);
+      display: inline;
+      margin-right: $quater-spacing-unit;
+      padding-right: $quater-spacing-unit;
+      border-right: 1px solid darken(rgba($noir-bleu,0.5),5%);
+      &:last-child {border-right-width: 0;}
+   }
+}

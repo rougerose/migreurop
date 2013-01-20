@@ -1,0 +1,10 @@
+{
+   "en" : {
+      "nxt" : "Next",
+      "prv" : "Previous"
+   },
+   "fr" : {
+      "nxt" : "Suivant",
+      "prv" : "Précédent"
+   }
+}

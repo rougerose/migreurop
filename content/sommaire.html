@@ -4,8 +4,12 @@
 [(#LOGO_ARTICLE|non) [(#SET_PUSH{articles_selection,#ID_ARTICLE})] ]
 </BOUCLE_selection>
 
+[(#REM) carousel ouverture ]
 [(#GET{articles_carousel}|oui)
    #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture}
-][(#GET{articles_selection}|oui)
+]
+
+[(#REM) selection des articles ]
+[(#GET{articles_selection}|oui)
 
 ]
