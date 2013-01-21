@@ -1,0 +1,13 @@
+/*   =FLYOUT
+   ------------------------------------------------------ */
+   // surcharges
+   .flyout--alt:hover > .flyout__content {
+      @extend .flyout--alt:hover;
+      top:-10px;
+   }
+
+   // themes
+   .flyout__box {
+      @include vendor(box-shadow, 0 0 5px rgba(0,0,0,0.3));
+      @include vendor(border-radius, 2px);
+   }

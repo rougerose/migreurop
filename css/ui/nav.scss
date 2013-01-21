@@ -19,12 +19,12 @@
    .barrenav a {
       color: #ddd; color: rgba(255,255,255,0.9);
       text-shadow: 0 0 4px rgba(68,68,68,0.6);
-      @include vendor(transition, all 0.2s);
    }
    .barrenav a:hover {
       color: #fff; color: rgba(255,255,255,1);
       text-shadow: 0 0 4px rgba(255,255,255,0.3);
-      text-decoration: none;}
+      text-decoration: none;
+   }
    .nav > .item > a {
       padding: $quater-spacing-unit;
       padding-right: 0;
@@ -47,13 +47,11 @@
       padding: $half-spacing-unit;
       position: absolute; right: -9999px; top: -9999px;
       opacity: 0;
-      @inclure vendor(box-shadow, 0 0 5px rgba(0,0,0,0.3));
-      @include vendor(border-radius, 2px);
-      @include vendor(transition, opacity 0.5s ease-in);
+      @include vendor(transition, opacity 0.5s ease-in-out);
       @include arrow(top, right, $noir-bleu);
    }
    .barrenav .ouvrir:after, .barrenav .ouvrir:before {
-      @include vendor(transition, all 0.2s);
+      @include vendor(transition, all 0.5s ease-in-out);
    }
    .barrenav .ouvrir.active:after,
    .barrenav .ouvrir.active:before,

@@ -1,22 +1,66 @@
 /*   =HENTRY
    ------------------------------------------------------ */
-.hentry {
+//.hentry {}
+.hentry.resume {
    .entry-title {
       @include font-size($h4-size);
       a {font-weight: 400;}
    }
-}
-.hentry.resume {
    .meta-publi {
       margin: 0;
-      border-top: 1px solid darken(rgba($noir-bleu,0.5),5%);
+      border-top: 1px solid rgba(#586A73,0.6);
    }
    .meta-publi > li {
       @include font-size(12px);
       display: inline;
       margin-right: $quater-spacing-unit;
       padding-right: $quater-spacing-unit;
-      border-right: 1px solid darken(rgba($noir-bleu,0.5),5%);
+      border-right: 1px solid rgba(#586a73,0.6);
       &:last-child {border-right-width: 0;}
    }
+
+   // traductions
+   /* icon */
+   .icon {
+      top: 9px;
+      position: relative;
+   }
+   .icon svg {
+      width: 26px;
+      height: 26px;
+      display: inline;
+      fill: #666;
+      @include vendor(transition, all 0.5s ease-in);
+   }
+   /* tooltip flyout */
+   .langues {
+      color: #ccc;
+      background-color: $noir-bleu;
+      padding: $quater-spacing-unit $half-spacing-unit ;
+      white-space: nowrap;
+      opacity: 0;
+      @include vendor(transition, all 0.5s ease-in);
+      @include arrow(left, top, $noir-bleu);
+   }
+   .translation:hover .langues {opacity: 1;}
+   .translation:hover .icon svg {fill: $rouge-hover;}
+
+   // surcharges taille fleche
+   .langues:before, .langues:after {
+      border-width: $quater-spacing-unit;
+      margin-left: -$quater-spacing-unit;
+   }
+   /* tooltip contenu */
+   .langues .zeta {color: #586a73; margin-bottom: 0; text-transform: uppercase;}
+   .langues a {
+      color: #fff;
+      &:hover {color: $rouge-hover;}
+   }
+   .langues > ul {margin-bottom: 0;}
+   .langues > ul > li {margin-right: 5px;}
+}
+
+// carousel > hentry
+.carousel svg {
+   fill: white;
 }

@@ -16,6 +16,9 @@
       <ul class="meta-publi">
          <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
          <B_auteurs><li class="byline author vcard"><:migreurop:by:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>
+         [<li class="translation flyout--alt">
+            (#MODELE{article-traductions})
+         </li>]
          <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
          <li class="category"><a href="#URL_RUBRIQUE">#TITRE</a></li>
          </BOUCLE_rubrique>

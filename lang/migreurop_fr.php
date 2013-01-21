@@ -9,6 +9,9 @@
       'by' => 'Par',
 
       // M
-      'more' => 'La suite'
+      'more' => 'La suite',
+
+      // T
+      'translations' => 'Traductions disponibles'
    );
 ?>

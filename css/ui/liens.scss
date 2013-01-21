@@ -1,23 +1,22 @@
 /*   =LIENS
    ------------------------------------------------------ */
    a {
-      font-weight:400;
-      -webkit-transition:color .35s ease-in-out .2s;
-      -moz-transition:color .35s ease-in-out .2s;
-      -o-transition:color .35s ease-in-out .2s;
-      transition:color .35s ease-in-out .2s;
+      color: #000;
+      font-weight:700;
+      @include vendor(transition, all 0.35s ease-in-out 0.2s);
       &:visited{}
-      &:hover{color: #d10c13; text-decoration: none;}
+      &:hover{color: $rouge-hover; text-decoration: none;}
       &:active, &:focus {
          position: relative; top: 1px;
       }
    }
+   // liens suite
    .suite_a {
       font-style: italic;
       &:before{
          display: inline-block;
          margin-right: .25em;
-         color: #d10c13;
+         color: $rouge-hover;
          content: "\2013";
       }
    }

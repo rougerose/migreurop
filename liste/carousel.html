@@ -14,6 +14,9 @@
       <BOUCLE_ouverture(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={ouverture}}>
       [(#INCLURE{fond=inclure/article-resume,id_article,env})]
       </BOUCLE_ouverture>
+      <!--
+         TODO portfolio
+      -->
       <BOUCLE_portfolio(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={portfolio}}>
 
       </BOUCLE_portfolio>
