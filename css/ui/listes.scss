@@ -1,0 +1,14 @@
+/*   =LISTES
+   ------------------------------------------------------ */
+   // articles-selection
+   .articles-selection > ul {
+      @extend .block-list;
+      & {
+         border-top-width: 0;
+      }
+      > li {
+         border-bottom-width: 0;
+         margin-bottom: $base-spacing-unit * 2;
+         padding-top: 0;
+      }
+   }

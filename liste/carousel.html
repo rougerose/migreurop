@@ -2,7 +2,7 @@
    VARIABLES
    =====================================
    selection:     tableau des identifiants articles ou images
-   contexte:      ouverture (sommaire, rubrique) ou portfolio (article)
+   contexte:      ouverture (sommaire, rubrique), extra (colonne secondaire), portfolio (article)
    type-page:     squelette dans lequel est inclus le carousel
 ][
    (#SET{articles_carousel, #ENV{selection,''}}) ][
@@ -11,9 +11,11 @@
 
 <div class="carousel[ carousel-(#GET{contexte})][ (#GET{type-page})]" lang="#LANG">
    <ul class="panels">
-      <BOUCLE_ouverture(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={ouverture}}>
-      [(#INCLURE{fond=inclure/article-resume,id_article,env})]
-      </BOUCLE_ouverture>
+      <BOUCLE_carousel(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|match{^ouverture|extra$}}>
+      <li>
+         [(#INCLURE{fond=inclure/article-resume,id_article,env})]
+      </li>
+      </BOUCLE_carousel>
       <!--
          TODO portfolio
       -->

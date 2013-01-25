@@ -1,5 +1,19 @@
-/*   =SPIPADMIN
+/*   =MISC
    ------------------------------------------------------ */
+
+   /* colonne extra : responsive push class */
+   @include media-query(desk){
+       .desk-push--one-tenth{
+           position:relative;
+           left:10%;
+       }
+   }
+
+   /* couleur de texte sélectionné */
+   ::selection { background-color:$brand-color; color:#fff; }
+   ::-moz-selection { background-color:$brand-color; color:#fff; }
+
+   /* spip-admin */
    body > .spip-admin-bloc, body > .spip-admin-float {z-index: 99999; top: 1%; left: 0; right: auto;}
    #spip-admin .spip-admin-boutons {
       font: 0.5rem/1.5 $mono-family;

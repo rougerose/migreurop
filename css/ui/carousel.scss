@@ -1,106 +1,157 @@
 /*   =CAROUSEL
    ------------------------------------------------------ */
-.carousel {
-   overflow: hidden;
-   width: 99.999%;
-   position: relative;
-}
-.carousel.carousel-ouverture,
-.carousel.carousel-ouverture article {
-   height: 500px;
-}
+   .carousel {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      @extend .landmark;
+   }
    .panels {
       list-style: none;
       position: relative;
-      margin-left: 0;
+      margin-left: 0; margin-bottom: 0;
       @extend .cf;
    }
-      .panels > li {
-         float: left;
-         position: relative;
+   .panels > li {
+      float: left;
+      position: relative;
+      overflow: hidden;
+   }
+   // navigation precedent/suivant
+   .prevnext {
+      width: 100%;
+   }
+   .prevnext a {
+      text-indent: -9999em;
+      cursor: pointer;
+      opacity: 0.5;
+      position: absolute;
+      z-index: 10;
+      background: url(../img/migreurop-sprite.svg) no-repeat 0 0;
+      top: 45%;
+      @include vendor(transition, opacity 0.5s linear);
+      &:hover{opacity:1;}
+   }
+   .prevnext .previous {left: 10px;}
+   .prevnext .next {right: 10px;}
+
+   // navigation par page
+   .pages {
+      position: absolute;
+      bottom: 0; right: 0;
+      z-index: 21;
+      margin-bottom: 0;
+   }
+   .pages > li {
+      margin-right: 5px;
+      text-indent: -9999em;
+   }
+   .pages > li > a {
+      cursor: pointer;
+      display: block;
+      height: 16px;
+      width: 16px;
+      background-color: #ddd;
+      background-color: rgba(255,255,255,0.5);
+      @include vendor(transition, all 0.2s);
+      &:hover{background-color: rgba(255,255,255,0.8);}
+   }
+   .pages .active,
+   .pages .active:hover {
+      background-color: #fff;
+      cursor: default;
+   }
+
+   // contenu
+   .panels article {position: relative;}
+
+   // uniquement pour le carousel ouverture
+   .panels .wrap {
+      position: absolute;
+      bottom: 0;
+      z-index: 20;
+      margin-left: -$base-spacing-unit;
+      width: 100%;
+      float: left;
+   }
+   .panels .calque {
+      color: #ccc;
+      background-color: $noir-bleu;
+      background-color: rgba($noir-bleu,0.8);
+      padding: $half-spacing-unit;
+      padding-top: $base-spacing-unit;
+      a {
+         color: #fff;
+         &:hover{color: #d10c13;}
       }
-      // navigation precedent/suivant
-      .prevnext {
-         width: 100%;
+   }
+   .calque header {position: relative;}
+   .calque .action {
+      background: url(../img/migreurop-sprite.svg) no-repeat -64px 0;
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
+      display: block;
+      position: absolute; top: 0; right: 0;
+      margin-top: -$half-spacing-unit;
+   }
+   .calque .action.ouvert {background-position: -64px -16px;}
+
+   // images
+   .carousel .link--img {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      background-color: $noir-bleu;
+   }
+   .carousel .spip_logos {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+   }
+
+   /* contexte ouverture de page (sommaire) */
+   .carousel-ouverture,
+   .carousel-ouverture article {
+      height: 520px;
+   }
+   .carousel-ouverture {
+      .hentry .entry-title {
+         @include font-size(18px);
+         //a {font-weight: 400;}
       }
+      .link--img {
+         height: 520px;
+      }
+      .meta-publi {
+         border-bottom-width: 0;
+      }
+      svg {fill: white;}
       .prevnext a {
-         text-indent: -9999em;
-         cursor: pointer;
-         opacity: 0.5;
-         position: absolute;
-         z-index: 10;
          height: 48px;
          width: 48px;
-         background: url(../img/migreurop-sprite.svg) no-repeat 0 0;
-         top: 45%;
-         @include vendor(transition, opacity 0.5s linear);
-         &:hover{opacity:1;}
       }
-      .prevnext .previous {background-position: 0 -32px; left: 10px;}
-      .prevnext .next {background-position: -64px -32px; right: 10px;}
+      .prevnext .previous {background-position: 0 -32px;}
+      .prevnext .next {background-position: -64px -32px;}
+   }
 
-      // navigation par page
-      .pages {
-         position: absolute;
-         bottom: 0; right: 0;
-         z-index: 21;
-         margin-bottom: 0;
+   /* contexte extra */
+   .carousel-extra {
+      .entry-title {
+         @include font-size(16px);
+         line-height: 1.2;
       }
-      .pages > li {
-         margin-right: 5px;
-         text-indent: -9999em;
+      .hentry .soustitre {
+         @include font-size(14px);
       }
-      .pages > li > a {
-         cursor: pointer;
-         display: block;
-         height: 16px;
-         width: 16px;
-         background-color: #ddd;
-         background-color: rgba(255,255,255,0.5);
-         @include vendor(transition, all 0.2s);
-         &:hover{background-color: rgba(255,255,255,0.8);}
+      .link--img {
+         height: 144px;
+         @include vendor(border-radius, 6px);
       }
-      .pages .active,
-      .pages .active:hover {
-         background-color: #fff;
-         cursor: default;
+      .prevnext a {
+         height: 32px; width: 32px;
+         top: 25%;
       }
-
-      // contenu
-      .panels article {position: relative; overflow: hidden;}
-      .panels .wrap {
-         position: absolute;
-         bottom: 0;
-         z-index: 20;
-         margin-left: -$base-spacing-unit;
-         width: 100%;
-         float: left;
-      }
-      .panels .calque {
-         color: #ccc;
-         background-color: $noir-bleu;
-         background-color: rgba($noir-bleu,0.8);
-         padding: $half-spacing-unit;
-         padding-top: $base-spacing-unit;
-         a {
-            color: #fff;
-            &:hover{color: #d10c13;}
-         }
-      }
-      .calque header {position: relative;}
-      .calque .action {
-         background: url(../img/migreurop-sprite.svg) no-repeat -64px 0;
-         cursor: pointer;
-         height: 16px;
-         width: 16px;
-         display: block;
-         position: absolute; top: 0; right: 0;
-         margin-top: -$half-spacing-unit;
-      }
-      .calque .action.ouvert {background-position: -64px -16px;}
-
-.carousel img {
-   display: block;
-   width: 100%;
-   max-width: 100%;
-}
+      .prevnext .previous {background-position: 0 0;}
+      .prevnext .next {background-position: -32px 0;}
+   }

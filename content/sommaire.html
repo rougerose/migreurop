@@ -1,15 +1,17 @@
 [(#SET{articles_carousel,#ARRAY})][(#SET{articles_selection,#ARRAY})]
-<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}>
+<BOUCLE_selection(ARTICLES pb_selection){lang}{par ordre}{spip_pb_selection.id_rubrique=0}>
 [(#LOGO_ARTICLE|oui) [(#SET_PUSH{articles_carousel,#ID_ARTICLE})] ]
 [(#LOGO_ARTICLE|non) [(#SET_PUSH{articles_selection,#ID_ARTICLE})] ]
-</BOUCLE_selection>
+</BOUCLE_selection>[
 
-[(#REM) carousel ouverture ]
+(#REM) carousel ouverture ]
 [(#GET{articles_carousel}|oui)
+<div class="g one-whole">
    #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture}
-]
+</div><!-- .g one-whole -->][
 
-[(#REM) selection des articles ]
+(#REM) selection des articles ]
 [(#GET{articles_selection}|oui)
-   #INCLURE{fond=liste/articles-selection,selection=#GET{articles_selection},ajax}
-]
+<div class="g one-whole desk-six-tenths">
+   #INCLURE{fond=liste/articles-selection,selection=#GET{articles_selection},pagination=10,ajax}
+</div><!-- .g one-whole desk-six-tenths -->]

@@ -1,10 +1,14 @@
 <B_articles>
-<div class="liste articles selection section">
+<section class="articles-selection">
    #ANCRE_PAGINATION
    [<nav class="pagination haut[ (#ENV{pagination_align})]">(#PAGINATION{li})</nav>]
-   <BOUCLE_articles(ARTICLES){id_article IN #ENV{selection}}{pagination #ENV{pagination,5}}>
-   #INCLURE{fond=inclure/article-resume,id_article}
-   </BOUCLE_articles>
+   <ul>
+      <BOUCLE_articles(ARTICLES){id_article IN #ENV{selection}}{pagination #ENV{pagination,20}}>
+      [<li>
+         (#INCLURE{fond=inclure/article-resume,id_article})
+      </li>]
+      </BOUCLE_articles>
+   </ul>
    [<nav class="pagination bas[ (#ENV{pagination-align})]">(#PAGINATION{li})</nav>]
-</div><!-- .liste articles -->
+</section>
 </B_articles>

@@ -1,0 +1,12 @@
+[(#SET{cartes,#ARRAY{0,2210}})]
+<div class="g one-whole desk-three-tenths desk-push--one-tenth">
+   <B_cartes>
+   <div class="box--aside">
+      <h1>#INFO_TITRE{rubrique,266}</h1>
+      <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,4}{lang}>
+      [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
+      </BOUCLE_cartes>
+         [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra})]
+   </div><!-- .box -->
+   </B_cartes>
+</div><!-- .g -->

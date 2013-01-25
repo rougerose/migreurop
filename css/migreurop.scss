@@ -21,15 +21,22 @@
 /**
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
- @import "ui/flyout";
-
- @import "ui/page";
+ // base
  @import "ui/liens";
- @import "ui/header";
- @import "ui/nav";
- @import "ui/logo";
+ @import "ui/typographie";
 
+ // structure
+ @import "ui/page";
+ @import "ui/header";
+ @import "ui/logo";
+ @import "ui/nav";
+
+ // objets
+ @import "ui/flyout";
+ @import "ui/listes";
+ @import "ui/box";
  @import "ui/hentry";
  @import "ui/carousel";
 
- @import "ui/spipadmin";
+ // misc
+ @import "ui/misc";
