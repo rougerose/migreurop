@@ -3,12 +3,13 @@
 
    /* box--aside */
    .box--aside {
-      > h1 {
-         @include font-size(20px);
-         font-weight: normal;
-         text-transform: uppercase;
-         color: $brand-color;
-         border-bottom: 2px solid $brand-color;
-         margin-bottom: $half-spacing-unit;
-      }
+      @extend .media;
+   }
+   .box--title {
+      @include font-size(20px);
+      font-weight: normal;
+      text-transform: uppercase;
+      color: $brand-color;
+      border-bottom: 2px solid $brand-color;
+      margin-bottom: $half-spacing-unit;
    }

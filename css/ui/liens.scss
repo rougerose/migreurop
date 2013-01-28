@@ -11,16 +11,6 @@
       }
    }
    // liens suite
-   /*.suite_a {
-      margin-left: .5em;
-      &:before{
-         display: inline-block;
-         margin-right: .25em;
-         color: $rouge-hover;
-         content: "\2013";
-      }
-   }*/
-
-   .suite_a {
+   .suite--link {
       border-bottom: 1px solid $brand-color;
    }

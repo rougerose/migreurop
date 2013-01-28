@@ -1,6 +1,8 @@
 /*   =HENTRY
    ------------------------------------------------------ */
+   // hentry principal
    .hentry {
+      color: #666;
       .entry-title {
          @include font-size($h4-size);
       }
@@ -11,18 +13,22 @@
       }
       .meta-publi {
          margin: 0;
-         border: 0 solid #000;
-         border-width: 1px 0;
-         border-top-style: dotted;
+         border-top: 1px dotted #ccc;
+         border-bottom: 1px solid #ddd;
          line-height: 2;
       }
       .meta-publi > li {
          @include font-size(12px);
+         color: #999;
          display: inline;
          margin-right: $quater-spacing-unit;
          padding-right: $quater-spacing-unit;
-         border-right: 1px solid rgba(#586a73,0.6);
+         border-right: 1px solid #ccc;
          &:last-child {border-right-width: 0;}
+      }
+      .meta-publi a {
+         color: #777;
+         &:hover{color: $rouge-hover;}
       }
 
       // traductions
@@ -36,9 +42,8 @@
       .icon svg {
          width: 26px;
          height: 26px;
-         xdisplay: inline;
          position: absolute;
-         fill: #000;
+         fill: #999;
          @include vendor(transition, all 0.5s ease-in);
       }
       // tooltip flyout
@@ -68,3 +73,28 @@
       .langues > ul {margin-bottom: 0;}
       .langues > ul > li {margin-right: 5px;}
    }
+
+   // hentry-secondary
+   .hentry-secondary {
+      margin-bottom: 0;
+      header {margin-bottom: $half-spacing-unit;}
+      hgroup {margin-bottom: 0;}
+      .entry-title {
+         @include font-size(16px);
+         line-height: 1.2;
+         margin-bottom: 0;
+      }
+      .soustitre {
+         @include font-size(14px);
+      }
+      .entry-content p {
+         @include font-size(13px);
+         line-height: 1.5;
+         color: #999;
+      }
+      .link--img {
+         display: inline-block;
+         width: 100%;
+      }
+   }
+

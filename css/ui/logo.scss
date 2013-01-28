@@ -1,4 +1,12 @@
 /*   =LOGO
    ------------------------------------------------------ */
+   /* logo site */
    .logo {text-align: center;}
    .logo a {margin-top: 3em; display: inline-block;}
+
+   /* spip-logos */
+   .spip_logos {
+      padding: 3px;
+      border: 1px solid #eee;
+      @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,.15));
+   }

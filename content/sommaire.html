@@ -7,11 +7,11 @@
 (#REM) carousel ouverture ]
 [(#GET{articles_carousel}|oui)
 <div class="g one-whole">
-   #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture}
+   #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture,conteneur=carousel}
 </div><!-- .g one-whole -->][
 
 (#REM) selection des articles ]
 [(#GET{articles_selection}|oui)
 <div class="g one-whole desk-six-tenths">
-   #INCLURE{fond=liste/articles-selection,selection=#GET{articles_selection},pagination=10,ajax}
+   #INCLURE{fond=liste/articles-selection,conteneur=principal,selection=#GET{articles_selection},pagination=10,ajax}
 </div><!-- .g one-whole desk-six-tenths -->]

@@ -4,7 +4,6 @@
       overflow: hidden;
       width: 100%;
       position: relative;
-      @extend .landmark;
    }
    .panels {
       list-style: none;
@@ -20,17 +19,18 @@
    // navigation precedent/suivant
    .prevnext {
       width: 100%;
+      position: absolute;
+      z-index: 21;
+      top: 45%;
    }
    .prevnext a {
       text-indent: -9999em;
       cursor: pointer;
       opacity: 0.5;
       position: absolute;
-      z-index: 10;
       background: url(../img/migreurop-sprite.svg) no-repeat 0 0;
-      top: 45%;
       @include vendor(transition, opacity 0.5s linear);
-      &:hover{opacity:1;}
+      &:hover{opacity:1; top: auto;}
    }
    .prevnext .previous {left: 10px;}
    .prevnext .next {right: 10px;}
@@ -98,13 +98,7 @@
    .calque .action.ouvert {background-position: -64px -16px;}
 
    // images
-   .carousel .link--img {
-      display: inline-block;
-      width: 100%;
-      overflow: hidden;
-      background-color: $noir-bleu;
-   }
-   .carousel .spip_logos {
+   .carousel__img {
       display: block;
       width: 100%;
       max-width: 100%;
@@ -116,12 +110,12 @@
       height: 520px;
    }
    .carousel-ouverture {
+      @extend .landmark;
       .hentry .entry-title {
          @include font-size(18px);
-         //a {font-weight: 400;}
       }
       .link--img {
-         height: 520px;
+         //height: 520px;
       }
       .meta-publi {
          border-bottom-width: 0;
@@ -137,20 +131,19 @@
 
    /* contexte extra */
    .carousel-extra {
-      .entry-title {
-         @include font-size(16px);
-         line-height: 1.2;
+      .panels > li {
+         padding: 0 2px;
       }
-      .hentry .soustitre {
-         @include font-size(14px);
+      .carousel__img {
+         @extend .spip_logos;
+         margin-bottom: $half-spacing-unit;
       }
-      .link--img {
-         height: 144px;
-         @include vendor(border-radius, 6px);
+      .prevnext {
+         top: 20%;
       }
+      .pages {top: 3%; right: 1%; bottom: auto;}
       .prevnext a {
          height: 32px; width: 32px;
-         top: 25%;
       }
       .prevnext .previous {background-position: 0 0;}
       .prevnext .next {background-position: -32px 0;}

@@ -65,13 +65,16 @@ $micro-size:        10px!default;
 /**
  * Brand stuff
  */
-$brand-color:       #bb1622!default;
-$noir-bleu:         #1d2326!default;
-$rouge-hover:       #d10c13!default;
-$brand-face:        "Ubuntu", "Open sans", "Helvetica Neue", sans-serif!default;
-$condensed-face:    "Ubuntu Condensed", sans-serif!default;
+ //couleurs
+    $brand-color:       #bb1622!default;
+    $noir-bleu:         #1d2326!default;
+    //$rouge-hover:       #d10c13!default;
+    $rouge-hover:       #bb1622!default;
 
-$mono-family :      Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace!default;
+ // fonts
+ $brand-face:        "Ubuntu", "Open sans", "Helvetica Neue", sans-serif!default;
+ $condensed-face:    "Ubuntu Condensed", sans-serif!default;
+ $mono-family :      Inconsolata, Monaco, Consolas, "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace!default;
 
 /**
  * inuit.css will work these next ones out for you.

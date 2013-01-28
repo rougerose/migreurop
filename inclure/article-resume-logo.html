@@ -1,0 +1,25 @@
+<BOUCLE_logo(ARTICLES){id_article}>
+<BOUCLE_contexte_extra(CONDITION){si #ENV{contexte}|=={extra}}>
+[(#REM) carousel
+][ (#ENV{conteneur}|=={carousel}|oui)
+   [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{640,0}|inserer_attribut{class,carousel__img})</a>]
+][(#REM) liste ]
+   <BOUCLE_conteneur_liste(CONDITION){si #ENV{conteneur}|=={liste}}>#SET{id_art,#ID_ARTICLE}
+      <BOUCLE_doc_rapport(DOCUMENTS mots_liens){id_mot=63}{id_article}>
+      <a href="#INFO_URL{article,#GET{id_art}}">
+         [(#LOGO_DOCUMENT{vignette}|?{
+            [(#LOGO_DOCUMENT{vignette}|image_reduire{60,0}
+               |inserer_attribut{alt,[(#TITRE|texte_backend)]}|inserer_attribut{class,spip_logos media__img})],
+            [(#CHEMIN{img/migreurop_rapport_couv_generique.png}|balise_img{[(#TITRE|texte_backend)],spip_logos media__img}|image_reduire{60,0})]
+         })]
+      </a>
+      </BOUCLE_doc_rapport>
+   </BOUCLE_conteneur_liste>
+</BOUCLE_contexte_extra>
+[(#ENV{contexte}|=={principal}|oui)
+   [(#LOGO_ARTICLE||image_reduire{200,150}|inserer_attribut{class,media__img})]
+]
+[(#ENV{contexte}|=={ouverture}|oui)
+   [<a href="#URL_ARTICLE">(#LOGO_ARTICLE|inserer_attribut{class,carousel__img})</a>]
+]
+</BOUCLE_logo>
