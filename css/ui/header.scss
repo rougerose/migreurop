@@ -3,9 +3,15 @@
    header[role=banner] {
       width: 100%;
    }
-   /* un carousel d'images en ouverture */
+
+   /* logo Migreurop */
+   .logo {
+      margin: 3em auto;
+      display: block;
+   }
+
+   /* carousel d'images ou logo de rubrique/article en ouverture de page */
    .ouverture {
       position: absolute; top: 0;
       z-index: 99;
    }
-
