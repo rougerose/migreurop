@@ -1,0 +1,13 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+[(#ENV{couper}|=={1}|oui)
+   [<p class="append">
+      (#TEXTE|couper{90})
+      <a class="anim pill--round__more" href="[(#SELF|parametre_url{couper,0})]" onclick="ajaxReload('self__texte',{args:{couper:0}});return(false);">+</a>
+   </p>]
+][(#ENV{couper}|=={0}|oui)
+   [<p class="append">
+      (#TEXTE|PtoBR)
+      <a class="anim pill--round__less" href="[(#SELF|parametre_url{couper,1})]" onclick="ajaxReload('self__texte',{args:{couper:1}});return(false);">-</a>
+   </p>]
+]
+</BOUCLE_rubrique>

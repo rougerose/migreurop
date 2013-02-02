@@ -1,5 +1,5 @@
 # fichiers systemes
 .DS_Store
-
+*.ai
 css/migreurop.css
 javascript/migreurop_public-ck.js

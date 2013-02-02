@@ -1,0 +1,23 @@
+<B_rubriques>
+<nav id="np" class="nav__plan">
+   <h1 class="nav__plan--titre">Plan de la rubrique</h1>
+   <ul>
+      <BOUCLE_rubriques(RUBRIQUES){racine}{par num titre, titre}>
+      <BOUCLE_test_rubrique_courante(RUBRIQUES){id_rubrique}>#EXPOSE{' '}</BOUCLE_test_rubrique_courante>
+      <li class="item[ (#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)on]">
+         <a href="#URL_RUBRIQUE">#TITRE</a>
+         <B_sous_rubriques>
+         <ul class="">
+            <BOUCLE_sous_rubriques(RUBRIQUES){id_parent}{par num titre, titre}><BOUCLE_test_expose(RUBRIQUES){id_enfant}>#EXPOSE{' '}</BOUCLE_test_expose>
+            <li class="item[ (#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)on]">
+               <a href="#URL_RUBRIQUE">#TITRE</a>
+            </li>
+            </B_test_expose></BOUCLE_sous_rubriques>
+         </ul>
+         </B_sous_rubriques>
+      </li>
+      </B_test_rubrique_courante>
+      </BOUCLE_rubriques>
+   </ul>
+</nav>
+</B_rubriques>

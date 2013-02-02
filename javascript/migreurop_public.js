@@ -108,7 +108,7 @@ $.fn.carousel = function(){
          var dir = page < pageCourante ? 1 : -1,
          n = Math.abs(pageCourante - page),
          valeur = dir * 100 * n;
-         if (page == 0) {
+         if (page === 0) {
             valeur = -100 * (pages - 1);
             page = pages;
          }
@@ -154,8 +154,24 @@ $(document).ready(function(){
    // ============
    // = Carousel =
    // ============
-   //
    $(".carousel").carousel();
+
+   // ==========================================
+   // = Image en ouverture (rubrique, article) =
+   // ==========================================
+   if ($("#ouverture").length) {
+      $("body").children("header[role='banner']").addClass("ouverture");
+   }
+
+   $("#np").each(function(){
+      var np = $(this),
+      ul = np.children("ul").hide();
+      np.click(function(){
+         $(this).toggleClass("open");
+         ul.slideToggle("slow");
+      });
+   });
+
 });
 
 

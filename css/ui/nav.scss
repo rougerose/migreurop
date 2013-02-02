@@ -1,76 +1,115 @@
-/*   =BARRENAV
+/*   =NAV
    ------------------------------------------------------ */
+   /* =BARRENAV */
    .barrenav {
       background-color: $noir-bleu;
       position: fixed;
+      top: 0;
+      z-index: 999;
       width: 100%;
+      .nav {position: relative; margin-bottom: 0;}
+      .nav ul {margin-left: 0;}
+      .item {
+         @include font-size(12px);
+         font-weight: 700;
+         text-transform: uppercase;
+      }
+      .nav > .item {
+         position: relative;
+         padding-right: $base-spacing-unit;
+      }
+      a {
+         color: #ddd; color: rgba(255,255,255,0.9);
+         text-shadow: 0 0 4px rgba(68,68,68,0.6);
+         &:hover {
+            color: #fff; color: rgba(255,255,255,1);
+            text-shadow: 0 0 4px rgba(255,255,255,0.3);
+            text-decoration: none;
+         }
+      }
+      .nav > .item > a {
+         padding: $quater-spacing-unit;
+         padding-right: 0;
+      }
+      .item.on a {
+         @include arrow(bottom, center, $noir-bleu);
+      }
+      .ouvrir {
+         width: 14px; height: 14px;
+         position: absolute; top: 0; right: 6px;
+         cursor: pointer;
+         @include arrow(bottom, center, rgba(255,255,255,0.6));
+      }
+      .ouvrir:before, .ouvrir:after {
+         @include vendor(transition, all 0.5s ease-in-out);
+      }
+      .dropdown {
+         background-color: #1d2326;
+         list-style: none;
+         text-align: left;
+         white-space: nowrap;
+         width: auto;
+         padding: $half-spacing-unit;
+         position: absolute; right: -9999px; top: -9999px;
+         opacity: 0;
+         @include vendor(transition, opacity 0.5s ease-in-out);
+         @include arrow(top, right, $noir-bleu);
+      }
+      .ouvrir.active:after,
+      .ouvrir.active:before,
+      .ouvrir:hover:after,
+      .ouvrir:hover:before {border-top-color: #fff;}
+      // surcharge inuitcss : taille de la fleche
+      .ouvrir:after,
+      .ouvrir:before,
+      .dropdown:after,
+      .dropdown:before {
+         border-width: $quater-spacing-unit;
+         margin-left: -$quater-spacing-unit;
+      }
+      // surcharge inuitcss: position de la fleche
+      .dropdown:after,
+      .dropdown:before {right: 12px;}
+      .dropdown.active {
+         right: -6px; top: 120%;
+         opacity: 1;
+      }
    }
-   .barrenav .nav {position: relative; margin-bottom: 0;}
-   .barrenav .nav ul {margin-left: 0;}
-   .barrenav .item {
-      @include font-size(12px);
-      font-weight: 700;
+
+   /* =NAV__PLAN */
+   .nav__plan {
+      ul {
+         margin-left: 0;
+         padding-left: $base-spacing-unit;
+         list-style-type: square;
+         position: relative;
+         zoom: 1;
+      }
+      li {
+         text-transform: uppercase;
+         @include font-size(14px);
+         line-height: 1.3;
+         margin: 0.25em 0;
+      }
+      li.on > a {color: $brand-color; font-weight: bold;}
+   }
+   .nav__plan--titre {
+      font-family: $condensed-face;
+      @include font-size(18px);
+      color: #999;
       text-transform: uppercase;
-   }
-   .nav > .item {
       position: relative;
-      padding-right: $base-spacing-unit;
-   }
-   .barrenav a {
-      color: #ddd; color: rgba(255,255,255,0.9);
-      text-shadow: 0 0 4px rgba(68,68,68,0.6);
-   }
-   .barrenav a:hover {
-      color: #fff; color: rgba(255,255,255,1);
-      text-shadow: 0 0 4px rgba(255,255,255,0.3);
-      text-decoration: none;
-   }
-   .nav > .item > a {
-      padding: $quater-spacing-unit;
-      padding-right: 0;
-   }
-   .barrenav .item.on a {
-      @include arrow(bottom, center, $noir-bleu);
-   }
-   .barrenav .ouvrir {
-      width: 14px; height: 14px;
-      position: absolute; top: 0; right: 6px;
       cursor: pointer;
-      @include arrow(bottom, center, rgba(255,255,255,0.6));
+      margin-bottom: 0;
+      @include vendor(transition, color 0.5s ease-in-out);
+      &:before {
+         content: '';
+         height: 16px;
+         width: 16px;
+         background: url(../img/migreurop-sprite.png) no-repeat 0 0;
+         position: absolute; left: -22px; top: 2px;
+         display: block;
+      }
    }
-   .barrenav .dropdown {
-      background-color: #1d2326;
-      list-style: none;
-      text-align: left;
-      white-space: nowrap;
-      width: auto;
-      padding: $half-spacing-unit;
-      position: absolute; right: -9999px; top: -9999px;
-      opacity: 0;
-      @include vendor(transition, opacity 0.5s ease-in-out);
-      @include arrow(top, right, $noir-bleu);
-   }
-   .barrenav .ouvrir:after, .barrenav .ouvrir:before {
-      @include vendor(transition, all 0.5s ease-in-out);
-   }
-   .barrenav .ouvrir.active:after,
-   .barrenav .ouvrir.active:before,
-   .barrenav .ouvrir:hover:after,
-   .barrenav .ouvrir:hover:before {border-top-color: #fff;}
-
-   /* surcharge inuitcss : taille de la fleche */
-   .barrenav .ouvrir:after,
-   .barrenav .ouvrir:before,
-   .barrenav .dropdown:after,
-   .barrenav .dropdown:before {
-      border-width: $quater-spacing-unit;
-      margin-left: -$quater-spacing-unit;
-   }
-   /* surcharge inuitcss: position de la fleche */
-   .barrenav .dropdown:after,
-   .barrenav .dropdown:before {right: 12px;}
-
-   .barrenav .dropdown.active {
-      right: -6px; top: 120%;
-      opacity: 1;
-   }
+   .nav__plan.open .nav__plan--titre, .nav__plan--titre:hover {color: $noir-bleu;}
+   .nav__plan.open .nav__plan--titre:before, .nav__plan--titre:hover:before {background-position: -16px 0;}

@@ -1,0 +1,14 @@
+/*   =SELF
+   ------------------------------------------------------ */
+   /* Les contenus d'un objet spip : titre, texte, documents, etc. d'une rubrique, d'un article, d'un mot-clé, etc. */
+   .self {
+      header {
+         border-bottom: 3px solid #000;
+         @extend %sass-margin-bottom;
+      }
+   }
+   .self__titre {
+      color: #000;
+      font-weight: 700;
+      margin-bottom: 0;
+   }

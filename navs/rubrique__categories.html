@@ -1,0 +1,12 @@
+<BOUCLE_nav_rubrique_categories(RUBRIQUES){id_rubrique}>
+[(#REM) récup. du groupe mots-clés de navigation thematique de la rubrique ainsi que le groupe transversal -- id_groupe=12 ]
+<BOUCLE_groupe_rubrique(GROUPES_MOTS){titre==#TITRE}>[(#SET{id_groupe,#ID_GROUPE})]</BOUCLE_groupe_rubrique>
+<nav class="breadcrumb-nav">
+   <ul class="nav breadcrumb--categories">
+      <li class="#EXPOSE"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+      <BOUCLE_mots(MOTS mots_liens){objet=article}{id_groupe IN #GET{id_groupe},12}{articles.id_secteur=#ID_SECTEUR}>
+      <li><a href="[(#SELF|parametre_url{categorie,#ID_MOT})]">#TITRE</a></li>
+      </BOUCLE_mots>
+   </ul>
+</nav>
+</BOUCLE_nav_rubrique_categories>

@@ -1,0 +1,35 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+[(#SET{couper,#ENV{couper,1}})] [(#SET{secteur-titre,#INFO_TITRE{rubrique,#ID_SECTEUR}})]
+<div class="g one-whole">
+   [<div id="ouverture" class="media-ouverture">
+      (#LOGO_RUBRIQUE|inserer_attribut{class,media-ouverture__img})
+   </div>]
+   <article class="self rubrique">
+      <header>
+         <h1 class="self__titre">#TITRE</h1>
+      </header>
+      <div class="gw">
+         <div class="g one-whole desk-six-tenths">
+            [<div class="self__texte">
+               (#TEXTE|?{
+                  [(#INCLURE{fond=inclure/rubrique-texte}{couper=#GET{couper}}{ajax=self__texte}{env})]
+                  ,
+                  <br />
+               })
+            </div><!-- .texte -->]
+         </div><!-- .desk-six-tenths -->
+         <div class="g one-whole desk-three-tenths desk-push--one-tenth">
+            <INCLURE{fond=navs/rubrique__plan,id_rubrique,secteur-titre=#GET{secteur-titre}}>
+         </div><!-- .g one-whole desk-three-tenths -->
+      </div><!-- .gw -->
+      <INCLURE{fond=navs/rubrique__categories,id_rubrique} />
+   </article><!-- .self -->
+</div><!-- .g one-whole -->
+
+<div class="g one-whole desk-six-tenths">
+
+   [<aside class="notes">
+      (#NOTES)
+   </aside>]
+</div><!-- .g one-whole desk-six-tenths -->
+</BOUCLE_rubrique>

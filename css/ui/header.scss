@@ -6,9 +6,14 @@
 
    /* logo Migreurop */
    .logo {
-      margin: 3em auto;
+      margin: 3em 0;
       display: block;
+      text-align: center;
    }
+      .logo-migreurop {
+         margin-left: auto;
+         margin-right: auto;
+      }
 
    /* carousel d'images ou logo de rubrique/article en ouverture de page */
    .ouverture {
