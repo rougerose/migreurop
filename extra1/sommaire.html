@@ -10,16 +10,6 @@
    </div><!-- .box-aside Cartes -->
    </B_cartes>
 
-   <B_portfolios>
-   <div class="box--aside">
-      <h1 class="box--title"><:migreurop:portfolios:></h1>
-      <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,4}{lang}>
-      [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
-      </BOUCLE_portfolios>
-         [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel})]
-   </div><!-- .box-aside Portfolios -->
-   </B_portfolios>
-
    <BOUCLE_rubrique_rapport(RUBRIQUES){id_rubrique=418}>
    <B_rapports>
    <div class="box--aside">
@@ -34,4 +24,14 @@
    </div><!-- .box-aside Rapports -->
    </B_rapports>
    </BOUCLE_rubrique_rapport>
+
+   <B_portfolios>
+   <div class="box--aside">
+      <h1 class="box--title"><:migreurop:portfolios:></h1>
+      <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,4}{lang}>
+      [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
+      </BOUCLE_portfolios>
+         [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel})]
+   </div><!-- .box-aside Portfolios -->
+   </B_portfolios>
 </div><!-- .g -->
