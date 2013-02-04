@@ -14,7 +14,7 @@
       .meta-publi {
          margin: 0;
          border-top: 1px dotted #ccc;
-         border-bottom: 1px solid #ddd;
+         border-bottom: 1px solid #000;
          line-height: 2;
       }
       .meta-publi > li {
@@ -70,6 +70,7 @@
          color: #fff;
          &:hover {color: $rouge-hover;}
       }
+      .langues > h3 {font-family: $condensed-face;}
       .langues > ul {margin-bottom: 0;}
       .langues > ul > li {margin-right: 5px;}
    }

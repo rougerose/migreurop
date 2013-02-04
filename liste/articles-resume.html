@@ -1,0 +1,14 @@
+<B_articles>
+<section>
+   #ANCRE_PAGINATION
+   [<nav class="pagination haut[ (#ENV{pagination_align})]">(#PAGINATION{li})</nav>]
+   <ul class="articles-selection">
+      <BOUCLE_articles(ARTICLES){id_rubrique?}{id_mot?}{lang}{pagination #ENV{pagination,20}}>
+      [<li>
+         (#INCLURE{fond=inclure/article-resume,conteneur=#ENV{conteneur},id_article})
+      </li>]
+      </BOUCLE_articles>
+   </ul>
+   [<nav class="pagination bas[ (#ENV{pagination-align})]">(#PAGINATION{li})</nav>]
+</section>
+</B_articles>

@@ -3,7 +3,7 @@
 
    // javascript
    function migreurop_insert_head($flux){
-      $js = array('javascript/migreurop_public.js');
+      $js = array('javascript/jquery.hashchange.min.js','javascript/jquery.easytabs.min.js','javascript/migreurop_public.js');
       foreach ($js as $f) {
          $flux .= '<script src="'.find_in_path($f).'" type="text/javascript"></script>'."\n";
       }

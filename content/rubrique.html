@@ -12,7 +12,7 @@
          <div class="g one-whole desk-six-tenths">
             [<div class="self__texte">
                (#TEXTE|?{
-                  [(#INCLURE{fond=inclure/rubrique-texte}{couper=#GET{couper}}{ajax=self__texte}{env})]
+                  [(#INCLURE{fond=inclure/rubrique-texte,couper=#GET{couper},ajax=self__texte,id_rubrique})]
                   ,
                   <br />
                })
@@ -22,12 +22,16 @@
             <INCLURE{fond=navs/rubrique__plan,id_rubrique,secteur-titre=#GET{secteur-titre}}>
          </div><!-- .g one-whole desk-three-tenths -->
       </div><!-- .gw -->
-      <INCLURE{fond=navs/rubrique__categories,id_rubrique} />
+      <INCLURE{fond=navs/rubrique__categories,id_rubrique,categorie=#ENV{categorie}} />
    </article><!-- .self -->
 </div><!-- .g one-whole -->
 
 <div class="g one-whole desk-six-tenths">
-
+   <BOUCLE_cond_categorie(CONDITION){si #ENV{categorie}}>
+      <INCLURE{fond=liste/articles-resume,id_mot=#ENV{categorie},ajax,env} />
+   </BOUCLE_cond_categorie>
+      <INCLURE{fond=inclure/rubrique-articles,env} />
+   <//B_cond_categorie>
    [<aside class="notes">
       (#NOTES)
    </aside>]

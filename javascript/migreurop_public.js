@@ -163,6 +163,9 @@ $(document).ready(function(){
       $("body").children("header[role='banner']").addClass("ouverture");
    }
 
+   // ========================================
+   // = navigation plan rubrique : animation =
+   // ========================================
    $("#np").each(function(){
       var np = $(this),
       ul = np.children("ul").hide();
@@ -172,6 +175,10 @@ $(document).ready(function(){
       });
    });
 
+   // =========================
+   // = easytabs : activation =
+   // =========================
+   $('#tabs-rubrique-principal').easytabs();
 });
 
 

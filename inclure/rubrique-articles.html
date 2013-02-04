@@ -1,0 +1,20 @@
+#SET{selection,#ARRAY} #SET{archives,''}
+<BOUCLE_archives(ARTICLES){id_rubrique}{lang}{0,1}>#SET{archives,' '}</BOUCLE_archives>
+<BOUCLE_selection(ARTICLES pb_selection){lang}{par ordre}{spip_pb_selection.id_rubrique=#ID_RUBRIQUE}>#SET_PUSH{selection,#ID_ARTICLE}</BOUCLE_selection>
+
+<BOUCLE_condition_archives(CONDITION){si #GET{archives}|oui}>
+<div id="tabs-rubrique-principal" class="tabs">
+   <ul class="tabs__nav">
+      [(#GET{selection}|oui)<li><a href="#tab-une">A la une</a></li>]
+      <li><a href="#tab-articles">Tous les articles</a></li>
+   </ul>
+   <div class="tabs__body">
+      [<div id="tab-une">
+         (#GET{selection}|oui) <INCLURE{fond=liste/articles-selection,selection=#GET{selection},ajax,conteneur=principal,pagination=5} />
+      </div>]
+      <div id="tab-articles">
+         <INCLURE{fond=liste/articles-resume,env,ajax,conteneur=principal,pagination=5} />
+      </div>
+   </div><!-- .tabs__body -->
+</div><!-- .tabs -->
+</BOUCLE_condition_archives>

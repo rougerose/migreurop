@@ -1,0 +1,47 @@
+/*   =TABS
+   ------------------------------------------------------ */
+   /* Nécessite plugin jquery easytabs pour les classes .active*/
+   /*.tabs {}*/
+      .tabs__nav {
+         @extend .nav;
+         margin-bottom: 0;
+         > li {
+            font-family: $condensed-face;
+            @include font-size(15px);
+            text-transform: uppercase;
+            border: solid 1px #fff;
+            border-width: 1px 1px 0;
+            position: relative;
+            @include vendor(border-radius, 3px 3px 0 0);
+            &:hover {border-color: #ddd;}
+            &:first-child {
+               margin-left: 3px;
+            }
+            &.active {
+               background-color: #fff;
+               border-color: #000;
+               border-width: 2px 2px 0;
+               top: 2px;
+               padding-top: 4px;
+            }
+            > a {
+               padding: 3px $half-spacing-unit;
+               color: #999;
+               color: rgba(0,0,0,0.4);
+               text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+               &:hover {
+                  color: $rouge-hover;
+               }
+               &.active {
+                  color: #000;
+                  cursor: default;
+               }
+            }
+         }
+      }
+      .tabs__body {
+         border: 2px solid #000;
+         border-width: 2px 0;
+         padding-top: $base-spacing-unit;
+         @extend %sass-margin-bottom;
+      }

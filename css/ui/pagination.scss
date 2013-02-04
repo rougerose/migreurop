@@ -1,0 +1,36 @@
+/*   =PAGINATION
+   ------------------------------------------------------ */
+   .pagination {
+      font-family: $condensed-face;
+      text-align: right;
+      background-color: #f5f5f5;
+      @include vendor(border-radius, 2px);
+      box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 5px rgba(0, 0, 0, 0.1);
+      padding: 2px;
+      @extend %sass-margin-bottom;
+      > ul {
+         @extend .nav;
+         display: inline;
+         margin-left: 12px;
+      }
+      li > strong {
+         display:inline-block;
+        *display:inline;
+         zoom:1;
+         color: $brand-color;
+         font-weight: normal;
+      }
+      li > a, li > strong {
+
+         padding: 0 $base-spacing-unit / 4;
+      }
+   }
+      .pagination-label {
+         @include font-size(16px);
+         display: inline-block;
+         margin-bottom: 0;
+         text-transform: uppercase;
+         color: #ccc;
+         color: rgba(0,0,0,0.4);
+         text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+      }

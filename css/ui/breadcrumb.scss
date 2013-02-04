@@ -1,25 +1,31 @@
 /*   =BREADCRUMB
    ------------------------------------------------------ */
    .breadcrumb-nav {
-      border: 1px solid #eee;
       margin-bottom: $base-spacing-unit;
+      background: #ededed;
+      background: -moz-linear-gradient(left, rgb(237,237,237) 0%, rgb(246,246,246) 53%, rgb(255,255,255) 100%);
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(237,237,237)), color-stop(53%,rgb(246,246,246)), color-stop(100%,rgb(255,255,255)));
+      background: -webkit-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+      background: -o-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+      background: -ms-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+      background: linear-gradient(to right, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 );
    }
    .breadcrumb--categories {
-      //background-color: #fff;
       margin-bottom: 0;
       overflow: hidden;
       > li {
          display: inline;
          @include font-size(14px);
       }
-      > li.on {font-weight: bold;}
       a {
          float: left;
          position: relative;
          padding: 3px 7px 3px 7px;
       }
       > li.on a {
-         background: #88b7d5;
+         color: #fff;
+         background: $brand-color;
          padding-left: 30px;
       }
       > li.on + li > a {padding-left: 23px;}
@@ -35,18 +41,18 @@
          margin-top: -60px;
       }
       > li.on a:before {
-         border-left: 17px solid white;
+         border-left: 17px solid #fff;
          margin-left: 1px;
          z-index: 1;
       }
       > li.on a:after {
-         border-left: 16px solid #88b7d5;
+         border-left: 16px solid $brand-color;
          margin-top: -60px;
          z-index: 2;
       }
       > li:first-child a {padding-left: 6px; padding-right: 0;}
    }
-
+   /*
    .pill--round__more, .pill--round__less {
       background: url(../img/migreurop-sprite.svg) no-repeat 0 -96px;
       cursor: pointer;
@@ -64,4 +70,4 @@
    .pill--round__less:hover {
       background-position: -16px -112px;
    }
-
+*/
