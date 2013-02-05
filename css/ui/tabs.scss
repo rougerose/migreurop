@@ -2,6 +2,7 @@
    ------------------------------------------------------ */
    /* Nécessite plugin jquery easytabs pour les classes .active*/
    /*.tabs {}*/
+      .tabs-principal {margin-top: -$half-spacing-unit;}
       .tabs__nav {
          @extend .nav;
          margin-bottom: 0;

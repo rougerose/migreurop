@@ -2,6 +2,7 @@
    ------------------------------------------------------ */
    /* Les contenus d'un objet spip : titre, texte, documents, etc. d'une rubrique, d'un article, d'un mot-clé, etc. */
    .self {
+      @extend .landmark;
       header {
          //border-bottom: 1px solid #000;
          @extend %sass-margin-bottom;
