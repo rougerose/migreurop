@@ -2,17 +2,7 @@
 <BOUCLE_motcle_rubrique(MOTS){id_rubrique}{id_groupe=14}>#SET{mot_rubrique,#ID_MOT}</BOUCLE_motcle_rubrique>
 
 <div class="g one-whole desk-three-tenths desk-push--one-tenth">
-   <B_cartes>
-   <div class="box--aside">
-      [<h1 class="box--title">(#INFO_TITRE{rubrique,266})</h1>]
-      <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,4}{lang}>
-      [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
-      </BOUCLE_cartes>
-         [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel})]
-   </div><!-- .box-aside Cartes -->
-   </B_cartes>
-
-   [(#REM) Les communiqués de presse -- id_mot 61 -- en rapport avec le thème principal de la rubrique ]
+   [(#REM) Les communiqués de presse -- id_mot 61 -- en rapport avec le mot-clé principal de la rubrique ]
    <B_communiques>
    <div class="box--aside">
       <h1 class="box--title"><:migreurop:communiques_presse:></h1>
@@ -26,10 +16,22 @@
    </div><!-- .box-aside Rapports -->
    </B_communiques>
 
+   [(#REM) Les cartes en rapport avec le mot-clé principal de la rubrique ]
+   <B_cartes>
+   <div class="box--aside">
+      [<h1 class="box--title">(#INFO_TITRE{rubrique,266})</h1>]
+      <BOUCLE_cartes(ARTICLES){id_rubrique=266}{id_mot=#GET{mot_rubrique}}{!par date}{0,4}{lang}>
+      [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
+      </BOUCLE_cartes>
+         [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel})]
+   </div><!-- .box-aside Cartes -->
+   </B_cartes>
+
+   [(#REM) Les portfolios en rapport avec le mot-clé principal de la rubrique ]
    <B_portfolios>
    <div class="box--aside">
       <h1 class="box--title"><:migreurop:portfolios:></h1>
-      <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,4}{lang}>
+      <BOUCLE_portfolios(ARTICLES){id_mot=32}{id_mot=#GET{mot_rubrique}}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
       </BOUCLE_portfolios>
          [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel})]
