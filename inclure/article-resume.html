@@ -25,9 +25,9 @@
          [<p[(#LOGO_ARTICLE|et{#ENV{contexte}|=={principal}}|oui) class="media__body"]>(#INTRODUCTION|PtoBR) <a href="#URL_ARTICLE" class="suite--link"><:migreurop:more:></a></p>]
       })]
    </div>
-   [(#ENV{contexte}|=={extra}|non)
+   [(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui)</div><!-- .media__body -->]
    <ul class="meta-publi">
-      <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
+      <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate{d M y})]</time></li>
       [<li class="byline author vcard">
          (#MODELE{article-auteurs})
       </li>]
@@ -35,8 +35,7 @@
          (#MODELE{article-traductions})
       </li>]
       [<li class="category"><a href="[(#INFO_URL{rubrique,#ID_RUBRIQUE})]">(#INFO_TITRE{rubrique,#ID_RUBRIQUE})</a></li>]
-   </ul> ]
-   [(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui)</div><!-- .media__body -->]
+   </ul>
    [(#ENV{contexte}|=={ouverture}|oui)</div></div></div><!-- .wrap -->
       [(#INCLURE{fond=inclure/article-resume-logo,id_article,contexte=#ENV{contexte},conteneur=#ENV{conteneur}})] ]
 </article>

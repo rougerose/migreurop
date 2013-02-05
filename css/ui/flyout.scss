@@ -2,8 +2,9 @@
    ------------------------------------------------------ */
    // surcharges
    .flyout--alt:hover > .flyout__content {
-      @extend .flyout--alt:hover;
-      top:-10px;
+      left: 0;
+      top: auto;
+      bottom: $base-spacing-unit;
    }
 
    // themes

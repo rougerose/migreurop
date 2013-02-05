@@ -13,7 +13,7 @@
 <div class="flyout__content">
    <div class="langues flyout__box">
       <h3 class="zeta"><:migreurop:translations:></h3>
-      <ul class="nav xnav--stacked">
+      <ul class="nav">
          <BOUCLE_traductions(ARTICLES){traduction}{par lang}>[(#TOTAL_BOUCLE|>{1}|?{' '})
          <li lang="#LANG" xml:lang="#LANG" dir="#LANG_DIR">[(#EXPOSE{'',<a href="#URL_ARTICLE" rel="alternate" hreflang="#LANG">})][(#LANG|traduire_nom_langue)][(#EXPOSE{'',</a>})]</li>
          ]</BOUCLE_traductions>

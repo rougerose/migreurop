@@ -1,9 +1,9 @@
-<B_articles>
+#ENV{ordre}<B_articles>
 <section>
    #ANCRE_PAGINATION
    [<nav class="pagination haut[ (#ENV{pagination_align})]">(#PAGINATION{li})</nav>]
    <ul class="articles-selection">
-      <BOUCLE_articles(ARTICLES){id_rubrique?}{id_mot?}{lang}{pagination #ENV{pagination,20}}>
+      <BOUCLE_articles(ARTICLES){id_rubrique?}{id_mot?}{lang}{tri #ENV{tri,titre},#ENV{sens,1}}{pagination #ENV{pagination,20}}>
       [<li>
          (#INCLURE{fond=inclure/article-resume,conteneur=#ENV{conteneur},id_article})
       </li>]

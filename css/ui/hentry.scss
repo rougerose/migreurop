@@ -54,7 +54,7 @@
          white-space: nowrap;
          opacity: 0;
          @include vendor(transition, all 0.5s ease-in);
-         @include arrow(left, top, $noir-bleu);
+         @include arrow(bottom, left, $noir-bleu);
       }
       .translation:hover .langues {opacity: 1;}
       .translation:hover .icon svg {fill: $rouge-hover;}
@@ -97,5 +97,7 @@
          display: inline-block;
          width: 100%;
       }
+      .meta-publi {margin-bottom: $half-spacing-unit;}
+      .meta-publi .author, .meta-publi .category {display: none;}
    }
 

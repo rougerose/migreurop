@@ -8,6 +8,9 @@
       // B
       'by' => 'Par',
 
+      // C
+      'communiques_presse' => 'Communiqués de presse',
+
       // M
       'more' => 'La suite',
 
