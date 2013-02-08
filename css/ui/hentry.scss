@@ -9,7 +9,6 @@
       .soustitre {
          @include font-size($h4-size);
          font-family: $condensed-face;
-         font-weight: 300;
       }
       .meta-publi {
          margin: 0;

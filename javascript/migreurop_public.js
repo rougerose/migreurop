@@ -5,7 +5,6 @@ $.fn.carousel = function(){
    return this.each(function(){
       var carousel = $(this),
       langue = carousel.attr("lang"),
-      header = carousel.parents("body").children("header[role='banner']"),
       conteneur = carousel.children(".panels"),
       items = conteneur.children("li"),
       pages = items.length,
@@ -19,7 +18,7 @@ $.fn.carousel = function(){
       items.css('width', itemWidth + '%');
 
       if (carousel.hasClass("carousel-ouverture")) {
-         header.addClass("ouverture");
+         carousel.parents("body").children("header[role='banner']").addClass("ouverture");
          ouverture = true;
       }
 
@@ -98,6 +97,23 @@ $.fn.carousel = function(){
          });
       }
 
+      // animation de la légende image dans portfolio
+      if (carousel.hasClass("carousel-portfolio")) {
+         var figures = items.children("figure"), images = figures.children("img"), captions = figures.children("figcaption");
+         captions.each(function(){
+            var caption = $(this), h = caption.outerHeight();
+            caption.css({top:-h});
+            images.hover(
+               function(){
+                  caption.stop().animate({top: 0},500);
+               },
+               function(){
+                  caption.stop().animate({top: -h},500);
+               }
+            );
+         });
+      }
+
       // defilement des pages
       function selectDefilement () {
          nav_pages_liens.removeClass('active');
@@ -156,13 +172,6 @@ $(document).ready(function(){
    // ============
    $(".carousel").carousel();
 
-   // ==========================================
-   // = Image en ouverture (rubrique, article) =
-   // ==========================================
-   if ($("#ouverture").length) {
-      $("body").children("header[role='banner']").addClass("ouverture");
-   }
-
    // ========================================
    // = navigation plan rubrique : animation =
    // ========================================
@@ -174,6 +183,13 @@ $(document).ready(function(){
          ul.slideToggle("slow");
       });
    });
+
+   // ==============================================
+   // = logo en ouverture page (rubrique, article) =
+   // ==============================================
+   if ($("#ouverture").length) {
+         $("body").children("header[role='banner']").addClass("ouverture");
+   }
 
    // =========================
    // = easytabs : activation =

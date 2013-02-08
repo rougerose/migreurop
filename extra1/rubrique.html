@@ -5,7 +5,7 @@
    [(#REM) Les communiqués de presse -- id_mot 61 -- en rapport avec le mot-clé principal de la rubrique ]
    <B_communiques>
    <div class="box--aside">
-      <h1 class="box--title"><:migreurop:communiques_presse:></h1>
+      <h1 class="box__title"><:migreurop:communiques_presse:></h1>
       <ul class="articles-selection">
          <BOUCLE_communiques(ARTICLES){id_mot=61}{id_mot=#GET{mot_rubrique}}{!par date}{lang}{0,4}>
          [<li>
@@ -19,7 +19,7 @@
    [(#REM) Les cartes en rapport avec le mot-clé principal de la rubrique ]
    <B_cartes>
    <div class="box--aside">
-      [<h1 class="box--title">(#INFO_TITRE{rubrique,266})</h1>]
+      [<h1 class="box__title">(#INFO_TITRE{rubrique,266})</h1>]
       <BOUCLE_cartes(ARTICLES){id_rubrique=266}{id_mot=#GET{mot_rubrique}}{!par date}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
       </BOUCLE_cartes>
@@ -30,7 +30,7 @@
    [(#REM) Les portfolios en rapport avec le mot-clé principal de la rubrique ]
    <B_portfolios>
    <div class="box--aside">
-      <h1 class="box--title"><:migreurop:portfolios:></h1>
+      <h1 class="box__title"><:migreurop:portfolios:></h1>
       <BOUCLE_portfolios(ARTICLES){id_mot=32}{id_mot=#GET{mot_rubrique}}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
       </BOUCLE_portfolios>

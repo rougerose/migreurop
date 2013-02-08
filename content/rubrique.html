@@ -5,17 +5,19 @@
       (#LOGO_RUBRIQUE|inserer_attribut{class,media-ouverture__img})
    </div>]
    <article class="self rubrique">
-      <header>
+      <header class="mbr">
          <h1 class="self__titre">#TITRE</h1>
       </header>
       <div class="gw">
          <div class="g one-whole desk-six-tenths">
-            [<div class="self__texte">
-               (#TEXTE|?{
-                  [(#INCLURE{fond=inclure/rubrique-texte,couper=#GET{couper},ajax=self__texte,id_rubrique})]
-                  ,
-                  <br />
-               })
+            [<div class="self__body">
+               <div class="chapo landmark">
+                  (#TEXTE|?{
+                     [(#INCLURE{fond=inclure/rubrique-texte,couper=#GET{couper},ajax=chapo,id_rubrique})]
+                     ,
+                     <br />
+                  })
+               </div>
             </div><!-- .texte -->]
          </div><!-- .desk-six-tenths -->
          <div class="g one-whole desk-three-tenths desk-push--one-tenth">
@@ -32,8 +34,14 @@
    </BOUCLE_cond_categorie>
       <INCLURE{fond=inclure/rubrique-articles,env} />
    <//B_cond_categorie>
+
    [<aside class="notes">
-      (#NOTES)
+      <div class="gw">
+         <div class="g desk-one-half">
+            <h1 class="spip"><:info_notes:></h1>
+            (#NOTES)
+         </div>
+      </div>
    </aside>]
 </div><!-- .g one-whole desk-six-tenths -->
 </BOUCLE_rubrique>

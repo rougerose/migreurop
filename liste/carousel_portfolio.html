@@ -1,0 +1,10 @@
+<BOUCLE_carousel_portfolio(DOCUMENTS){id_article}{mode=document}{extension IN png,jpg,gif}{vu=non}{par num titre, date}>
+[<li>
+   <figure>
+      <img src="(#FICHIER)" class="carousel__img" />
+      [<figcaption>
+         <p class="carousel__legende"><strong>(#TITRE)</strong>[ (#DESCRIPTIF|PtoBR)][ <small>\((#CREDITS)\)</small>]</p>
+      </figcaption>]
+   </figure>
+</li>]
+</BOUCLE_carousel_portfolio>

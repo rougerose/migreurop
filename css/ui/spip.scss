@@ -1,0 +1,87 @@
+/*   =SPIP
+   ------------------------------------------------------ */
+   /* headings */
+   h2.spip, h3.spip, h4.spip, h5.spip, h6.spip,
+   .notes h1.spip {
+      font-family: $condensed-face;
+      color: #000;
+      margin-top:2 * $base-spacing-unit;
+      margin-top:(2 * $base-spacing-unit / $base-font-size)*1rem;
+   }
+   h2.spip {
+      @extend .beta;
+      line-height: 1.2;
+   }
+   h3.spip {
+      font-weight: normal;
+   }
+   h4.spip {
+      font-weight: normal;
+      padding-left: 0;
+   }
+   h5.spip {
+      @extend .delta;
+      color: #666;
+      padding-left: 0;
+   }
+   h6.spip {
+      @extend .delta;
+      color: #999;
+      padding-left: 0;
+   }
+
+   /* appel de notes */
+   .spip_note_ref {color: #000;}
+
+   /* notes */
+   .notes {
+      h1.spip {
+         @extend .gamma;
+         border-bottom: 1px solid #000;
+      }
+      p {
+         @include font-size(13px);
+         margin-bottom:$base-spacing-unit / 2;
+         margin-bottom:(($base-spacing-unit / $base-font-size) / 2)*1rem;
+      }
+   }
+
+   /* hr */
+   hr.spip {
+      border: 0;
+      height: 1px;
+      background: black;
+      background: -moz-linear-gradient(left, #fff 0%, #000 50%, #fff 100%);
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fff), color-stop(50%,#000), color-stop(100%,#fff));
+      background: -webkit-linear-gradient(left, #fff 0%,#000 50%,#fff 100%);
+      background: -o-linear-gradient(left, #fff 0%,#000 50%,#fff 100%);
+      background: -ms-linear-gradient(left, #fff 0%,#000 50%,#fff 100%);
+      background: linear-gradient(to right, #fff 0%,#000 50%,#fff 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fff',GradientType=1 );
+   }
+
+   /* tableaux */
+   table.spip {
+      @extend .table--bordered;
+      @extend .table--striped;
+      @include font-size(13px);
+      max-width: 100%;
+      th {color: #000;}
+      th, td {
+         border-color: #ddd;
+         border-width: 1px 0 0;
+      }
+      tr:last-child th,
+      tr:last-child td {
+         border-bottom-width: 1px;
+      }
+      tbody tr:nth-of-type(odd),
+      .row_odd {
+         background: #f9f9f9;
+      }
+      caption {
+         color: #999;
+         margin-bottom: 1em;
+         text-transform: uppercase;
+      }
+   }

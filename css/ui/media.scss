@@ -2,9 +2,40 @@
    ------------------------------------------------------ */
    /* spip-logos */
    .spip_logos {
-      padding: 3px;
-      border: 1px solid #eee;
-      @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,.15));
+      padding: 4px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0,0,0,.2);
+      @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,.1));
+   }
+
+   /* Documents */
+   .spip_documents a {
+      display: block; border-bottom: none;
+   }
+      .spip_documents img {
+         @extend .spip_logos;
+      }
+
+   /* Documents en illustration (champs txt) */
+   .txt {
+      .spip_documents {
+         display: block;
+         margin-top: 5px;
+         margin-bottom: $base-spacing-unit;
+      }
+      .spip_documents_left {margin-right:$base-spacing-unit;}
+      .spip_documents_center {
+         text-align: center;
+         clear: both;
+      }
+      .spip_documents_right {margin-left: $base-spacing-unit;}
+      .spip_doc_titre,
+      .spip_doc_descriptif {
+         @include font-size($milli-size);
+         color: #999;
+         margin-left: 0;
+      }
    }
 
    .media-ouverture {

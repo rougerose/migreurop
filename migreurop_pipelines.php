@@ -12,7 +12,7 @@
 
    // css
    function migreurop_insert_head_css($flux) {
-      $flux .= "<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic,700italic|Ubuntu+Condensed' rel='stylesheet' type='text/css'>\n";
+      $flux .= "<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow' rel='stylesheet' type='text/css'>\n";
       $css = find_in_path('css/migreurop.css');
       if ($css) {
          $flux .= "<link rel='stylesheet' href='$css'>\n";

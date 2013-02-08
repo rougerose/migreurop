@@ -2,7 +2,7 @@
 <div class="g one-whole desk-three-tenths desk-push--one-tenth">
    <B_cartes>
    <div class="box--aside">
-      [<h1 class="box--title">(#INFO_TITRE{rubrique,266})</h1>]
+      [<h1 class="box__title">(#INFO_TITRE{rubrique,266})</h1>]
       <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
       </BOUCLE_cartes>
@@ -13,7 +13,7 @@
    <BOUCLE_rubrique_rapport(RUBRIQUES){id_rubrique=418}>
    <B_rapports>
    <div class="box--aside">
-      <h1 class="box--title">#TITRE</h1>
+      <h1 class="box__title">#TITRE</h1>
       <ul class="block-list--media">
          <BOUCLE_rapports(ARTICLES){branche}{!par date}{lang}{0,4}>
          [<li>
@@ -27,7 +27,7 @@
 
    <B_portfolios>
    <div class="box--aside">
-      <h1 class="box--title"><:migreurop:portfolios:></h1>
+      <h1 class="box__title"><:migreurop:portfolios:></h1>
       <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
       </BOUCLE_portfolios>

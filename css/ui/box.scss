@@ -1,11 +1,10 @@
 /*   =BOX
    ------------------------------------------------------ */
-
    /* box--aside */
    .box--aside {
-      @extend .media;
+      @extend .cf;
    }
-   .box--title {
+   .box__title {
       @include font-size(20px);
       font-family: $condensed-face;
       font-weight: normal;

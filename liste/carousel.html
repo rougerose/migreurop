@@ -17,11 +17,8 @@
          [(#INCLURE{fond=inclure/article-resume,id_article,env})]
       </li>
       </BOUCLE_carousel>
-      <!--
-         TODO portfolio
-      -->
-      <BOUCLE_portfolio(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|=={portfolio}}>
-
+      <BOUCLE_portfolio(ARTICLES){id_article ?}{si #GET{contexte}|=={portfolio}}>
+         [(#INCLURE{fond=liste/carousel_portfolio,id_article})]
       </BOUCLE_portfolio>
    </ul><!-- .panels -->
 </div><!-- .carousel -->

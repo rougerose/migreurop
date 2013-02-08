@@ -24,6 +24,9 @@
  // base
  @import "ui/liens";
  @import "ui/typographie";
+ @import "ui/shared";
+
+ @import "ui/quotes";
 
  // structure
  @import "ui/page";
@@ -42,6 +45,9 @@
  @import "ui/pagination";
 
  @import "ui/self";
+
+ // spip
+ @import "ui/spip";
 
  // misc
  @import "ui/misc";

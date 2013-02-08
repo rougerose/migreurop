@@ -14,6 +14,9 @@
       // M
       'more' => 'La suite',
 
+      // P
+      'info_ps' => 'Post-scriptum',
+
       // T
       'translations' => 'Traductions disponibles'
    );

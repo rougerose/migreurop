@@ -4,6 +4,7 @@
       overflow: hidden;
       width: 100%;
       position: relative;
+      @extend .landmark;
    }
    .panels {
       list-style: none;
@@ -32,8 +33,12 @@
       @include vendor(transition, opacity 0.5s linear);
       &:hover{opacity:1; top: auto;}
    }
-   .prevnext .previous {left: 10px;}
-   .prevnext .next {right: 10px;}
+   .prevnext a {
+      height: 48px;
+      width: 48px;
+   }
+   .prevnext .previous {left: 10px; background-position: 0 -32px;}
+   .prevnext .next {right: 10px; background-position: -64px -32px;}
 
    // navigation par page
    .pages {
@@ -65,38 +70,6 @@
    // contenu
    .panels article {position: relative;}
 
-   // uniquement pour le carousel ouverture
-   .panels .wrap {
-      position: absolute;
-      bottom: 0;
-      z-index: 20;
-      margin-left: -$base-spacing-unit;
-      width: 100%;
-      float: left;
-   }
-   .panels .calque {
-      color: #ccc;
-      background-color: $noir-bleu;
-      background-color: rgba($noir-bleu,0.8);
-      padding: $half-spacing-unit;
-      padding-top: $base-spacing-unit;
-      a {
-         color: #fff;
-         &:hover{color: #d10c13;}
-      }
-   }
-   .calque header {position: relative;}
-   .calque .action {
-      background: url(../img/migreurop-sprite.svg) no-repeat -64px 0;
-      cursor: pointer;
-      height: 16px;
-      width: 16px;
-      display: block;
-      position: absolute; top: 0; right: 0;
-      margin-top: -$half-spacing-unit;
-   }
-   .calque .action.ouvert {background-position: -64px -16px;}
-
    // images
    .carousel__img {
       display: block;
@@ -104,29 +77,52 @@
       max-width: 100%;
    }
 
-   /* contexte ouverture de page (sommaire) */
+   /* contexte ouverture (sommaire) et portfolio (article) */
    .carousel-ouverture,
-   .carousel-ouverture article {
+   .carousel-ouverture article,
+   .carousel-portfolio {
       height: 520px;
    }
    .carousel-ouverture {
-      @extend .landmark;
+      .panels .wrap {
+         position: absolute;
+         bottom: 0;
+         z-index: 20;
+         margin-left: -$base-spacing-unit;
+         width: 100%;
+         float: left;
+      }
+      .panels .calque {
+         color: #ccc;
+         background-color: $noir-bleu;
+         background-color: rgba($noir-bleu,0.8);
+         padding: $half-spacing-unit;
+         padding-top: $base-spacing-unit;
+         a {
+            color: #fff;
+            &:hover{color: #d10c13;}
+         }
+      }
+      .calque header {position: relative;}
+      .calque .action {
+         background: url(../img/migreurop-sprite.svg) no-repeat -64px 0;
+         cursor: pointer;
+         height: 16px;
+         width: 16px;
+         display: block;
+         position: absolute; top: 0; right: 0;
+         margin-top: -$half-spacing-unit;
+      }
+      .calque .action.ouvert {background-position: -64px -16px;}
+
       .hentry .entry-title {
          @include font-size(18px);
-      }
-      .link--img {
-         //height: 520px;
       }
       .meta-publi {
          border-bottom-width: 0;
       }
       svg {fill: white;}
-      .prevnext a {
-         height: 48px;
-         width: 48px;
-      }
-      .prevnext .previous {background-position: 0 -32px;}
-      .prevnext .next {background-position: -64px -32px;}
+
    }
 
    /* contexte extra */
@@ -147,4 +143,21 @@
       }
       .prevnext .previous {background-position: 0 0;}
       .prevnext .next {background-position: -32px 0;}
+   }
+
+   /* contexte portfolio article */
+   .carousel-portfolio {
+      figcaption {
+         color: #fff;
+         background-color: $noir-bleu;
+         background-color: rgba($noir-bleu,0.8);
+         position: absolute;
+         top: 0;
+         width: 100%;
+         padding: $half-spacing-unit/2 $half-spacing-unit;
+         .carousel__legende {
+            margin-bottom: 0;
+            @include font-size(13px);
+         }
+      }
    }

@@ -1,0 +1,67 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<article class="self article">
+   <div class="g one-whole">
+
+      [(#REM) mot-clé portfolio ? ]
+      <BOUCLE_mot_portfolio(MOTS){id_article}{id_mot=32}>
+      [(#SET{portfolio,' '})]
+      [(#REM) au moins un document dans le portfolio de l'article ]
+         <BOUCLE_document_portfolio(DOCUMENTS){id_article}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
+            [(#INCLURE{fond=liste/carousel,id_article,type-page=#ENV{type-page},contexte=portfolio})]
+         </BOUCLE_document_portfolio>
+      [(#REM) sinon le logo ]
+         [<div id="ouverture" class="media-ouverture">
+            (#LOGO_ARTICLE|inserer_attribut{class,media-ouverture__img})
+         </div>]
+         <//B_document_portfolio>
+      </BOUCLE_mot_portfolio>
+      </B_mot_portfolio>
+      [(#REM) sinon le logo ]
+         [<div id="ouverture" class="media-ouverture">
+            (#LOGO_ARTICLE|inserer_attribut{class,media-ouverture__img})
+         </div>]
+      <//B_mot_portfolio>
+
+      <header class="landmark">
+         [(#SOUSTITRE|ou{#SURTITRE}|oui)
+         <hgroup>]
+            [<p class="surtitre hN">(#SURTITRE)</p>]
+            <h1 class="self__titre entry-title titre[(#SOUSTITRE|ou{#SURTITRE}|oui) hN]">#TITRE</h1>
+            [<h2 class="soustitre hN">(#SOUSTITRE)</h2>]
+         [(#SOUSTITRE|ou{#SURTITRE}|oui)
+         </hgroup>]
+      </header>
+   </div><!-- .g one-whole -->
+
+   <div class="g one-whole desk-six-tenths">
+      <div class="self__body entry-content contenu surlignable">
+         [<div class="chapo txt landmark">
+            (#CHAPO|image_reduire{600,0})
+         </div><!-- .chapeau -->]
+         [<div class="texte txt">
+            (#TEXTE|image_reduire{600,0})
+         </div><!-- .texte -->]
+         [<div class="ps txt">
+            <h2 class="spip"><:migreurop:info_ps:></h2>
+            (#PS|image_reduire{600,0})
+         </div><!-- .ps -->]
+         [(#PAGE|=={contact}|oui)
+            [(#FORMULAIRE_ECRIRE_AUTEUR)]]
+
+         [(#REM) Gestion du portfolio et des documents ]
+            [(#INCLURE{fond=inclure/documents,id_article,portfolio=#GET{portfolio}})]
+
+         [<aside class="notes">
+            <div class="gw">
+               <div class="g desk-one-half">
+                  <h1 class="spip"><:info_notes:></h1>
+                  (#NOTES)
+               </div>
+            </div>
+         </aside>]
+      </div><!-- .entry -->
+   </div><!-- .g one-whole desk-six-tenths -->
+
+
+</article><!-- .self -->
+</BOUCLE_article>

@@ -3,13 +3,35 @@
    /* Les contenus d'un objet spip : titre, texte, documents, etc. d'une rubrique, d'un article, d'un mot-clé, etc. */
    .self {
       @extend .landmark;
-      header {
-         //border-bottom: 1px solid #000;
-         @extend %sass-margin-bottom;
+      .surtitre {
+         @include font-size($h3-size);
+         //font-family: $condensed-face;
+         margin-bottom: 0;
+         color: #aaa;
+         //text-transform: uppercase;
+      }
+      .soustitre {
+         @include font-size($h3-size);
+         font-family: $condensed-face;
+         color: #aaa;
       }
    }
    .self__titre {
       color: #000;
-      //font-weight: 700;
       margin-bottom: 0;
+      @include font-size($h2-size);
    }
+   .self__body {
+      .txt {
+         margin-left: $base-spacing-unit * 2;
+      }
+   }
+      .chapo {
+         color: #252525;
+         @include font-size(18px);
+      }
+      .self__body a,
+      .notes a {
+         @extend .suite--link;
+         padding-bottom: 1px;
+      }
