@@ -11,6 +11,10 @@
       // C
       'communiques_presse' => 'Communiqués de presse',
 
+      // I
+      'info_document' => 'Document',
+      'info_documents' => 'Documents',
+
       // M
       'more' => 'La suite',
 

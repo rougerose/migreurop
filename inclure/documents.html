@@ -1,25 +1,25 @@
 <hr id="documents" class="hide--desk" />
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
-<figure class="documents portfolio">
+<figure class="documents portfolio media">
    <h1 class="spip"><:medias:info_portfolio:></h1>
    <BOUCLE_documents_portfolio(DOCUMENTS){id_article?}{id_rubrique?}{mode=document}{extension IN png,jpg,gif}{par num titre, date}{vu=non}{si #ENV{portfolio}|non}>[
-   <a class="mediabox" href="(#URL_DOCUMENT)" type="#MIME_TYPE" rel="documents_portfolio[-a(#ID_ARTICLE)][-r(#ID_RUBRIQUE)]" [ title="(#TITRE|attribut_html|couper{80})"] class="[item_(#COMPTEUR_BOUCLE|modulo{4})]">[(#FICHIER|image_reduire{130,100}|inserer_attribut{class,spip_logos}|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]</a>]</BOUCLE_documents_portfolio>
+   <a class="mediabox[ item_(#COMPTEUR_BOUCLE|modulo{4})] media__link" href="(#URL_DOCUMENT)" type="#MIME_TYPE" rel="documents_portfolio[-a(#ID_ARTICLE)][-r(#ID_RUBRIQUE)]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER|image_reduire{150,100}|inserer_attribut{class,spip_logos media__img}|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]</a>]</BOUCLE_documents_portfolio>
 </figure>
 </B_documents_portfolio>
 
 [(#REM) Liste des autres documents joints ]
 <B_documents_joints>
 <figure class="documents fichiers">
-   <h1 class="spip"><:caap:info_documents:></h1>
+   <h1 class="spip"><:migreurop:info_documents:></h1>
    <BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
-   <dl class="documents">
+   <dl class="block-list media">
       <dt>
-         [(#LOGO_DOCUMENT|#URL_DOCUMENT|inserer_attribut{class,fichier})]
+         [<a href="#URL_DOCUMENT" class="media__link">(#LOGO_DOCUMENT||inserer_attribut{class,spip_logos media__img})</a>]
       </dt>
-      <dd>
-         <h2 class="spip_doc_titre"><small><a href="#URL_DOCUMENT" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:caap:info_document:>})]</a></small></h2>
-         <p class="small spip_doc_descriptif">[(#DESCRIPTIF) ](#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)])</p>
+      <dd class="media__body">
+         <h2 class="spip_doc_titre delta"><a href="#URL_DOCUMENT" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:migreurop:info_document:>})]</a></h2>
+         <p class="spip_doc_descriptif">[(#DESCRIPTIF) ](#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)])</p>
       </dd>
    </dl>
    </BOUCLE_documents_joints>

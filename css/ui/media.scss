@@ -1,23 +1,44 @@
 /*   =MEDIA
    ------------------------------------------------------ */
+   /* plugin mediabox/colorbox : content-box au lieu de border-box sur le conteneur sinon l'image est partiellement masquée. */
+   #colorbox {
+      &,
+      &:before,
+      &:after{
+          @include vendor(box-sizing, content-box);
+      }
+   }
+
+   /* image en ouverture */
+   .media-ouverture {
+      @extend .media;
+      width: 100%;
+      max-height: 520px;
+      overflow: hidden;
+   }
+      .media-ouverture__img {
+         width: 100%;
+      }
+
    /* spip-logos */
    .spip_logos {
       padding: 4px;
       background-color: #fff;
       border: 1px solid #ccc;
-      border: 1px solid rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.2);
       @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,.1));
+      @include vendor(box-sizing, content-box);
    }
 
    /* Documents */
-   .spip_documents a {
+   .spip_documents a, .documents a {
       display: block; border-bottom: none;
    }
       .spip_documents img {
          @extend .spip_logos;
       }
 
-   /* Documents en illustration (champs txt) */
+   /* Documents en illustration (champs Texte) */
    .txt {
       .spip_documents {
          display: block;
@@ -37,13 +58,29 @@
          margin-left: 0;
       }
    }
-
-   .media-ouverture {
-      @extend .media;
-      width: 100%;
-      max-height: 520px;
-      overflow: hidden;
-   }
-      .media-ouverture__img {
-         width: 100%;
+   /* documents joints */
+   .documents {
+      margin-bottom: 0;
+      @extend .cf;
+      h1.spip {
+         @extend .beta;
+         border-bottom: 2px solid #000;
       }
+      .block-list {border-top: none;}
+      .media__link {float: left;}
+      .media__img {margin-bottom: $base-spacing-unit;}
+      .media__body {margin-left: 0;}
+   }
+   /*  tous les autres documents */
+   .documents.fichiers {
+      .spip_doc_titre,
+      p {
+         margin-bottom: 0;
+      }
+   }
+
+   /* desk : images dans le portfolio sur 4 colonnes */
+   @media (min-width: $desk-start) {
+      .documents.portfolio .item_0 {margin-right: 0;}
+      .documents.portfolio .item_1 {clear:left;}
+   }

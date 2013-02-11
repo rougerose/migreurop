@@ -2,7 +2,8 @@
    ------------------------------------------------------ */
    /* headings */
    h2.spip, h3.spip, h4.spip, h5.spip, h6.spip,
-   .notes h1.spip {
+   .notes h1.spip,
+   .documents h1.spip {
       font-family: $condensed-face;
       color: #000;
       margin-top:2 * $base-spacing-unit;
@@ -85,3 +86,5 @@
          text-transform: uppercase;
       }
    }
+
+   /* documents : voir media.scss */
