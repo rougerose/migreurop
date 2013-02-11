@@ -37,7 +37,7 @@
    .notes {
       h1.spip {
          @extend .gamma;
-         border-bottom: 1px solid #000;
+         border-bottom: 2px solid #000;
       }
       p {
          @include font-size(13px);

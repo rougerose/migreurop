@@ -4,12 +4,12 @@
 <B_mots>
 <nav class="breadcrumb-nav">
    <ul class="nav breadcrumb--categories">
-      <li class="#EXPOSE"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+      <li class="#EXPOSE"><a href="[(#URL_RUBRIQUE|ancre_url{content})]">#TITRE</a></li>
       <BOUCLE_env_categorie(MOTS){id_mot=#ENV{categorie}}>
-      <li class="on"><a href="[(#SELF|parametre_url{categorie,#ID_MOT})]">#TITRE</a></li>
+      <li class="on"><a href="[(#SELF|parametre_url{categorie,#ID_MOT}|ancre_url{content})]">#TITRE</a></li>
       </BOUCLE_env_categorie>
       <BOUCLE_mots(MOTS mots_liens){objet=article}{id_groupe IN #GET{id_groupe},12}{articles.id_rubrique=#ID_RUBRIQUE}>
-      [(#ENV{categorie}|=={#ID_MOT}|non)<li><a href="[(#SELF|parametre_url{categorie,#ID_MOT})]">#TITRE</a></li>]
+      [(#ENV{categorie}|=={#ID_MOT}|non)<li><a href="[(#SELF|parametre_url{categorie,#ID_MOT}|ancre_url{content})]">#TITRE</a></li>]
       </BOUCLE_mots>
    </ul>
 </nav>
