@@ -27,7 +27,7 @@
    </div>
    [(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui)</div><!-- .media__body -->]
    <ul class="meta-publi">
-      <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate{d M y})]</time></li>
+      <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|journum)][ (#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})]</time></li>
       [<li class="byline author vcard">
          (#MODELE{article-auteurs})
       </li>]
