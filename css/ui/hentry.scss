@@ -11,15 +11,12 @@
          font-family: $condensed-face;
       }
       .meta-publi {
-         margin: 0;
          border-top: 1px dotted #ccc;
          border-bottom: 1px solid #000;
          line-height: 2;
       }
       .meta-publi > li {
          @include font-size(12px);
-         color: #999;
-         display: inline;
          margin-right: $quater-spacing-unit;
          padding-right: $quater-spacing-unit;
          border-right: 1px solid #ccc;
@@ -29,9 +26,8 @@
          color: #777;
          &:hover{color: $rouge-hover;}
       }
-
       // traductions
-         // icon
+      // icon
       .icon {
          position: relative;
          display: inline-block;

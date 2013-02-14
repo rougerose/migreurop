@@ -1,0 +1,46 @@
+/*   =META-PUBLI
+   ------------------------------------------------------ */
+   /* éléments communs. éléments spécifiques voir hentry.scss, self.scss */
+   .meta-publi {
+      @extend .nav;
+      .intertitre {
+         color: #aaa;
+         text-transform: uppercase;
+         font-family: $condensed-face;
+         @include font-size(18px);
+         padding-left: 21px;
+         margin-left: -21px;
+         margin-bottom: 0;
+         position: relative;
+      }
+      .liste-items {
+         list-style-type: none;
+         margin-left: 0;
+         > li {
+            padding-left: 16px;
+         }
+         .updated {
+            @include font-size(12px);
+         }
+         a {
+            color: #333;
+            &:hover{color: $rouge-hover;}
+         }
+      }
+   }
+      // rubrique
+      .category {
+         text-transform: uppercase;
+         padding-left: 0.7em;
+         position: relative;
+
+      }
+      .category.on a {color: $brand-color; font-weight: 700;}
+
+      // date publication
+      .updated {text-transform: uppercase; color: #999;}
+
+      // auteur
+      .byline {font-style: italic; color: #999;}
+
+      // tags

@@ -1,0 +1,47 @@
+/*   =SPRITE
+   ------------------------------------------------------ */
+   .sp {
+      position: relative;
+      &:before{
+         content: '';
+         height: 16px;
+         width: 16px;
+         background: url(../img/migreurop-sprite.png) no-repeat 0 0;
+         position: absolute; left: 0; top: 2px;
+         display: block;
+      }
+   }
+   // tags
+   .sp--tags {
+      &:before{
+         background-position: -32px 0;
+      }
+   }
+   // meme sujet
+   .sp--related {
+      &:before {
+         background-position: -80px 0;
+      }
+   }
+
+   // plan de la rubrique
+   .sp--map {
+      &:before {
+         background-position: 0 0;
+      }
+   }
+   // partagez
+   .sp--share {
+      &:before {
+         width: 17px;
+         background-position: -48px 0;
+      }
+   }
+
+   // puce
+   .sp--puce {
+      &:before {
+         width: 14px;
+         background-position: -66px 0;
+      }
+   }

@@ -33,6 +33,18 @@
       </header>
    </div><!-- .g one-whole -->
 
+   <div class="g desk-three-tenths rev">
+      <aside>
+         <ul class="meta-publi">
+            <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+            <li class="category on mbr"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+            </BOUCLE_rubrique>
+            <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
+            <B_auteurs><li class="byline author vcard"><:caap:par:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>
+         </ul>
+      </aside>
+   </div>
+
    <div class="g one-whole desk-six-tenths">
       <div class="self__body entry-content contenu surlignable">
          [<div class="chapo txt landmark">
@@ -62,6 +74,17 @@
       </div><!-- .entry -->
    </div><!-- .g one-whole desk-six-tenths -->
 
-
+   <div class="g desk-three-tenths rev">
+      <aside>
+         <ul class="meta-publi">
+            [(#PLUGIN{socialtags}|oui)
+            <li class="share mbr">
+               <h1 id="share" class="intertitre sp sp--share"><:migreurop:info_partager:></h1>
+            </li>]
+            [(#INCLURE{fond=liste/mots,id_article})]
+            [(#INCLURE{fond=liste/objets-relation,id_article})]
+         </ul>
+      </aside>
+   </div>
 </article><!-- .self -->
 </BOUCLE_article>

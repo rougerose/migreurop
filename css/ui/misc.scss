@@ -1,12 +1,13 @@
 /*   =MISC
    ------------------------------------------------------ */
-
-   /* colonne extra : responsive push class */
    @include media-query(desk){
+      // colonne extra : responsive push class
        .desk-push--one-tenth {
            position:relative;
            left:10%;
        }
+       // les éléments de grille sont inversés.
+       .rev {float: right;}
    }
 
    /* couleur de texte sélectionné */

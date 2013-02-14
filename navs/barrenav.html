@@ -1,14 +1,14 @@
 <nav id="barrenav" class="barrenav">
    <div class="container">
       <ul class="nav nav--banner">
-         <li class="item[(#ENV{type-page}|=={sommaire}|oui) on]"><a href="#URL_SITE_SPIP"><:migreurop:home:></a></li>
+         <li class="nav--item[(#ENV{type-page}|=={sommaire}|oui) on]"><a href="#URL_SITE_SPIP"><:migreurop:home:></a></li>
          <BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}>
-         <li id="r#ID_RUBRIQUE" class="item">
+         <li id="r#ID_RUBRIQUE" class="nav--item">
             <a href="#URL_RUBRIQUE">#TITRE</a>
             <B_sousrubriques>
                <ul class="menu dropdown flyout__box">
                   <BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
-                  <li id="r#ID_RUBRIQUE" class="item">
+                  <li id="r#ID_RUBRIQUE" class="nav--item">
                      <a href="#URL_RUBRIQUE">#TITRE</a>
                   </li>
                   </BOUCLE_sousrubriques>

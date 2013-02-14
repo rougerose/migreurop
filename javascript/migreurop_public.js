@@ -143,7 +143,7 @@ $(document).ready(function(){
    // = Menu principal en version dropdown =
    // ======================================
    $("#barrenav .nav").each(function(){
-      var $items = $(this).children(".item"),
+      var $items = $(this).children(".nav--item"),
       $haschild = $items.children("ul").before('<span class="ouvrir" />').parent().addClass("haschild"),
       $ouvrir = $haschild.children("span"),
       $dropdown = $items.children("ul");

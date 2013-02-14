@@ -35,3 +35,6 @@
          @extend .suite--link;
          padding-bottom: 1px;
       }
+   .self .meta-publi {
+      @extend .nav--stacked;
+   }
