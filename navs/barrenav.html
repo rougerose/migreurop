@@ -3,7 +3,7 @@
       <ul class="nav nav--banner">
          <li class="nav--item[(#ENV{type-page}|=={sommaire}|oui) on]"><a href="#URL_SITE_SPIP"><:migreurop:home:></a></li>
          <BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}>
-         <li id="r#ID_RUBRIQUE" class="nav--item">
+         <li id="r#ID_RUBRIQUE" class="nav--item #EXPOSE">
             <a href="#URL_RUBRIQUE">#TITRE</a>
             <B_sousrubriques>
                <ul class="menu dropdown flyout__box">
