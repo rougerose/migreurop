@@ -75,6 +75,7 @@
       display: block;
       width: 100%;
       max-width: 100%;
+      @include vendor(box-sizing, border-box);
    }
 
    /* contexte ouverture (sommaire) et portfolio (article) */
@@ -133,6 +134,7 @@
       .carousel__img {
          @extend .spip_logos;
          margin-bottom: $half-spacing-unit;
+         @include vendor(box-sizing, border-box);
       }
       .prevnext {
          top: 20%;
