@@ -63,7 +63,7 @@
          [(#REM) Gestion du portfolio et des documents ]
             [(#INCLURE{fond=inclure/documents,id_article,portfolio=#GET{portfolio}})]
 
-         [<aside class="notes">
+         [<aside class="notes txt">
             <div class="gw">
                <div class="g desk-one-half">
                   <h1 class="spip"><:info_notes:></h1>
@@ -71,7 +71,7 @@
                </div>
             </div>
          </aside>]
-      </div><!-- .entry -->
+      </div><!-- .self__body -->
    </div><!-- .g one-whole desk-six-tenths -->
 
    <div class="g desk-three-tenths rev">
@@ -81,7 +81,7 @@
             <li class="share mbr">
                <h1 id="share" class="intertitre sp sp--share"><:migreurop:info_partager:></h1>
             </li>]
-            [(#INCLURE{fond=liste/mots,id_article})]
+            [(#INCLURE{fond=liste/mots-article,id_article})]
             [(#INCLURE{fond=liste/objets-relation,id_article})]
          </ul>
       </aside>
