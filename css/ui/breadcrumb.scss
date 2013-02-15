@@ -26,6 +26,9 @@
       > li.on a {
          color: #fff;
          background: $brand-color;
+         text-transform: uppercase;
+         font-weight: 700;
+         @include font-size(12px);
          padding-left: 30px;
       }
       > li.on + li > a {padding-left: 23px;}
