@@ -1,10 +1,15 @@
 /*   =RECHERCHE
    ------------------------------------------------------ */
 
+   .resultats--message,
    .resultats--detail {
+      font-family: $condensed-face;
       font-weight: 700;
       text-transform: uppercase;
       color: #000;
+   }
+   .resultats--message {
+      @include font-size($h3-size);
    }
 
    // titre des documents

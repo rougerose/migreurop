@@ -1,0 +1,57 @@
+[(#REM) variables ] [(#SET{total,''})]
+
+<BOUCLE_articles(ARTICLES){recherche}{!par points}{lang}>[(#SET_PUSH{articles,#ID_ARTICLE})]</BOUCLE_articles>
+<BOUCLE_rubriques(RUBRIQUES){recherche}{!par points}>[(#SET_PUSH{rubriques,#ID_RUBRIQUE})]</BOUCLE_rubriques>
+<BOUCLE_documents(DOCUMENTS){recherche}{!par points}>[(#SET_PUSH{documents,#ID_DOCUMENT})]</BOUCLE_documents>
+<BOUCLE_sites(SITES){recherche}{!par points}>[(#SET_PUSH{sites,#ID_SYNDIC})]</BOUCLE_sites>
+<BOUCLE_mots(MOTS){recherche}{!par points}>[(#SET_PUSH{mots,#ID_MOT})]</BOUCLE_mots>[
+(#SET{total,
+   #GET{articles}|count
+      |plus{#GET{rubriques}|count}
+      |plus{#GET{sites}|count}
+      |plus{#GET{documents}|count}
+      |plus{#GET{mots}|count}
+})]
+
+<article class="self recherche cf">
+   <div class="g one-whole">
+      <header class="landmark">
+         <h1 class="self__titre entry-title titre"><:migreurop:info_recherche_label:> &laquo;&nbsp;#RECHERCHE&nbsp;&raquo;</h1>
+      </header>
+   </div><!-- .g one-whole -->
+
+   <div class="g one-whole desk-six-tenths">
+      <div class="self__body entry-content contenu surlignable">
+         <div class="texte txt">
+            [(#GET{total}|>{0}|?{
+               [<p class="resultats--message info">(#GET{total}|singulier_ou_pluriel{migreurop:info_recherche_resultat,migreurop:info_recherche_resultats,nb})</p>],
+               <p class="resultats--message"><:migreurop:info_recherche_pas_de_resultat:></p>
+            })]
+         </div><!-- .texte -->
+      </div><!-- .self__body -->
+   </div><!-- .g one-whole desk-six-tenths -->
+</article><!-- .self -->
+
+<div class="g one-whole desk-six-tenths">
+   [(#GET{total}|>{0}|oui)
+      [(#GET{articles}|count|>{0}|oui)
+      [<div class="liste articles recherche">
+         (#INCLURE{fond=liste/articles,selection=#GET{articles},contexte=principal,ajax})
+      </div>]][
+      (#GET{rubriques}|count|>{0}|oui)
+      [<div class="liste rubriques recherche">
+         (#INCLURE{fond=liste/rubriques,selection=#GET{rubriques},contexte=principal,ajax})
+      </div>]][(#GET{documents}|count|>{0}|oui)
+      [<div class="liste documents recherche">
+         (#INCLURE{fond=liste/documents,selection=#GET{documents},contexte=principal,ajax})
+      </div>]][
+      (#GET{mots}|count|>{0}|oui)
+      [<div class="liste mots recherche">
+         (#INCLURE{fond=liste/mots,selection=#GET{mots},contexte=principal,ajax})
+      </div>]][
+      (#GET{sites}|count|>{0}|oui)
+      [<div class="liste sites recherche">
+         (#INCLURE{fond=liste/sites,selection=#GET{sites},contexte=principal,ajax})
+      </div>]]
+   ]
+</div><!-- .g one-whole desk-six-tenths -->

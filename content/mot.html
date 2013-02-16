@@ -4,14 +4,14 @@
 <BOUCLE_articles(ARTICLES){id_mot}{lang}>[(#SET_PUSH{articles,#ID_ARTICLE})]</BOUCLE_articles>
 <BOUCLE_rubriques(RUBRIQUES){id_mot}>[(#SET_PUSH{rubriques,#ID_RUBRIQUE})]</BOUCLE_rubriques>
 <BOUCLE_documents(DOCUMENTS mots_liens){id_mot}>[(#SET_PUSH{documents,#ID_DOCUMENT})]</BOUCLE_documents>
-<BOUCLE_sites(SITES){id_mot}>[(#SET{sites,#ID_SYNDIC})]</BOUCLE_sites>[
+<BOUCLE_sites(SITES){id_mot}>[(#SET_PUSH{sites,#ID_SYNDIC})]</BOUCLE_sites>[
 (#SET{total,
    #GET{articles}|count
       |plus{#GET{rubriques}|count}
       |plus{#GET{sites}|count}
       |plus{#GET{documents}|count}
 })
-]<article class="self article">
+]<article class="self article cf">
    <div class="g one-whole">
       [(#REM) le logo ]
          [<div id="ouverture" class="media-ouverture">

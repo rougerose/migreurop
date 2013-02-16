@@ -1,0 +1,25 @@
+[(#REM) VARIABLES > selection : tableau de la sélection transmis par inclure
+] #SET{selection,#ENV{selection}}
+
+<B_mots>
+[<h2 class="delta resultats--detail">
+   (#GET{selection}|count|singulier_ou_pluriel{migreurop:info_recherche_mot,migreurop:info_recherche_mots,nb})
+</h2>]
+<ol class="objets-selection liste-items recherche">
+   #ANCRE_PAGINATION
+   <BOUCLE_mots(MOTS){id_mot IN #GET{selection}}{pagination 5}>
+   <li class="item">
+      <article class="hentry">
+         <header class="header">
+            <h1 class="entry-title"><a href="#URL_MOT" rel="bookmark">#TITRE</a></h1>
+         </header>
+         <div class="entry-content[ (#ENV{contexte}|=={principal}|oui)media]">
+            [(#LOGO_MOT||image_reduire{200,150}|inserer_attribut{class,media__img spip_logos})]
+            [<p[(#LOGO_MOT|et{#ENV{contexte}|=={principal}}|oui) class="media__body"]>(#INTRODUCTION|PtoBR) <a href="#URL_MOT" class="suite--link"><:migreurop:more:></a></p>]
+         </div><!-- .entry -->
+      </article>
+   </li>
+   </BOUCLE_mots>
+</ol>
+[<nav class="pagination bas[ (#ENV{pagination-align})]">(#PAGINATION{li})</nav>]
+</B_mots>
