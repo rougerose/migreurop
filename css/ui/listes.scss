@@ -1,7 +1,7 @@
 /*   =LISTES
    ------------------------------------------------------ */
-   // articles-selection
-   .articles-selection {
+   // objets-selection
+   .objets-selection {
       @extend .block-list;
       border-top-width:0;
       > li {
@@ -11,12 +11,15 @@
 
       }
    }
-   .box--aside .articles-selection > li {margin-bottom: $half-spacing-unit;}
+   ol.objets-selection {
+      margin-left: $base-spacing-unit * 2;
+   }
+   .box--aside .objets-selection > li {margin-bottom: $half-spacing-unit;}
 
    // block-list--media
    .block-list--media {
       @extend .block-list;
-      @extend .articles-selection;
+      @extend .objets-selection;
       > li {
          margin-bottom: $base-spacing-unit;
       }

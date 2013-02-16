@@ -19,7 +19,8 @@
    .self__titre {
       color: #000;
       margin-bottom: 0;
-      @include font-size($h2-size);
+      @include font-size(32px);
+      font-weight: 700;
    }
    .self__body {
       .txt {
@@ -30,11 +31,11 @@
          color: #252525;
          @include font-size(18px);
       }
-      .self__body a,
-      .notes a {
-         @extend .suite--link;
-         padding-bottom: 1px;
-      }
+   .txt a {
+      @extend .suite--link;
+      padding-bottom: 1px;
+      margin-left: 0;
+   }
    .self .meta-publi {
       @extend .nav--stacked;
    }

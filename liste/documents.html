@@ -1,0 +1,53 @@
+[(#REM)
+   Variables
+   ----------------------------------------------
+   selection : tableau de la sélection transmis par inclure
+   url_doc : url du document
+] #SET{selection,#ENV{selection}} #SET{url_doc,''}
+<B_documents>
+[<h2 class="delta resultats--detail">
+   (#GET{selection}|count|singulier_ou_pluriel{migreurop:info_recherche_document,migreurop:info_recherche_documents,nb})
+</h2>]
+<ol class="objets-selection liste-items recherche">
+   #ANCRE_PAGINATION
+   <BOUCLE_documents(DOCUMENTS){id_document IN #GET{selection}}{pagination 5}>
+   [(#REM) calcul de l'url ]
+   <BOUCLE_lien_article(documents_liens){id_document}{objet=article}>[
+      (#SET{url_doc, #INFO_URL{article,#ID_OBJET}|ancre_url{documents}})
+   ]</BOUCLE_lien_article>
+   <BOUCLE_lien_rubrique(documents_liens){id_document}{objet=rubrique}>[
+      (#SET{url_doc,#INFO_URL{rubrique,#ID_OBJET}})
+   ]</BOUCLE_lien_rubrique>
+   <li class="item">
+      <article class="hentry">
+         [(#ENV{contexte}|=={principal}|oui)
+         <div class="media">]
+            [(#LOGO_DOCUMENT{vignette}|?{
+               [<a href="[(#GET{url_doc})]">(#LOGO_DOCUMENT{vignette}|image_reduire{104,0}|inserer_attribut{alt,[(#TITRE|sinon{<migreurop:info_document:> #ID_DOCUMENT})]}|inserer_attribut{class,spip_logos media__img})</a>]
+               ,
+               [<a href="[(#GET{url_doc})]">(#LOGO_DOCUMENT|image_reduire{104,0}|inserer_attribut{alt,[(#TITRE|sinon{<migreurop:info_document:> #ID_DOCUMENT})]}|inserer_attribut{class,spip_logos media__img})</a>]
+            })]
+            [(#ENV{contexte}|=={principal}|oui)
+            <div class="media__body">]
+               <header>
+                     <h1 class="entry-title"><a href="#GET{url_doc}" rel="bookmark">[(#TITRE|sinon{<migreurop:info_document:> #ID_DOCUMENT})]</a></h1>
+               </header>
+               <div class="entry-content">
+                  <p>
+                     [(#DESCRIPTIF|PtoBR) <br />]
+                     <:migreurop:fichier:> #TYPE_DOCUMENT[ / (#TAILLE|taille_en_octets)]
+                  </p>
+               </div>
+            [(#ENV{contexte}|=={principal}|oui)
+            </div>]
+         [(#ENV{contexte}|=={principal}|oui)
+         </div>]
+         <ul class="meta-publi">
+            <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|journum)][ (#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})]</time></li>
+         </ul>
+      </article>
+   </li>
+   </BOUCLE_documents>
+</ol>
+[<nav class="pagination bas[ (#ENV{pagination-align})]">(#PAGINATION{li})</nav>]
+</B_documents>

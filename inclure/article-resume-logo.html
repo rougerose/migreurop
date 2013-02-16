@@ -17,7 +17,7 @@
    </BOUCLE_conteneur_liste>
 </BOUCLE_contexte_extra>
 [(#ENV{contexte}|=={principal}|oui)
-   [(#LOGO_ARTICLE||image_reduire{200,150}|inserer_attribut{class,media__img})]
+   [(#LOGO_ARTICLE||image_reduire{200,150}|inserer_attribut{class,media__img spip_logos})]
 ]
 [(#ENV{contexte}|=={ouverture}|oui)
    [<a href="#URL_ARTICLE">(#LOGO_ARTICLE|inserer_attribut{class,carousel__img})</a>]

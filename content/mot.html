@@ -1,0 +1,62 @@
+<BOUCLE_mot(MOTS){id_mot}>
+[(#REM) variables ]
+   [(#SET{total,''})]
+<BOUCLE_articles(ARTICLES){id_mot}{lang}>[(#SET_PUSH{articles,#ID_ARTICLE})]</BOUCLE_articles>
+<BOUCLE_rubriques(RUBRIQUES){id_mot}>[(#SET_PUSH{rubriques,#ID_RUBRIQUE})]</BOUCLE_rubriques>
+<BOUCLE_documents(DOCUMENTS mots_liens){id_mot}>[(#SET_PUSH{documents,#ID_DOCUMENT})]</BOUCLE_documents>
+<BOUCLE_sites(SITES){id_mot}>[(#SET{sites,#ID_SYNDIC})]</BOUCLE_sites>[
+(#SET{total,
+   #GET{articles}|count
+      |plus{#GET{rubriques}|count}
+      |plus{#GET{sites}|count}
+      |plus{#GET{documents}|count}
+})
+]<article class="self article">
+   <div class="g one-whole">
+      [(#REM) le logo ]
+         [<div id="ouverture" class="media-ouverture">
+            (#LOGO_MOT|inserer_attribut{class,media-ouverture__img})
+         </div>]
+      <header class="landmark">
+         <h1 class="self__titre entry-title titre">#TITRE</h1>
+      </header>
+   </div><!-- .g one-whole -->
+
+   <div class="g one-whole desk-six-tenths">
+      <div class="self__body entry-content contenu surlignable">
+         [<div class="texte txt">
+            (#TEXTE|image_reduire{600,0})
+         </div><!-- .texte -->]
+      </div><!-- .self__body -->
+   </div><!-- .g one-whole desk-six-tenths -->
+</article><!-- .self -->
+
+<div class="g one-whole desk-six-tenths">
+   [(#GET{total}|>{0}|oui)
+      [(#GET{articles}|count|>{0}|oui)
+      [<div class="liste articles recherche">
+         (#INCLURE{fond=liste/articles,selection=#GET{articles},contexte=principal,ajax})
+      </div>]][
+      (#GET{rubriques}|count|>{0}|oui)
+      [<div class="liste rubriques recherche">
+         (#INCLURE{fond=liste/rubriques,selection=#GET{rubriques},contexte=principal,ajax})
+      </div>]][(#GET{documents}|count|>{0}|oui)
+      [<div class="liste documents recherche">
+         (#INCLURE{fond=liste/documents,selection=#GET{documents},contexte=principal,ajax})
+      </div>]][
+      (#GET{sites}|count|>{0}|oui)
+      [<div class="liste sites recherche">
+         (#INCLURE{fond=liste/sites,selection=#GET{sites},contexte=principal,ajax})
+      </div>]]
+   ]
+
+   [<aside class="notes txt">
+      <div class="gw">
+         <div class="g desk-one-half">
+            <h1 class="spip"><:info_notes:></h1>
+            (#NOTES)
+         </div>
+      </div>
+   </aside>]
+</div><!-- .g one-whole desk-six-tenths -->
+</BOUCLE_mot>
