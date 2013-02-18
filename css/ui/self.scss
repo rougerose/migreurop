@@ -5,10 +5,8 @@
       @extend .landmark;
       .surtitre {
          @include font-size($h3-size);
-         //font-family: $condensed-face;
          margin-bottom: 0;
          color: #aaa;
-         //text-transform: uppercase;
       }
       .soustitre {
          @include font-size($h3-size);

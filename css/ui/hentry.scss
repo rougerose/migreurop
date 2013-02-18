@@ -32,14 +32,9 @@
          position: relative;
          display: inline-block;
          height: 16px;
-         width: 26px;
-      }
-      .icon svg {
-         width: 26px;
-         height: 26px;
-         position: absolute;
-         fill: #999;
-         @include vendor(transition, all 0.5s ease-in);
+         width: 16px;
+         top: 2px;
+         margin-right: 2px;
       }
       // tooltip flyout
       .langues {
@@ -51,8 +46,7 @@
          @include vendor(transition, all 0.5s ease-in);
          @include arrow(bottom, left, $noir-bleu);
       }
-      .translation:hover .langues {opacity: 1;}
-      .translation:hover .icon svg {fill: $rouge-hover;}
+      .traductions:hover .langues {opacity: 1;}
 
       // surcharges taille fleche
       .langues:before, .langues:after {
@@ -60,9 +54,14 @@
          margin-left: -$quater-spacing-unit;
       }
       // tooltip contenu
-      .langues .zeta {color: #586a73; margin-bottom: 0; text-transform: uppercase;}
+      .langues .zeta {
+         color: #999;
+         text-transform: uppercase;
+         margin-bottom: 0;
+      }
       .langues a {
          color: #fff;
+         font-weight: bold;
          &:hover {color: $rouge-hover;}
       }
       .langues > h3 {font-family: $condensed-face;}

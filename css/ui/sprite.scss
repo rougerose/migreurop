@@ -37,11 +37,16 @@
          background-position: -48px 0;
       }
    }
-
    // puce
    .sp--puce {
       &:before {
          width: 14px;
          background-position: -66px 0;
+      }
+   }
+   // traductions
+   .sp--trads {
+      &:before {
+         background-position: -96px 0;
       }
    }

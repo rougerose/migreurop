@@ -1,0 +1,10 @@
+<BOUCLE_article(ARTICLES){id_article}><B_traductions>
+<li class="traductions">
+   <h1 class="intertitre sp sp--trads"><:migreurop:translations:></h1>
+   <ul class="liste-items">
+      <BOUCLE_traductions(ARTICLES){traduction}{par lang}>[(#TOTAL_BOUCLE|>{1}|?{' '})
+      <li class="traduction sp sp--puce[ (#EXPOSE)]" lang="#LANG" xml:lang="#LANG" dir="#LANG_DIR">[<span class="lang">(#LANG|traduire_nom_langue)</span> ][(#EXPOSE{'',<a href="#URL_ARTICLE" rel="alternate" hreflang="#LANG">})][(#TITRE)][(#EXPOSE{'',</a>})]</li>
+      ]</BOUCLE_traductions>
+   </ul>
+</li>
+</B_traductions></BOUCLE_article>

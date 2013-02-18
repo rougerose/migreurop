@@ -17,10 +17,7 @@
          list-style-type: none;
          margin-left: 0;
          > li {
-            padding-left: 16px;
-         }
-         .updated {
-            @include font-size(12px);
+            padding-left: 18px;
          }
          a {
             color: #333;
@@ -33,14 +30,24 @@
          text-transform: uppercase;
          padding-left: 0.7em;
          position: relative;
-
       }
       .category.on a {color: $brand-color; font-weight: 700;}
-
       // date publication
-      .updated {text-transform: uppercase; color: #999;}
-
+      .updated {
+         text-transform: uppercase;
+         color: #999;
+      }
       // auteur
       .byline {font-style: italic; color: #999;}
-
-      // tags
+      // traductions
+      .box--aside .traductions {
+         @extend %sass-margin-top;
+      }
+         .traduction.on {
+            color: $brand-color;
+         }
+            .lang {
+               text-transform: uppercase;
+               color: #999;
+               @include font-size(14px);
+            }

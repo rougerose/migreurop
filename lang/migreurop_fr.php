@@ -18,6 +18,7 @@
       'info_partager' => 'Partager',
       'info_related' => 'Sur le même sujet',
       'info_themes' => 'Thèmes',
+      'info_traductions' => 'Traductions disponibles',
 
       // M
       'more' => 'La suite',
