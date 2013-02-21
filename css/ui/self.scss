@@ -39,6 +39,12 @@
    }
 
    .url-site {
+      padding-left: 21px;
+   }
+   a.url-site {
       display: inline-block;
       margin-top: $base-spacing-unit;
+   }
+   p.url-site {
+      margin-left: $base-spacing-unit * 2;
    }

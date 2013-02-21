@@ -1,0 +1,50 @@
+<BOUCLE_site(SITES){id_syndic}>
+<article class="self site cf">
+   <div class="g one-whole">
+      <header class="landmark">
+            <h1 class="self__titre entry-title titre">#NOM_SITE</h1>
+      </header>
+   </div><!-- .g one-whole -->
+   <div class="g desk-three-tenths rev">
+      <aside>
+         <ul class="meta-publi box--aside">
+            <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+            <li class="category on mbr"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+            </BOUCLE_rubrique>
+            <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
+         </ul>
+      </aside>
+   </div>
+
+   <div class="g one-whole desk-six-tenths">
+      <div class="self__body entry-content contenu surlignable">
+         <div class="texte txt">
+            [(#DESCRIPTIF|image_reduire{600,0})]
+         </div><!-- .texte -->
+         <p class="url-site sp sp--puce--alt"><a href='#URL_SITE' class="">#URL_SITE</a></p>
+
+         [<aside class="notes txt">
+            <div class="gw">
+               <div class="g desk-one-half">
+                  <h1 class="spip"><:info_notes:></h1>
+                  (#NOTES)
+               </div>
+            </div>
+         </aside>]
+      </div><!-- .self__body -->
+   </div><!-- .g one-whole desk-six-tenths -->
+
+   <div class="g desk-three-tenths rev">
+      <aside>
+         <ul class="meta-publi box-aside">
+            [(#PLUGIN{socialtags}|oui)
+            <li class="share mbr">
+               <h1 id="share" class="intertitre sp sp--share"><:migreurop:info_partager:></h1>
+            </li>]
+            [(#INCLURE{fond=liste/mots-objet,id_syndic})]
+            [(#INCLURE{fond=liste/sites-relation,id_syndic})]
+         </ul>
+      </aside>
+   </div>
+</article><!-- .self -->
+</BOUCLE_site>

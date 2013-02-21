@@ -1,0 +1,18 @@
+[(#REM)
+   Les sites en relation avec le site
+   ======================================
+][
+
+(#REM) les mots-clés du site ]
+<BOUCLE_mots(MOTS){id_syndic}>#SET_PUSH{mots,#ID_MOT}</BOUCLE_mots>
+
+<B_sites_100>
+<li class="related mbr">
+   <h1 class="intertitre sp sp--related"><:migreurop:info_related:></h1>
+   <ul class="liste-items">
+      <BOUCLE_sites_100(SITES){mots 100% #GET{mots}}{!par date}{0,3}{exclus}>
+      <li class="sp sp--puce"><a href="[(#ID_SYNDIC|generer_url_entite{site})]">- #NOM_SITE</a>[ <time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">\((#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})\)</time>]</li>
+      </BOUCLE_sites_100>
+   </ul>
+</li>
+</B_sites_100>
