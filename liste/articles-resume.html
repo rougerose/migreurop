@@ -1,7 +1,7 @@
 <B_articles>
 <section>
    #ANCRE_PAGINATION
-   [<nav class="pagination haut[ (#ENV{pagination_align})]">(#PAGINATION{li})</nav>]
+   [<nav class="pagination haut[ (#ENV{pagination_align})] mbr">(#PAGINATION{li})</nav>]
    <ul class="objets-selection">
       <BOUCLE_articles(ARTICLES){id_rubrique?}{id_mot?}{lang}{tri #ENV{tri,titre},#ENV{sens,1}}{pagination #ENV{pagination,20}}>
       [<li>
@@ -9,6 +9,6 @@
       </li>]
       </BOUCLE_articles>
    </ul>
-   [<nav class="pagination bas[ (#ENV{pagination-align})]">(#PAGINATION{li})</nav>]
+   [<nav class="pagination bas[ (#ENV{pagination-align})] mbr">(#PAGINATION{li})</nav>]
 </section>
 </B_articles>
