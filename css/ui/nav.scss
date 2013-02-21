@@ -117,5 +117,8 @@
       }
    }
    .nav__plan .nav--item.on {
+      > a {
+         color: $brand-color;
+      }
       &:before {color: $brand-color; font-weight: bold;}
    }

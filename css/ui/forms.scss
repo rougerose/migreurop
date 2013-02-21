@@ -1,0 +1,181 @@
+/*   =FORMS
+   ------------------------------------------------------ */
+   /* Styles communs */
+   label,
+   input,
+   button,
+   select,
+   textarea {
+     @include font-size($base-font-size);
+     font-weight: normal;
+   }
+
+   input,
+   button,
+   select,
+   textarea {
+     font-family: $brand-face;
+   }
+
+   select,
+   textarea,
+   input[type="text"],
+   input[type="password"],
+   input[type="datetime"],
+   input[type="datetime-local"],
+   input[type="date"],
+   input[type="month"],
+   input[type="time"],
+   input[type="week"],
+   input[type="number"],
+   input[type="email"],
+   input[type="url"],
+   input[type="search"],
+   input[type="tel"],
+   input[type="color"] {
+      display: inline-block;
+      height: $base-spacing-unit;
+      padding: 4px 6px;
+      margin-bottom: $base-spacing-unit / 2;
+      color: #555;
+      @include vendor(border-radius, $inputBorderRadius);
+      vertical-align: middle;
+   }
+
+   // Reset appearance properties for textual inputs and textarea
+   input,
+   textarea,
+   .uneditable-input {
+     width: 206px; // plus 12px padding and 2px border
+   }
+   // Reset height since textareas have rows
+   textarea {
+     height: auto;
+   }
+   // Everything else
+   textarea,
+   input[type="text"],
+   input[type="password"],
+   input[type="datetime"],
+   input[type="datetime-local"],
+   input[type="date"],
+   input[type="month"],
+   input[type="time"],
+   input[type="week"],
+   input[type="number"],
+   input[type="email"],
+   input[type="url"],
+   input[type="search"],
+   input[type="tel"],
+   input[type="color"] {
+     background-color: $inputBackground;
+     border: 1px solid $inputBorder;
+     @include vendor(border-shadow, inset 0 1px 1px rgba(0,0,0,.075));
+     @include vendor(transition, border linear .2s, box-shadow linear .2s);
+
+     // Focus state
+     &:focus {
+       border-color: rgba(82,168,236,.8);
+       outline: 0;
+       outline: thin dotted \9; /* IE6-9 */
+       @include vendor(box-shadow, inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+     }
+   }
+
+   // Position radios and checkboxes better
+   input[type="radio"],
+   input[type="checkbox"] {
+     margin: 4px 0 0;
+     line-height: normal;
+   }
+
+   // Reset width of input images, buttons, radios, checkboxes
+   input[type="file"],
+   input[type="image"],
+   input[type="submit"],
+   input[type="reset"],
+   input[type="button"],
+   input[type="radio"],
+   input[type="checkbox"] {
+     width: auto; // Override of generic input selector
+   }
+
+   // Set the height of select and file controls to match text inputs
+   select,
+   input[type="file"] {
+     height: $inputHeight; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+     *margin-top: 4px; /* For IE7, add top margin to align select with labels */
+     line-height: $inputHeight;
+   }
+
+   // Make select elements obey height by applying a border
+   select {
+     width: 110px; // default input width + 10px of padding that doesn't get applied
+     border: 1px solid $inputBorder;
+     background-color: $inputBackground; // Chrome on Linux and Mobile Safari need background-color
+   }
+
+   // Make multiple select elements height not fixed
+   select[multiple],
+   select[size] {
+     height: auto;
+   }
+
+   // Focus for select, file, radio, and checkbox
+   select:focus,
+   input[type="file"]:focus,
+   input[type="radio"]:focus,
+   input[type="checkbox"]:focus {
+      outline: thin dotted #333;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+   }
+
+
+   /* .form-inline */
+   .form-inline {
+      input,
+      textarea,
+      select,
+      .boutons,
+      .legend,
+      .form-fields {
+         display: inline-block;
+         margin-bottom: 0;
+         vertical-align: middle;
+      }
+      //.legend {vertical-align: top;}
+      label,
+      .label,
+      .form-fields > li {
+         display: inline-block;
+         margin-bottom: 0;
+      }
+   }
+
+
+   /* form-tri */
+   .form-tri {
+      font-family: $condensed-face;
+      text-align: right;
+      background-color: #f5f5f5;
+      padding: 4px;
+      //@extend %sass-margin-bottom;
+      @include vendor(border-radius, 2px);
+      box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 5px rgba(0, 0, 0, 0.1);
+
+      .legend, label {
+         color: #ccc;
+         text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+         line-height: .5em;
+         text-transform: uppercase;
+      }
+      .legend {
+         color: rgba(0,0,0,0.4);
+      }
+      label {
+         color: rgba(0,0,0,0.6);
+         margin-left: $base-spacing-unit;
+         margin-right: $base-spacing-unit/2;
+      }
+   }

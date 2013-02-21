@@ -1,0 +1,14 @@
+<BOUCLE_site(SITES){id_syndic}>
+<article class="hentry simple">
+   <header class="header">
+      <h1 class="entry-title"><a href="[(#ID_SYNDIC|generer_url_entite{site})]">#NOM_SITE</a></h1>
+   </header>
+   <div class="entry-content[ (#ENV{contexte}|=={principal}|oui)media]">
+      [(#LOGO_SITE||image_reduire{104,0}|inserer_attribut{class,media__img spip_logos})]
+      <p[(#LOGO_SITE|et{#ENV{contexte}|=={principal}}|oui) class="media__body"]>
+         [(#DESCRIPTIF|PtoBR) <a href="[(#ID_SYNDIC|generer_url_entite{site})]" class="suite--link"><:migreurop:more:></a> <br />]
+         [<a href="#URL_SITE" class="url-site">(#URL_SITE)</a>]
+      </p>
+   </div><!-- .entry -->
+</article>
+</BOUCLE_site>

@@ -1,0 +1,14 @@
+<B_sites_mots>
+<section>
+   #ANCRE_PAGINATION
+   [<nav class="pagination haut[ (#ENV{pagination_align})]">(#PAGINATION{li})</nav>]
+   <ul class="objets-selection">
+      <BOUCLE_sites_mots(SITES){id_rubrique}{mots}{par nom_site}{pagination #ENV{pagination,10}}>
+      [<li class="item">
+         (#INCLURE{fond=inclure/site-resume,contexte=#ENV{contexte},id_syndic})
+      </li>]
+      </BOUCLE_sites_mots>
+   </ul>
+   [<nav class="pagination bas[ (#ENV{pagination-align})]">(#PAGINATION{li})</nav>]
+</section>
+</B_sites_mots>

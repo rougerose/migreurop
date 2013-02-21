@@ -69,6 +69,11 @@ $micro-size:        10px!default;
     $brand-color:       #bb1622!default;
     $noir-bleu:         #1d2326!default;
     $rouge-hover:       #bb1622!default;
+    $linkColor: $brand-color !default;
+    $white : #fff !default;
+    $orange:                #f89406 !default;
+    $grayDarker:            #222 !default;
+    $grayDark:              #333 !default;
 
  // fonts
  $brand-face:        "PT Sans", "Helvetica Neue", sans-serif!default;
@@ -84,3 +89,32 @@ $base-spacing-unit: $base-line-height!default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
 $quater-spacing-unit: $base-spacing-unit / 4!default;
 $line-height-ratio: $base-line-height / $base-font-size;
+
+/* formulaires */
+$inputBackground: #fff!default;
+$inputBorder: #ccc!default;
+$inputBorderRadius : 3px!default;
+$inputHeight:  $base-line-height !default;
+
+/* boutons */
+$btnBackground:                     $white !default;
+$btnBackgroundHighlight:            darken($white, 10%) !default;
+$btnBorder:                         #ccc !default;
+
+$btnPrimaryBackground:              $linkColor !default;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
+
+$btnInfoBackground:                 #5bc0de !default;
+$btnInfoBackgroundHighlight:        #2f96b4 !default;
+
+$btnSuccessBackground:              #62c462 !default;
+$btnSuccessBackgroundHighlight:     #51a351 !default;
+
+$btnWarningBackground:              lighten($orange, 15%) !default;
+$btnWarningBackgroundHighlight:     $orange !default;
+
+$btnDangerBackground:               #ee5f5b !default;
+$btnDangerBackgroundHighlight:      #bd362f !default;
+
+$btnInverseBackground:              #444 !default;
+$btnInverseBackgroundHighlight:     $grayDarker !default;

@@ -37,3 +37,8 @@
    .self .meta-publi {
       @extend .nav--stacked;
    }
+
+   .url-site {
+      display: inline-block;
+      margin-top: $base-spacing-unit;
+   }

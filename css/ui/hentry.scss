@@ -46,7 +46,7 @@
          @include vendor(transition, all 0.5s ease-in);
          @include arrow(bottom, left, $noir-bleu);
       }
-      .traductions:hover .langues {opacity: 1;}
+      .flyout--alt:hover .langues {opacity: 1;}
 
       // surcharges taille fleche
       .langues:before, .langues:after {
@@ -95,3 +95,12 @@
       .meta-publi .author, .meta-publi .category {display: none;}
    }
 
+   // hentry simple
+   .hentry.simple {
+      border-bottom: 1px solid #ccc;
+   }
+
+   // hentry media
+   .hentry .media > p {
+      margin-bottom: 0;
+   }

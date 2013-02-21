@@ -1,0 +1,35 @@
+<div id="formulaire_tri_sites" class="formulaire_spip form-tri form-inline landmark">
+   <form method='post' action='#ENV{action}' enctype='multipart/form-data'><div>
+      #ACTION_FORMULAIRE{#ENV{action}}
+      <BOUCLE_tagshidden(MOTS){id_mot IN #ENV{mots}}>
+      <input type="hidden" name="mots[]" value="#ID_MOT" />
+      </BOUCLE_tagshidden>
+      <h2 class="legend epsilon">Trier par</h2>
+      <ul id="tri" class="form-fields">
+         <B_categories>
+         <li>
+            <label for=champ_categorie>Catégorie</label>
+            <select name="mots[0]" id="champ_categorie" onchange="if((this.value != '')[ && (this.value != (#ENV{mots}|table_valeur{0}))]){this.form.submit()};">
+               <option value="0"[ (#ENV{mots}|table_valeur{0}|=={''}|oui)selected='selected']>Toutes</option>
+               <BOUCLE_categories(MOTS mots_liens){objet=site}{id_groupe=16}{par titre}>
+               <option value="#ID_MOT"[ (#ID_MOT|in_array{#ENV{mots}}|oui)selected='selected']>#TITRE</option>
+               </BOUCLE_categories>
+            </select>
+         </li>
+         </B_categories>
+         <B_pays>
+         <li>
+            <label for="champ_pays">Pays</label>
+            <select name="mots[1]" id="champ_pays" onchange="if((this.value != '')[ && (this.value != (#ENV{mots}|table_valeur{1}))]){this.form.submit()};">
+               <option value="0"[ (#ENV{mots}|table_valeur{1}|=={''}|oui)selected='selected']>Tous</option>
+               <BOUCLE_pays(MOTS mots_liens){objet=site}{id_groupe=6}{par titre}>
+               <option value="#ID_MOT"[ (#ID_MOT|in_array{#ENV{mots}}|oui)selected='selected']>#TITRE</option>
+               </BOUCLE_pays>
+            </select>
+         </li>
+         </B_pays>
+      </ul>
+      <input type="hidden" value="#tri">
+      <p class="boutons"><input type="submit" class="submit btn btn--tri_sites" value="<:pass_ok:>" /></p>
+   </div></form>
+</div>
