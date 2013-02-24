@@ -23,16 +23,18 @@
          position: relative;
          padding: 3px 7px 3px 7px;
       }
-      > li.on a {
-         color: #fff;
-         background: $brand-color;
-         text-transform: uppercase;
-         font-weight: 700;
-         @include font-size(12px);
-         padding-left: 30px;
+      > li.on {
+         a {
+            color: #fff;
+            background: $brand-color;
+            text-transform: uppercase;
+            font-weight: 700;
+            @include font-size(12px);
+            padding-right: 0;
+         }
       }
-      > li.on + li > a {padding-left: 23px;}
-      > li.on a:before, > li.on a:after {
+      > li.on + li > a {padding-left: 15px;}
+      /*> li.on a:before, > li.on a:after {
          content: " ";
          display: block;
          width: 0;
@@ -52,25 +54,6 @@
          border-left: 16px solid $brand-color;
          margin-top: -60px;
          z-index: 2;
-      }
+      }*/
       > li:first-child a {padding-left: 6px; padding-right: 0;}
    }
-   /*
-   .pill--round__more, .pill--round__less {
-      background: url(../img/migreurop-sprite.svg) no-repeat 0 -96px;
-      cursor: pointer;
-      height: 16px;
-      width: 16px;
-      display: inline-block;
-      text-indent: -9999em;
-      line-height: 1em;
-      @include vendor(transition, none);
-   }
-   .pill--round__less {background-position: 0px -112px;}
-   .pill--round__more:hover {
-      background-position: -16px -96px;
-   }
-   .pill--round__less:hover {
-      background-position: -16px -112px;
-   }
-*/
