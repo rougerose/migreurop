@@ -3,12 +3,12 @@
    // core
    .btn {
       @extend .btn;
-      padding: 4px 12px;
+      padding: 0 4px;
       margin-bottom: 0; // For input.btn
       text-align: center;
       vertical-align: middle;
-      //font-size: $base-font-size;
-      //line-height: $base-line-height;
+      font-size: $base-font-size;
+      line-height: $base-line-height;
       @include buttonBackground($btnBackground, $btnBackgroundHighlight, $grayDark, 0 1px 1px rgba(255,255,255,.75));
       border: 1px solid #ccc;
       border-bottom-color: darken(#ccc, 10%);
@@ -26,9 +26,6 @@
        // behind the gradient (there for IE<=9 fallback) gets mismatched
        @include vendor(transition, background-position .1s linear);
      }
-
-     // Focus state for keyboard and accessibility
-     //&:focus {.tab-focus();}
 
      // Active state
      &.active,

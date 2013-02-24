@@ -37,7 +37,7 @@
       <aside>
          <ul class="meta-publi box--aside">
             <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-            <li class="category on mbr"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+            <li class="category cat--item on mbr"><a href="#URL_RUBRIQUE">#TITRE</a></li>
             </BOUCLE_rubrique>
             <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
             <B_auteurs><li class="byline author vcard"><:caap:par:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>

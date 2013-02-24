@@ -74,6 +74,8 @@ $micro-size:        10px!default;
     $orange:                #f89406 !default;
     $grayDarker:            #222 !default;
     $grayDark:              #333 !default;
+    $grayLight:             #999 !default;
+    $grayLighter:           #eee !default;
 
  // fonts
  $brand-face:        "PT Sans", "Helvetica Neue", sans-serif!default;
@@ -94,7 +96,12 @@ $line-height-ratio: $base-line-height / $base-font-size;
 $inputBackground: #fff!default;
 $inputBorder: #ccc!default;
 $inputBorderRadius : 3px!default;
-$inputHeight:  $base-line-height !default;
+$inputHeight:  $base-line-height + 6px !default;
+
+// Input placeholder text color
+// -------------------------
+$placeholderText:         #ccc !default;
+
 
 /* boutons */
 $btnBackground:                     $white !default;

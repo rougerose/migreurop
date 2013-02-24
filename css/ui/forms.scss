@@ -34,20 +34,13 @@
    input[type="tel"],
    input[type="color"] {
       display: inline-block;
-      height: $base-spacing-unit;
-      padding: 4px 6px;
+      padding: 0 6px;
       margin-bottom: $base-spacing-unit / 2;
       color: #555;
       @include vendor(border-radius, $inputBorderRadius);
       vertical-align: middle;
    }
 
-   // Reset appearance properties for textual inputs and textarea
-   input,
-   textarea,
-   .uneditable-input {
-     width: 206px; // plus 12px padding and 2px border
-   }
    // Reset height since textareas have rows
    textarea {
      height: auto;
@@ -103,14 +96,12 @@
    // Set the height of select and file controls to match text inputs
    select,
    input[type="file"] {
-     height: $inputHeight; /* In IE7, the height of the select element cannot be changed by height, only font-size */
      *margin-top: 4px; /* For IE7, add top margin to align select with labels */
      line-height: $inputHeight;
    }
 
    // Make select elements obey height by applying a border
    select {
-     width: 110px; // default input width + 10px of padding that doesn't get applied
      border: 1px solid $inputBorder;
      background-color: $inputBackground; // Chrome on Linux and Mobile Safari need background-color
    }
@@ -131,6 +122,11 @@
       outline-offset: -2px;
    }
 
+   // Placeholder
+   input,
+   textarea {
+     @include placeholder();
+   }
 
    /* .form-inline */
    .form-inline {
@@ -144,7 +140,6 @@
          margin-bottom: 0;
          vertical-align: middle;
       }
-      //.legend {vertical-align: top;}
       label,
       .label,
       .form-fields > li {
@@ -160,15 +155,14 @@
       text-align: right;
       background-color: #f5f5f5;
       padding: 4px;
-      //@extend %sass-margin-bottom;
       @include vendor(border-radius, 2px);
       box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 5px rgba(0, 0, 0, 0.1);
 
       .legend, label {
          color: #ccc;
          text-shadow: 0 1px 1px rgba(255,255,255,0.5);
-         line-height: .5em;
          text-transform: uppercase;
+         vertical-align: middle;
       }
       .legend {
          color: rgba(0,0,0,0.4);
@@ -177,5 +171,33 @@
          color: rgba(0,0,0,0.6);
          margin-left: $base-spacing-unit;
          margin-right: $base-spacing-unit/2;
+      }
+   }
+
+   /* form-search */
+   .form-search {
+      position: relative;
+      label,
+      .search {
+         @include font-size(13px);
+      }
+      label {
+         position: absolute;
+         left: -9999px;
+      }
+      .search {
+         margin-bottom: 0;
+         padding: 0 0 0 22px;
+         width: 128px;
+         background: $noir-bleu url(../img/search.png) no-repeat 2px -27px;
+         border-color: $noir-bleu;
+         color: #ddd;
+         text-transform: uppercase;
+         @include vendor(transition, background-color 0.5s ease-in-out);
+         &:focus {
+            background-color: #fff;
+            background-position: 2px 1px;
+            color: #555;
+         }
       }
    }

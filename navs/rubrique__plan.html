@@ -1,15 +1,15 @@
 <B_rubriques>
 <nav id="np" class="nav__plan">
    <h1 class="intertitre nav__plan--titre sp sp--map">Plan de la rubrique</h1>
-   <ul>
+   <ul class="nav nav--stacked">
       <BOUCLE_rubriques(RUBRIQUES){racine}{par num titre, titre}>
       <BOUCLE_test_rubrique_courante(RUBRIQUES){id_rubrique}>#EXPOSE{' '}</BOUCLE_test_rubrique_courante>
-      <li class="nav--item[ (#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)on]">
+      <li class="nav--item cat--item[ (#ENV{id_secteur}|=={#ID_RUBRIQUE}|oui)on]">
          <a href="#URL_RUBRIQUE">#TITRE</a>
          <B_sous_rubriques>
-         <ul>
+         <ul class="nav nav--stacked">
             <BOUCLE_sous_rubriques(RUBRIQUES){id_parent}{par num titre, titre}><BOUCLE_test_expose(RUBRIQUES){id_enfant}>#EXPOSE{' '}</BOUCLE_test_expose>
-            <li class="nav--item[ (#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)on]">
+            <li class="nav--item cat--item[ (#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)on]">
                <a href="#URL_RUBRIQUE">#TITRE</a>
             </li>
             </B_test_expose></BOUCLE_sous_rubriques>

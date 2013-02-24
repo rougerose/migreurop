@@ -3,10 +3,11 @@
    .pagination {
       @extend .form-tri;
       > ul {
-         @extend .nav;
+         list-style:none;
          display: inline;
          margin-left: 12px;
       }
+      li,
       li > strong {
          display:inline-block;
         *display:inline;

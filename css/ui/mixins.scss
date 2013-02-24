@@ -2,6 +2,21 @@
    ------------------------------------------------------ */
    // Repris de la version scss de Bootstrap
 
+   // Placeholder text
+   // -------------------------
+   @mixin placeholder($color: $placeholderText) {
+     &:-moz-placeholder {
+       color: $color;
+     }
+     &:-ms-input-placeholder {
+       color: $color;
+     }
+     &::-webkit-input-placeholder {
+       color: $color;
+     }
+   }
+
+
    // BACKGROUNDS
    // --------------------------------------------------
 

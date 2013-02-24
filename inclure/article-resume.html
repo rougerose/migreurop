@@ -32,7 +32,7 @@
          (#MODELE{article-auteurs})
       </li>]
       [(#MODELE{article-resume-traductions})]
-      [<li class="category"><a href="[(#INFO_URL{rubrique,#ID_RUBRIQUE})]">(#INFO_TITRE{rubrique,#ID_RUBRIQUE})</a></li>]
+      [<li class="category cat--item"><a href="[(#INFO_URL{rubrique,#ID_RUBRIQUE})]">(#INFO_TITRE{rubrique,#ID_RUBRIQUE})</a></li>]
    </ul>
    [(#ENV{contexte}|=={ouverture}|oui)</div></div></div><!-- .wrap -->
       [(#INCLURE{fond=inclure/article-resume-logo,id_article,contexte=#ENV{contexte},conteneur=#ENV{conteneur}})] ]

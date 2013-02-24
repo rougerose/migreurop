@@ -144,27 +144,30 @@ $(document).ready(function(){
    // ======================================
    $("#barrenav .nav").each(function(){
       var $items = $(this).children(".nav--item"),
-      $haschild = $items.children("ul").before('<span class="ouvrir" />').parent().addClass("haschild"),
-      $ouvrir = $haschild.children("span"),
-      $dropdown = $items.children("ul");
+      $haschild = $items.children(".dropdown"),
+      $ul_child = $haschild.filter("ul");
 
-      function ouvrir_dropdown(){
-         var index = $ouvrir.index(this),
-         dd = $dropdown.eq(index);
+      $ul_child.before('<span class="open s s--dd" />');
+      var $opens = $items.children("span");
+
+      function open_dropdown(){
+         var index = $opens.index(this),
+         dd = $haschild.eq(index);
          if (dd.is(".active")) {
             $(this).removeClass("active");
             dd.removeClass("active");
             return false;
          }
-         $dropdown.removeClass("active");
-         $ouvrir.removeClass("active");
+         $haschild.removeClass("active");
+         $opens.removeClass("active");
          $(this).addClass("active");
-         dd.addClass('active');
+         dd.addClass("active");
          return false;
       }
-      $ouvrir.click(ouvrir_dropdown);
-      // fermer le menu dropdown éventuellement ouvert lors d'un clic dans la page
-      $("html").click(function(){$dropdown.removeClass("active");});
+
+      $opens.click(open_dropdown);
+      $("html").click(function(){$haschild.removeClass("active"); $opens.removeClass("active");});
+
    });
 
    // ============
@@ -179,7 +182,6 @@ $(document).ready(function(){
       var np = $(this),
       ul = np.children("ul").hide();
       np.click(function(){
-         $(this).toggleClass("open");
          ul.slideToggle("slow");
       });
    });

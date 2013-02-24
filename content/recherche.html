@@ -35,22 +35,22 @@
 <div class="g one-whole desk-six-tenths">
    [(#GET{total}|>{0}|oui)
       [(#GET{articles}|count|>{0}|oui)
-      [<div class="liste articles recherche">
+      [<div class="liste articles recherche landmark">
          (#INCLURE{fond=liste/articles,selection=#GET{articles},contexte=principal,ajax})
       </div>]][
       (#GET{rubriques}|count|>{0}|oui)
-      [<div class="liste rubriques recherche">
+      [<div class="liste rubriques recherche landmark">
          (#INCLURE{fond=liste/rubriques,selection=#GET{rubriques},contexte=principal,ajax})
       </div>]][(#GET{documents}|count|>{0}|oui)
-      [<div class="liste documents recherche">
+      [<div class="liste documents recherche landmark">
          (#INCLURE{fond=liste/documents,selection=#GET{documents},contexte=principal,ajax})
       </div>]][
       (#GET{mots}|count|>{0}|oui)
-      [<div class="liste mots recherche">
+      [<div class="liste mots recherche landmark">
          (#INCLURE{fond=liste/mots,selection=#GET{mots},contexte=principal,ajax})
       </div>]][
       (#GET{sites}|count|>{0}|oui)
-      [<div class="liste sites recherche">
+      [<div class="liste sites recherche landmark">
          (#INCLURE{fond=liste/sites,selection=#GET{sites},contexte=principal,ajax})
       </div>]]
    ]

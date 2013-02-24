@@ -2,7 +2,7 @@
     $RESET
 \*------------------------------------*/
 /**
- * A more considered reset; more of a restart... 
+ * A more considered reset; more of a restart...
  * As per: csswizardry.com/2011/10/reset-restarted
  */
 
@@ -63,14 +63,14 @@ img{
 /**
  * Give form elements some cursor interactions...
  */
-label,
+/*label,
 input,
 textarea,
 button,
 select,
 option{
-    cursor:pointer;
-}
+    //cursor:pointer;
+}*/
     .text-input:active,
     .text-input:focus,
     textarea:active,
