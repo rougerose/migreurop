@@ -1,6 +1,9 @@
 /*   =FLYOUT
    ------------------------------------------------------ */
    // surcharges
+   .flyout--alt {
+      overflow: visible;
+   }
    .flyout--alt:hover > .flyout__content {
       left: 0;
       top: auto;
