@@ -24,7 +24,7 @@ $.fn.carousel = function(){
 
       if (pages > 1) {
          // navigation précédent/suivant
-         carousel.append('<ul class="nav prevnext"><li><a class="previous" /></li><li><a class="next" /></li></ul>');
+         carousel.append('<ul class="nav prevnext"><li><a class="previous s" /></li><li><a class="next s" /></li></ul>');
          var nav_pn = carousel.children(".prevnext");
          // chaîne de langue pour navigation précédent/suivant
          $.getJSON('plugins/migreurop/lang/migreurop.json', function(data) {
@@ -78,7 +78,7 @@ $.fn.carousel = function(){
             var wrap = $(this),
             calque = wrap.find(".calque"),
             header = calque.children("header"),
-            action = $('<span class="action" />'),
+            action = $('<span class="s s--north" />'),
             wrapH = wrap.height(),
             headerH = header.height() + 24,
             masque = wrapH - headerH - 24;
@@ -87,11 +87,11 @@ $.fn.carousel = function(){
             calque.hover(
                function(){
                   wrap.stop().animate({bottom: 0},500);
-                  action.toggleClass("ouvert");
+                  action.removeClass("s--north").addClass("s--south");
                },
                function(){
                   wrap.stop().animate({bottom:-masque},500);
-                  action.toggleClass("ouvert");
+                  action.removeClass("s--south").addClass("s--north");
                }
             );
          });
@@ -180,8 +180,10 @@ $(document).ready(function(){
    // ========================================
    $("#np").each(function(){
       var np = $(this),
+      h1 = np.children("h1"),
       ul = np.children("ul").hide();
       np.click(function(){
+         h1.toggleClass("on");
          ul.slideToggle("slow");
       });
    });

@@ -34,26 +34,5 @@
          }
       }
       > li.on + li > a {padding-left: 15px;}
-      /*> li.on a:before, > li.on a:after {
-         content: " ";
-         display: block;
-         width: 0;
-         height: 0;
-         border-top: 60px solid transparent;
-         border-bottom: 60px solid transparent;
-         position: absolute;
-         left: 100%; top: 50%;
-         margin-top: -60px;
-      }
-      > li.on a:before {
-         border-left: 17px solid #fff;
-         margin-left: 1px;
-         z-index: 1;
-      }
-      > li.on a:after {
-         border-left: 16px solid $brand-color;
-         margin-top: -60px;
-         z-index: 2;
-      }*/
       > li:first-child a {padding-left: 6px; padding-right: 0;}
    }

@@ -25,20 +25,24 @@
       top: 45%;
    }
    .prevnext a {
+      height: 48px;
+      width: 48px;
       text-indent: -9999em;
       cursor: pointer;
       opacity: 0.5;
       position: absolute;
-      background: url(../img/migreurop-sprite.svg) no-repeat 0 0;
+      top: auto;
       @include vendor(transition, opacity 0.5s linear);
       &:hover{opacity:1; top: auto;}
    }
-   .prevnext a {
-      height: 48px;
-      width: 48px;
+   .prevnext .previous {
+      left: 10px;
+      background-position: 0 -32px;
    }
-   .prevnext .previous {left: 10px; background-position: 0 -32px;}
-   .prevnext .next {right: 10px; background-position: -64px -32px;}
+   .prevnext .next {
+      right: 10px;
+      background-position: -48px -32px;
+   }
 
    // navigation par page
    .pages {
@@ -105,25 +109,16 @@
          }
       }
       .calque header {position: relative;}
-      .calque .action {
-         background: url(../img/migreurop-sprite.svg) no-repeat -64px 0;
-         cursor: pointer;
-         height: 16px;
-         width: 16px;
-         display: block;
+      .calque .s {
          position: absolute; top: 0; right: 0;
-         margin-top: -$half-spacing-unit;
+         margin-top: -20px;
       }
-      .calque .action.ouvert {background-position: -64px -16px;}
-
       .hentry .entry-title {
          @include font-size(18px);
       }
       .meta-publi {
          margin-bottom: 0;
       }
-      svg {fill: white;}
-
    }
 
    /* contexte extra */
@@ -137,14 +132,15 @@
          @include vendor(box-sizing, border-box);
       }
       .prevnext {
-         top: 20%;
+         top: 15%;
       }
       .pages {top: 3%; right: 1%; bottom: auto;}
+      .pages > li > a {height: 12px; width: 12px;}
       .prevnext a {
          height: 32px; width: 32px;
       }
-      .prevnext .previous {background-position: 0 0;}
-      .prevnext .next {background-position: -32px 0;}
+      .prevnext .previous {background-position: -96px -16px;}
+      .prevnext .next {background-position: -96px -48px;}
    }
 
    /* contexte portfolio article */

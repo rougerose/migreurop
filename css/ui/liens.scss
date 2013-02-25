@@ -15,3 +15,8 @@
       border-bottom: 1px solid $brand-color;
       margin-left: 4px;
    }
+
+   // more
+   .more, .less {
+      .txt & {border-bottom: none;}
+   }
