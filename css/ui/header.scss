@@ -1,19 +1,13 @@
 /*   =HEADER
    ------------------------------------------------------ */
-   header[role=banner] {
-      width: 100%;
-   }
+   header[role=banner] {width: 100%;}
 
    /* logo Migreurop */
    .logo {
-      margin: 3em 0;
+      margin: 3.5em auto 3em;
       display: block;
-      text-align: center;
    }
-      .logo-migreurop {
-         margin-left: auto;
-         margin-right: auto;
-      }
+      .logo-migreurop {}
 
    /* carousel d'images ou logo de rubrique/article en ouverture de page */
    .ouverture {
