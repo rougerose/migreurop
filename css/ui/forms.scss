@@ -128,6 +128,53 @@
      @include placeholder();
    }
 
+   // CHECKBOXES & RADIOS
+   // -------------------
+
+   // Indent the labels to position radios/checkboxes as hanging
+   .choix {
+     min-height: $base-line-height; // clear the floating input if there is no label text
+     padding-left: 20px;
+   }
+   .choix input[type="radio"],
+   .choix input[type="checkbox"] {
+     float: left;
+     margin-left: -20px;
+     //margin-top: 0;
+   }
+
+   // Label & legend
+   // ---------------
+   legend {
+      text-transform: uppercase;
+   }
+   label, legend {
+      color: #000;
+      font-weight: 700;
+   }
+
+   // Formulaires spip
+   // -----------------
+   .formulaire_spip {
+      @extend %sass-margin-bottom;
+   }
+
+   /* form liste */
+   .formulaire_spip ul {
+      @extend .form-fields;
+   }
+   .formulaire_spip ul > li{
+       @extend %sass-margin-bottom;
+   }
+   .formulaire_spip > li:last-child{
+       margin-bottom:0;
+   }
+
+   /* boutons */
+   .boutons .submit {
+      @extend .btn;
+   }
+
    /* .form-inline */
    .form-inline {
       input,
@@ -160,6 +207,7 @@
 
       .legend, label {
          color: #ccc;
+         font-weight: normal;
          text-shadow: 0 1px 1px rgba(255,255,255,0.5);
          text-transform: uppercase;
          vertical-align: middle;
@@ -177,6 +225,7 @@
    /* form-search */
    .form-search {
       position: relative;
+      margin-bottom: 0;
       label,
       .search {
          @include font-size(13px);
