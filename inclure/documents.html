@@ -15,7 +15,10 @@
    <BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
    <dl class="block-list media">
       <dt>
-         [<a href="#URL_DOCUMENT" class="media__link">(#LOGO_DOCUMENT||inserer_attribut{class,spip_logos media__img})</a>]
+         [(#LOGO_DOCUMENT{vignette}|?{
+            [<a href="#URL_DOCUMENT" class="media__link">(#LOGO_DOCUMENT|image_reduire{150,100}|inserer_attribut{class,spip_logos media__img})</a>],
+            [<a href="#URL_DOCUMENT" class="media__link">(#LOGO_DOCUMENT||inserer_attribut{class,spip_logos media__img})</a>]
+         })]
       </dt>
       <dd class="media__body">
          <h2 class="spip_doc_titre delta"><a href="#URL_DOCUMENT" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:migreurop:info_document:>})]</a></h2>
