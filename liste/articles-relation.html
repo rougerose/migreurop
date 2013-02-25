@@ -10,7 +10,7 @@
 <li class="related mbr">
    <h1 class="intertitre sp sp--related"><:migreurop:info_related:></h1>
    <ul class="liste-items">
-      <BOUCLE_articles_100(ARTICLES){mots 100% #GET{mots}}{!par date}{0,3}{exclus}>
+      <BOUCLE_articles_100(ARTICLES){mots 100% #GET{mots}}{lang}{!par date}{0,3}{exclus}>
       <li class="sp sp--puce"><a href="#URL_ARTICLE">#TITRE</a>[ <time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">\((#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})\)</time>]</li>
       </BOUCLE_articles_100>
    </ul>
@@ -20,7 +20,7 @@
 <li class="related mbr">
    <h1 class="intertitre sp sp--related"><:migreurop:info_related:></h1>
    <ul class="liste-items">
-      <BOUCLE_articles_50(ARTICLES){mots 50% #GET{mots}}{!par date}{0,3}{exclus}>
+      <BOUCLE_articles_50(ARTICLES){mots 50% #GET{mots}}{lang}{!par date}{0,3}{exclus}>
       <li class="sp sp--puce"><a href="#URL_ARTICLE">#TITRE</a>[ <time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">\((#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})\)</time>]</li>
       </BOUCLE_articles_50>
    </ul>
