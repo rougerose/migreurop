@@ -1,0 +1,30 @@
+<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
+<article class="self auteur cf vcard">
+   <div class="g one-whole">
+      <header class="landmark">
+         <h1 class="self__titre entry-title titre fn">#NOM</h1>
+      </header>
+   </div><!-- .g one-whole -->
+
+   <div class="g one-whole desk-six-tenths">
+      <div class="self__body entry-content contenu surlignable">
+         [<div class="texte txt">
+            (#BIO)
+         </div><!-- .texte -->]
+         [<div class="texte txt">
+            <p class="hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="url spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>
+         </div>]
+
+         [<aside class="notes txt">
+            <div class="gw">
+               <div class="g desk-one-half">
+                  <h1 class="spip"><:info_notes:></h1>
+                  (#NOTES)
+               </div>
+            </div>
+         </aside>]
+         #FORMULAIRE_ECRIRE_AUTEUR
+      </div><!-- .self__body -->
+   </div><!-- .g one-whole desk-six-tenths -->
+</article><!-- .self -->
+</BOUCLE_auteur>
