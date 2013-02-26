@@ -4,9 +4,12 @@
    .resultats--message,
    .resultats--detail {
       font-family: $condensed-face;
-      font-weight: 700;
       text-transform: uppercase;
       color: #000;
+   }
+   .resultats--detail {
+      font-weight: 700;
+      border-bottom: 1px solid #000;
    }
    .resultats--message {
       @include font-size($h3-size);

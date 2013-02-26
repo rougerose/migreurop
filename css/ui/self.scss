@@ -20,6 +20,9 @@
       @include font-size(32px);
       font-weight: 700;
    }
+   .rubrique .self__titre,
+   .mot .self__titre,
+   .recherche .self__titre span {text-transform: uppercase;}
    .self__body {
       .txt {
          margin-left: $base-spacing-unit * 2;
