@@ -1,0 +1,17 @@
+<article class="self login cf">
+   <div class="g one-whole">
+      <header class="landmark">
+         <h1 class="self__titre entry-title titre"><:migreurop:changer_passe:></h1>
+      </header>
+   </div><!-- .g one-whole -->
+   <div class="g one-whole desk-six-tenths">
+      <div class="self__body entry-content contenu">
+         [(#ENV{p}|non)
+            #FORMULAIRE_OUBLI
+         ]
+         [(#ENV{p}|oui)
+            #FORMULAIRE_MOT_DE_PASSE
+         ]
+      </div><!-- .self__body -->
+   </div><!-- .g one-whole desk-six-tenths -->
+</article><!-- .self -->
