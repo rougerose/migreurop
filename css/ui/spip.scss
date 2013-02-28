@@ -1,36 +1,5 @@
 /*   =SPIP
    ------------------------------------------------------ */
-   /* headings */
-   h2.spip, h3.spip, h4.spip, h5.spip, h6.spip,
-   .notes h1.spip,
-   .documents h1.spip {
-      font-family: $condensed-face;
-      color: #000;
-      margin-top:2 * $base-spacing-unit;
-      margin-top:(2 * $base-spacing-unit / $base-font-size)*1rem;
-   }
-   h2.spip {
-      @extend .beta;
-      line-height: 1.2;
-   }
-   h3.spip {
-      font-weight: normal;
-   }
-   h4.spip {
-      font-weight: normal;
-      padding-left: 0;
-   }
-   h5.spip {
-      @extend .delta;
-      color: #666;
-      padding-left: 0;
-   }
-   h6.spip {
-      @extend .delta;
-      color: #999;
-      padding-left: 0;
-   }
-
    /* appel de notes */
    .spip_note_ref {color: #000;}
 

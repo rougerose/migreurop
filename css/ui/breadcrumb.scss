@@ -1,6 +1,7 @@
 /*   =BREADCRUMB
    ------------------------------------------------------ */
-   .breadcrumb-nav {
+   /* categories thématiques d'une rubrique */
+   .breadcrumb-nav--categories {
       margin-bottom: $base-spacing-unit;
       background: #ededed;
       background: -moz-linear-gradient(left, rgb(237,237,237) 0%, rgb(246,246,246) 53%, rgb(255,255,255) 100%);
@@ -35,4 +36,25 @@
       }
       > li.on + li > a {padding-left: 15px;}
       > li:first-child a {padding-left: 6px; padding-right: 0;}
+   }
+
+   /* breadcrumb site */
+   .breadcrumb-container {
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #ddd;
+      background-color: #fefefe;
+   }
+   .breadcrumb--path {
+      margin-bottom: 0;
+      padding: $half-spacing-unit 0;
+      > li {
+         text-transform: uppercase;
+         &:before {
+            content:"/ ";
+            color: $pathColor;
+         }
+         &.on {
+            color: $brand-color;
+         }
+      }
    }

@@ -1,0 +1,10 @@
+<div id="#LANG" lang="#LANG" dir="#LANG_DIR">
+   <h1 class="intertitre"><:migreurop:lastest_news:></h1>
+   <B_lang_articles>
+   <ul class="liste-items">
+      <BOUCLE_lang_articles(ARTICLES){lang}{age < 365}{!par date}{0,10}>
+      <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--puce"><a href="#URL_ARTICLE">#TITRE</a>[ <time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">\((#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})\)</time>]</li>
+      </BOUCLE_lang_articles>
+   </ul>
+   </B_lang_articles>
+</div>

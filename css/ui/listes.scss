@@ -24,3 +24,16 @@
          margin-bottom: $base-spacing-unit;
       }
    }
+
+   // ul.liste-items
+   .liste-items {
+      list-style-type: none;
+      margin-left: 0;
+      // li.sp
+      > .sp {
+         padding-left: 18px;
+      }
+      > .sp-rtl {
+         padding-right: 18px;
+      }
+   }

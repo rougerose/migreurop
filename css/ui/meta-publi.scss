@@ -4,9 +4,6 @@
    .meta-publi {
       @extend .nav;
       .intertitre {
-         color: #aaa;
-         text-transform: uppercase;
-         font-family: $condensed-face;
          @include font-size(18px);
          padding-left: 21px;
          margin-left: -21px;
@@ -14,11 +11,6 @@
          position: relative;
       }
       .liste-items {
-         list-style-type: none;
-         margin-left: 0;
-         > li {
-            padding-left: 18px;
-         }
          a {
             color: #333;
             &:hover{color: $rouge-hover;}
@@ -26,6 +18,7 @@
       }
    }
       // rubrique
+      // ---------
       .category {
          &.on a {color: $brand-color; font-weight: 700;}
       }
@@ -35,20 +28,23 @@
          padding-left: 0.7em;
          &:before {
             content: '/';
-            color: #999;
+            color: $pathColor;
             display: block;
             position: absolute;
             left: 0;
          }
       }
       // date publication
+      // ------------------
       .updated {
          text-transform: uppercase;
          color: #999;
       }
       // auteur
+      // -------
       .byline {font-style: italic; color: #999;}
       // traductions
+      // -------------
       .box--aside .traductions {
          @extend %sass-margin-top;
       }

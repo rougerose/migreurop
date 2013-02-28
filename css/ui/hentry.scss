@@ -26,17 +26,10 @@
          color: #777;
          &:hover{color: $rouge-hover;}
       }
-      // traductions
-      // icon
-      /*.icon {
-         position: relative;
-         display: inline-block;
-         height: 16px;
-         width: 16px;
-         top: 2px;
-         margin-right: 2px;
-      }*/
+      // Traductions
+      // ===============
       // tooltip flyout
+      // ---------------
       .langues {
          color: #ccc;
          background-color: $noir-bleu;
@@ -55,7 +48,7 @@
       }
       // tooltip contenu
       .langues .zeta {
-         color: #999;
+         color: #88A3B2;
          text-transform: uppercase;
          margin-bottom: 0;
       }

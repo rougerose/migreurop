@@ -2,7 +2,7 @@
 [(#REM) récup. du groupe mots-clés de navigation thematique de la rubrique ainsi que le groupe transversal -- id_groupe=12 ]
 <BOUCLE_groupe_rubrique(GROUPES_MOTS){titre==#TITRE}>[(#SET{id_groupe,#ID_GROUPE})]</BOUCLE_groupe_rubrique>
 <B_mots>
-<nav class="breadcrumb-nav">
+<nav class="breadcrumb-nav--categories">
    <ul class="nav breadcrumb--categories">
       <li class="#EXPOSE"><a href="[(#URL_RUBRIQUE|ancre_url{content})]"[(#EXPOSE|oui) class="sp--alt sp--bc"]>#TITRE </a></li>
       <BOUCLE_env_mot(MOTS){id_mot IN #ENV{mot}}>

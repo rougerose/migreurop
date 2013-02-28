@@ -3,12 +3,12 @@
 <BOUCLE_selection(ARTICLES pb_selection){lang}{par ordre}{spip_pb_selection.id_rubrique=#ID_RUBRIQUE}>#SET_PUSH{selection,#ID_ARTICLE}</BOUCLE_selection>
 
 <BOUCLE_condition_archives(CONDITION){si #GET{archives}|oui}>
-<div id="tabs-rubrique-principal" class="tabs tabs-principal">
-   <ul class="tabs__nav">
+<div id="tabs-rubrique-principal" class="tabs tabs-top tabs-principal">
+   <ul class="tabs-top__nav tabs__nav">
       [(#GET{selection}|oui)<li><a href="#tab-une">A la une</a></li>]
       <li><a href="#tab-articles">Tous les articles</a></li>
    </ul>
-   <div class="tabs__body">
+   <div class="tabs-top__body tabs__body">
       [<div id="tab-une">
          (#GET{selection}|oui) <INCLURE{fond=liste/articles-selection,selection=#GET{selection},ajax,conteneur=principal,pagination=5} />
       </div>]

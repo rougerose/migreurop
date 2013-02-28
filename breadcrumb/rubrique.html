@@ -1,0 +1,9 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+<ul class="nav  breadcrumb--path">
+   <li><a href="#URL_SITE_SPIP/"><:accueil_site:></a></li>
+   <BOUCLE_bc(HIERARCHIE){id_rubrique}>
+   <li><a href="#URL_RUBRIQUE">[(#TITRE)]</a></li>
+   </BOUCLE_bc>
+   <li class="on"><span>[(#TITRE|couper{50})]</span></li>
+</ul>
+</BOUCLE_rubrique>

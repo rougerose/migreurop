@@ -1,0 +1,13 @@
+// ================================================
+// = Footer : dernieres news, activation easytabs =
+// ================================================
+
+// La langue de l'environnement est passée en parametre
+$('#tabs-news').easytabs({defaultTab:["li#(#ENV{default})"]});
+$('#tabs-news').bind('easytabs:before', function(evt, tab, panel, data) {
+   var h = tab.parents("ul").outerHeight(true);
+   panel.css({'min-height':h});
+});
+// une hauteur minimum pour .tabs-side__body
+var h = $("#tabs-news").children("ul").outerHeight(true);
+$("#tabs-news").children("div.tabs-side__body").css({'min-height':h});

@@ -53,13 +53,42 @@
             background-position: -16px 0;
          }
       }
-
+   }
+   // mail
+   .sp--mail {
+      &:before {
+         background-position: -64px -16px;
+      }
+   }
+   // coordonnees
+   .sp--address {
+      &:before {
+         background-position: -80px -16px;
+      }
    }
    // partagez
    .sp--share {
       &:before {
          width: 17px;
          background-position: -48px 0;
+      }
+   }
+   // facebook
+   .sp--fb {
+      &:before {
+         background-position: -128px -16px;
+      }
+   }
+   // twitter
+   .sp--tw {
+      &:before {
+         background-position: -128px -32px;
+      }
+   }
+   // liste de diffusion migreurop
+   .sp--ld {
+      &:before {
+         background-position: -128px -48px;
       }
    }
    // puces
@@ -73,6 +102,14 @@
       &:before {
          width: 14px;
          background-position: -112px 0;
+      }
+   }
+   // back to top
+   .sp--top {
+      &:after {
+         background-position: 0 -80px;
+         width: 32px;
+         top: 2px;
       }
    }
    // traductions
@@ -127,4 +164,24 @@
       height: 48px;
       width: 48px;
       background-position: -48px -32px;
+   }
+
+   // RIGHT TO LEFT
+   // --------------
+   .sp-rtl {
+      position: relative;
+      &:after{
+         content: '';
+         height: 16px;
+         width: 16px;
+         background: url(../img/migreurop-sprite.png) no-repeat 0 0;
+         position: absolute; right: 0; top: 2px;
+         display: block;
+      }
+      &.sp--puce {
+         &:after {
+            width: 14px;
+            background-position: -66px 0;
+         }
+      }
    }

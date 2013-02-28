@@ -10,10 +10,10 @@
 
       // C
       'communiques_presse' => 'Communiqués de presse',
-      'contact_address' => 'Toutes nos coordonnées',
-      'contact_mail' => 'Par mail',
-      'contact_us' => 'Nous contacter',
-      'credits' => 'Réalisé avec <a href="http://spip.net">SPIP</a>. Conception graphique par <a href="http://rouge-rose.net">christophe le drean</a>.',
+      'contact_address' => 'Our address',
+      'contact_mail' => 'By mail',
+      'contact_us' => 'Contact us',
+      'credits' => 'Made with <a href="http://spip.net">SPIP</a>. Design by <a href="http://rouge-rose.net">christophe le drean</a>.',
 
       // I
       'info_document' => 'Document',
@@ -25,7 +25,7 @@
       'info_traductions' => 'Traductions disponibles',
 
       // L
-      'lastest_news' => 'Dernières actualités',
+      'lastest_news' => 'Latest news',
 
       // M
       'more' => 'La suite',
@@ -53,9 +53,10 @@
 
       // S
       'social_facebook' => 'Facebook',
-      'social_follow_us' => 'Nous suivre',
+      'social_follow_us' => 'Follow us',
       'social_twitter' => "Twitter",
-      'social_mailing_list' => 'Liste de diffusion',
+      'social_mailing_list' => 'Mailing list',
+
 
       // T
       'translations' => 'Traductions disponibles'

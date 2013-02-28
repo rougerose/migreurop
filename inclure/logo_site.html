@@ -1,0 +1,16 @@
+[(#ENV{bloc}|=={footer}|oui)
+   [(#SET{fichier,
+      [(#CHEMIN{img/migreurop_observatoire_frontieres_alt.png}
+         |balise_img{[(#NOM_SITE_SPIP|texte_backend)[ (#SLOGAN_SITE_SPIP|texte_backend)]],logo-migreurop}
+         |image_reduire{400,0})]
+   })]
+][(#ENV{bloc}|=={header}|oui)
+  [(#SET{fichier,
+     [(#CHEMIN{img/migreurop_observatoire_frontieres.png}
+        |balise_img{[(#NOM_SITE_SPIP|texte_backend)[ (#SLOGAN_SITE_SPIP|texte_backend)]],logo-migreurop}
+        |image_reduire{600,0})]
+  })]
+]
+[<a href="#URL_SITE_SPIP" class="logo" rel="start home" style="[width:(#GET{fichier}|largeur)px;][ height:(#GET{fichier}|hauteur)px;]">
+   (#GET{fichier})
+</a>]

@@ -1,0 +1,56 @@
+/*   =PAGE-FOOT
+   ------------------------------------------------------ */
+   .page-foot {
+      background-color: $noir-bleu;
+      padding: $base-spacing-unit 0 0;
+      color: $pageFootColor;
+      border-top: 1px solid #000;
+      .intertitre {
+         color: #355E73;
+         @include font-size(26px);
+         margin: $half-spacing-unit/2 0;
+      }
+      .social {
+         > .sp {
+            padding-left: 22px;
+            text-transform: uppercase;
+            @include font-size(14px);
+         }
+      }
+      .updated {
+         color: $pageFootColor;
+         @include font-size(13px);
+      }
+      a {
+         color: #ddd;
+         &:hover{color: $rouge-hover;}
+         &.sp--top {
+            text-transform: uppercase;
+            @include font-size(18px);
+            font-family: $condensed-face;
+            padding-right: 32px;
+            margin-top: 2em;
+            display: inline-block;
+         }
+      }
+   }
+   // credits
+   .credits {
+      text-align: right;
+      @include font-size(12px);
+      color: #444;
+      margin-bottom: 0;
+      a {
+         color: #666;
+      }
+   }
+   // signature du site
+   .signature {
+      border-top: 2px solid darken(#111,10%);
+      background-color: #111;
+      margin-top: $base-spacing-unit/2;
+      padding-bottom: 1em;
+      .logo {
+         margin: 0 auto;
+      }
+   }
