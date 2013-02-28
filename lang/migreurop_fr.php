@@ -9,6 +9,7 @@
       'by' => 'Par',
 
       // C
+      'changer_passe' => 'Changer votre mot de passe',
       'communiques_presse' => 'Communiqués de presse',
       'contact_address' => 'Toutes nos coordonnées',
       'contact_mail' => 'Par mail',
@@ -28,6 +29,7 @@
       'lastest_news' => 'Dernières actualités',
 
       // M
+      'message_404' => 'La page ou le document que vous demandez est introuvable sur le site&hellip;',
       'more' => 'La suite',
 
       // P
