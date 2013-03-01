@@ -1,4 +1,4 @@
-<div id="formulaire_tri_sites" class="formulaire_spip form-tri form-inline landmark">
+<div id="formulaire_tri_pays" class="formulaire_spip form-tri form-inline landmark">
    <form method='post' action='#ENV{action}' enctype='multipart/form-data'><div>
       #ACTION_FORMULAIRE{#ENV{action}}
       <BOUCLE_tagshidden(MOTS){id_mot IN #ENV{mots}}>
@@ -7,23 +7,12 @@
       <input type="hidden" value="#tri">
       <h2 class="legend epsilon"><:migreurop:info_sort_by:></h2>
       <ul id="tri" class="form-fields">
-         <B_categories>
-         <li>
-            <label for=champ_categorie><:migreurop:info_category:></label>
-            <select name="mots[0]" id="champ_categorie" onchange="if((this.value != '')[ && (this.value != (#ENV{mots}|table_valeur{0}))]){this.form.submit()};">
-               <option value="0"[ (#ENV{mots}|table_valeur{0}|=={''}|oui)selected='selected']><:migreurop:info_all_f:></option>
-               <BOUCLE_categories(MOTS mots_liens){objet=site}{id_groupe=16}{par titre}>
-               <option value="#ID_MOT"[ (#ID_MOT|in_array{#ENV{mots}}|oui)selected='selected']>#TITRE</option>
-               </BOUCLE_categories>
-            </select>
-         </li>
-         </B_categories>
          <B_pays>
          <li>
             <label for="champ_pays"><:migreurop:info_country:></label>
             <select name="mots[1]" id="champ_pays" onchange="if((this.value != '')[ && (this.value != (#ENV{mots}|table_valeur{1}))]){this.form.submit()};">
                <option value="0"[ (#ENV{mots}|table_valeur{1}|=={''}|oui)selected='selected']><:migreurop:info_all_m:></option>
-               <BOUCLE_pays(MOTS mots_liens){objet=site}{id_groupe=6}{par titre}>
+               <BOUCLE_pays(MOTS mots_liens){objet=article}{id_groupe=6}{articles.id_rubrique=#EVAL{_request('id_rubrique')}}{par titre}>
                <option value="#ID_MOT"[ (#ID_MOT|in_array{#ENV{mots}}|oui)selected='selected']>#TITRE</option>
                </BOUCLE_pays>
             </select>

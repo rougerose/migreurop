@@ -1,0 +1,5 @@
+<composition>
+   <nom>Rubrique avec formulaire tri pays</nom>
+   <description>Composition pour les rubriques qui nécessitent un formulaire de tri par pays</description>
+   <icon>images/composition-test.png</icon>
+</composition>

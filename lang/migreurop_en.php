@@ -3,7 +3,6 @@
 
    $GLOBALS[$GLOBALS['idx_lang']] = array(
       // A
-      'home' => 'Accueil',
 
       // B
       'by' => 'Par',
@@ -16,12 +15,20 @@
       'contact_us' => 'Contact us',
       'credits' => 'Made with <a href="http://spip.net">SPIP</a>. Design by <a href="http://rouge-rose.net">christophe le drean</a>.',
 
+      // H
+      'home' => 'Accueil',
+
       // I
+      'info_all_f' => 'All',
+      'info_all_m' => 'All',
+      'info_category' => 'Catégorie',
+      'info_country' => 'Pays',
       'info_document' => 'Document',
       'info_documents' => 'Documents',
       'info_fichier' => 'Fichier',
       'info_partager' => 'Partager',
       'info_related' => 'Sur le même sujet',
+      'info_sort_by' => 'Sort by',
       'info_themes' => 'Thèmes',
       'info_traductions' => 'Traductions disponibles',
 
