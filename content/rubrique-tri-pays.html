@@ -24,7 +24,7 @@
             <INCLURE{fond=navs/rubrique__plan,id_rubrique,id_secteur,secteur-titre=#GET{secteur-titre}}>
          </div><!-- .g one-whole desk-three-tenths -->
       </div><!-- .gw -->
-      <INCLURE{fond=navs/rubrique__categories,id_rubrique,mots} />
+      <INCLURE{fond=navs/rubrique__categories,id_rubrique,mots,ajax} />
    </article><!-- .self -->
 </div><!-- .g one-whole -->
 
@@ -32,7 +32,7 @@
    #FORMULAIRE_TRI_PAYS{#SELF,#ID_RUBRIQUE}
 
    <BOUCLE_cond_categorie(CONDITION){si #ENV{mots}}>
-      <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax,env} />
+      <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax=art_cat,env} />
    </BOUCLE_cond_categorie>
       <INCLURE{fond=inclure/rubrique-articles,env} />
    <//B_cond_categorie>

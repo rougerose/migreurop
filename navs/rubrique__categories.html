@@ -9,7 +9,7 @@
       <li class="on"><a href="[(#SELF|parametre_url{mots\[\],''}|parametre_url{mots\[\],#ID_MOT}|ancre_url{content})]" class="sp--alt sp--bc">#TITRE</a></li>
       </BOUCLE_env_mot>
       <BOUCLE_mots(MOTS mots_liens){objet=article}{id_groupe IN #GET{id_groupe},12}{articles.id_rubrique=#ID_RUBRIQUE}>
-      [(#ENV{mots}|find{#ID_MOT}|non)<li><a href="[(#SELF|parametre_url{mots\[\],#ID_MOT}|ancre_url{content})]">#TITRE</a></li>]
+      [(#ENV{mots}|find{#ID_MOT}|non)<li><a href="[(#SELF|parametre_url{mots\[\],#ID_MOT}|ancre_url{content})]" onclick="ajaxReload('art_cat',{args:{mots\[\]:#ID_MOT}});return(false);">#TITRE</a></li>]
       </BOUCLE_mots>
    </ul>
 </nav>

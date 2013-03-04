@@ -18,6 +18,7 @@ function formulaires_tri_sites_traiter($url_resultat = null) {
    $url_resultat = parametre_url($url_resultat,'mots','');
    // Mettre dans l'URL
    $url_resultat = parametre_url($url_resultat,'mots',array_unique(_request('mots')));
+   $url_resultat = ancre_url($url_resultat, _request('ancre'));
    return array('redirect' => $url_resultat);
 }
 
