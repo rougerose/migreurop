@@ -50,6 +50,7 @@
       padding: $half-spacing-unit 0;
       > li {
          text-transform: uppercase;
+         margin-right: 5px;
          &:before {
             content:"/ ";
             color: $pathColor;
