@@ -18,7 +18,6 @@ $.fn.carousel = function(){
       items.css('width', itemWidth + '%');
 
       if (carousel.hasClass("carousel-ouverture")) {
-         carousel.parents("body").children("header[role='banner']").addClass("ouverture");
          ouverture = true;
       }
 
@@ -191,8 +190,8 @@ $(document).ready(function(){
    // ==============================================
    // = logo en ouverture page (rubrique, article) =
    // ==============================================
-   if ($("#ouverture").length) {
-         $("body").children("header[role='banner']").addClass("ouverture");
+   if ($(".carousel-ouverture,.media-ouverture").length){
+      $("body").children("header[role='banner']").addClass("ouverture");
    }
 
    // =========================

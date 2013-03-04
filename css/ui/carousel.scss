@@ -13,9 +13,13 @@
       @extend .cf;
    }
    .panels > li {
-      float: left;
       position: relative;
       overflow: hidden;
+   }
+   // styles nécessaires avec le js,
+   // permet d'éviter un fouc au chargement de la page également.
+   .js .panels > li {
+      float: left;
    }
    // navigation precedent/suivant
    .prevnext {
