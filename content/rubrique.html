@@ -29,7 +29,7 @@
 </div><!-- .g one-whole -->
 
 <div class="g one-whole desk-six-tenths">
-   <BOUCLE_cond_categorie(CONDITION){si #ENV{mot}}>
+   <BOUCLE_cond_categorie(CONDITION){si #ENV{mots}}>
       <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax,env} />
    </BOUCLE_cond_categorie>
       <INCLURE{fond=inclure/rubrique-articles,env} />
