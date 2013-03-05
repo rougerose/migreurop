@@ -1,0 +1,25 @@
+/*   =lt-ie9
+   ------------------------------------------------------ */
+   .lt-ie9 {
+      // grille
+      @include grid-setup("desk-");
+
+      // misc
+      // colonne extra : responsive push class
+      .desk-push--one-tenth {
+         position:relative;
+         left:10%;
+      }
+      .desk-push--four-tenths {
+         position: relative;
+         left: 40%;
+      }
+
+       // les éléments de grille sont inversés.
+       .rev {float: right;}
+
+       // media
+       .documents {
+          .media__link {float: none;}
+       }
+   }
