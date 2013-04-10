@@ -48,6 +48,10 @@
       .box--aside .traductions {
          @extend %sass-margin-top;
       }
+         .traduction {
+            margin-right: .1em;
+            text-transform: uppercase;
+         }
          .traduction.on {
             color: $brand-color;
          }
