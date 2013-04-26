@@ -1,16 +1,14 @@
 <body id="top">
    <header class="page-head" role="banner">
-      <INCLURE{fond=navs/barrenav,env}>
       <INCLURE{fond=header/#ENV{type-page},env} />
    </header>
-   <div class="container page">
-      <div class="gw">
-         <INCLURE{fond=content/#ENV{type-page},env} />
-         <INCLURE{fond=extra1/#ENV{type-page},env} />
-      </div><!-- .gw -->
-   </div><!-- .container -->
-   <INCLURE{fond=breadcrumb/breadcrumb,env} />
-   <footer class="page-foot">
-      <INCLURE{fond=page-foot/#ENV{type-page},env} />
+   <div class="page-content">
+      <div class="grid">
+
+      </div>
+      <INCLURE{fond=nav/nav-principale,env}>
+   </div><!-- .page -->
+   <footer class="page-footer">
+      <p>footer</p>
    </footer>
 </body>

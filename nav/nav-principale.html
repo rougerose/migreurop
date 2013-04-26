@@ -1,0 +1,24 @@
+<nav id="nav-principale" class="nav-principale">
+   <div class="grid">
+      <div class="grid__item">
+         [(#REM) navigation pour ecran sup. à 960 px ]
+         <ul class="nav desk-nav">
+            <li class="nav__item[ (#ENV{type-page}|=={sommaire}|oui)nav__item--active]"><a href="#URL_SITE_SPIP" class="item"><:migreurop:home:></a></li><BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}><!--
+         --><li id="r#ID_RUBRIQUE" class="nav__item[ (#EXPOSE)nav__item--active]">
+               <a class="item" href="#URL_RUBRIQUE">#TITRE</a><B_sousrubriques>
+               <ul class="nav--stacked nav--dropdown">
+                  <BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+                  <li id="r#ID_RUBRIQUE" class="nav__item">
+                     <a href="#URL_RUBRIQUE">#TITRE</a>
+                  </li></BOUCLE_sousrubriques><!--
+            --></ul></B_sousrubriques>
+            </li></BOUCLE_secteurs><!--
+         --><li class="nav__item search[ (#ENV{type-page}|=={recherche}|oui)on]">
+               [(#FORMULAIRE_RECHERCHE{'',form-search item})]
+            </li>
+         </ul><!-- .desk-nav -->
+         [(#REM) navigation pour ecran inf. à 960px ]
+         [(#FORMULAIRE_SELECT_NAV)]
+      </div><!-- .grid__item -->
+   </div><!-- .grid -->
+</nav>

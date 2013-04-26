@@ -1,16 +1,32 @@
 /*   =PAGE
-   ------------------------------------------------------ */
-   html{
-       font-family:$brand-face;
-       font-weight:400;
-       color:#444;
-       background-color:#fff;
+------------------------------------------------------ */
+.page {
+   max-width: 1100px;
+   margin-right: auto;
+   margin-left: auto;
+   //padding-right:$base-spacing-unit;
+   //padding-left:$base-spacing-unit;
+
+   @include media-query(lap) {
+      //padding-right:$half-spacing-unit;
+      //padding-left: $half-spacing-unit;
+      max-width: 640px;
    }
-   .container{
-       margin:0 auto;
-       width: 1190px;
-       padding-left:$base-spacing-unit;
-       @include media-query(desk) {
-          width: 1190px;
-       }
+
+}
+/*html {
+   font-family: $brand-face;
+   font-weight: 400;
+   color: #444;
+   background-color: #fff;
    }
+   .container {
+   margin: 0 auto;
+   width: 1190px;
+   padding-left: $base-spacing-unit;
+   @include media-query(desk) {
+   width: 1190px;
+   }
+
+   }
+   */

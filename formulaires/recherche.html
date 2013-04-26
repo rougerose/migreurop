@@ -2,7 +2,11 @@
    <form action="[(#ENV{action})]" method="get"><div>
       [(#ENV{action}|form_hidden)]
       [<input type="hidden" name="lang" value="(#ENV{lang})" />]
-      <label for="#ENV{_id_champ}"><:migreurop:info_recherche_label:></label>
-      <input[ (#HTML5|?{type="search" class="search text",type="text" class="text"})] size="10" name="recherche" id="#ENV{_id_champ}"[ value="(#ENV{recherche})"] accesskey="4" autocapitalize="off" autocorrect="off" />
+      <label for="#ENV{_id_champ}">
+         <input type="search" required="required" aria-label="<:migreurop:info_recherche_label:>" placeholder="<:migreurop:info_recherche_label:>" class="search text" size="10" name="recherche" id="#ENV{_id_champ}" value="" autocapitalize="off" autocorrect="off" />
+      </label>
+      <label class="submit-search" for="submit-search">
+         <input id="submit-search" name="submit" type="image" src="[(#CHEMIN{img/icon--search.png})]" class="submit" alt="<:info_rechercher:>" />
+      </label>
    </div></form>
 </div>

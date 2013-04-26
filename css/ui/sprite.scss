@@ -24,8 +24,8 @@
          display: block;
       }
    }
-   .s {
-      @extend .s;
+   .sprite {
+      @extend .sprite;
       background-image:url(../img/migreurop-sprite.png);
    }
    // tags
@@ -122,7 +122,7 @@
       }
    }
    // icone menu dropdown
-   .s--dd {
+   .sprite--dropdown {
       background-position: -128px 0;
    }
    // recherche

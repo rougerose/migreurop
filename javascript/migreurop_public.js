@@ -141,12 +141,13 @@ $(document).ready(function(){
    // ======================================
    // = Menu principal en version dropdown =
    // ======================================
-   $("#barrenav .nav").each(function(){
-      var $items = $(this).children(".nav--item"),
-      $haschild = $items.children(".dropdown"),
+   $("#nav-principale .nav").each(function(){
+      var $items = $(this).children(".nav__item"),
+      $haschild = $items.children(".nav--dropdown"),
       $ul_child = $haschild.filter("ul");
 
-      $ul_child.before('<span class="open s s--dd" />');
+      //$ul_child.before('<span class="open s s--dd" />');
+      $haschild.before('<span class="sprite sprite--dropdown" />');
       var $opens = $items.children("span");
 
       function open_dropdown(){

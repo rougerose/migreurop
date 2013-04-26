@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /*------------------------------------*\
-    YOUR-PROJECT.CSS
+    STYLE.CSS
 \*------------------------------------*/
 /**
  *
- * sass --watch your-project.scss:your-project.min.css --style compressed
+ * sass --watch style.scss:style.min.css --style compressed
  *
- * Here we set up some variables, include the inuit.css framework, then add our
+ * Here we pull in some variables, include the inuit.css framework, then add our
  * project-specific components afterwards.
  */
 
@@ -14,56 +14,35 @@
 /**
  * Setup
  */
- @import "vars";
- @import "inuit.css/inuit";
+@import "vars";
+@import "inuit.css/inuit";
 
- @import "ui/mixins";
+
+
+
 
 /**
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
- /*!*
-  *
-  * migreurop.css v2 -- christophe le drean - http://rouge-rose.net -- 2013 03
-  *
-  */
- // base
- @import "ui/reset";
- @import "ui/liens";
- @import "ui/typographie";
- @import "ui/headings";
- @import "ui/shared";
- @import "ui/forms";
- @import "ui/button";
+//@import "ui/example";
 
- @import "ui/quotes";
+// base
+// ======================
+@import "ui/base";
 
- // structure
- @import "ui/page";
- @import "ui/header";
- @import "ui/page-foot";
+// layout
+// ======================
+@import "ui/page";
+@import "ui/page-head";
 
- // objets
- @import "ui/nav";
- @import "ui/box";
- @import "ui/media";
- @import "ui/sprite";
- @import "ui/hentry";
- @import "ui/meta-publi";
- @import "ui/carousel";
- @import "ui/flyout";
- @import "ui/listes";
- @import "ui/breadcrumb";
- @import "ui/tabs";
- @import "ui/pagination";
- @import "ui/recherche";
- @import "ui/self";
+// modules
+// ======================
+@import "ui/nav";
+@import "ui/dropdown";
 
- // spip
- @import "ui/spip";
+@import "ui/sprite";
 
- // misc
- @import "ui/misc";
+@import "ui/forms";
 
- // lt-ie9
- @import "ui/lt-ie9"
+// divers
+@import "ui/misc";

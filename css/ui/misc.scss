@@ -1,28 +1,14 @@
 /*   =MISC
    ------------------------------------------------------ */
-   @include media-query(desk){
-      // colonne extra : responsive push class
-      .desk-push--one-tenth {
-         position:relative;
-         left:10%;
-      }
-      .desk-push--four-tenths {
-         position: relative;
-         left: 40%;
-      }
-
-       // les éléments de grille sont inversés.
-       .rev {float: right;}
-   }
 
    /* couleur de texte sélectionné */
    ::selection { background-color:$brand-color; color:#fff; }
    ::-moz-selection { background-color:$brand-color; color:#fff; }
 
    /* spip-admin */
-   body > .spip-admin-bloc, body > .spip-admin-float {z-index: 99999; top: 5%; left: 0; right: auto;}
+   body > .spip-admin-bloc, body > .spip-admin-float {z-index: 99999; top: 10%; left: 0; right: auto;}
    #spip-admin .spip-admin-boutons {
-      font: 0.5rem/1.5 $mono-family;
+      font:10px/1 $mono-font-family;
       display: block;
       text-align: center;
       margin-bottom: 5px;

@@ -9,8 +9,12 @@
  * using your own, so you can completely modify how inuit.css works without ever
  * having to alter the framework itself.
  */
+$base-font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+$condensed-font-family:"PT Sans Narrow","Helvetica Neue",Helvetica,Arial,sans-serif;
+$mono-font-family: monospace;
 
-
+/* couleurs */
+$brand-color: #d2270e;
 
 
 
@@ -23,10 +27,10 @@
  * and introducing objects and abstractions is as simple as switching the
  * following variables to `true`.
  */
-$use-grids:         false;
+$use-grids:         true;
 $use-flexbox:       false;
 $use-columns:       false;
-$use-nav:           false;
+$use-nav:           true;
 $use-options:       false;
 $use-pagination:    false;
 $use-breadcrumb:    false;
@@ -40,7 +44,7 @@ $use-this-or-this:  false;
 $use-link-complex:  false;
 $use-flyout:        false;
 $use-arrows:        false;
-$use-sprite:        false;
+$use-sprite:        true;
 $use-icon-text:     false;
 $use-beautons:      false;
 $use-lozenges:      false;
@@ -58,6 +62,11 @@ $use-greybox:       false;
 /**
  * Place any variables that should override inuit.css’ defaults here.
  */
+$responsive-extra:  true;
+
+$lap-start:         481px;
+$desk-start:        1024px;
+$desk-wide-start:   1100px;
 
 
 
@@ -69,3 +78,6 @@ $use-greybox:       false;
 /**
  * Place any of your own variables that sit on top of inuit.css here.
  */
+
+// couleurs
+$noir-bleu: #1d2326!default;
