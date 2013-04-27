@@ -1,16 +1,12 @@
 [(#ENV{bloc}|=={footer}|oui)
    [(#SET{fichier,
-      [(#CHEMIN{img/migreurop_observatoire_frontieres_alt.png}
-         |balise_img{[(#NOM_SITE_SPIP|texte_backend)[ (#SLOGAN_SITE_SPIP|texte_backend)]],logo-migreurop}
-         |image_reduire{300,0})]
+      [<img src="(#CHEMIN{img/migreurop_observatoire_frontieres_alt.png}|image_reduire{300,0}|extraire_attribut{src})" alt="[(#NOM_SITE_SPIP|texte_backend)[ (#SLOGAN_SITE_SPIP|texte_backend)]]" class="logo-migreurop">]
    })]
 ][(#ENV{bloc}|=={header}|oui)
   [(#SET{fichier,
-     [(#CHEMIN{img/migreurop_observatoire_frontieres.png}
-        |balise_img{[(#NOM_SITE_SPIP|texte_backend)[ (#SLOGAN_SITE_SPIP|texte_backend)]],logo-migreurop}
-        |image_reduire{500,0})]
+     [<img src="(#CHEMIN{img/migreurop_observatoire_frontieres.png}|image_reduire{500,0}|extraire_attribut{src})" alt="[(#NOM_SITE_SPIP|texte_backend)[ (#SLOGAN_SITE_SPIP|texte_backend)]]" class="logo-migreurop">]
   })]
 ]
-[<a href="#URL_SITE_SPIP" class="logo" rel="start home" style="[width:(#GET{fichier}|largeur)px;][ height:(#GET{fichier}|hauteur)px;]">
+[<a href="#URL_SITE_SPIP" class="logo" rel="start home">
    (#GET{fichier})
 </a>]

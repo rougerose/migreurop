@@ -1,8 +1,14 @@
 /*   =PAGE-HEAD
    ------------------------------------------------------ */
 .page-head {
-   /*position: absolute;
-   top: 0;
-   z-index: 999;
-   width: 100%;*/
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 3.5em $base-spacing-unit 3em;
+   text-align: center;
+   @include media-query(lap) {
+      max-width: 640px;
+   }
+   @inclure media-query(palm) {
+      max-width: 480px;
+   }
 }
