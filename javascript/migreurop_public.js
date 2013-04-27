@@ -199,6 +199,15 @@ $(document).ready(function(){
    // = easytabs : activation =
    // =========================
    $('#tabs-rubrique-principal').easytabs();
+
+   // =============
+   // = recherche =
+   // =============
+   $(".nav__item.search .action").click(function(){
+      $("#formulaire_recherche").slideToggle("fast","swing");
+      $(this).toggleClass("sprite--search-is-active");
+   });
+
 });
 
 

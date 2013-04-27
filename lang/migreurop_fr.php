@@ -14,7 +14,10 @@
       'contact_mail' => 'Par mail',
       'contact_us' => 'Nous contacter',
       'credits' => 'Réalisé avec <a href="http://spip.net">SPIP</a>. Conception graphique par <a href="http://rouge-rose.net">christophe le drean</a>.',
-      
+
+      // G
+      'goto' => 'Aller &agrave;&hellip;',
+
       // H
       'home' => 'Accueil',
 

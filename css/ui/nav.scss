@@ -1,7 +1,7 @@
 /*   =NAV
    ------------------------------------------------------ */
 
-/* nav-principale */
+/* nav-principale : desk-nav */
 .nav-principale {
    background-color:$noir-bleu;
    position: absolute;
@@ -10,9 +10,14 @@
    .nav {
       margin-bottom: 0;
       margin: 0 auto;
-      padding-right:$half-spacing-unit;
-      padding-left: $half-spacing-unit;
-      max-width: 1100px;
+      padding-right:$base-spacing-unit;
+      padding-left: $base-spacing-unit;
+      @media only screen and (max-width: 960px) {
+         text-align: right;
+      }
+      @media only screen and (min-width: 961px) {
+         max-width: 1100px;
+      }
    }
    a {
       color: #ddd; color: rgba(255,255,255,0.9);
@@ -29,8 +34,36 @@
    font-weight: 700;
    text-transform: uppercase;
    position: relative;
+   &.search {
+      padding-right: 0 !important;
+   }
+   &.is-active {
+      .item {@include arrow(bottom, center, $noir-bleu);}
+   }
    .nav-principale & {
-      padding-right: 8px;
       @include font-size(13px);
+   }
+}
+
+.desk-nav {
+   display: block;
+   .nav__item {
+      padding-right: 8px;
+      &.search {
+         float: right;
+      }
+   }
+   @media only screen and (max-width: 960px) {
+      display: none;
+   }
+}
+
+.palm-nav {
+   display: none;
+   .nav__item {
+      padding-right: 1em;
+   }
+   @media only screen and (max-width: 960px) {
+      display: block;
    }
 }

@@ -1,19 +1,20 @@
-<div id="formulaire_select_nav" class="formulaire_spip formulaire_#FORM">
-   <form method='post' action='#ENV{action}' enctype='multipart/form-data'><div>
+<div id="formulaire_select_nav" class="formulaire_spip formulaire_#FORM [(#ENV{class})]">
+   <form method='post' action='#ENV{action}' enctype='multipart/form-data' class="form--inline"><div>
       #ACTION_FORMULAIRE{#ENV{action}}
       <ul class="form-fields">
          <li>
             <label for="select-nav">
-               <select name="" id="select-nav">
-                  <option value="">Aller à...</option>
+               <select name="rubrique" id="select-nav">
+                  <option value=""><:migreurop:goto:></option>
+                  <option value="home"><:migreurop:home:></option>
                   <BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}>
                   <option value="#ID_RUBRIQUE">#TITRE</option><B_sousrubriques><BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
-                  <option value="#ID_RUBRIQUE">[ - (#TITRE)]</option></BOUCLE_sousrubriques></B_sousrubriques>
+                  <option value="#URL_RUBRIQUE">[-- (#TITRE)]</option></BOUCLE_sousrubriques></B_sousrubriques>
                   </BOUCLE_secteurs>
                </select>
             </label>
          </li>
       </ul>
-      <p class="boutons"><input type="submit" class="submit btn" value="<:pass_ok:>" /></p>
+      <p class="boutons"><input type="submit" class="submit btn btn--small" value="<:pass_ok:>" /></p>
    </div></form>
 </div>

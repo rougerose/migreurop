@@ -865,7 +865,7 @@ ul, ol, dd {
     $MAIN
 \*------------------------------------*/
 html {
-  font: 1em/1.5 sans-serif;
+  font: 1em/1.5 "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-y: scroll;
   min-height: 100%; }
 
@@ -1723,6 +1723,40 @@ label,
   display: none; }
 
 /*------------------------------------*\
+    $ARROWS
+\*------------------------------------*/
+/**
+ * It is a common design treatment to give an element a triangular points-out
+ * arrow, we typically build these with CSS. These following classes allow us to
+ * generate these arbitrarily with a mixin, `@arrow()`.
+ */
+/**
+ * Forms the basis for any/all CSS arrows.
+ */
+.nav__item.is-active .item {
+  position: relative; }
+  .nav__item.is-active .item:before, .nav__item.is-active .item:after {
+    content: "";
+    position: absolute;
+    border-collapse: separate; }
+  .nav__item.is-active .item:before {
+    border: 12px solid transparent; }
+  .nav__item.is-active .item:after {
+    border: 11px solid transparent; }
+
+/**
+ * Define individual edges so we can combine what we need, when we need.
+ */
+.nav__item.is-active .item:before, .nav__item.is-active .item:after {
+  top: 100%; }
+
+.nav__item.is-active .item:before, .nav__item.is-active .item:after {
+  left: 50%;
+  margin-left: -12px; }
+.nav__item.is-active .item:after {
+  margin-left: -11px; }
+
+/*------------------------------------*\
     $SPRITE
 \*------------------------------------*/
 /**
@@ -1814,6 +1848,199 @@ label,
 
 .icon--natural {
   font-size: inherit; }
+
+/*------------------------------------*\
+    $BEAUTONS.CSS
+\*------------------------------------*/
+/**
+ * beautons is a beautifully simple button toolkit.
+ *
+ * LICENSE
+ * 
+ * Copyright 2013 Harry Roberts
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/**
+ * 
+ * @csswizardry -- csswizardry.com/beautons
+ * 
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base button styles.
+ *
+ * 1. Allow us to better style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Stop buttons wrapping and looking broken.
+ * 4. Make buttons inherit font styles.
+ * 5. Force all elements using beautons to appear clickable.
+ * 6. Normalise box model styles.
+ * 7. If the button’s text is 1em, and the button is (3 * font-size) tall, then
+ *    there is 1em of space above and below that text. We therefore apply 1em
+ *    of space to the left and right, as padding, to keep consistent spacing.
+ * 8. Basic cosmetics for default buttons. Change or override at will.
+ * 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
+ */
+.btn {
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  white-space: nowrap;
+  /* [3] */
+  font-family: inherit;
+  /* [4] */
+  font-size: 100%;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  border: none;
+  /* [6] */
+  margin: 0;
+  /* [6] */
+  padding-top: 0;
+  /* [6] */
+  padding-bottom: 0;
+  /* [6] */
+  line-height: 3;
+  /* [7] */
+  padding-right: 1em;
+  /* [7] */
+  padding-left: 1em;
+  /* [7] */
+  border-radius: 4px;
+  /* [8] */ }
+
+.btn, .btn:hover {
+  text-decoration: none;
+  /* [9] */ }
+.btn:active, .btn:focus {
+  outline: none; }
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+/**
+ * Button size modifiers.
+ *
+ * These all follow the same sizing rules as above; text is 1em, space around it
+ * remains uniform.
+ */
+.btn--small {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  line-height: 2; }
+
+.btn--large {
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  line-height: 4; }
+
+.btn--huge {
+  padding-right: 2em;
+  padding-left: 2em;
+  line-height: 5; }
+
+/**
+ * These buttons will fill the entirety of their container.
+ *
+ * 1. Remove padding so that widths and paddings don’t conflict.
+ */
+.btn--full {
+  width: 100%;
+  padding-right: 0;
+  /* [1] */
+  padding-left: 0;
+  /* [1] */
+  text-align: center; }
+
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Button font-size modifiers.
+ */
+.btn--alpha {
+  font-size: 3rem; }
+
+.btn--beta {
+  font-size: 2rem; }
+
+.btn--gamma {
+  font-size: 1rem; }
+
+/**
+ * Make the button inherit sizing from its parent.
+ */
+.btn--natural {
+  vertical-align: baseline;
+  font-size: inherit;
+  line-height: inherit;
+  padding-right: 0.5em;
+  padding-left: 0.5em; }
+
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * Button function modifiers.
+ */
+/**
+ * Positive actions; e.g. sign in, purchase, submit, etc.
+ */
+.btn--positive {
+  background-color: #4A993E;
+  color: #fff; }
+
+/**
+ * Negative actions; e.g. close account, delete photo, remove friend, etc.
+ */
+.btn--negative {
+  background-color: #b33630;
+  color: #fff; }
+
+/**
+ * Inactive, disabled buttons.
+ * 
+ * 1. Make the button look like normal text when hovered.
+ */
+.btn--inactive,
+.btn--inactive:hover,
+.btn--inactive:active,
+.btn--inactive:focus {
+  background-color: #ddd;
+  color: #777;
+  cursor: text;
+  /* [1] */ }
+
+/*------------------------------------*\
+    $STYLES
+\*------------------------------------*/
+/**
+ * Button style modifiers.
+ *
+ * 1. Use an overly-large number to ensure completely rounded, pill-like ends.
+ */
+.btn--soft {
+  border-radius: 200px;
+  /* [1] */ }
+
+.btn--hard {
+  border-radius: 0; }
 
 /**
  * Style trumps; helper and brand classes
@@ -2959,7 +3186,7 @@ a {
 
 /*   =NAV
    ------------------------------------------------------ */
-/* nav-principale */
+/* nav-principale : desk-nav */
 .nav-principale {
   background-color: #1d2326;
   position: absolute;
@@ -2968,9 +3195,14 @@ a {
   .nav-principale .nav {
     margin-bottom: 0;
     margin: 0 auto;
-    padding-right: 12px;
-    padding-left: 12px;
-    max-width: 1100px; }
+    padding-right: 24px;
+    padding-left: 24px; }
+    @media only screen and (max-width: 960px) {
+      .nav-principale .nav {
+        text-align: right; } }
+    @media only screen and (min-width: 961px) {
+      .nav-principale .nav {
+        max-width: 1100px; } }
   .nav-principale a {
     color: #ddd;
     color: rgba(255, 255, 255, 0.9);
@@ -2985,11 +3217,34 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   position: relative; }
+  .nav__item.search {
+    padding-right: 0 !important; }
+  .nav__item.is-active .item:before {
+    border-top-color: #1d2326 !important; }
+  .nav__item.is-active .item:after {
+    border-top-color: #1d2326 !important; }
   .nav-principale .nav__item {
-    padding-right: 8px;
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.84615; }
+
+.desk-nav {
+  display: block; }
+  .desk-nav .nav__item {
+    padding-right: 8px; }
+    .desk-nav .nav__item.search {
+      float: right; }
+  @media only screen and (max-width: 960px) {
+    .desk-nav {
+      display: none; } }
+
+.palm-nav {
+  display: none; }
+  .palm-nav .nav__item {
+    padding-right: 1em; }
+  @media only screen and (max-width: 960px) {
+    .palm-nav {
+      display: block; } }
 
 /*   =DROPDOWN
    ------------------------------------------------------ */
@@ -3082,9 +3337,15 @@ a {
 .sprite--dropdown {
   background-position: -128px 0; }
 
-.s--search {
-  background-position: -128px 0;
-  margin-left: 6px; }
+.sprite--search {
+  height: 18px;
+  width: 18px;
+  background-position: -32px -93px; }
+  .sprite--search:hover {
+    background-position: -50px -93px; }
+
+.sprite--search-is-active {
+  background-position: -50px -93px; }
 
 .sp--bc:after {
   height: 100%;
@@ -3130,28 +3391,71 @@ a {
 
 /*   =FORMS
    ------------------------------------------------------ */
+/* STYLES COMMUNS */
+/* .form-inline */
+.form--inline input,
+.form--inline textarea,
+.form--inline select,
+.form--inline .boutons,
+.form--inline .legend {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle; }
+.form--inline label,
+.form--inline .label,
+.form--inline ul > li,
+.form--inline .form-fields,
+.form--inline .boutons {
+  display: inline-block;
+  margin-bottom: 0; }
+
 /* FORMULAIRE RECHERCHE */
-.formulaire_recherche form {
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px; }
-.formulaire_recherche label, .formulaire_recherche input {
-  display: inline-block; }
-.formulaire_recherche .submit-search {
-  height: 16px;
-  width: 16px; }
-.formulaire_recherche input[type="search"] {
-  width: 1px;
-  padding: 3px 0;
-  opacity: 0;
-  border: 0;
-  transition: all 200ms ease-in 0s;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px; }
-.formulaire_recherche:hover input[type="search"] {
-  width: 200px;
-  opacity: 1; }
+.formulaire_recherche {
+  position: absolute;
+  z-index: 98;
+  width: 100%;
+  background-color: rgba(29, 35, 38, 0.5);
+  -moz-box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 4px -2px rgba(0, 0, 0, 0.5); }
+  .formulaire_recherche form {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.5em 24px;
+    text-align: right;
+    line-height: 10px; }
+  .formulaire_recherche label, .formulaire_recherche input {
+    display: inline-block; }
+  .formulaire_recherche .submit-search {
+    height: 18px;
+    width: 18px;
+    padding-top: 5px; }
+    .formulaire_recherche .submit-search is-hidden {
+      opacity: 0;
+      visibility: hidden; }
+  .formulaire_recherche input[type="search"] {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 1.84615;
+    color: #555;
+    cursor: text;
+    padding: 1px 9px;
+    width: 20em;
+    border: 0;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px; }
+
+/* affichage du formulaire via js */
+.js .formulaire_recherche {
+  display: none; }
+
+/* NAVIGATION PRINCIPALE : palm-nav */
+.formulaire_select_nav {
+  text-align: right; }
+
+.js .formulaire_select_nav .boutons {
+  display: none; }
 
 /*   =MISC
    ------------------------------------------------------ */

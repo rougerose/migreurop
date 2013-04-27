@@ -1,30 +1,72 @@
 /*   =FORMS
    ------------------------------------------------------ */
+/* STYLES COMMUNS */
+
+   /* .form-inline */
+   .form--inline {
+      input,
+      textarea,
+      select,
+      .boutons,
+      .legend {
+         display: inline-block;
+         margin-bottom: 0;
+         vertical-align: middle;
+      }
+      label,
+      .label,
+      ul > li,
+      .form-fields,
+      .boutons {
+         display: inline-block;
+         margin-bottom: 0;
+      }
+   }
 
 /* FORMULAIRE RECHERCHE */
 .formulaire_recherche {
+   position: absolute;
+   z-index: 98;
+   width: 100%;
+   background-color: rgba($noir-bleu,0.5);
+   -moz-box-shadow:     inset 0 2px 4px -2px rgba(0,0,0,0.5);
+   -webkit-box-shadow:  inset 0 2px 4px -2px rgba(0,0,0,0.5);
+   box-shadow:          inset 0 2px 4px -2px rgba(0,0,0,0.5);
    form {
-      -webkit-border-radius:50px;
-         -moz-border-radius:50px;
-              border-radius:50px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5em $base-spacing-unit;
+      text-align: right;
+      line-height: 10px;
    }
    label, input {display: inline-block;}
    .submit-search {
-      height: 16px;
-      width: 16px;
+      height: 18px;
+      width: 18px;
+      padding-top: 5px;
+      is-hidden {opacity: 0; visibility: hidden;}
    }
    input[type="search"] {
-      width: 1px;
-      padding: 3px 0;
-      opacity: 0;
+      @include font-size(13px);
+      color: #555;
+      cursor: text;
+      padding: 1px 9px;
+      width: 20em;
       border: 0;
-      transition: all 200ms ease-in 0s;
       -webkit-border-radius:50px;
          -moz-border-radius:50px;
               border-radius:50px;
    }
-   &:hover input[type="search"] {
-      width: 200px;
-      opacity: 1;
-   }
+}
+/* affichage du formulaire via js */
+.js .formulaire_recherche {
+   display: none;
+}
+
+/* NAVIGATION PRINCIPALE : palm-nav */
+.formulaire_select_nav {
+   text-align: right;
+}
+.js .formulaire_select_nav .boutons {
+   display: none;
 }

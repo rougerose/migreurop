@@ -24,10 +24,8 @@
          display: block;
       }
    }
-   .sprite {
-      @extend .sprite;
-      background-image:url(../img/migreurop-sprite.png);
-   }
+   .sprite {background-image:url(../img/migreurop-sprite.png);}
+
    // tags
    .sp--tags {
       &:before{
@@ -126,10 +124,15 @@
       background-position: -128px 0;
    }
    // recherche
-   .s--search {
-      background-position: -128px 0;
-      margin-left: 6px;
+   .sprite--search {
+      height: 18px;
+      width: 18px;
+      background-position: -32px -93px;
+      &:hover {
+         background-position: -50px -93px;
+      }
    }
+   .sprite--search-is-active {background-position: -50px -93px;}
    // breadcrumb--categorie
    .sp--bc {
       &:after {

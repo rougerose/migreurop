@@ -15,6 +15,9 @@
       'contact_us' => 'Contact us',
       'credits' => 'Made with <a href="http://spip.net">SPIP</a>. Design by <a href="http://rouge-rose.net">christophe le drean</a>.',
 
+      // G
+      'goto' => 'Go to&hellip;',
+
       // H
       'home' => 'Accueil',
 
