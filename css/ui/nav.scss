@@ -5,6 +5,7 @@
 .nav-principale {
    background-color:$noir-bleu;
    position: absolute;
+   z-index: 90;
    top: 0;
    width: 100%;
    .nav {

@@ -6,7 +6,7 @@
       <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
       </BOUCLE_cartes>
-         [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel})]
+         [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel,id=carouselExtra1})]
    </div><!-- .box-aside Cartes -->
    </B_cartes>
 
@@ -31,7 +31,7 @@
       <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
       </BOUCLE_portfolios>
-         [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel})]
+         [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel,id=carouselExtra2})]
    </div><!-- .box-aside Portfolios -->
    </B_portfolios>
 </div><!-- .g -->

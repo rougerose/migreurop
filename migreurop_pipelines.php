@@ -6,6 +6,7 @@
       $js = array(
          'javascript/jquery.hashchange.min.js',
          'javascript/jquery.easytabs.min.js',
+         'javascript/swipe.js',
          'javascript/migreurop_public.js'
       );
       foreach ($js as $f) {

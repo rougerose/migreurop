@@ -6,8 +6,8 @@
 
 (#REM) carousel ouverture ]
 [(#GET{articles_carousel}|oui)
-<div class="g one-whole">
-   #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture,conteneur=carousel}
+<div class="grid__item">
+   #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture,conteneur=carousel,id=carouselOuverture}
 </div><!-- .g one-whole -->][
 
 (#REM) selection des articles ]

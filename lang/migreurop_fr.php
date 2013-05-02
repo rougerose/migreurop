@@ -42,8 +42,12 @@
       'message_404' => 'La page ou le document que vous demandez est introuvable sur le site&hellip;',
       'more' => 'La suite',
 
+      // N
+      'next' => 'Suivant',
+
       // P
       'info_ps' => 'Post-scriptum',
+      'previous' => 'Précédent',
 
       // R
       'info_recherche_article' => '1 article',
