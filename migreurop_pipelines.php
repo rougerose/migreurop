@@ -6,8 +6,7 @@
       $js = array(
          'javascript/jquery.hashchange.min.js',
          'javascript/jquery.easytabs.min.js',
-         'javascript/swipe.js',
-         'javascript/migreurop_public.js'
+         'javascript/jquery.flexslider-min.js'
       );
       foreach ($js as $f) {
          $flux .= '<script src="'.find_in_path($f).'" type="text/javascript"></script>'."\n";

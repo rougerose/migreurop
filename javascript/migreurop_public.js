@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).load(function(){
    // ======================================
    // = Menu principal en version dropdown =
    // ======================================
@@ -62,6 +62,13 @@ $(document).ready(function(){
    $(".nav__item.search .action").click(function(){
       $("#formulaire_recherche").slideToggle("fast","swing");
       $(this).toggleClass("sprite--search-is-active");
+   });
+
+   // ==============
+   // = flexslider =
+   // ==============
+   $('.flexslider').flexslider({
+     animation: "slide"
    });
 
 });
