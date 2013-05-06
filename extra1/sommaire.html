@@ -1,12 +1,13 @@
 [(#SET{cartes,#ARRAY})][(#SET{portfolios,#ARRAY})]
-<div class="g one-whole desk-three-tenths desk-push--one-tenth">
+ --><div class="grid__item desk-three-tenths push--desk-one-tenth">
    <B_cartes>
    <div class="box--aside">
       [<h1 class="box__title">(#INFO_TITRE{rubrique,266})</h1>]
       <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
       </BOUCLE_cartes>
-         [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel,id=carouselExtra1})]
+         [(#INCLURE{fond=liste/carousel,
+            selection=#GET{cartes},contexte=extra,conteneur=carousel,id=carouselExtra1})]
    </div><!-- .box-aside Cartes -->
    </B_cartes>
 
@@ -17,7 +18,8 @@
       <ul class="block-list--media">
          <BOUCLE_rapports(ARTICLES){branche}{!par date}{lang}{0,4}>
          [<li>
-            (#INCLURE{fond=inclure/article-resume,id_article,contexte=extra,conteneur=liste})
+            (#INCLURE{fond=inclure/article-resume,
+               id_article,contexte=extra,conteneur=liste})
          </li>]
          </BOUCLE_rapports>
       </ul>
@@ -31,7 +33,8 @@
       <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,4}{lang}>
       [(#LOGO_ARTICLE|oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
       </BOUCLE_portfolios>
-         [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel,id=carouselExtra2})]
+         [(#INCLURE{fond=liste/carousel,
+            selection=#GET{portfolios},contexte=extra,conteneur=carousel,id=carouselExtra2})]
    </div><!-- .box-aside Portfolios -->
    </B_portfolios>
 </div><!-- .g -->

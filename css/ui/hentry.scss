@@ -27,3 +27,34 @@
    //color: #777;
    //&:hover{color: $brand-color;}
 }
+
+/* hentry-secondary */
+.hentry-secondary {
+   header {
+      margin-bottom: $half-spacing-unit;
+   }
+   hgroup {
+      margin-bottom: 0;
+   }
+      .entry-title {
+         @include font-size(17px);
+         line-height: 1.2;
+         margin-bottom: 0;
+      }
+      .soustitre {
+         @include font-size(15px);
+      }
+   .entry-content p {
+      margin-bottom: $quarter-spacing-unit;
+      @include font-size(13px);
+      line-height: 1.5;
+      color: #999;
+   }
+   .meta-publi {
+      line-height: 1.2em;
+      > li {
+         @include font-size(10px);
+         line-height: 1.5em;
+      }
+   }
+}

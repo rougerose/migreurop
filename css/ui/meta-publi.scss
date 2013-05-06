@@ -61,4 +61,5 @@
             .box--aside & {
                @extend %sass-margin-top;
             }
+            .box--aside .carousel & {margin-top: 0;}
          }

@@ -1,5 +1,8 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <article class="hentry resume[(#ENV{contexte}|=={extra}|oui) hentry-secondary][(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui) media]">
+   [(#ENV{contexte}|=={extra}|oui)[
+      (#INCLURE{fond=inclure/article-resume-logo,
+         id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]]
    <div class="wrap">
       <header>
          [(#SOUSTITRE|oui)<hgroup>]
@@ -7,9 +10,13 @@
             [<h2 class="soustitre hN">(#SOUSTITRE)</h2>]
          [(#SOUSTITRE|oui)</hgroup>]
       </header>
-      [<ul class="meta-publi">
-         (#MODELE{article-resume-traductions})
-      </ul>]
+      <div class="entry-content">
+         [<p>(#INTRODUCTION|couper{100}|PtoBR) <a href="#URL_ARTICLE" class="suite--link"><:migreurop:more:></a></p>]
+      </div>
+      <ul class="meta-publi">
+         <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|journum)][ (#DATE|nom_mois{abbr})][ (#DATE|affdate{Y})]</time></li>[
+         (#MODELE{article-resume-traductions})]
+      </ul>
    </div>
    [(#ENV{contexte}|=={ouverture}|oui)[
       (#INCLURE{fond=inclure/article-resume-logo, id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]

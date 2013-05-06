@@ -845,7 +845,7 @@ pre,
 /**
  * Doubled up `margin-bottom` helper class.
  */
-.landmark, .self {
+.landmark, .carousel-ouverture, .self {
   margin-bottom: 48px;
   margin-bottom: 3rem; }
 
@@ -3263,7 +3263,7 @@ h6.spip {
 .btn--traduction {
   background-color: #ddd;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.3;
   font-weight: bold;
   -webkit-transition: background-color 0.35s ease-in-out 0.2s;
   -moz-transition: background-color 0.35s ease-in-out 0.2s;
@@ -3816,6 +3816,36 @@ ol.objets-selection, ol.block-list--media {
   .meta-publi > li:last-child {
     border-right-width: 0; }
 
+/* hentry-secondary */
+.hentry-secondary header {
+  margin-bottom: 12px; }
+.hentry-secondary hgroup {
+  margin-bottom: 0; }
+.hentry-secondary .entry-title {
+  font-size: 17px;
+  font-size: 1.0625rem;
+  line-height: 1.41176;
+  line-height: 1.2;
+  margin-bottom: 0; }
+.hentry-secondary .soustitre {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6; }
+.hentry-secondary .entry-content p {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1.84615;
+  line-height: 1.5;
+  color: #999; }
+.hentry-secondary .meta-publi {
+  line-height: 1.2em; }
+  .hentry-secondary .meta-publi > li {
+    font-size: 10px;
+    font-size: 0.625rem;
+    line-height: 2.4;
+    line-height: 1.5em; }
+
 /*   =META-PUBLI
    ------------------------------------------------------ */
 /* éléments communs. éléments spécifiques voir hentry.scss, self.scss */
@@ -3862,6 +3892,8 @@ ol.objets-selection, ol.block-list--media {
   text-transform: uppercase; }
   .traduction.on .btn--traduction {
     background-color: #d2270e; }
+  .box--aside .carousel .traduction {
+    margin-top: 0; }
 
 /*   =CAROUSEL
    ------------------------------------------------------ */
@@ -3925,7 +3957,7 @@ ol.objets-selection, ol.block-list--media {
   height: 16px;
   width: 16px;
   background-color: #ddd;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.75);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
@@ -3943,10 +3975,10 @@ ol.objets-selection, ol.block-list--media {
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
   text-indent: -9999em; }
   .flex-control-paging a:hover {
-    background-color: rgba(255, 255, 255, 0.65); }
+    background-color: #fff; }
 
 .flex-control-paging .flex-active {
-  background-color: #fff;
+  background-color: rgba(210, 39, 14, 0.95);
   cursor: default; }
 
 /*
@@ -3974,38 +4006,80 @@ ol.objets-selection, ol.block-list--media {
   width: 100%; }
 
 /* carousel-ouverture */
-.carousel-ouverture .wrap {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 70%;
-  margin-left: 24px; }
-.carousel-ouverture .entry-title {
-  line-height: 1.5em; }
-  .carousel-ouverture .entry-title a[rel="bookmark"] {
-    padding: .1em;
-    background-color: #000;
-    background-color: rgba(0, 0, 0, 0.65);
+.carousel-ouverture {
+  min-height: 500px; }
+  .carousel-ouverture .wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    padding: 12px;
+    background-color: rgba(29, 35, 38, 0.8); }
+  .carousel-ouverture header,
+  .carousel-ouverture .soustitre,
+  .carousel-ouverture .entry-content p,
+  .carousel-ouverture .meta-publi {
+    margin-bottom: 6px; }
+  .carousel-ouverture hgroup {
+    margin-bottom: 0; }
+  .carousel-ouverture .entry-title {
+    margin-bottom: 0; }
+  .carousel-ouverture .soustitre {
+    color: #999;
+    @inclure font-size(14px); }
+  .carousel-ouverture a[rel="bookmark"],
+  .carousel-ouverture .suite--link,
+  .carousel-ouverture .txt a,
+  .txt .carousel-ouverture a {
     color: #eee;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 4px rgba(68, 68, 68, 0.6);
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
     -webkit-transition: all 0.35s ease-in-out 0.2s;
     -moz-transition: all 0.35s ease-in-out 0.2s;
     -ms-transition: all 0.35s ease-in-out 0.2s;
     -o-transition: all 0.35s ease-in-out 0.2s;
     transition: all 0.35s ease-in-out 0.2s; }
-    .carousel-ouverture .entry-title a[rel="bookmark"]:hover {
-      color: #fff;
-      background-color: #d2270e;
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.3); }
-.carousel-ouverture .soustitre {
-  padding: .1em;
-  display: inline-block;
-  background-color: #000;
-  background-color: rgba(0, 0, 0, 0.65);
-  color: #eee; }
-.carousel-ouverture .meta-publi {
-  border: none; }
+    .carousel-ouverture a[rel="bookmark"]:hover,
+    .carousel-ouverture .suite--link:hover,
+    .carousel-ouverture .txt a:hover,
+    .txt .carousel-ouverture a:hover {
+      color: #d2270e;
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.5); }
+  .carousel-ouverture .entry-content p {
+    color: #fff; }
+  .carousel-ouverture .meta-publi,
+  .carousel-ouverture .meta-publi > li {
+    border-color: #555;
+    border-color: rgba(85, 85, 85, 0.5); }
+
+/* carousel-extra */
+.carousel-extra {
+  min-height: 250px;
+  border: 3px solid white;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+  .carousel-extra article {
+    padding: 4px; }
+  .carousel-extra header {
+    margin-bottom: 0; }
+  .carousel-extra .carousel__img {
+    margin-bottom: 12px; }
+  .carousel-extra .meta-publi {
+    margin-bottom: 6px; }
+  .carousel-extra .flex-direction-nav a {
+    height: 32px;
+    width: 32px;
+    top: 30%; }
+  .carousel-extra .flex-prev {
+    background-position: -96px -16px; }
+  .carousel-extra .flex-next {
+    background-position: -96px -48px; }
+  .carousel-extra .flex-control-nav {
+    top: 6px;
+    bottom: auto; }
 
 .no-js .slides > li:first-child {
   display: block; }
@@ -4415,6 +4489,13 @@ table.spip {
 
 /*   =MISC
    ------------------------------------------------------ */
+@media only screen and (min-width: 1024px) {
+  .push--desk-one-tenth {
+    position: relative;
+    left: 10%; }
+
+  .rev {
+    float: right; } }
 /* couleur de texte sélectionné */
 ::selection {
   background-color: #d2270e;

@@ -2,7 +2,7 @@
 <BOUCLE_contexte_extra(CONDITION){si #ENV{contexte}|=={extra}}>
 [(#REM) carousel
 ][ (#ENV{conteneur}|=={carousel}|oui)
-   [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{640,0}|inserer_attribut{class,carousel__img})</a>]
+   [<a href="#URL_ARTICLE" class="carousel__link"><img src="(#LOGO_ARTICLE|image_reduire{640,0}|extraire_attribut{src})" class="carousel__img" alt="#TITRE"></a>]
 ][(#REM) liste ]
    <BOUCLE_conteneur_liste(CONDITION){si #ENV{conteneur}|=={liste}}>#SET{id_art,#ID_ARTICLE}
       <BOUCLE_doc_rapport(DOCUMENTS mots_liens){id_mot=63}{id_article}>
