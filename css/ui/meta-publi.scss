@@ -13,7 +13,7 @@
       .liste-items {
          a {
             color: #333;
-            &:hover{color: $rouge-hover;}
+            &:hover{color: $brand-color;}
          }
       }
    }
@@ -34,25 +34,31 @@
             left: 0;
          }
       }
+
       // date publication
       // ------------------
       .updated {
          text-transform: uppercase;
          color: #999;
       }
+
       // auteur
       // -------
       .byline {font-style: italic; color: #999;}
+
       // traductions
       // -------------
-      .box--aside .traductions {
-         @extend %sass-margin-top;
-      }
-         .traduction.on {
-            color: $brand-color;
+      .traductions {
+         .sprite {
+            margin-right: 6px;
          }
-            .lang {
-               text-transform: uppercase;
-               color: #999;
-               @include font-size(14px);
+      }
+         .traduction {
+            text-transform: uppercase;
+            &.on .btn--traduction {
+               background-color: $brand-color;
             }
+            .box--aside & {
+               @extend %sass-margin-top;
+            }
+         }

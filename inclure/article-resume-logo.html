@@ -19,4 +19,4 @@
 [(#ENV{contexte}|=={principal}|oui)
    [(#LOGO_ARTICLE||image_reduire{200,150}|inserer_attribut{class,media__img spip_logos})]
 ]
-[(#ENV{contexte}|=={ouverture}|oui)[<a href="#URL_ARTICLE" class="carousel__img-link"><img src="(#LOGO_ARTICLE|image_reduire{1024,512}|extraire_attribut{src})" class="carousel__img" alt="#TITRE"></a>]]</BOUCLE_logo>
+[(#ENV{contexte}|=={ouverture}|oui)[<a href="#URL_ARTICLE" class="carousel__link"><img src="(#LOGO_ARTICLE|image_reduire{1024,512}|extraire_attribut{src})" class="carousel__img" alt="#TITRE"></a>]]</BOUCLE_logo>

@@ -68,7 +68,11 @@ $(window).load(function(){
    // = flexslider =
    // ==============
    $('.flexslider').flexslider({
-     animation: "slide"
+     animation: "slide",
+     slideshow: false,
+     start: function(slider){
+       $('body').removeClass('loading');
+     }
    });
 
 });

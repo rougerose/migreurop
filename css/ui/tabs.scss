@@ -8,7 +8,7 @@
       .tabs__nav {
          list-style-type: none;
          > li {
-            font-family: $condensed-face;
+            font-family: $condensed-font-family;
             text-transform: uppercase;
             border: solid 1px #fff;
             border-width: 1px 1px 0;
@@ -42,7 +42,7 @@
             > a {
                padding: 3px $half-spacing-unit;
                color: #999; color: rgba(0,0,0,0.4);
-               &:hover {color: $rouge-hover;}
+               &:hover {color: $brand-color;}
                &.active {color: #000; cursor: default;}
             }
          }
@@ -77,8 +77,8 @@
                display: block;
                padding: 3px 6px 3px 6px;
                width: 30px;
-               &:hover {color: $rouge-hover;}
-               &.active {color: $rouge-hover; cursor: default;}
+               &:hover {color: $brand-color;}
+               &.active {color: $brand-color; cursor: default;}
             }
          }
       }

@@ -17,33 +17,48 @@
 @import "vars";
 @import "inuit.css/inuit";
 
-
-
-
-
 /**
  * She’s all yours, cap’n... Begin importing your stuff here.
  */
-//@import "ui/example";
-
 // base
 // ======================
 @import "ui/base";
+@import "ui/typographie";
+@import "ui/headings";
+@import "ui/shared";
+@import "ui/button";
+@import "ui/quotes";
 
 // layout
 // ======================
 @import "ui/page-head";
 @import "ui/page-content";
+@import "ui/page-foot";
 
 // modules
 // ======================
 @import "ui/nav";
+@import "ui/box";
 @import "ui/dropdown";
-
+@import "ui/listes";
 @import "ui/sprite";
 @import "ui/media";
-@import "ui/carousel";
+
 @import "ui/forms";
+@import "ui/hentry";
+@import "ui/meta-publi";
+@import "ui/carousel";
+@import "ui/breadcrumb";
+@import "ui/tabs";
+@import "ui/pagination";
+@import "ui/recherche";
+@import "ui/self";
+
+// spip
+@import "ui/spip";
+
+// lt-ie9
+@import "ui/lt-ie9";
 
 // divers
 @import "ui/misc";

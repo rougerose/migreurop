@@ -9,14 +9,22 @@
  * using your own, so you can completely modify how inuit.css works without ever
  * having to alter the framework itself.
  */
+$base-line-height:  24px;
+
 $base-font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 $condensed-font-family:"PT Sans Narrow","Helvetica Neue",Helvetica,Arial,sans-serif;
 $mono-font-family: monospace;
 
 /* couleurs */
 $brand-color: #d2270e;
+$pageFootColor: #738b98;
+$pathColor: #ccc;
 
 
+/* boutons */
+$btnBackground: #fff !default;
+$btnBackgroundHighlight: darken(#fff, 10%) !default;
+$btnBorder: #ccc !default;
 
 /*------------------------------------*\
     $OBJECTS-AND-ABSTRACTIONS
@@ -37,7 +45,7 @@ $use-breadcrumb:    false;
 $use-media:         false;
 $use-marginalia:    false;
 $use-island:        false;
-$use-block-list:    false;
+$use-block-list:    true;
 $use-matrix:        false;
 $use-split:         false;
 $use-this-or-this:  false;
@@ -81,3 +89,7 @@ $desk-wide-start:   1100px;
 
 // couleurs
 $noir-bleu: #1d2326!default;
+
+// marges
+$base-spacing-unit: $base-line-height;
+$quarter-spacing-unit : $base-spacing-unit/4;

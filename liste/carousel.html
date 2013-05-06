@@ -12,60 +12,12 @@
    (#SET{type-page,#ENV{type-page,sommaire}}) ][
    (#SET{id,#ENV{id}}) ]
 
-<div [id="(#GET{id})"] class="carousel[ carousel-(#GET{contexte})][ (#GET{type-page})]" lang="#LANG">
-   <ul class="carousel-wrap">
+<div [id="(#GET{id})"] class="flexslider carousel[ carousel-(#GET{contexte})][ (#GET{type-page})]" lang="#LANG">
+   <ul class="slides">
       <BOUCLE_carousel(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|match{^ouverture|extra$}}>
-      <li>[(#INCLURE{fond=inclure/article-resume,id_article,env})]</li></BOUCLE_carousel>
+      [<li>(#INCLURE{fond=inclure/article-resume-carousel,id_article,env})</li>]</BOUCLE_carousel>
       <BOUCLE_portfolio(ARTICLES){id_article ?}{si #GET{contexte}|=={portfolio}}>
          [(#INCLURE{fond=liste/carousel_portfolio,id_article})]
       </BOUCLE_portfolio>
    </ul><!-- .swipe-wrap -->
-   <nav class="prevnext">
-      <ul class="nav">
-         <li><a href="#" class="prev sprite sprite--prev" onclick='[swipe(#GET{id}).prev();]return false;'><:migreurop:previous:></a></li>
-         <li><a href="#" class="next sprite sprite--next" onclick='[swipe(#GET{id}).next();]return false;'><:migreurop:next:></a></li>
-      </ul>
-   </nav>
 </div><!-- .carousel -->
-<script type="text/javascript">
-   $(document).ready(function(){
-      $('[#(#GET{id})]').each(function(){
-         var carousel = $(this),
-         items = carousel.children('ul').children('li'),
-         pages = items.length;
-         if (pages > 1) {
-            carousel.append('<ol id="navpages_#GET{id}" class="nav pages" />');
-            var navpages = carousel.find("#navpages_#GET{id}"), str = '', n = 1;
-            for(var i=0; i < pages; i++){
-                str += '<li><a>' + n + '</a></li>';
-                n++;
-            }
-            navpages.append(str);
-         }
-      });
-      var elem = document.getElementById('[(#GET{id})]'), navpages = document.getElementById('navpages_#GET{id}');
-      window.swipe[(#GET{id})] = Swipe(elem, {
-         callback: function(ind, elem) {
-            for (var i = 0; i < navpages.childNodes.length; i++) {
-               if (navpages.childNodes[i].className == "active") {
-                  navpages.childNodes[i].className = "";
-               }
-            }
-            document.getElementById('navpages_'+ (ind+1)).className = "active";
-         }
-      });
-      if (navpages) {
-         for (var x = 0; x < navpages.children.length; x++) {
-            addSwipeClick(x);
-         }
-         function addSwipeClick(x) {
-            navpages.children[x].onclick = function() {
-               swipe[(#GET{id})].slide(x, 500);
-            }
-         }
-      }
-      /*elem.onclick = function() {
-         swipe[(#GET{id})].next();
-      }*/
-   });
-</script>

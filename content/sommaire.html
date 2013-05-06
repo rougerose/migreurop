@@ -1,17 +1,26 @@
 [(#SET{articles_carousel,#ARRAY})][(#SET{articles_selection,#ARRAY})]
 <BOUCLE_selection(ARTICLES pb_selection){lang}{par ordre}{spip_pb_selection.id_rubrique=0}>
-[(#LOGO_ARTICLE|oui) [(#SET_PUSH{articles_carousel,#ID_ARTICLE})] ]
+[(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={800})]}|oui) [(#SET_PUSH{articles_carousel,#ID_ARTICLE})] ]
 [(#LOGO_ARTICLE|non) [(#SET_PUSH{articles_selection,#ID_ARTICLE})] ]
 </BOUCLE_selection>[
 
 (#REM) carousel ouverture ]
 [(#GET{articles_carousel}|oui)
 <div class="grid__item">
-   #INCLURE{fond=liste/carousel,selection=#GET{articles_carousel},type-page=#ENV{type-page},contexte=ouverture,conteneur=carousel,id=carouselOuverture}
-</div><!-- .g one-whole -->][
+   #INCLURE{fond=liste/carousel,
+      selection=#GET{articles_carousel},
+      type-page=#ENV{type-page},
+      contexte=ouverture,
+      conteneur=carousel,
+      id=carouselOuverture}
+</div><!-- .grid__item -->][
 
 (#REM) selection des articles ]
 [(#GET{articles_selection}|oui)
-<div class="g one-whole desk-six-tenths">
-   #INCLURE{fond=liste/articles-selection,conteneur=principal,selection=#GET{articles_selection},pagination=10,ajax}
-</div><!-- .g one-whole desk-six-tenths -->]
+<div class="grid__item desk-six-tenths">
+   #INCLURE{fond=liste/articles-selection,
+      conteneur=principal,
+      selection=#GET{articles_selection},
+      pagination=10,
+      ajax}
+</div><!-- .grid__itme-->]

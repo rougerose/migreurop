@@ -23,11 +23,11 @@
       }
       a {
          color: #ddd;
-         &:hover{color: $rouge-hover;}
+         &:hover{color: $brand-color;}
          &.sp--top {
             text-transform: uppercase;
             @include font-size(18px);
-            font-family: $condensed-face;
+            font-family: $condensed-font-family;
             padding-right: 32px;
             margin-top: 2em;
             display: inline-block;

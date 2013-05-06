@@ -20,3 +20,15 @@ a {
       position: relative; top: 1px;
    }
 }
+// liens soulignés
+.suite--link,
+#spip_pass {
+   border-bottom: 1px solid $brand-color;
+}
+.suite--link {
+   margin-left: 4px;
+}
+// more
+.more, .less {
+   .txt & {border-bottom: none;}
+}

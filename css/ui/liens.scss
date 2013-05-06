@@ -5,7 +5,7 @@
       text-decoration: none;
       @include vendor(transition, color 0.35s ease-in-out 0.2s);
       &:visited{}
-      &:hover{color: $rouge-hover; text-decoration: none;}
+      &:hover{color: $brand-color; text-decoration: none;}
       &:active, &:focus {
          position: relative; top: 1px;
       }

@@ -7,9 +7,8 @@
 ]<BOUCLE_article(ARTICLES){id_article}>
 <article class="hentry resume[(#ENV{contexte}|=={extra}|oui) hentry-secondary][(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui) media]">
    [(#ENV{contexte}|=={extra}|oui)
-      [(#INCLURE{fond=inclure/article-resume-logo,id_article,contexte=#ENV{contexte},conteneur=#ENV{conteneur}})]
+      [(#INCLURE{fond=inclure/article-resume-logo, id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]
    ]
-   [(#ENV{contexte}|=={ouverture}|oui)<div class="wrap"><div class="g desk-one-half"><div class="calque">]
    [(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui)<div class="media__body">]
    <header>
       [(#SOUSTITRE|oui)<hgroup>]
@@ -19,7 +18,7 @@
    </header>
    <div class="entry-content[(#ENV{contexte}|=={principal}|oui) media]">
       [(#ENV{contexte}|=={principal}|oui)
-      [(#INCLURE{fond=inclure/article-resume-logo,id_article,contexte=#ENV{contexte},conteneur=#ENV{conteneur}})] ]
+      [(#INCLURE{fond=inclure/article-resume-logo, id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})] ]
       [(#ENV{contexte}|=={extra}|?{
          [<p[(#ENV{contexte}|=={liste}|oui) class="media__body"]>(#INTRODUCTION|couper{100}|PtoBR) <a href="#URL_ARTICLE" class="suite--link"><:migreurop:more:></a></p>],
          [<p[(#LOGO_ARTICLE|et{#ENV{contexte}|=={principal}}|oui) class="media__body"]>(#INTRODUCTION|PtoBR) <a href="#URL_ARTICLE" class="suite--link"><:migreurop:more:></a></p>]
@@ -31,8 +30,8 @@
       [<li class="byline author vcard">
          (#MODELE{article-auteurs})
       </li>]
-      [(#MODELE{article-resume-traductions})]
-      [<li class="category cat--item"><a href="[(#INFO_URL{rubrique,#ID_RUBRIQUE})]">(#INFO_TITRE{rubrique,#ID_RUBRIQUE})</a></li>]
+      [<li class="category cat--item"><a href="[(#INFO_URL{rubrique,#ID_RUBRIQUE})]">(#INFO_TITRE{rubrique,#ID_RUBRIQUE})</a></li>][
+      (#MODELE{article-resume-traductions})]
    </ul>
    [(#ENV{contexte}|=={ouverture}|oui)</div></div></div><!-- .wrap -->
       [(#INCLURE{fond=inclure/article-resume-logo,id_article,contexte=#ENV{contexte},conteneur=#ENV{conteneur}})] ]

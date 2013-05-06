@@ -1,0 +1,18 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<article class="hentry resume[(#ENV{contexte}|=={extra}|oui) hentry-secondary][(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui) media]">
+   <div class="wrap">
+      <header>
+         [(#SOUSTITRE|oui)<hgroup>]
+            <h1 class="entry-title[(#SOUSTITRE|oui) hN]"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h1>
+            [<h2 class="soustitre hN">(#SOUSTITRE)</h2>]
+         [(#SOUSTITRE|oui)</hgroup>]
+      </header>
+      [<ul class="meta-publi">
+         (#MODELE{article-resume-traductions})
+      </ul>]
+   </div>
+   [(#ENV{contexte}|=={ouverture}|oui)[
+      (#INCLURE{fond=inclure/article-resume-logo, id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]
+   ]
+</article>
+</BOUCLE_article>

@@ -1,73 +1,146 @@
 /*   =CAROUSEL
    ------------------------------------------------------ */
 /*
- * Elements communs
+ * FlexSlider : css de base
  */
+.flex-viewport {
+   max-height: 2000px;
+   @include vendor(transition, all 1s ease);
+}
+.loading .flex-viewport {
+   max-height: 300px;
+}
+/* navigation precedent/suivant */
+.flex-control-nav,
+.flex-direction-nav {
+   margin: 0;
+   list-style: none;
+}
+.flex-direction-nav a {
+   @extend .sprite;
+   height: 48px;
+   width: 48px;
+   text-indent: -9999em;
+   cursor: pointer;
+   opacity: 0.5;
+   position: absolute;
+   top: 50%;
+   @include vendor(transition, opacity 0.5s linear);
+   &:hover {
+      opacity:1;
+   }
+}
+.flex-prev {
+   left: 10px;
+   background-position: 0 -32px;
+}
+.flex-next {
+   right: 10px;
+   background-position: -48px -32px;
+}
+/* navigation pagination */
+.flex-control-nav {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   @extend .nav;
+}
+.flex-control-nav li {
+   margin: 0 6px 0 0;
+   line-height: 1;
+}
+.flex-control-paging a {
+   cursor: pointer;
+   display: block;
+   height: 16px;
+   width: 16px;
+   background-color: #ddd;
+   background-color: rgba(255,255,255,0.4);
+   @include vendor(transition, all 0.2s);
+   @include vendor(border-radius,2px);
+   @include vendor(box-shadow,0 0 3px 1px rgba(0,0,0,0.15));
+   text-indent: -9999em;
+   &:hover {
+      background-color: rgba(255,255,255,0.65);
+   }
+}
+.flex-control-paging .flex-active {
+   background-color: #fff;
+   cursor: default;
+}
+
+/*
+ * Carousel
+ * ===================================
+ */
+
+   /* Styles communs */
    .carousel {
-      overflow: hidden;
-      visibility: hidden;
       position: relative;
-      background-color: $noir-bleu;
-      // masquer le texte des articles !! à supprimer !!
-      // ================================================
-      .wrap {
-         display: none;
-      }
-   }
-   .carousel-ouverture,
-   .carousel-ouverture article,
-   .carousel-portfolio {
-      //height: 520px; /* hauteur contrainte pour l'ouverture et le portfolio */
-   }
-   /* conteneur */
-   .carousel-wrap {
-      list-style: none outside none;
-      margin: 0;
-      overflow: hidden;
-      position: relative;
-      > li {
-         float:left;
-         width:100%;
-         position: relative;
-      }
-   }
-      /* liens + image */
-      .carousel__img-link {
-         width: 100%;
-         display: block;
-         line-height: 0;
-      }
-         .carousel__img {
-            width: 100%;
+      a {
+         &:active,
+         &:focus {
+            outline: none;
          }
-
-/**
- * Navigation Précédent/Suivant
- */
-   .prevnext {
+      }
+      .slides {
+         @extend .cf;
+         @extend .nav;
+         margin-bottom: 0;
+         > li {
+            display: none;
+            -webkit-backface-visibility: hidden;
+         }
+         article {
+            position: relative;
+         }
+      }
+   }
+   .carousel__link {
+      display: block; line-height: 0;
+   }
+   .carousel__img {
       width: 100%;
-      position: absolute;
-      z-index: 21;
-      top: 45%;
    }
-      .prevnext a {
-         height: 48px;
-         width: 48px;
-         text-indent: -9999em;
-         cursor: pointer;
-         opacity: 0.5;
+
+   /* carousel-ouverture */
+   .carousel-ouverture {
+      .wrap {
          position: absolute;
-         @include vendor(transition, opacity 0.5s linear);
-         &:hover{
-            opacity:1;
+         left: 0;
+         bottom: 0;
+         width: 70%;
+         margin-left: $base-spacing-unit;
+      }
+      .entry-title {
+         line-height: 1.5em;
+         a[rel="bookmark"] {
+            padding: .1em;
+            background-color: #000;
+            background-color: rgba(#000,0.65);
+            color: #eee;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 0 4px rgba(68,68,68,0.6);
+            @include vendor(transition, all 0.35s ease-in-out 0.2s);
+            &:hover {
+               color: #fff;
+               background-color: $brand-color;
+               text-shadow: 0 0 4px rgba(255,255,255,0.3);
+            }
          }
       }
-      .prevnext .prev {
-         left: 10px;
-         background-position: 0 -32px;
+      .soustitre {
+         padding: .1em;
+         display: inline-block;
+         background-color: #000;
+         background-color: rgba(#000,0.65);
+         color: #eee;
       }
-      .prevnext .next {
-         right: 10px;
-         background-position: -48px -32px;
+      .meta-publi {
+         border: none;
       }
+   }
 
+
+
+.no-js .slides > li:first-child {display: block;}
