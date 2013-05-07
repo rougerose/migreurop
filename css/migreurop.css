@@ -796,7 +796,7 @@ textarea:focus {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf:after, .nav:after, .meta-publi:after, .flex-control-nav:after, .carousel .slides:after, .tabs-top__nav:after, .box--aside:after, .documents:after, .tabs-side:after {
+.cf:after, .nav:after, .meta-publi:after, .flex-control-nav:after, .carousel .slides:after, .tabs-top__nav:after, .media:after, .media-ouverture:after, .box--aside:after, .documents:after, .tabs-side:after {
   content: "";
   display: table;
   clear: both; }
@@ -845,7 +845,7 @@ pre,
 /**
  * Doubled up `margin-bottom` helper class.
  */
-.landmark, .carousel-ouverture, .self {
+.landmark, .box--aside, .carousel-ouverture, .self {
   margin-bottom: 48px;
   margin-bottom: 3rem; }
 
@@ -1734,6 +1734,57 @@ label,
   content: "\002C" "\00A0"; }
 .nav--keywords > li:last-child:after {
   display: none; }
+
+/*------------------------------------*\
+    $MEDIA
+\*------------------------------------*/
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * E.g.:
+ *
+   <div class=media>
+       <img src=http://placekitten.com/200/300 alt="" class=media__img>
+       <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/cf4Qs
+ *
+ */
+.media, .media-ouverture {
+  display: block; }
+
+.media__img {
+  float: left;
+  margin-right: 24px; }
+
+/**
+ * Reversed image location (right instead of left).
+ */
+.media__img--rev {
+  float: right;
+  margin-left: 24px; }
+
+.media__img img,
+.media__img--rev img {
+  display: block; }
+
+.media__body {
+  overflow: hidden; }
+
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0; }
+
+/**
+ * `.img`s in `.islet`s need an appropriately sized margin.
+ */
+.islet .media__img {
+  margin-right: 12px; }
+
+.islet .media__img--rev {
+  margin-left: 12px; }
 
 /*------------------------------------*\
     $BLOCK-LIST
@@ -3251,10 +3302,6 @@ h6.spip {
 
 /*   =SHARED
    ------------------------------------------------------ */
-.box--aside .traduction {
-  margin-top: 24px;
-  margin-top: 1.5rem; }
-
 /*   =BUTTON
    ------------------------------------------------------ */
 .btn {
@@ -3476,7 +3523,7 @@ ol.objets-selection, ol.block-list--media {
   margin-left: 48px; }
 
 .box--aside .objets-selection > li, .box--aside .block-list--media > li {
-  margin-bottom: 12px; }
+  margin-bottom: 24px; }
 
 .block-list--media > li {
   margin-bottom: 24px; }
@@ -3817,34 +3864,40 @@ ol.objets-selection, ol.block-list--media {
     border-right-width: 0; }
 
 /* hentry-secondary */
-.hentry-secondary header {
-  margin-bottom: 12px; }
-.hentry-secondary hgroup {
+.hentry-secondary {
   margin-bottom: 0; }
-.hentry-secondary .entry-title {
-  font-size: 17px;
-  font-size: 1.0625rem;
-  line-height: 1.41176;
-  line-height: 1.2;
-  margin-bottom: 0; }
-.hentry-secondary .soustitre {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.6; }
-.hentry-secondary .entry-content p {
-  margin-bottom: 6px;
-  font-size: 13px;
-  font-size: 0.8125rem;
-  line-height: 1.84615;
-  line-height: 1.5;
-  color: #999; }
-.hentry-secondary .meta-publi {
-  line-height: 1.2em; }
-  .hentry-secondary .meta-publi > li {
-    font-size: 10px;
-    font-size: 0.625rem;
-    line-height: 2.4;
-    line-height: 1.5em; }
+  .hentry-secondary header {
+    margin-bottom: 12px; }
+  .hentry-secondary hgroup {
+    margin-bottom: 0; }
+  .hentry-secondary .entry-title {
+    font-size: 17px;
+    font-size: 1.0625rem;
+    line-height: 1.41176;
+    line-height: 1.2;
+    margin-bottom: 0; }
+  .hentry-secondary .soustitre {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6; }
+  .hentry-secondary .entry-content p {
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 1.84615;
+    line-height: 1.5;
+    color: #999; }
+  .hentry-secondary .meta-publi {
+    margin-bottom: 0;
+    line-height: 1.2em; }
+    .hentry-secondary .meta-publi > li {
+      font-size: 10px;
+      font-size: 0.625rem;
+      line-height: 2.4;
+      line-height: 1em; }
+  .hentry-secondary .author,
+  .hentry-secondary .category {
+    display: none; }
 
 /*   =META-PUBLI
    ------------------------------------------------------ */
@@ -3892,8 +3945,6 @@ ol.objets-selection, ol.block-list--media {
   text-transform: uppercase; }
   .traduction.on .btn--traduction {
     background-color: #d2270e; }
-  .box--aside .carousel .traduction {
-    margin-top: 0; }
 
 /*   =CAROUSEL
    ------------------------------------------------------ */
@@ -4012,12 +4063,11 @@ ol.objets-selection, ol.block-list--media {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50%;
+    width: 60%;
     padding: 12px;
     background-color: rgba(29, 35, 38, 0.8); }
   .carousel-ouverture header,
   .carousel-ouverture .soustitre,
-  .carousel-ouverture .entry-content p,
   .carousel-ouverture .meta-publi {
     margin-bottom: 6px; }
   .carousel-ouverture hgroup {
@@ -4033,7 +4083,6 @@ ol.objets-selection, ol.block-list--media {
   .txt .carousel-ouverture a {
     color: #eee;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
     -webkit-transition: all 0.35s ease-in-out 0.2s;
     -moz-transition: all 0.35s ease-in-out 0.2s;
     -ms-transition: all 0.35s ease-in-out 0.2s;
@@ -4043,9 +4092,9 @@ ol.objets-selection, ol.block-list--media {
     .carousel-ouverture .suite--link:hover,
     .carousel-ouverture .txt a:hover,
     .txt .carousel-ouverture a:hover {
-      color: #d2270e;
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.5); }
+      color: #d2270e; }
   .carousel-ouverture .entry-content p {
+    margin-bottom: 12px;
     color: #fff; }
   .carousel-ouverture .meta-publi,
   .carousel-ouverture .meta-publi > li {

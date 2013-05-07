@@ -30,6 +30,7 @@
 
 /* hentry-secondary */
 .hentry-secondary {
+   margin-bottom: 0;
    header {
       margin-bottom: $half-spacing-unit;
    }
@@ -45,16 +46,21 @@
          @include font-size(15px);
       }
    .entry-content p {
-      margin-bottom: $quarter-spacing-unit;
+      margin-bottom: $half-spacing-unit;
       @include font-size(13px);
       line-height: 1.5;
       color: #999;
    }
    .meta-publi {
+      margin-bottom: 0;
       line-height: 1.2em;
       > li {
          @include font-size(10px);
-         line-height: 1.5em;
+         line-height: 1em;
       }
+   }
+   .author,
+   .category {
+      display: none;
    }
 }

@@ -3,6 +3,7 @@
    /* box--aside */
    .box--aside {
       @extend .cf;
+      @extend .landmark;
    }
    .box__title {
       @include font-size(20px);

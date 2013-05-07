@@ -111,13 +111,12 @@
          position: absolute;
          left: 0;
          bottom: 0;
-         width: 50%;
+         width: 60%;
          padding: $half-spacing-unit;
          background-color: rgba($noir-bleu,0.8);
       }
       header,
       .soustitre,
-      .entry-content p,
       .meta-publi {
          margin-bottom: $quarter-spacing-unit;
       }
@@ -135,14 +134,13 @@
       .suite--link {
          color: #eee;
          color: rgba(255,255,255,0.9);
-         text-shadow: 0 0 4px rgba(255,255,255,0.5);
          @include vendor(transition, all 0.35s ease-in-out 0.2s);
          &:hover {
             color: $brand-color;
-            text-shadow: 0 0 4px rgba(255,255,255,0.5);
          }
       }
       .entry-content p {
+         margin-bottom: $half-spacing-unit;
          color: #fff;
       }
       .meta-publi {

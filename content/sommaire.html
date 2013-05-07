@@ -1,8 +1,9 @@
 [(#SET{articles_carousel,#ARRAY})][(#SET{articles_selection,#ARRAY})]
-<BOUCLE_selection(ARTICLES pb_selection){lang}{par ordre}{spip_pb_selection.id_rubrique=0}>
-[(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={800})]}|oui) [(#SET_PUSH{articles_carousel,#ID_ARTICLE})] ]
-[(#LOGO_ARTICLE|non) [(#SET_PUSH{articles_selection,#ID_ARTICLE})] ]
-</BOUCLE_selection>[
+<BOUCLE_selection(ARTICLES pb_selection){lang}{par ordre}{spip_pb_selection.id_rubrique=0}>[
+(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={800})]}|?{
+   [(#SET_PUSH{articles_carousel,#ID_ARTICLE})],
+   [(#SET_PUSH{articles_selection,#ID_ARTICLE})]
+})]</BOUCLE_selection>[
 
 (#REM) carousel ouverture ]
 [(#GET{articles_carousel}|oui)
