@@ -3838,9 +3838,9 @@ ol.objets-selection, ol.block-list--media {
   color: #666; }
 
 .entry-title {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1; }
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
   @media only screen and (max-width: 480px) {
     .entry-title {
       font-size: 20px;
@@ -3848,9 +3848,9 @@ ol.objets-selection, ol.block-list--media {
       line-height: 1.2; } }
 
 .soustitre {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #999; }
   @media only screen and (max-width: 480px) {
@@ -3882,9 +3882,9 @@ ol.objets-selection, ol.block-list--media {
   .hentry-secondary hgroup {
     margin-bottom: 0; }
   .hentry-secondary .entry-title {
-    font-size: 17px;
-    font-size: 1.0625rem;
-    line-height: 1.41176;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
     line-height: 1.2;
     margin-bottom: 0; }
   .hentry-secondary .soustitre {
@@ -3896,8 +3896,7 @@ ol.objets-selection, ol.block-list--media {
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.84615;
-    line-height: 1.5;
-    color: #999; }
+    line-height: 1.5; }
   .hentry-secondary .meta-publi {
     margin-bottom: 0;
     line-height: 1.2em;
