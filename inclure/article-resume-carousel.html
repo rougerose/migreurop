@@ -1,8 +1,6 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <article class="hentry resume[(#ENV{contexte}|=={extra}|oui) hentry-secondary][(#ENV{contexte}|=={extra}|et{#ENV{conteneur}|=={liste}}|oui) media]">
-   [(#ENV{contexte}|=={extra}|oui)[
-      (#INCLURE{fond=inclure/article-resume-logo,
-         id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]]
+   [(#INCLURE{fond=inclure/article-resume-logo,id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]
    <div class="wrap">
       <header>
          [(#SOUSTITRE|oui)<hgroup>]
@@ -18,8 +16,5 @@
          (#MODELE{article-resume-traductions})]
       </ul>
    </div>
-   [(#ENV{contexte}|=={ouverture}|oui)[
-      (#INCLURE{fond=inclure/article-resume-logo, id_article, contexte=#ENV{contexte}, conteneur=#ENV{conteneur}})]
-   ]
 </article>
 </BOUCLE_article>

@@ -31,6 +31,13 @@ $(window).load(function(){
 
    });
 
+   // ============================
+   // = Menu principal en select =
+   // ============================
+   $("#formulaire_select_nav form select").change(function() {
+      $(this).closest("form").submit();
+   });
+
    // ========================================
    // = navigation plan rubrique : animation =
    // ========================================
