@@ -54,6 +54,7 @@
    .meta-publi {
       margin-bottom: 0;
       line-height: 1.2em;
+      clear: both;
       > li {
          @include font-size(10px);
          line-height: 1em;

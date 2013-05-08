@@ -7,16 +7,16 @@
       position: absolute;
       z-index: 90;
       width: 100%;
+      @include media-query(palm) {
+         position: static;
+      }
    }
 }
 
    /* logo site */
    .logo {
       display: inline-block;
-      @include media-query(lap) {
-         width: 320px;
-      }
       @include media-query(palm) {
-         width: 210px;
+         width: 280px;
       }
    }
