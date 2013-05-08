@@ -6,10 +6,17 @@
 }
 .entry-title {
    @include font-size($h3-size);
+   @include media-query(palm) {
+      @include font-size($h4-size);
+   }
 }
 .soustitre {
    @include font-size($h4-size);
    font-family: $condensed-font-family;
+   color: #999;
+   @include media-query(palm) {
+      @include font-size($h5-size);
+   }
 }
 .meta-publi {
    border-top: 1px dotted #ccc;
