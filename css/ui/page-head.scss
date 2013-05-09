@@ -11,12 +11,15 @@
          position: static;
       }
    }
+   @include media-query(palm) {
+      padding-top: 5em;
+   }
 }
 
    /* logo site */
    .logo {
       display: inline-block;
       @include media-query(palm) {
-         width: 300px;
+         width: 250px;
       }
    }
