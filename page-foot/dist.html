@@ -1,7 +1,7 @@
 #SET{lang_env,fr}
-<div class="container">
-   <div class="gw">
-      <div class="g desk-four-tenths">
+<div class="conteneur">
+   <div class="grid">
+      <div class="grid__item desk-four-tenths">
          <B_langues>
          <BOUCLE_langues(ARTICLES){age < 365}>
          [(#LANG|unique|oui)[(#SET_PUSH{lang-affich,#LANG})]]
@@ -21,15 +21,14 @@
          </div><!-- .tabs -->
          [<script src="(#PRODUIRE{fond=javascript/migreurop_easytabs_news.js,default=tn-#GET{lang_env}})" type="text/javascript" charset="utf-8"></script>]
          </B_langues>
-      </div><!-- g desk-four-tenths -->
-      <div class="g desk-four-tenths">
+      </div><!-- grid__item desk-four-tenths --><!--
+    --><div class="grid__item desk-four-tenths lap-two-fifths">
          <BOUCLE_qsn(RUBRIQUES){id_rubrique=378}>
          <h1 class="intertitre">#TITRE</h1>
          [<p>(#TEXTE|PtoBR) <a href="#URL_RUBRIQUE" class="suite--link"><:migreurop:more:></a></p>]
          </BOUCLE_qsn>
-      </div><!-- .g desk-four-tenths -->
-
-      <div class="g desk-two-tenths">
+      </div><!-- .grid__item desk-four-tenths --><!--
+   --><div class="grid__item desk-two-tenths lap-two-fifths push--lap-one-fifth">
          <h1 class="intertitre"><:migreurop:social_follow_us:></h1>
          <ul class="liste-items social">
             <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--tw">
@@ -51,17 +50,17 @@
                <a href="#URL_PAGE{contact}"><:migreurop:contact_address:></a>
             </li>
          </ul>
-         <a href="#top" class="sp--alt sp--top">Haut de page</a>
-      </div><!-- .g desk-two-tenths -->
-   </div><!-- gw -->
-</div><!-- container -->
+         <a href="#top" class="sp--alt sp--top"><:migreurop:top_page:></a>
+      </div><!-- .grid__item desk-two-tenths -->
+   </div><!-- .grid -->
+</div><!-- .conteneur -->
 <div class="signature">
-   <div class="container">
-      <div class="gw">
-         <div class="g one-whole">
+   <div class="conteneur">
+      <div class="grid">
+         <div class="grid__item">
             <p class="credits"><:migreurop:credits:></p>
             <INCLURE{fond=inclure/logo_site,bloc=footer} />
-         </div><!-- .g one-whole -->
-      </div><!-- .gw -->
-   </div><!-- .container -->
-</div><!-- .signature-container -->
+         </div><!-- .grid__item -->
+      </div><!-- .grid -->
+   </div><!-- .conteneur -->
+</div><!-- .signature -->

@@ -1,7 +1,6 @@
 /*   =PAGE
 ------------------------------------------------------ */
 .page-content {
-   //max-width: 1100px;
    margin-right: auto;
    margin-left: auto;
    padding-right:$base-spacing-unit;
@@ -9,13 +8,12 @@
    @include media-query(desk) {
       max-width: 1100px;
    }
-}
-
-.conteneur {
-   @include media-query(portable) {
-      text-align: center;
-      > .grid__item {
-         text-align: left;
+   .conteneur {
+      @include media-query(portable) {
+         text-align: center;
+         > .grid__item {
+            text-align: left;
+         }
       }
    }
 }

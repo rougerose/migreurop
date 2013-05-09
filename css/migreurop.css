@@ -3362,12 +3362,11 @@ blockquote {
   @media only screen and (min-width: 961px) {
     .page-content {
       max-width: 1100px; } }
-
-@media only screen and (max-width: 960px) {
-  .conteneur {
-    text-align: center; }
-    .conteneur > .grid__item {
-      text-align: left; } }
+  @media only screen and (max-width: 960px) {
+    .page-content .conteneur {
+      text-align: center; }
+      .page-content .conteneur > .grid__item {
+        text-align: left; } }
 
 /*   =PAGE-FOOT
    ------------------------------------------------------ */
@@ -3376,6 +3375,11 @@ blockquote {
   padding: 24px 0 0;
   color: #738b98;
   border-top: 1px solid black; }
+  .page-foot .conteneur {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-right: 24px;
+    padding-left: 24px; }
   .page-foot .intertitre {
     color: #355E73;
     font-size: 26px;
@@ -3407,6 +3411,15 @@ blockquote {
       margin-top: 2em;
       display: inline-block; }
 
+.signature {
+  border-top: 2px solid black;
+  background-color: #111;
+  margin-top: 12px;
+  padding-bottom: 1em;
+  text-align: center; }
+  .signature .logo {
+    margin: 0 auto; }
+
 .credits {
   text-align: right;
   font-size: 12px;
@@ -3416,14 +3429,6 @@ blockquote {
   margin-bottom: 0; }
   .credits a {
     color: #666; }
-
-.signature {
-  border-top: 2px solid black;
-  background-color: #111;
-  margin-top: 12px;
-  padding-bottom: 1em; }
-  .signature .logo {
-    margin: 0 auto; }
 
 /*   =NAV
    ------------------------------------------------------ */
@@ -4618,6 +4623,7 @@ table.spip {
 
 /*   =MISC
    ------------------------------------------------------ */
+/* push */
 @media only screen and (min-width: 961px) {
   .push--desk-one-tenth {
     position: relative;
@@ -4625,6 +4631,10 @@ table.spip {
 
   .rev {
     float: right; } }
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  .push--lap-one-fifth {
+    position: relative;
+    left: 20%; } }
 /* couleur de texte sélectionné */
 ::selection {
   background-color: #d2270e;

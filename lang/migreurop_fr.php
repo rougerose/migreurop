@@ -74,6 +74,7 @@
       'social_mailing_list' => 'Liste de diffusion',
 
       // T
+      'top_page' => 'Haut de page',
       'translations' => 'Traductions disponibles'
    );
 ?>

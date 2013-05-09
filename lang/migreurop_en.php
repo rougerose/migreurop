@@ -75,6 +75,7 @@
 
 
       // T
+      'top_page' => 'Top',
       'translations' => 'Traductions disponibles'
    );
 ?>
