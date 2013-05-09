@@ -55,8 +55,9 @@
    .credits {
       text-align: right;
       @include font-size(12px);
+      line-height: 1em;
       color: #444;
-      margin-bottom: 0;
+      margin-bottom: 1em;
       a {
          color: #666;
       }

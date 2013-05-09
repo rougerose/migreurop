@@ -3425,8 +3425,9 @@ blockquote {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 2;
+  line-height: 1em;
   color: #444;
-  margin-bottom: 0; }
+  margin-bottom: 1em; }
   .credits a {
     color: #666; }
 
