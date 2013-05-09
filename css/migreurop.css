@@ -796,7 +796,7 @@ textarea:focus {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf:after, .nav:after, .meta-publi:after, .flex-control-nav:after, .carousel .slides:after, .tabs-top__nav:after, .media:after, .media-ouverture:after, .box--aside:after, .documents:after, .tabs-side:after {
+.cf:after, .nav:after, .flex-control-nav:after, .carousel .slides:after, .tabs-top__nav:after, .media:after, .media-ouverture:after, .box--aside:after, .documents:after, .tabs-side:after {
   content: "";
   display: table;
   clear: both; }
@@ -1635,12 +1635,11 @@ label,
  * Demo: jsfiddle.net/inuitcss/Vnph4
  *
  */
-.nav, .meta-publi, .flex-control-nav, .carousel .slides, .tabs-top__nav {
+.nav, .flex-control-nav, .carousel .slides, .tabs-top__nav {
   list-style: none;
   margin-left: 0; }
-  .nav > li, .meta-publi > li, .flex-control-nav > li, .carousel .slides > li, .tabs-top__nav > li,
+  .nav > li, .flex-control-nav > li, .carousel .slides > li, .tabs-top__nav > li,
   .nav > li > a,
-  .meta-publi > li > a,
   .flex-control-nav > li > a,
   .carousel .slides > li > a,
   .tabs-top__nav > li > a {
@@ -3435,16 +3434,16 @@ blockquote {
   z-index: 90;
   top: 0;
   width: 100%; }
-  .nav-principale .nav, .nav-principale .meta-publi, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
+  .nav-principale .nav, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
     margin-bottom: 0;
     margin: 0 auto;
     padding-right: 24px;
     padding-left: 24px; }
     @media only screen and (max-width: 960px) {
-      .nav-principale .nav, .nav-principale .meta-publi, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
+      .nav-principale .nav, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
         text-align: right; } }
     @media only screen and (min-width: 961px) {
-      .nav-principale .nav, .nav-principale .meta-publi, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
+      .nav-principale .nav, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
         max-width: 1100px; } }
   .nav-principale a {
     color: #eee;
@@ -3834,88 +3833,22 @@ ol.objets-selection, ol.block-list--media {
 .js .formulaire_select_nav .boutons {
   display: none; }
 
-/*   =HENTRY
-   ------------------------------------------------------ */
-/* Styles communs */
-.hentry {
-  color: #666; }
-
-.entry-title {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 1.2; }
-  @media only screen and (max-width: 480px) {
-    .entry-title {
-      font-size: 20px;
-      font-size: 1.25rem;
-      line-height: 1.2; } }
-
-.soustitre {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #999; }
-  @media only screen and (max-width: 480px) {
-    .soustitre {
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 1.5; } }
-
-.meta-publi {
-  border-top: 1px dotted #cccccc;
-  border-bottom: 1px solid #cccccc;
-  line-height: 2; }
-
-.meta-publi > li {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 2;
-  margin-right: 6px;
-  padding-right: 6px;
-  border-right: 1px solid #cccccc; }
-  .meta-publi > li:last-child {
-    border-right-width: 0; }
-
-/* hentry-secondary */
-.hentry-secondary {
-  margin-bottom: 0; }
-  .hentry-secondary header {
-    margin-bottom: 12px; }
-  .hentry-secondary hgroup {
-    margin-bottom: 0; }
-  .hentry-secondary .entry-title {
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
-    line-height: 1.2;
-    margin-bottom: 0; }
-  .hentry-secondary .soustitre {
-    font-size: 15px;
-    font-size: 0.9375rem;
-    line-height: 1.6; }
-  .hentry-secondary .entry-content p {
-    margin-bottom: 12px;
-    font-size: 13px;
-    font-size: 0.8125rem;
-    line-height: 1.84615;
-    line-height: 1.5; }
-  .hentry-secondary .meta-publi {
-    margin-bottom: 0;
-    line-height: 1.2em;
-    clear: both; }
-    .hentry-secondary .meta-publi > li {
-      font-size: 10px;
-      font-size: 0.625rem;
-      line-height: 2.4;
-      line-height: 1em; }
-  .hentry-secondary .author,
-  .hentry-secondary .category {
-    display: none; }
-
 /*   =META-PUBLI
    ------------------------------------------------------ */
 /* éléments communs. éléments spécifiques voir hentry.scss, self.scss */
+@media only screen and (min-width: 481px) {
+  .meta-publi {
+    list-style: none;
+    margin-left: 0; }
+    .meta-publi > li,
+    .meta-publi > li > a {
+      display: inline-block;
+      *display: inline;
+      zoom: 1; } }
+@media only screen and (max-width: 480px) {
+  .meta-publi {
+    margin-left: 0;
+    list-style: none; } }
 .meta-publi .intertitre {
   font-size: 18px;
   font-size: 1.125rem;
@@ -3959,6 +3892,79 @@ ol.objets-selection, ol.block-list--media {
   text-transform: uppercase; }
   .traduction.on .btn--traduction {
     background-color: #d2270e; }
+
+/*   =HENTRY
+   ------------------------------------------------------ */
+/* Styles communs */
+.hentry {
+  color: #666; }
+
+.entry-title {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+.soustitre {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #999; }
+
+.meta-publi {
+  border-top: 1px dotted #cccccc;
+  border-bottom: 1px solid #cccccc;
+  line-height: 2; }
+
+.meta-publi > li {
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 2;
+  margin-right: 6px;
+  padding-right: 6px;
+  border-right: 1px solid #cccccc; }
+  .meta-publi > li:last-child {
+    border-right-width: 0; }
+  @media only screen and (max-width: 480px) {
+    .meta-publi > li {
+      border: none; } }
+
+/* hentry-secondary */
+.hentry-secondary {
+  margin-bottom: 0; }
+  .hentry-secondary header {
+    margin-bottom: 12px; }
+  .hentry-secondary hgroup {
+    margin-bottom: 0; }
+  .hentry-secondary .entry-title {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    line-height: 1.2;
+    margin-bottom: 0; }
+  .hentry-secondary .soustitre {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6; }
+  .hentry-secondary .entry-content p {
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    line-height: 1.84615;
+    line-height: 1.5; }
+  .hentry-secondary .meta-publi {
+    margin-bottom: 0;
+    line-height: 1.2em;
+    clear: both; }
+    @media only screen and (min-width: 961px) {
+      .hentry-secondary .meta-publi > li {
+        font-size: 10px;
+        font-size: 0.625rem;
+        line-height: 2.4;
+        line-height: 1em; } }
+  .hentry-secondary .author,
+  .hentry-secondary .category {
+    display: none; }
 
 /*   =CAROUSEL
    ------------------------------------------------------ */
@@ -4010,7 +4016,7 @@ ol.objets-selection, ol.block-list--media {
 .flex-control-nav {
   position: absolute;
   right: 0;
-  bottom: 0; }
+  bottom: 1em; }
 
 .flex-control-nav li {
   margin: 0 6px 0 0;

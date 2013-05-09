@@ -6,17 +6,11 @@
 }
 .entry-title {
    @include font-size($h4-size);
-   @include media-query(palm) {
-      @include font-size($h4-size);
-   }
 }
 .soustitre {
    @include font-size($h5-size);
    font-family: $condensed-font-family;
    color: #999;
-   @include media-query(palm) {
-      @include font-size($h5-size);
-   }
 }
 .meta-publi {
    border-top: 1px dotted #ccc;
@@ -29,11 +23,14 @@
    padding-right: $quarter-spacing-unit;
    border-right: 1px solid #ccc;
    &:last-child {border-right-width: 0;}
+   @include media-query(palm) {
+      border: none;
+   }
 }
-.meta-publi a {
+//.meta-publi a {
    //color: #777;
    //&:hover{color: $brand-color;}
-}
+   // }
 
 /* hentry-secondary */
 .hentry-secondary {
@@ -54,6 +51,7 @@
       }
    .entry-content p {
       margin-bottom: $half-spacing-unit;
+
       @include font-size(13px);
       line-height: 1.5;
    }
@@ -61,9 +59,11 @@
       margin-bottom: 0;
       line-height: 1.2em;
       clear: both;
-      > li {
-         @include font-size(10px);
-         line-height: 1em;
+      @include media-query(desk) {
+         > li {
+            @include font-size(10px);
+            line-height: 1em;
+         }
       }
    }
    .author,

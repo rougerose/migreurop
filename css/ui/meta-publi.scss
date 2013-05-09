@@ -2,7 +2,23 @@
    ------------------------------------------------------ */
    /* éléments communs. éléments spécifiques voir hentry.scss, self.scss */
    .meta-publi {
-      @extend .nav;
+      @include media-query(lap-and-up) {
+         // @extend .nav ne fonctionne pas, on fait en manuel.
+         list-style: none;
+         margin-left: 0;
+         > li {
+            &,
+            > a {
+               display: inline-block;
+               *display: inline;
+               zoom: 1;
+            }
+         }
+      }
+      @include media-query(palm) {
+         margin-left: 0;
+         list-style: none;
+      }
       .intertitre {
          @include font-size(18px);
          padding-left: 21px;

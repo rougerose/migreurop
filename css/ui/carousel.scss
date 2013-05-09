@@ -42,7 +42,7 @@
 .flex-control-nav {
    position: absolute;
    right: 0;
-   bottom: 0;
+   bottom: 1em;
    @extend .nav;
 }
 .flex-control-nav li {
