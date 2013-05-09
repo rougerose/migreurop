@@ -8,8 +8,9 @@
       </div>
    </div><!-- .page-content -->
    <INCLURE{fond=nav/nav-principale,env}>
-   <footer class="page-footer">
-      <p>footer</p>
+   <INCLURE{fond=breadcrumb/breadcrumb,env} />
+   <footer class="page-foot">
+      <INCLURE{fond=page-foot/#ENV{type-page},env} />
    </footer>
    [<script src="(#CHEMIN{javascript/migreurop_public.js})" type="text/javascript" defer></script>]
 </body>

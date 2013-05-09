@@ -2,7 +2,7 @@
    if (!defined("_ECRIRE_INC_VERSION")) return;
 
    // bloc zcore : extra2 n'est pas utilisé, ajout de breadcrumb
-   //$GLOBALS['z_blocs'] = array('content','extra1','breadcrumb','head','head_js','header','page-foot');
+   $GLOBALS['z_blocs'] = array('content','extra1','breadcrumb','head','head_js','header','page-foot');
 
    // pas de cache pour la phase développement
    define('_NO_CACHE',1);
