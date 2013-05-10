@@ -38,19 +38,6 @@ $(window).load(function(){
       $(this).closest("form").submit();
    });
 
-   // ========================================
-   // = navigation plan rubrique : animation =
-   // ========================================
-   /*$("#np").each(function(){
-      var np = $(this),
-      h1 = np.children("h1"),
-      ul = np.children("ul").hide();
-      np.click(function(){
-         h1.toggleClass("on");
-         ul.slideToggle("slow");
-      });
-   });*/
-
    // ==============================================
    // = logo en ouverture page (rubrique, article) =
    // ==============================================
