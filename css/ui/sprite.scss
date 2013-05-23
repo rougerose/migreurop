@@ -23,6 +23,7 @@
          top: 0;
          display: block;
       }
+
    }
    .sprite {background-image:url(../img/migreurop-sprite.png);}
 
@@ -40,7 +41,7 @@
    }
 
    // plan de la rubrique
-   .sp--map {
+   .sprite--map {
       &:before {
          background-position: 0 0;
       }

@@ -1,7 +1,7 @@
 [(#SET{cartes,#ARRAY})][(#SET{portfolios,#ARRAY})] #SET{mot_rubrique,''}
 <BOUCLE_motcle_rubrique(MOTS){id_rubrique}{id_groupe=14}>#SET{mot_rubrique,#ID_MOT}</BOUCLE_motcle_rubrique>
-
-<div class="g one-whole desk-three-tenths desk-push--one-tenth">
+--><div class="grid__item desk-three-tenths push--desk-one-tenth">
+   <hr class="visuallyhidden--desk hr--break" />
    [(#REM) Les communiqués de presse -- id_mot 61 -- en rapport avec le mot-clé principal de la rubrique ]
    <B_communiques>
    <div class="box--aside">
@@ -37,4 +37,4 @@
          [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel})]
    </div><!-- .box-aside Portfolios -->
    </B_portfolios>
-</div><!-- .g -->
+</div><!-- .grid__item -->

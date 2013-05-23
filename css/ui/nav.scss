@@ -46,7 +46,7 @@
       @include font-size(13px);
    }
 }
-
+// 2 formats de navigation desk et palm (+ lap)
 .desk-nav {
    display: block;
    .nav__item {
@@ -55,9 +55,6 @@
          float: right;
       }
    }
-   @media only screen and (max-width: 960px) {
-      display: none;
-   }
 }
 
 .palm-nav {
@@ -65,7 +62,28 @@
    .nav__item {
       padding-right: 1em;
    }
-   @media only screen and (max-width: 960px) {
-      display: block;
+}
+
+/* nav__plan */
+.nav__plan {
+   .nav--item {
+      @include font-size(14px);
+      line-height: 1.3;
+      margin: 0.25em 0 0.25em 22px;
+      &.on > a {
+         color: $brand-color;
+         font-weight: 700;
+      }
+   }
+   ul ul > .nav--item {
+      margin-left: 0.7em;
+   }
+   .nav--titre {
+      padding-left: 22px;
    }
 }
+   .nav--titre {
+      @include font-size(18px);
+      color: #999;
+      margin-bottom: 0;
+   }

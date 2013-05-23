@@ -68,6 +68,7 @@
       'info_recherche_pas_de_resultat' => 'Aucun résultat',
 
       // S
+      'section_map' => 'Plan de la rubrique',
       'social_facebook' => 'Facebook',
       'social_follow_us' => 'Nous suivre',
       'social_twitter' => "Twitter",
