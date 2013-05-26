@@ -48,7 +48,6 @@
 }
 // 2 formats de navigation desk et palm (+ lap)
 .desk-nav {
-   display: block;
    .nav__item {
       padding-right: 8px;
       &.search {
@@ -58,7 +57,6 @@
 }
 
 .palm-nav {
-   display: none;
    .nav__item {
       padding-right: 1em;
    }

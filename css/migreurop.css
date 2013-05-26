@@ -3597,17 +3597,13 @@ blockquote {
     font-size: 0.8125rem;
     line-height: 1.84615; }
 
-.desk-nav {
-  display: block; }
-  .desk-nav .nav__item {
-    padding-right: 8px; }
-    .desk-nav .nav__item.search {
-      float: right; }
+.desk-nav .nav__item {
+  padding-right: 8px; }
+  .desk-nav .nav__item.search {
+    float: right; }
 
-.palm-nav {
-  display: none; }
-  .palm-nav .nav__item {
-    padding-right: 1em; }
+.palm-nav .nav__item {
+  padding-right: 1em; }
 
 /* nav__plan */
 .nav__plan .nav--item {
