@@ -48,7 +48,7 @@ $(window).load(function(){
    // =========================
    // = easytabs : activation =
    // =========================
-   $('#tabs-rubrique-principal').easytabs();
+   $('.tabs-principal').easytabs();
 
    // =============
    // = recherche =

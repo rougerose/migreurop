@@ -37,6 +37,7 @@
 
       // L
       'lastest_news' => 'Latest news',
+      'lastest_articles' => 'Lastest articles',
 
       // M
       'message_404' => 'La page ou le document que vous demandez est introuvable sur le site&hellip;',

@@ -22,6 +22,32 @@
          margin-bottom: 0;
       }
    }
+   
+   /* form-tri */
+   .form-tri {
+      font-family: $condensed-font-family;
+      text-align: right;
+      background-color: #f5f5f5;
+      padding: 4px;
+      @include vendor(border-radius, 2px);
+      box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 5px rgba(0, 0, 0, 0.1);
+
+      .legend, label {
+         color: #ccc;
+         font-weight: normal;
+         text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+         text-transform: uppercase;
+         vertical-align: middle;
+      }
+      .legend {
+         color: rgba(0,0,0,0.4);
+      }
+      label {
+         color: rgba(0,0,0,0.6);
+         margin-left: $base-spacing-unit;
+         margin-right: $base-spacing-unit/2;
+      }
+   }
 
 /* FORMULAIRE RECHERCHE */
 .formulaire_recherche {
