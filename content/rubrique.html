@@ -1,7 +1,6 @@
 <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-[(#SET{couper,#ENV{couper,1}})] [(#SET{secteur-titre,#INFO_TITRE{rubrique,#ID_SECTEUR}})]
+[(#SET{secteur-titre,#INFO_TITRE{rubrique,#ID_SECTEUR}})]
 <div class="grid__item">
-   
    [<div id="ouverture" class="media-ouverture">
       <img src="(#LOGO_RUBRIQUE|image_reduire{1024,512}|extraire_attribut{src})" class="media-ouverture__img" alt="#TITRE">
    </div>]

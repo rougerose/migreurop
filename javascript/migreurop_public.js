@@ -45,11 +45,6 @@ $(window).load(function(){
       $("body").children("header[role='banner']").addClass("ouverture");
    }
 
-   // =========================
-   // = easytabs : activation =
-   // =========================
-   $('.tabs-principal').easytabs();
-
    // =============
    // = recherche =
    // =============
@@ -57,6 +52,11 @@ $(window).load(function(){
       $("#formulaire_recherche").slideToggle("fast","swing");
       $(this).toggleClass("sprite--search-is-active");
    });
+   
+   // =========================
+   // = easytabs : activation =
+   // =========================
+   $('.tabs').easytabs();
 
    // ==============
    // = flexslider =
