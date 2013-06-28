@@ -15,7 +15,7 @@
             position: relative;
          }
       }
-      .tabs__body {}
+      // .tabs__body {}
 
    /* tabs-top : onglet en haut */
    .tabs-top {margin-top: -$half-spacing-unit;}
@@ -49,7 +49,7 @@
       }
       .tabs-top__body {
          border: 1px solid #000;
-         border-width: 2px 0;
+         border-width: 2px 0 1px;
          padding-top: $base-spacing-unit;
          @extend %sass-margin-bottom;
       }

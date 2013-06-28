@@ -42,17 +42,19 @@
    
    // Sous-rubriques
    .rubrique--titre {
-      //padding-left: 0.7em;
-      //border-bottom: 1px dotted #000;
+      border-bottom: 3px solid $brand-color;
+      padding-bottom: 0.5em;
       position: relative;
       @include font-size(22px);
-      //font-weight: 700;
       text-transform: uppercase;
+      padding-left: 0.6em;
       &:before {
          content: '/';
          color: $pathColor;
-         //display: block;
          position: absolute;
-         left: -0.7em;
+         left: 0.1em;
       }
+   }
+   .rubrique--descriptif {
+      color: #222;
    }

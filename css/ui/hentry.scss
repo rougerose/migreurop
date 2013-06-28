@@ -16,21 +16,18 @@
    border-top: 1px dotted #ccc;
    border-bottom: 1px solid #ccc;
    line-height: 2;
-}
-.meta-publi > li {
-   @include font-size(12px);
-   margin-right: $quarter-spacing-unit;
-   padding-right: $quarter-spacing-unit;
-   border-right: 1px solid #ccc;
-   &:last-child {border-right-width: 0;}
-   @include media-query(palm) {
-      border: none;
+   > li {
+      @include font-size(12px);
+      // line-height: 2;
+      margin-right: $quarter-spacing-unit;
+      padding-right: $quarter-spacing-unit;
+      border-right: 1px solid #ccc;
+      &:last-child {border-right-width: 0;}
+      @include media-query(palm) {
+         border: none;
+      }
    }
 }
-//.meta-publi a {
-   //color: #777;
-   //&:hover{color: $brand-color;}
-   // }
 
 /* hentry-secondary */
 .hentry-secondary {
@@ -57,13 +54,9 @@
    }
    .meta-publi {
       margin-bottom: 0;
-      line-height: 1.2em;
       clear: both;
-      @include media-query(desk) {
-         > li {
-            @include font-size(10px);
-            line-height: 1em;
-         }
+      > li {
+         @include font-size(11px);
       }
    }
    .author,

@@ -15,15 +15,12 @@
             (#TEXTE|sinon{<br />})
          </div>
       </div><!-- .self__body -->]
-   </div><!-- .grid__item --><!--
---><div class="grid__item desk-three-tenths push--desk-one-tenth lap-one-half lap-float--right">
+   </div><!-- .grid__item --><div class="grid__item desk-three-tenths push--desk-one-tenth lap-one-half lap-float--right">
       <INCLURE{fond=nav/rubrique__plan, id_rubrique, id_secteur,secteur-titre=#GET{secteur-titre}}>
-   </div><!-- .grid__item desk-three-tenths --><!--
---><div class="grid__item lap-one-half lap-float--left">
+   </div><!-- .grid__item desk-three-tenths --><div class="grid__item lap-one-half lap-float--left">
       <INCLURE{fond=nav/rubrique__categories,id_rubrique,mots,ajax} />
    </div><!-- .grid__item lap-one-half -->
 </article><!-- .self -->
-
 <div class="grid__item desk-six-tenths">
    <BOUCLE_cond_categorie(CONDITION){si #ENV{mots}}>
       <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax=art_cat,env} />
@@ -45,6 +42,9 @@
          </div>
       </div>
    </aside>]
-</div><!-- .grid__item --><!--
-<INCLURE{fond=extra1/#ENV{type-page},env} />
+</div><!-- .grid__item --><div class="grid__item desk-three-tenths push--desk-one-tenth">
+   
+   <INCLURE{fond=extra1/#ENV{type-page},env} />
+
+</div><!-- .grid__item -->
 </BOUCLE_rubrique>

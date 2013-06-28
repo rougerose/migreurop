@@ -1,9 +1,9 @@
 <BOUCLE_article(ARTICLES){id_article}><B_traductions>
 <li class="traductions">
    <ul class="nav">
-      <span class="sprite sprite--trad"></span>
+      <span class="sprite sprite--trad" alt="traductions disponibles"></span>
       <BOUCLE_traductions(ARTICLES){traduction}{par lang}>[(#TOTAL_BOUCLE|>{1}|?{' '})
-      <li class="traduction[ (#EXPOSE)]" lang="#LANG" xml:lang="#LANG" dir="#LANG_DIR">[(#EXPOSE{<span class="btn btn--natural btn--traduction">,<a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]" rel="alternate" hreflang="#LANG" class="btn btn--natural btn--traduction">})][(#LANG)][(#EXPOSE{</span>,</a>})]</li>
+      <li class="traduction[ (#EXPOSE)]" lang="#LANG" xml:lang="#LANG" dir="#LANG_DIR">[(#EXPOSE{<span class="loz loz--active">,<a href="[(#URL_ARTICLE|parametre_url{lang,#LANG})]" rel="alternate" hreflang="#LANG" class="loz">})][(#LANG)][(#EXPOSE{</span>,</a>})]</li>
       ]</BOUCLE_traductions>
    </ul>
 </li>

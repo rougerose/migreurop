@@ -28,23 +28,19 @@ $(window).load(function(){
 
       $opens.click(open_dropdown);
       $("html").click(function(){$haschild.removeClass("active"); $opens.removeClass("active");});
-
    });
-
    // ============================
    // = Menu principal en select =
    // ============================
    $("#formulaire_select_nav form select").change(function() {
       $(this).closest("form").submit();
    });
-
    // ==============================================
    // = logo en ouverture page (rubrique, article) =
    // ==============================================
    if ($(".carousel-ouverture,.media-ouverture").length){
       $("body").children("header[role='banner']").addClass("ouverture");
    }
-
    // =============
    // = recherche =
    // =============
@@ -52,12 +48,10 @@ $(window).load(function(){
       $("#formulaire_recherche").slideToggle("fast","swing");
       $(this).toggleClass("sprite--search-is-active");
    });
-   
    // =========================
    // = easytabs : activation =
    // =========================
    $('.tabs').easytabs();
-
    // ==============
    // = flexslider =
    // ==============
@@ -68,7 +62,6 @@ $(window).load(function(){
        $('body').removeClass('loading');
      }
    });
-
 });
 
 

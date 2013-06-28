@@ -2186,6 +2186,46 @@ label,
 .btn--hard {
   border-radius: 0; }
 
+/*------------------------------------*\
+    $LOZENGES
+\*------------------------------------*/
+/**
+ * Create pill- and lozenge-like runs of text, e.g.:
+ *
+   <p>This <span class=pill>here</span> is a pill!</p>
+ *
+   <p>This <span class=loz>here</span> is also a lozenge!</p>
+ *
+ * Pills have fully rounded ends, lozenges have only their corners rounded.
+ *
+ * Demo: jsfiddle.net/inuitcss/N3pGm
+ *
+ */
+.pill, .loz {
+  display: inline-block;
+  /**
+   * These numbers set in ems mean that, at its narrowest, a lozenge will be
+   * the same width as the `line-height` set on the `html` element.
+   * This allows us to use the `.loz` in almost any `font-size` we wish.
+   */
+  min-width: 1.0em;
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+  /* =1.50em */
+  text-align: center;
+  background-color: #cccccc;
+  color: #fff;
+  /* Override this color in your theme stylesheet */
+  /**
+   * Normally we’d use border-radius:100%; but instead here we just use an
+   * overly large number; `border-radius:100%;` would create an oval on
+   * non-square elements whereas we just want to round the ends of an element.
+   */
+  border-radius: 100px; }
+
+.loz {
+  border-radius: 4px; }
+
 /**
  * Style trumps; helper and brand classes
  */
@@ -3346,16 +3386,22 @@ h6.spip {
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .rubrique--titre {
+  border-bottom: 3px solid #d2270e;
+  padding-bottom: 0.5em;
   position: relative;
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.09091;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding-left: 0.6em; }
   .rubrique--titre:before {
     content: '/';
     color: #cccccc;
     position: absolute;
-    left: -0.7em; }
+    left: 0.1em; }
+
+.rubrique--descriptif {
+  color: #222; }
 
 /*   =SHARED
    ------------------------------------------------------ */
@@ -4054,7 +4100,17 @@ ol.objets-selection, ol.block-list--media {
 
 .traduction {
   text-transform: uppercase; }
-  .traduction.on .btn--traduction {
+  .traduction .loz {
+    background-color: #ccc;
+    -webkit-transition: background-color 0.35s ease-in-out 0.2s;
+    -moz-transition: background-color 0.35s ease-in-out 0.2s;
+    -ms-transition: background-color 0.35s ease-in-out 0.2s;
+    -o-transition: background-color 0.35s ease-in-out 0.2s;
+    transition: background-color 0.35s ease-in-out 0.2s; }
+    .traduction .loz:hover {
+      background-color: #d2270e;
+      color: #fff; }
+  .traduction .loz--active {
     background-color: #d2270e; }
 
 /*   =HENTRY
@@ -4079,19 +4135,18 @@ ol.objets-selection, ol.block-list--media {
   border-top: 1px dotted #ccc;
   border-bottom: 1px solid #ccc;
   line-height: 2; }
-
-.meta-publi > li {
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 2;
-  margin-right: 6px;
-  padding-right: 6px;
-  border-right: 1px solid #ccc; }
-  .meta-publi > li:last-child {
-    border-right-width: 0; }
-  @media only screen and (max-width: 480px) {
-    .meta-publi > li {
-      border: none; } }
+  .meta-publi > li {
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 2;
+    margin-right: 6px;
+    padding-right: 6px;
+    border-right: 1px solid #ccc; }
+    .meta-publi > li:last-child {
+      border-right-width: 0; }
+    @media only screen and (max-width: 480px) {
+      .meta-publi > li {
+        border: none; } }
 
 /* hentry-secondary */
 .hentry-secondary {
@@ -4118,14 +4173,11 @@ ol.objets-selection, ol.block-list--media {
     line-height: 1.5; }
   .hentry-secondary .meta-publi {
     margin-bottom: 0;
-    line-height: 1.2em;
     clear: both; }
-    @media only screen and (min-width: 961px) {
-      .hentry-secondary .meta-publi > li {
-        font-size: 10px;
-        font-size: 0.625rem;
-        line-height: 2.4;
-        line-height: 1em; } }
+    .hentry-secondary .meta-publi > li {
+      font-size: 11px;
+      font-size: 0.6875rem;
+      line-height: 2.18182; }
   .hentry-secondary .author,
   .hentry-secondary .category {
     display: none; }
@@ -4505,7 +4557,7 @@ ol.objets-selection, ol.block-list--media {
 
 .tabs-top__body {
   border: 1px solid #000;
-  border-width: 2px 0;
+  border-width: 2px 0 1px;
   padding-top: 24px; }
 
 /* tabs-side : onglets sur le côté */
@@ -4638,7 +4690,7 @@ ol.objets-selection, ol.block-list--media {
   margin-left: 48px; }
 
 .chapo {
-  color: #252525;
+  color: #222;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333; }
