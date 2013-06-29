@@ -3428,10 +3428,7 @@ h6.spip {
 /*   =SHARED
    ------------------------------------------------------ */
 .hr--break {
-  margin: 1.5em 0 2em;
-  border: 0;
-  background: black;
-  height: 2px; }
+  margin: 1.5em 0 2em; }
 
 /*   =BUTTON
    ------------------------------------------------------ */
@@ -4960,8 +4957,8 @@ p.url-site {
 /* hr */
 hr.spip {
   border: 0;
-  height: 1px;
-  background: black;
+  height: 2px;
+  background: #000;
   background: -moz-linear-gradient(left, white 0%, black 50%, white 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, white), color-stop(50%, black), color-stop(100%, white));
   background: -webkit-linear-gradient(left, white 0%, black 50%, white 100%);

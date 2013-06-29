@@ -74,6 +74,7 @@
       'social_follow_us' => 'Nous suivre',
       'social_twitter' => "Twitter",
       'social_mailing_list' => 'Liste de diffusion',
+      'sort_keyword' => 'Trier par mot-clé',
 
       // T
       'top_page' => 'Haut de page',
