@@ -6,10 +6,15 @@
       color: $pageFootColor;
       border-top: 1px solid #000;
       .conteneur {
-         max-width: 1100px;
          margin: 0 auto;
          padding-right:$base-spacing-unit;
          padding-left:$base-spacing-unit;
+         @include media-query(lap) {
+            padding-left:$base-spacing-unit*2;
+         }
+         @include media-query(desk) {
+            max-width: 1100px;
+         }
       }
       .intertitre {
          color: #355E73;

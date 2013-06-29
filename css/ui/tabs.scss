@@ -57,6 +57,12 @@
    .tabs-side {
       border: 1px solid $noir-bleu;
       @extend .cf;
+      @include media-query(palm) {
+         margin-left: -$base-spacing-unit;
+      }
+      @include media-query(lap) {
+         margin-left: -$base-spacing-unit;
+      }
    }
       .tabs-side__nav {
          float: left;

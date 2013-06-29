@@ -8,6 +8,9 @@
    @include media-query(desk) {
       max-width: 1100px;
    }
+   @include media-query(portable) {
+      max-width: 640px;
+   }
    .conteneur {
       @include media-query(portable) {
          text-align: center;

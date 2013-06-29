@@ -817,7 +817,9 @@ table,
 fieldset, figure,
 pre,
 .form-fields > li,
+.formulaire_spip form ul > li,
 .mbr,
+.formulaire_spip form,
 .tabs-top__body,
 .media,
 .media-ouverture,
@@ -830,8 +832,8 @@ pre,
   blockquote, .islet p, .islet address, .islet
   table, .islet
   fieldset, .islet figure, .islet
-  pre, .islet .form-fields > li, .islet
-  .mbr, .islet
+  pre, .islet .form-fields > li, .islet .formulaire_spip form ul > li, .formulaire_spip form .islet ul > li, .islet
+  .mbr, .islet .formulaire_spip form, .formulaire_spip .islet form, .islet
   .tabs-top__body, .islet
   .media, .islet
   .media-ouverture, .islet
@@ -1442,11 +1444,11 @@ textarea {
    </ul>
  *
  */
-.form-fields {
+.form-fields, .formulaire_spip form ul {
   list-style: none;
   margin: 0; }
 
-.form-fields > li:last-child {
+.form-fields > li:last-child, .formulaire_spip form ul > li:last-child {
   margin-bottom: 0; }
 
 /**
@@ -2001,7 +2003,7 @@ label,
  * 8. Basic cosmetics for default buttons. Change or override at will.
  * 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
  */
-.btn {
+.btn, .formulaire_spip .boutons .submit {
   display: inline-block;
   /* [1] */
   vertical-align: middle;
@@ -2031,10 +2033,10 @@ label,
   border-radius: 4px;
   /* [8] */ }
 
-.btn, .btn:hover {
+.btn, .formulaire_spip .boutons .submit, .btn:hover, .formulaire_spip .boutons .submit:hover {
   text-decoration: none;
   /* [9] */ }
-.btn:active, .btn:focus {
+.btn:active, .formulaire_spip .boutons .submit:active, .btn:focus, .formulaire_spip .boutons .submit:focus {
   outline: none; }
 
 /*------------------------------------*\
@@ -3433,7 +3435,7 @@ h6.spip {
 
 /*   =BUTTON
    ------------------------------------------------------ */
-.btn {
+.btn, .formulaire_spip .boutons .submit {
   padding: 0 4px;
   margin-bottom: 0;
   text-align: center;
@@ -3468,13 +3470,13 @@ h6.spip {
   -ms-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
-  .btn:hover, .btn:active, .active.btn, .disabled.btn, [disabled].btn {
+  .btn:hover, .formulaire_spip .boutons .submit:hover, .btn:active, .formulaire_spip .boutons .submit:active, .active.btn, .formulaire_spip .boutons .active.submit, .disabled.btn, .formulaire_spip .boutons .disabled.submit, [disabled].btn, .formulaire_spip .boutons [disabled].submit {
     color: #333333;
     background-color: #e6e6e6;
     *background-color: #d9d9d9; }
-  .btn:active, .active.btn {
+  .btn:active, .formulaire_spip .boutons .submit:active, .active.btn, .formulaire_spip .boutons .active.submit {
     background-color: #cccccc \9; }
-  .btn:hover, .btn:focus {
+  .btn:hover, .formulaire_spip .boutons .submit:hover, .btn:focus, .formulaire_spip .boutons .submit:focus {
     color: #333;
     text-decoration: none;
     background-position: 0 -15px;
@@ -3483,7 +3485,7 @@ h6.spip {
     -ms-transition: background-position 0.1s linear;
     -o-transition: background-position 0.1s linear;
     transition: background-position 0.1s linear; }
-  .active.btn, .btn:active {
+  .active.btn, .formulaire_spip .boutons .active.submit, .btn:active, .formulaire_spip .boutons .submit:active {
     background-image: none;
     outline: 0;
     -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -3549,6 +3551,9 @@ blockquote {
     .page-content {
       max-width: 1100px; } }
   @media only screen and (max-width: 960px) {
+    .page-content {
+      max-width: 640px; } }
+  @media only screen and (max-width: 960px) {
     .page-content .conteneur {
       text-align: center; }
       .page-content .conteneur > .grid__item {
@@ -3562,10 +3567,15 @@ blockquote {
   color: #738b98;
   border-top: 1px solid #000; }
   .page-foot .conteneur {
-    max-width: 1100px;
     margin: 0 auto;
     padding-right: 24px;
     padding-left: 24px; }
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      .page-foot .conteneur {
+        padding-left: 48px; } }
+    @media only screen and (min-width: 961px) {
+      .page-foot .conteneur {
+        max-width: 1100px; } }
   .page-foot .intertitre {
     color: #355E73;
     font-size: 26px;
@@ -3668,6 +3678,8 @@ blockquote {
   .desk-nav .nav__item.search {
     float: right; }
 
+.palm-nav form {
+  margin-bottom: 0; }
 .palm-nav .nav__item {
   padding-right: 1em; }
 
@@ -3995,8 +4007,157 @@ ol.objets-selection, ol.block-list--media {
     clear: left; } }
 /*   =FORMS
    ------------------------------------------------------ */
-/* STYLES COMMUNS */
-/* .form-inline */
+/*==========  styles communs  ==========*/
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: normal; }
+
+input,
+button,
+select,
+textarea {
+  font-family: "Helvetica Neue", sans-serif; }
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: inline-block;
+  padding: 0 6px;
+  margin-bottom: 12px;
+  color: #555;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  vertical-align: middle; }
+
+textarea {
+  height: auto; }
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  background-color: white;
+  border: 1px solid #cccccc;
+  -webkit-border-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-border-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -ms-border-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -o-border-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s; }
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  line-height: normal; }
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; }
+
+select,
+input[type="file"] {
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+  line-height: 30px; }
+
+select {
+  border: 1px solid #cccccc;
+  background-color: white; }
+
+select[multiple],
+select[size] {
+  height: auto; }
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+/*==========  formulaires spip  ==========*/
+.formulaire_spip label,
+.formulaire_spip legend {
+  font-weight: 700;
+  color: #000; }
+
+.choix {
+  padding-left: 20px; }
+  .choix input[type="radio"],
+  .choix input[type="checkbox"] {
+    float: left;
+    margin-left: -20px; }
+
+/*==========  .form-inline  ==========*/
+.form--inline form {
+  margin-bottom: 0; }
 .form--inline input,
 .form--inline textarea,
 .form--inline select,
@@ -4009,11 +4170,16 @@ ol.objets-selection, ol.block-list--media {
 .form--inline .label,
 .form--inline ul > li,
 .form--inline .form-fields,
+.form--inline .formulaire_spip form ul,
+.formulaire_spip form .form--inline ul,
+.form--inline .form-fields > li,
+.form--inline .formulaire_spip form ul > li,
+.formulaire_spip form .form--inline ul > li,
 .form--inline .boutons {
   display: inline-block;
   margin-bottom: 0; }
 
-/* form-tri */
+/*==========  .form-tri  ==========*/
 .form-tri, .pagination {
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: right;
@@ -4038,7 +4204,7 @@ ol.objets-selection, ol.block-list--media {
     margin-left: 24px;
     margin-right: 12px; }
 
-/* FORMULAIRE RECHERCHE */
+/*==========  formulaire_recherche  ==========*/
 .formulaire_recherche {
   position: absolute;
   z-index: 97;
@@ -4248,9 +4414,6 @@ ol.objets-selection, ol.block-list--media {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease; }
-
-.loading .flex-viewport {
-  max-height: 300px; }
 
 /* navigation precedent/suivant */
 .flex-control-nav,
@@ -4620,6 +4783,12 @@ ol.objets-selection, ol.block-list--media {
 /* tabs-side : onglets sur le côté */
 .tabs-side {
   border: 1px solid #1d2326; }
+  @media only screen and (max-width: 480px) {
+    .tabs-side {
+      margin-left: -24px; } }
+  @media only screen and (min-width: 481px) and (max-width: 960px) {
+    .tabs-side {
+      margin-left: -24px; } }
 
 .tabs-side__nav {
   float: left;

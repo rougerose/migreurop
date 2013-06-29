@@ -58,7 +58,7 @@ $(window).load(function(){
      animation: "slide",
      slideshow: false,
      start: function(slider){
-       $('body').removeClass('loading');
+       // $('body').removeClass('loading');
      }
    });
 });

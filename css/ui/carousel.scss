@@ -7,9 +7,9 @@
    max-height: 2000px;
    @include vendor(transition, all 1s ease);
 }
-.loading .flex-viewport {
-   max-height: 300px;
-}
+// .loading .flex-viewport {
+//    max-height: 300px;
+// }
 /* navigation precedent/suivant */
 .flex-control-nav,
 .flex-direction-nav {
