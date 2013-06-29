@@ -4527,91 +4527,88 @@ input[type="checkbox"]:focus {
   width: 100%; }
 
 /* carousel-ouverture */
-.carousel-ouverture {
-  min-height: 500px; }
+@media only screen and (max-width: 480px) {
+  .carousel-ouverture {
+    border: 3px solid #fff;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); } }
+.carousel-ouverture .wrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  padding: 12px;
+  background-color: rgba(29, 35, 38, 0.8); }
+  @media only screen and (max-width: 960px) {
+    .carousel-ouverture .wrap {
+      position: static;
+      width: auto;
+      padding-right: 40%;
+      background-color: rgba(29, 35, 38, 0.95);
+      -webkit-box-shadow: inset 0 0 3px black;
+      -moz-box-shadow: inset 0 0 3px black;
+      -ms-box-shadow: inset 0 0 3px black;
+      -o-box-shadow: inset 0 0 3px black;
+      box-shadow: inset 0 0 3px black; } }
   @media only screen and (max-width: 480px) {
-    .carousel-ouverture {
-      min-height: inherit;
-      border: 3px solid #fff;
-      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-      -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-      -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); } }
-  .carousel-ouverture .wrap {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60%;
-    padding: 12px;
-    background-color: rgba(29, 35, 38, 0.8); }
-    @media only screen and (max-width: 960px) {
-      .carousel-ouverture .wrap {
-        position: static;
-        width: auto;
-        padding-right: 40%;
-        background-color: rgba(29, 35, 38, 0.95);
-        -webkit-box-shadow: inset 0 0 3px black;
-        -moz-box-shadow: inset 0 0 3px black;
-        -ms-box-shadow: inset 0 0 3px black;
-        -o-box-shadow: inset 0 0 3px black;
-        box-shadow: inset 0 0 3px black; } }
-    @media only screen and (max-width: 480px) {
-      .carousel-ouverture .wrap {
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        -ms-box-shadow: none;
-        -o-box-shadow: none;
-        box-shadow: none;
-        padding-right: 12px;
-        background-color: #fff; } }
-  .carousel-ouverture header,
-  .carousel-ouverture .soustitre,
-  .carousel-ouverture .meta-publi {
-    margin-bottom: 6px; }
-  .carousel-ouverture hgroup {
-    margin-bottom: 0; }
-  .carousel-ouverture .entry-title {
-    margin-bottom: 0; }
-  .carousel-ouverture .soustitre {
-    @inclure font-size(14px); }
-  .carousel-ouverture a[rel="bookmark"],
-  .carousel-ouverture .suite--link,
-  .carousel-ouverture .txt a,
-  .txt .carousel-ouverture a {
-    color: #eee;
-    color: rgba(255, 255, 255, 0.9);
-    -webkit-transition: all 0.35s ease-in-out 0.2s;
-    -moz-transition: all 0.35s ease-in-out 0.2s;
-    -ms-transition: all 0.35s ease-in-out 0.2s;
-    -o-transition: all 0.35s ease-in-out 0.2s;
-    transition: all 0.35s ease-in-out 0.2s; }
-    .carousel-ouverture a[rel="bookmark"]:hover,
-    .carousel-ouverture .suite--link:hover,
-    .carousel-ouverture .txt a:hover,
-    .txt .carousel-ouverture a:hover {
-      color: #d2270e; }
-    @media only screen and (max-width: 480px) {
-      .carousel-ouverture a[rel="bookmark"],
-      .carousel-ouverture .suite--link,
-      .carousel-ouverture .txt a,
-      .txt .carousel-ouverture a {
-        color: #000; }
-        .carousel-ouverture a[rel="bookmark"]:hover,
-        .carousel-ouverture .suite--link:hover,
-        .carousel-ouverture .txt a:hover,
-        .txt .carousel-ouverture a:hover {
-          color: #d2270e; } }
-  .carousel-ouverture .entry-content p {
-    margin-bottom: 12px;
-    color: #fff; }
-    @media only screen and (max-width: 480px) {
-      .carousel-ouverture .entry-content p {
-        color: #666; } }
-  .carousel-ouverture .meta-publi,
-  .carousel-ouverture .meta-publi > li {
-    border-color: #555;
-    border-color: rgba(85, 85, 85, 0.5); }
+    .carousel-ouverture .wrap {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      padding-right: 12px;
+      background-color: #fff; } }
+.carousel-ouverture header,
+.carousel-ouverture .soustitre,
+.carousel-ouverture .meta-publi {
+  margin-bottom: 6px; }
+.carousel-ouverture hgroup {
+  margin-bottom: 0; }
+.carousel-ouverture .entry-title {
+  margin-bottom: 0; }
+.carousel-ouverture .soustitre {
+  @inclure font-size(14px); }
+.carousel-ouverture a[rel="bookmark"],
+.carousel-ouverture .suite--link,
+.carousel-ouverture .txt a,
+.txt .carousel-ouverture a {
+  color: #eee;
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.35s ease-in-out 0.2s;
+  -moz-transition: all 0.35s ease-in-out 0.2s;
+  -ms-transition: all 0.35s ease-in-out 0.2s;
+  -o-transition: all 0.35s ease-in-out 0.2s;
+  transition: all 0.35s ease-in-out 0.2s; }
+  .carousel-ouverture a[rel="bookmark"]:hover,
+  .carousel-ouverture .suite--link:hover,
+  .carousel-ouverture .txt a:hover,
+  .txt .carousel-ouverture a:hover {
+    color: #d2270e; }
+  @media only screen and (max-width: 480px) {
+    .carousel-ouverture a[rel="bookmark"],
+    .carousel-ouverture .suite--link,
+    .carousel-ouverture .txt a,
+    .txt .carousel-ouverture a {
+      color: #000; }
+      .carousel-ouverture a[rel="bookmark"]:hover,
+      .carousel-ouverture .suite--link:hover,
+      .carousel-ouverture .txt a:hover,
+      .txt .carousel-ouverture a:hover {
+        color: #d2270e; } }
+.carousel-ouverture .entry-content p {
+  margin-bottom: 12px;
+  color: #fff; }
+  @media only screen and (max-width: 480px) {
+    .carousel-ouverture .entry-content p {
+      color: #666; } }
+.carousel-ouverture .meta-publi,
+.carousel-ouverture .meta-publi > li {
+  border-color: #555;
+  border-color: rgba(85, 85, 85, 0.5); }
 
 /* carousel-portfolio */
 /* carousel-extra */

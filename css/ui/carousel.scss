@@ -127,9 +127,9 @@
    /* carousel-ouverture */
    .carousel-ouverture {
       @extend .landmark;
-      min-height: 500px;
+      // min-height: 500px;
       @include media-query(palm) {
-         min-height: inherit;
+         // min-height: inherit;
          border: 3px solid #fff;
          @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,0.2));
       }

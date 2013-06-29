@@ -8,7 +8,6 @@ $(window).load(function(){
 
       $haschild.before('<span class="sprite sprite--dropdown" />');
       var $opens = $items.children("span");
-      console.log($opens);
 
       function open_dropdown(){
          var index = $opens.index(this),
@@ -57,9 +56,7 @@ $(window).load(function(){
    $('.flexslider').flexslider({
      animation: "slide",
      slideshow: false,
-     start: function(slider){
-       // $('body').removeClass('loading');
-     }
+     smoothHeight: true
    });
 });
 
