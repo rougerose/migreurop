@@ -12,7 +12,9 @@
       }
    }
    ol.objets-selection {
-      margin-left: $base-spacing-unit * 2;
+      @include media-query(lap-and-up) {
+         margin-left: $base-spacing-unit * 2;
+      }
    }
    .box--aside .objets-selection > li {margin-bottom: $base-spacing-unit;}
 

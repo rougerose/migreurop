@@ -3757,8 +3757,9 @@ blockquote {
     margin-bottom: 48px;
     padding: 0; }
 
-ol.objets-selection, ol.block-list--media {
-  margin-left: 48px; }
+@media only screen and (min-width: 481px) {
+  ol.objets-selection, ol.block-list--media {
+    margin-left: 48px; } }
 
 .box--aside .objets-selection > li, .box--aside .block-list--media > li {
   margin-bottom: 24px; }
@@ -4351,6 +4352,11 @@ input[type="checkbox"]:focus {
   color: #999; }
 
 /* résumé */
+.resume .media, .resume .media-ouverture {
+  margin-bottom: 0; }
+@media only screen and (max-width: 480px) {
+  .resume .media__img {
+    float: none; } }
 .resume .meta-publi {
   border-top: 1px dotted #ccc;
   border-bottom: 1px solid #ccc;

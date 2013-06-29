@@ -15,6 +15,14 @@
 
 /* résumé */
 .resume {
+   .media {
+      margin-bottom: 0;
+   }
+   .media__img {
+      @include media-query(palm) {
+         float: none;
+      }
+   }
    .meta-publi {
       border-top: 1px dotted #ccc;
       border-bottom: 1px solid #ccc;
