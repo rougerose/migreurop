@@ -18,6 +18,7 @@
       color: #000;
       margin-bottom: 0;
       @include font-size(26px);
+      line-height: 1.2;
       font-weight: 700;
    }
    .rubrique .self__titre,
@@ -25,7 +26,9 @@
    .recherche .self__titre span {text-transform: uppercase;}
    .self__body {
       .txt {
-         margin-left: $base-spacing-unit * 2;
+         @include media-query(lap-and-up) {
+            margin-left: $base-spacing-unit * 2;
+         }
       }
    }
       .chapo {

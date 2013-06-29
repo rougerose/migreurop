@@ -3536,9 +3536,6 @@ blockquote {
 /* logo site */
 .logo {
   display: inline-block; }
-  @media only screen and (max-width: 480px) {
-    .logo {
-      width: 250px; } }
 
 /*   =PAGE
 ------------------------------------------------------ */
@@ -4281,6 +4278,12 @@ input[type="checkbox"]:focus {
   margin-left: -21px;
   margin-bottom: 0;
   position: relative; }
+  @media only screen and (max-width: 480px) {
+    .meta-publi .intertitre {
+      margin-left: 0; } }
+  @media only screen and (min-width: 481px) and (max-width: 960px) {
+    .meta-publi .intertitre {
+      margin-left: 0; } }
 .meta-publi .liste-items a {
   color: #333; }
   .meta-publi .liste-items a:hover {
@@ -4905,6 +4908,7 @@ input[type="checkbox"]:focus {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.84615;
+  line-height: 1.2;
   font-weight: 700; }
 
 .rubrique .self__titre,
@@ -4912,8 +4916,9 @@ input[type="checkbox"]:focus {
 .recherche .self__titre span {
   text-transform: uppercase; }
 
-.self__body .txt {
-  margin-left: 48px; }
+@media only screen and (min-width: 481px) {
+  .self__body .txt {
+    margin-left: 48px; } }
 
 .chapo {
   color: #222;

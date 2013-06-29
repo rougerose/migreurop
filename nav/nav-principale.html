@@ -2,7 +2,7 @@
    <div class="grid">
       <div class="grid__item">
          [(#REM) navigation pour ecran sup. à 960 px ]
-         <ul class="nav desk-nav visuallyhidden--lap">
+         <ul class="nav desk-nav visuallyhidden--lap visuallyhidden--palm">
             <li class="nav__item[ (#ENV{type-page}|=={sommaire}|oui)is-active]"><a href="#URL_SITE_SPIP" class="item"><:migreurop:home:></a></li><BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}><!--
          --><li id="r#ID_RUBRIQUE" class="nav__item[ (#EXPOSE|oui)is-active]">
                <a class="item" href="#URL_RUBRIQUE">#TITRE</a><B_sousrubriques>

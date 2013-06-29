@@ -25,6 +25,12 @@
          margin-left: -21px;
          margin-bottom: 0;
          position: relative;
+         @include media-query(palm) {
+            margin-left: 0;
+         }
+         @include media-query(lap) {
+            margin-left: 0;
+         }
       }
       .liste-items {
          a {
