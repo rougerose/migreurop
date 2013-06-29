@@ -65,8 +65,10 @@
             <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
             <li class="category cat--item on"><a href="#URL_RUBRIQUE">#TITRE</a></li>
             </BOUCLE_rubrique>
-            <li class="meta-publi--time"><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
-            <B_auteurs><li class="byline author vcard"><:migreurop:by:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>
+            <li class="meta-publi--time">
+               <time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time>
+               <B_auteurs><p class="byline author vcard"><:migreurop:by:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></p></B_auteurs>
+            </li>
             [(#MODELE{article-self-traductions})]
             [(#PLUGIN{socialtags}|oui)
             <li class="share">

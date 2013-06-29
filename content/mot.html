@@ -12,7 +12,7 @@
       |plus{#GET{documents}|count}
 })
 ]<article class="self mot cf">
-   <div class="g one-whole">
+   <div class="grid__item one-whole">
       [(#REM) le logo ]
          [<div id="ouverture" class="media-ouverture">
             (#LOGO_MOT|inserer_attribut{class,media-ouverture__img})
@@ -22,7 +22,7 @@
       </header>
    </div><!-- .g one-whole -->
 
-   <div class="g one-whole desk-six-tenths">
+   <div class="grid__item one-whole desk-six-tenths">
       <div class="self__body entry-content contenu surlignable">
          [<div class="texte txt">
             (#TEXTE|image_reduire{600,0})
@@ -31,7 +31,7 @@
    </div><!-- .g one-whole desk-six-tenths -->
 </article><!-- .self -->
 
-<div class="g one-whole desk-six-tenths">
+<div class="grid__item one-whole desk-six-tenths">
    [(#GET{total}|>{0}|oui)
       [(#GET{articles}|count|>{0}|oui)
       [<div class="liste articles recherche">
@@ -51,8 +51,8 @@
    ]
 
    [<aside class="notes txt">
-      <div class="gw">
-         <div class="g desk-one-half">
+      <div class="grid">
+         <div class="grid__item desk-one-half">
             <h1 class="spip"><:info_notes:></h1>
             (#NOTES)
          </div>
