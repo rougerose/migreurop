@@ -9,7 +9,7 @@
                   <option value="home"><:migreurop:home:></option>
                   <BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}>
                   <option value="#ID_RUBRIQUE">[(#TITRE|couper{40})]</option><B_sousrubriques><BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
-                  <option value="#URL_RUBRIQUE">[-- (#TITRE|couper{40})]</option></BOUCLE_sousrubriques></B_sousrubriques>
+                  <option value="#ID_RUBRIQUE">[-- (#TITRE|couper{40})]</option></BOUCLE_sousrubriques></B_sousrubriques>
                   </BOUCLE_secteurs>
                </select>
             </label>
