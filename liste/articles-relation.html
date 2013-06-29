@@ -7,7 +7,7 @@
 <BOUCLE_mots(MOTS){id_article}{id_groupe!=14}>#SET_PUSH{mots,#ID_MOT}</BOUCLE_mots>
 
 <B_articles_100>
-<li class="related mbr">
+<li class="related">
    <h1 class="intertitre sp sp--related"><:migreurop:info_related:></h1>
    <ul class="liste-items">
       <BOUCLE_articles_100(ARTICLES){mots 100% #GET{mots}}{lang}{!par date}{0,3}{exclus}>
@@ -17,7 +17,7 @@
 </li>
 </B_articles_100>
 <B_articles_50>
-<li class="related mbr">
+<li class="related">
    <h1 class="intertitre sp sp--related"><:migreurop:info_related:></h1>
    <ul class="liste-items">
       <BOUCLE_articles_50(ARTICLES){mots 50% #GET{mots}}{lang}{!par date}{0,3}{exclus}>

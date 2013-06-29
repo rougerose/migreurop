@@ -2226,6 +2226,57 @@ label,
 .loz {
   border-radius: 4px; }
 
+/*------------------------------------*\
+    $RULES
+\*------------------------------------*/
+/**
+ * Horizontal rules, extend `hr`.
+ *
+ * Demo: jsfiddle.net/inuitcss/L6GuZ
+ *
+ */
+.rule {
+  color: #cccccc;
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 23px;
+  margin-bottom: 1.4375rem; }
+
+/**
+ * Dotted rules
+ */
+.rule--dotted {
+  border-bottom-style: dotted; }
+
+/**
+ * Dashed rules
+ */
+.rule--dashed {
+  border-bottom-style: dashed; }
+
+/**
+ * Ornamental rules. Places a § over the rule.
+ */
+.rule--ornament {
+  position: relative;
+  /**
+  * Pass in an arbitrary ornament though a data attribute, e.g.:
+  *
+    <hr class="rule  rule--ornament" data-ornament="!">
+  *
+  */ }
+  .rule--ornament:after {
+    content: "\00A7";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    line-height: 0;
+    text-align: center; }
+  .rule--ornament[data-ornament]:after {
+    content: attr(data-ornament); }
+
 /**
  * Style trumps; helper and brand classes
  */
@@ -3346,6 +3397,13 @@ a {
 .txt .more, .txt .less {
   border-bottom: none; }
 
+/* Images http://www.456bereastreet.com/archive/201306/how_to_proportionally_scale_images_that_have_dimension_attributes/ */
+img[width],
+img[height] {
+  max-width: 100%;
+  width: auto;
+  height: auto; }
+
 /*   =TYPOGRAPHIE
    ------------------------------------------------------ */
 /* Headings */
@@ -4113,6 +4171,14 @@ ol.objets-selection, ol.block-list--media {
   .traduction .loz--active {
     background-color: #d2270e; }
 
+.meta-publi.box--aside,
+.meta-publi.box--aside > li {
+  border: none;
+  margin-bottom: 24px; }
+  .meta-publi.box--aside.meta-publi--time,
+  .meta-publi.box--aside > li.meta-publi--time {
+    margin-bottom: 0; }
+
 /*   =HENTRY
    ------------------------------------------------------ */
 /* Styles communs */
@@ -4131,21 +4197,22 @@ ol.objets-selection, ol.block-list--media {
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #999; }
 
-.meta-publi {
+/* résumé */
+.resume .meta-publi {
   border-top: 1px dotted #ccc;
   border-bottom: 1px solid #ccc;
   line-height: 2; }
-  .meta-publi > li {
+  .resume .meta-publi > li {
     font-size: 12px;
     font-size: 0.75rem;
     line-height: 2;
     margin-right: 6px;
     padding-right: 6px;
     border-right: 1px solid #ccc; }
-    .meta-publi > li:last-child {
+    .resume .meta-publi > li:last-child {
       border-right-width: 0; }
     @media only screen and (max-width: 480px) {
-      .meta-publi > li {
+      .resume .meta-publi > li {
         border: none; } }
 
 /* hentry-secondary */
@@ -4299,6 +4366,8 @@ ol.objets-selection, ol.block-list--media {
       -webkit-backface-visibility: hidden; }
     .carousel .slides article {
       position: relative; }
+    .carousel .slides figure {
+      margin-bottom: 0; }
 
 .carousel__link {
   display: block;

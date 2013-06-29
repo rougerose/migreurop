@@ -83,3 +83,13 @@
                background-color: $brand-color;
             }
          }
+   .meta-publi.box--aside {
+      &, 
+      > li {
+         border: none;
+         margin-bottom: $base-spacing-unit;
+         &.meta-publi--time {
+            margin-bottom: 0;
+         }
+      }
+   }

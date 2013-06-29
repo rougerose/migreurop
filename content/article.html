@@ -1,6 +1,6 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <article class="self article cf">
-   <div class="g one-whole">
+   <div class="grid__item one-whole">
 
       [(#REM) mot-clé portfolio ? ]
       <BOUCLE_mot_portfolio(MOTS){id_article}{id_mot=32}>
@@ -11,14 +11,14 @@
          </BOUCLE_document_portfolio>
       [(#REM) sinon le logo ]
          [<div id="ouverture" class="media-ouverture">
-            (#LOGO_ARTICLE|inserer_attribut{class,media-ouverture__img})
+            <img src="(#LOGO_ARTICLE||image_reduire{960,420}|extraire_attribut{src})" class="media-ouverture__img" alt="#TITRE" />
          </div>]
          <//B_document_portfolio>
       </BOUCLE_mot_portfolio>
       </B_mot_portfolio>
       [(#REM) sinon le logo ]
          [<div id="ouverture" class="media-ouverture">
-            (#LOGO_ARTICLE|inserer_attribut{class,media-ouverture__img})
+            <img src="(#LOGO_ARTICLE||image_reduire{960,420}|extraire_attribut{src})" class="media-ouverture__img" alt="#TITRE" />
          </div>]
       <//B_mot_portfolio>
 
@@ -31,22 +31,8 @@
          [(#SOUSTITRE|ou{#SURTITRE}|oui)
          </hgroup>]
       </header>
-   </div><!-- .g one-whole -->
-
-   <div class="g desk-three-tenths rev">
-      <aside>
-         <ul class="meta-publi box--aside">
-            <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-            <li class="category cat--item on mbr"><a href="#URL_RUBRIQUE">#TITRE</a></li>
-            </BOUCLE_rubrique>
-            <li><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
-            <B_auteurs><li class="byline author vcard"><:caap:par:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>
-            [(#MODELE{article-self-traductions})]
-         </ul>
-      </aside>
-   </div>
-
-   <div class="g one-whole desk-six-tenths">
+   </div><!-- .grid__item one-whole -->
+   <div class="grid__item one-whole desk-six-tenths">
       <div class="self__body entry-content contenu surlignable">
          [<div class="chapo txt landmark">
             (#CHAPO|image_reduire{600,0})
@@ -65,27 +51,31 @@
             [(#INCLURE{fond=inclure/documents,id_article,portfolio=#GET{portfolio}})]
 
          [<aside class="notes txt">
-            <div class="gw">
-               <div class="g desk-one-half">
+            <div class="grid">
+               <div class="grid__item desk-one-half">
                   <h1 class="spip"><:info_notes:></h1>
                   (#NOTES)
                </div>
             </div>
          </aside>]
       </div><!-- .self__body -->
-   </div><!-- .g one-whole desk-six-tenths -->
-
-   <div class="g desk-three-tenths rev">
+   </div><!-- .grid__item one-whole desk-six-tenths --><div class="grid__item desk-three-tenths push--desk-one-tenth">
       <aside>
-         <ul class="meta-publi box-aside">
+         <ul class="meta-publi box--aside">
+            <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+            <li class="category cat--item on"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+            </BOUCLE_rubrique>
+            <li class="meta-publi--time"><time class="updated" datetime="[(#DATE|affdate{Y-m-d})]">[(#DATE|affdate)]</time></li>
+            <B_auteurs><li class="byline author vcard"><:migreurop:by:> <BOUCLE_auteurs(AUTEURS){id_article}{par nom}{", "}><span class="fn">#NOM</span></BOUCLE_auteurs></li></B_auteurs>
+            [(#MODELE{article-self-traductions})]
             [(#PLUGIN{socialtags}|oui)
-            <li class="share mbr">
+            <li class="share">
                <h1 id="share" class="intertitre sp sp--share"><:migreurop:info_partager:></h1>
             </li>]
             [(#INCLURE{fond=liste/mots-objet,id_article})]
             [(#INCLURE{fond=liste/articles-relation,id_article,lang})]
          </ul>
       </aside>
-   </div>
+   </div><!-- .grid__item desk-three-tenths -->
 </article><!-- .self -->
 </BOUCLE_article>

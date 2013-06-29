@@ -12,19 +12,23 @@
    font-family: $condensed-font-family;
    color: #999;
 }
-.meta-publi {
-   border-top: 1px dotted #ccc;
-   border-bottom: 1px solid #ccc;
-   line-height: 2;
-   > li {
-      @include font-size(12px);
-      // line-height: 2;
-      margin-right: $quarter-spacing-unit;
-      padding-right: $quarter-spacing-unit;
-      border-right: 1px solid #ccc;
-      &:last-child {border-right-width: 0;}
-      @include media-query(palm) {
-         border: none;
+
+/* résumé */
+.resume {
+   .meta-publi {
+      border-top: 1px dotted #ccc;
+      border-bottom: 1px solid #ccc;
+      line-height: 2;
+      > li {
+         @include font-size(12px);
+         // line-height: 2;
+         margin-right: $quarter-spacing-unit;
+         padding-right: $quarter-spacing-unit;
+         border-right: 1px solid #ccc;
+         &:last-child {border-right-width: 0;}
+         @include media-query(palm) {
+            border: none;
+         }
       }
    }
 }
