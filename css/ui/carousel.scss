@@ -197,6 +197,11 @@
          }
       }
    }
+   /* carousel-portfolio */
+   .carousel-portfolio {
+      @extend .landmark;
+   }
+
    /* carousel-extra */
    .carousel-extra {
       min-height: 250px;

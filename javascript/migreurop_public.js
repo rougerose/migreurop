@@ -2,14 +2,13 @@ $(window).load(function(){
    // ======================================
    // = Menu principal en version dropdown =
    // ======================================
-   $("#nav-principale .nav").each(function(){
+   $("#nav-principale .desk-nav").each(function(){
       var $items = $(this).children(".nav__item"),
-      $haschild = $items.children(".nav--dropdown"),
-      $ul_child = $haschild.filter("ul");
+      $haschild = $items.find(".nav--dropdown");
 
-      //$ul_child.before('<span class="open s s--dd" />');
       $haschild.before('<span class="sprite sprite--dropdown" />');
       var $opens = $items.children("span");
+      console.log($opens);
 
       function open_dropdown(){
          var index = $opens.index(this),

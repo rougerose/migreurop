@@ -6,4 +6,29 @@
    position: absolute;
    top:100%;
    left:-99999px;
+   text-align: left;
+   list-style-type: none;
+   white-space: nowrap;
+   padding: $half-spacing-unit;
+   margin-left: 0;
+   background-color: $noir-bleu;
+   opacity: 0;
+   @include vendor(transition, opacity 0.5s ease-in-out);
+   @include arrow(top, right, $noir-bleu);
+   //surcharge taille et position fleche
+   &:before,
+   &:after {
+    border-width: $base-spacing-unit/4;
+    margin-left: -$base-spacing-unit/4;
+    right: 12px;
+   }
+   &.active {
+    top: 120%;
+    left: auto;
+    right: -4px;
+    opacity: 1;
+   }
+   .nav__item {
+    padding: 0;
+   }
 }

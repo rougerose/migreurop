@@ -843,7 +843,7 @@ pre,
 /**
  * Doubled up `margin-bottom` helper class.
  */
-.landmark, .box--aside, .carousel-ouverture, .self {
+.landmark, .box--aside, .carousel-ouverture, .carousel-portfolio, .self {
   margin-bottom: 48px;
   margin-bottom: 3rem; }
 
@@ -1831,20 +1831,23 @@ label,
 /**
  * Forms the basis for any/all CSS arrows.
  */
-.nav__item.is-active .item {
+.nav--dropdown, .nav__item.is-active .item {
   position: relative; }
-  .nav__item.is-active .item:before, .nav__item.is-active .item:after {
+  .nav--dropdown:before, .nav__item.is-active .item:before, .nav--dropdown:after, .nav__item.is-active .item:after {
     content: "";
     position: absolute;
     border-collapse: separate; }
-  .nav__item.is-active .item:before {
+  .nav--dropdown:before, .nav__item.is-active .item:before {
     border: 12px solid transparent; }
-  .nav__item.is-active .item:after {
+  .nav--dropdown:after, .nav__item.is-active .item:after {
     border: 11px solid transparent; }
 
 /**
  * Define individual edges so we can combine what we need, when we need.
  */
+.nav--dropdown:before, .nav--dropdown:after {
+  bottom: 100%; }
+
 .nav__item.is-active .item:before, .nav__item.is-active .item:after {
   top: 100%; }
 
@@ -1853,6 +1856,11 @@ label,
   margin-left: -12px; }
 .nav__item.is-active .item:after {
   margin-left: -11px; }
+
+.nav--dropdown:before {
+  right: 11px; }
+.nav--dropdown:after {
+  right: 12px; }
 
 /*------------------------------------*\
     $SPRITE
@@ -3705,7 +3713,34 @@ blockquote {
 .nav--dropdown {
   position: absolute;
   top: 100%;
-  left: -99999px; }
+  left: -99999px;
+  text-align: left;
+  list-style-type: none;
+  white-space: nowrap;
+  padding: 12px;
+  margin-left: 0;
+  background-color: #1d2326;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; }
+  .nav--dropdown:before {
+    border-bottom-color: #1d2326 !important; }
+  .nav--dropdown:after {
+    border-bottom-color: #1d2326 !important; }
+  .nav--dropdown:before, .nav--dropdown:after {
+    border-width: 6px;
+    margin-left: -6px;
+    right: 12px; }
+  .nav--dropdown.active {
+    top: 120%;
+    left: auto;
+    right: -4px;
+    opacity: 1; }
+  .nav--dropdown .nav__item {
+    padding: 0; }
 
 /*   =LISTES
    ------------------------------------------------------ */
@@ -3817,7 +3852,8 @@ ol.objets-selection, ol.block-list--media {
   background-position: -96px 0; }
 
 .sprite--dropdown {
-  background-position: -128px 0; }
+  background-position: -128px 0;
+  cursor: pointer; }
 
 .sprite--search {
   height: 18px;
@@ -4414,6 +4450,7 @@ ol.objets-selection, ol.block-list--media {
     border-color: #555;
     border-color: rgba(85, 85, 85, 0.5); }
 
+/* carousel-portfolio */
 /* carousel-extra */
 .carousel-extra {
   min-height: 250px;
