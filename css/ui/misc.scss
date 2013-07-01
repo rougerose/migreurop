@@ -10,6 +10,12 @@
       // les éléments de grille sont inversés.
       .rev {float: right;}
    }
+   @include media-query(lap-and-up) {
+      .push--lap-and-up-one-tenth {
+         position: relative;
+         left: 10%;
+      }
+   }
    @include media-query(lap) {
       .push--lap-one-fifth {
          position: relative;

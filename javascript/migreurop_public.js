@@ -55,8 +55,8 @@ $(window).load(function(){
    // ==============
    $('.flexslider').flexslider({
      animation: "slide",
-     slideshow: false,
-     smoothHeight: true
+     slideshow: false
+     // smoothHeight: true
    });
 });
 

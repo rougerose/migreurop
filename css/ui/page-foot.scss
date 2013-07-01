@@ -9,6 +9,9 @@
          margin: 0 auto;
          padding-right:$base-spacing-unit;
          padding-left:$base-spacing-unit;
+         @include media-query(palm) {
+            max-width: 640px;
+         }
          @include media-query(lap) {
             padding-left:$base-spacing-unit*2;
          }

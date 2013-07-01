@@ -19,13 +19,13 @@
 (#REM) selection des articles ]
 [(#GET{articles_selection}|oui)
 <div class="conteneur">
-   <div class="grid__item desk-six-tenths">
+   <div class="grid__item lap-and-up-six-tenths">
       #INCLURE{fond=liste/articles-selection,
          conteneur=principal,
          selection=#GET{articles_selection},
          pagination=10,
          ajax}
-   </div><!-- .grid__item --><div class="grid__item desk-three-tenths push--desk-one-tenth">
+   </div><!-- .grid__item --><div class="grid__item lap-and-up-three-tenths push--lap-and-up-one-tenth">
       <INCLURE{fond=extra1/#ENV{type-page},env} />
    </div>   
 </div><!-- .conteneur -->]

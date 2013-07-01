@@ -2368,7 +2368,7 @@ label,
  * Demo: jsfiddle.net/inuitcss/WS4Ge
  *
  */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   /**
   * Whole
   */
@@ -2467,7 +2467,7 @@ label,
 
   .palm-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (min-width: 481px) and (max-width: 960px) {
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
   /**
   * Whole
   */
@@ -2566,7 +2566,7 @@ label,
 
   .lap-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   /**
   * Whole
   */
@@ -2665,7 +2665,7 @@ label,
 
   .lap-and-up-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1023px) {
   /**
   * Whole
   */
@@ -2764,7 +2764,7 @@ label,
 
   .portable-eleven-twelfths {
     width: 91.666%; } }
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1024px) {
   /**
   * Whole
   */
@@ -3253,7 +3253,7 @@ label,
   position: absolute !important;
   width: 1px !important; }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .accessibility--palm,
   .visuallyhidden--palm {
     border: 0 !important;
@@ -3264,7 +3264,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 481px) and (max-width: 960px) {
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
   .accessibility--lap,
   .visuallyhidden--lap {
     border: 0 !important;
@@ -3275,7 +3275,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   .accessibility--lap-and-up,
   .visuallyhidden--lap-and-up {
     border: 0 !important;
@@ -3286,7 +3286,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1023px) {
   .accessibility--portable,
   .visuallyhidden--portable {
     border: 0 !important;
@@ -3297,7 +3297,7 @@ label,
     padding: 0 !important;
     position: absolute !important;
     width: 1px !important; } }
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1024px) {
   .accessibility--desk,
   .visuallyhidden--desk {
     border: 0 !important;
@@ -3523,10 +3523,10 @@ blockquote {
     position: absolute;
     z-index: 90;
     width: 100%; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 768px) {
       .page-head.ouverture {
         position: static; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .page-head {
       padding-top: 5em; } }
 
@@ -3540,14 +3540,12 @@ blockquote {
   margin-right: auto;
   margin-left: auto;
   padding-right: 24px;
-  padding-left: 24px; }
-  @media only screen and (min-width: 961px) {
-    .page-content {
-      max-width: 1100px; } }
-  @media only screen and (max-width: 960px) {
+  padding-left: 24px;
+  max-width: 1100px; }
+  @media only screen and (max-width: 768px) {
     .page-content {
       max-width: 640px; } }
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 768px) {
     .page-content .conteneur {
       text-align: center; }
       .page-content .conteneur > .grid__item {
@@ -3564,10 +3562,13 @@ blockquote {
     margin: 0 auto;
     padding-right: 24px;
     padding-left: 24px; }
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
+    @media only screen and (max-width: 768px) {
+      .page-foot .conteneur {
+        max-width: 640px; } }
+    @media only screen and (min-width: 769px) and (max-width: 1023px) {
       .page-foot .conteneur {
         padding-left: 48px; } }
-    @media only screen and (min-width: 961px) {
+    @media only screen and (min-width: 1024px) {
       .page-foot .conteneur {
         max-width: 1100px; } }
   .page-foot .intertitre {
@@ -3634,10 +3635,10 @@ blockquote {
     margin: 0 auto;
     padding-right: 24px;
     padding-left: 24px; }
-    @media only screen and (max-width: 960px) {
+    @media only screen and (max-width: 959px) {
       .nav-principale .nav, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
         text-align: right; } }
-    @media only screen and (min-width: 961px) {
+    @media only screen and (min-width: 960px) {
       .nav-principale .nav, .nav-principale .flex-control-nav, .nav-principale .carousel .slides, .carousel .nav-principale .slides, .nav-principale .tabs-top__nav {
         max-width: 1100px; } }
   .nav-principale a {
@@ -3671,7 +3672,27 @@ blockquote {
   padding-right: 8px; }
   .desk-nav .nav__item.search {
     float: right; }
+@media only screen and (max-width: 959px) {
+  .desk-nav {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
 
+@media only screen and (min-width: 959px) {
+  .palm-nav {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
 .palm-nav form {
   margin-bottom: 0; }
 .palm-nav .nav__item {
@@ -3757,7 +3778,7 @@ blockquote {
     margin-bottom: 48px;
     padding: 0; }
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   ol.objets-selection, ol.block-list--media {
     margin-left: 48px; } }
 
@@ -3994,7 +4015,7 @@ blockquote {
   margin-bottom: 0; }
 
 /* desk : images dans le portfolio sur 4 colonnes */
-@media (min-width: 961px) {
+@media (min-width: 1024px) {
   .documents.portfolio .item_0 {
     margin-right: 0; }
 
@@ -4237,7 +4258,7 @@ input[type="checkbox"]:focus {
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 768px) {
       .formulaire_recherche input[type="search"] {
         width: 15em; } }
 
@@ -4255,7 +4276,7 @@ input[type="checkbox"]:focus {
 /*   =META-PUBLI
    ------------------------------------------------------ */
 /* éléments communs. éléments spécifiques voir hentry.scss, self.scss */
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   .meta-publi {
     list-style: none;
     margin-left: 0; }
@@ -4264,7 +4285,7 @@ input[type="checkbox"]:focus {
       display: inline-block;
       *display: inline;
       zoom: 1; } }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .meta-publi {
     margin-left: 0;
     list-style: none; } }
@@ -4276,10 +4297,10 @@ input[type="checkbox"]:focus {
   margin-left: -21px;
   margin-bottom: 0;
   position: relative; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .meta-publi .intertitre {
       margin-left: 0; } }
-  @media only screen and (min-width: 481px) and (max-width: 960px) {
+  @media only screen and (min-width: 769px) and (max-width: 1023px) {
     .meta-publi .intertitre {
       margin-left: 0; } }
 .meta-publi .liste-items a {
@@ -4354,7 +4375,7 @@ input[type="checkbox"]:focus {
 /* résumé */
 .resume .media, .resume .media-ouverture {
   margin-bottom: 0; }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .resume .media__img {
     float: none; } }
 .resume .meta-publi {
@@ -4370,7 +4391,7 @@ input[type="checkbox"]:focus {
     border-right: 1px solid #ccc; }
     .resume .meta-publi > li:last-child {
       border-right-width: 0; }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 768px) {
       .resume .meta-publi > li {
         border: none; } }
 
@@ -4491,7 +4512,7 @@ input[type="checkbox"]:focus {
   background-color: rgba(210, 39, 14, 0.95);
   cursor: default; }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .flex-control-nav {
     top: 0;
     bottom: auto; }
@@ -4499,7 +4520,8 @@ input[type="checkbox"]:focus {
   .flex-direction-nav a {
     height: 32px;
     width: 32px;
-    top: 20%; }
+    top: 30%;
+    opacity: 1; }
 
   .flex-prev {
     background-position: -96px -16px; }
@@ -4533,7 +4555,7 @@ input[type="checkbox"]:focus {
   width: 100%; }
 
 /* carousel-ouverture */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .carousel-ouverture {
     border: 3px solid #fff;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -4548,7 +4570,7 @@ input[type="checkbox"]:focus {
   width: 60%;
   padding: 12px;
   background-color: rgba(29, 35, 38, 0.8); }
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 1023px) {
     .carousel-ouverture .wrap {
       position: static;
       width: auto;
@@ -4559,7 +4581,7 @@ input[type="checkbox"]:focus {
       -ms-box-shadow: inset 0 0 3px black;
       -o-box-shadow: inset 0 0 3px black;
       box-shadow: inset 0 0 3px black; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .carousel-ouverture .wrap {
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
@@ -4594,7 +4616,7 @@ input[type="checkbox"]:focus {
   .carousel-ouverture .txt a:hover,
   .txt .carousel-ouverture a:hover {
     color: #d2270e; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .carousel-ouverture a[rel="bookmark"],
     .carousel-ouverture .suite--link,
     .carousel-ouverture .txt a,
@@ -4608,7 +4630,7 @@ input[type="checkbox"]:focus {
 .carousel-ouverture .entry-content p {
   margin-bottom: 12px;
   color: #fff; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .carousel-ouverture .entry-content p {
       color: #666; } }
 .carousel-ouverture .meta-publi,
@@ -4626,7 +4648,7 @@ input[type="checkbox"]:focus {
   -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .carousel-extra {
       min-height: inherit; } }
   .carousel-extra article {
@@ -4661,7 +4683,7 @@ input[type="checkbox"]:focus {
 .breadcrumb--categories {
   margin: 0;
   overflow: hidden; }
-  @media only screen and (min-width: 961px) {
+  @media only screen and (min-width: 1024px) {
     .breadcrumb--categories {
       background: #ededed;
       background: -moz-linear-gradient(left, #ededed 0%, #f6f6f6 53%, white 100%);
@@ -4676,7 +4698,7 @@ input[type="checkbox"]:focus {
     font-size: 0.875rem;
     line-height: 1.71429;
     display: block; }
-    @media only screen and (min-width: 961px) {
+    @media only screen and (min-width: 1024px) {
       .breadcrumb--categories > li {
         display: inline; }
         .breadcrumb--categories > li.on + li > a {
@@ -4686,7 +4708,7 @@ input[type="checkbox"]:focus {
           padding-right: 0; } }
     .breadcrumb--categories > li a {
       margin-left: 15px; }
-      @media only screen and (min-width: 961px) {
+      @media only screen and (min-width: 1024px) {
         .breadcrumb--categories > li a {
           float: left;
           position: relative;
@@ -4700,12 +4722,12 @@ input[type="checkbox"]:focus {
       font-size: 0.75rem;
       line-height: 2;
       color: #d2270e; }
-      @media only screen and (min-width: 961px) {
+      @media only screen and (min-width: 1024px) {
         .breadcrumb--categories > li.on a {
           color: #fff;
           background: #d2270e;
           padding-right: 0; } }
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 1023px) {
     .breadcrumb--categories .sp--alt:after {
       display: none; } }
 
@@ -4786,10 +4808,10 @@ input[type="checkbox"]:focus {
 /* tabs-side : onglets sur le côté */
 .tabs-side {
   border: 1px solid #1d2326; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 768px) {
     .tabs-side {
       margin-left: -24px; } }
-  @media only screen and (min-width: 481px) and (max-width: 960px) {
+  @media only screen and (min-width: 769px) and (max-width: 1023px) {
     .tabs-side {
       margin-left: -24px; } }
 
@@ -4916,7 +4938,7 @@ input[type="checkbox"]:focus {
 .recherche .self__titre span {
   text-transform: uppercase; }
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 769px) {
   .self__body .txt {
     margin-left: 48px; } }
 
@@ -5085,14 +5107,18 @@ table.spip {
 /*   =MISC
    ------------------------------------------------------ */
 /* push */
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1024px) {
   .push--desk-one-tenth {
     position: relative;
     left: 10%; }
 
   .rev {
     float: right; } }
-@media only screen and (min-width: 481px) and (max-width: 960px) {
+@media only screen and (min-width: 769px) {
+  .push--lap-and-up-one-tenth {
+    position: relative;
+    left: 10%; } }
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
   .push--lap-one-fifth {
     position: relative;
     left: 20%; }
