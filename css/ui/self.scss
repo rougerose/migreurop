@@ -10,6 +10,7 @@
       }
       .soustitre {
          @include font-size($h3-size);
+         line-height: 1.4;
          font-family: $condensed-font-family;
          color: #aaa;
       }

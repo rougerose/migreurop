@@ -14,13 +14,13 @@
 })]
 
 <article class="self recherche cf">
-   <div class="grid__item one-whole">
+   <div class="grid__item">
       <header class="landmark">
          <h1 class="self__titre entry-title titre"><span><:migreurop:info_recherche_label:></span> &laquo;&nbsp;#RECHERCHE&nbsp;&raquo;</h1>
       </header>
-   </div><!-- .g one-whole -->
+   </div><!-- .grid__item -->
 
-   <div class="grid__item one-whole desk-six-tenths">
+   <div class="grid__item lap-and-up-six-tenths">
       <div class="self__body entry-content contenu surlignable">
          <div class="texte txt">
             [(#GET{total}|>{0}|?{
@@ -29,10 +29,10 @@
             })]
          </div><!-- .texte -->
       </div><!-- .self__body -->
-   </div><!-- .g one-whole desk-six-tenths -->
+   </div><!-- .grid__item -->
 </article><!-- .self -->
 
-<div class="grid__item one-whole desk-six-tenths">
+<div class="grid__item lap-and-up-six-tenths">
    [(#GET{total}|>{0}|oui)
       [(#GET{articles}|count|>{0}|oui)
       [<div class="liste articles recherche landmark">
@@ -54,4 +54,4 @@
          (#INCLURE{fond=liste/sites,selection=#GET{sites},contexte=principal,ajax})
       </div>]]
    ]
-</div><!-- .g one-whole desk-six-tenths -->
+</div><!-- .grid__item -->

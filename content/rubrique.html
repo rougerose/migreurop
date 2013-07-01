@@ -9,19 +9,19 @@
    <header class="mbr grid__item">
       <h1 class="self__titre">#TITRE</h1>
    </header>
-   <div class="grid__item desk-six-tenths">
+   <div class="grid__item lap-and-up-six-tenths">
       [<div class="self__body">
          <div class="chapo landmark txt">
             (#TEXTE|sinon{<br />})
          </div>
       </div><!-- .self__body -->]
-   </div><!-- .grid__item --><div class="grid__item desk-three-tenths push--desk-one-tenth lap-one-half lap-float--right">
+   </div><!-- .grid__item --><div class="grid__item lap-and-up-three-tenths push--lap-and-up-one-tenth palm-one-half palm-float--right">
       <INCLURE{fond=nav/rubrique__plan, id_rubrique, id_secteur,secteur-titre=#GET{secteur-titre}}>
-   </div><!-- .grid__item desk-three-tenths --><div class="grid__item lap-one-half lap-float--left">
+   </div><!-- .grid__item --><div class="grid__item palm-one-half palm-float--left">
       <INCLURE{fond=nav/rubrique__categories,id_rubrique,mots,ajax} />
    </div><!-- .grid__item lap-one-half -->
 </article><!-- .self -->
-<div class="grid__item desk-six-tenths">
+<div class="grid__item lap-and-up-six-tenths">
    <BOUCLE_cond_categorie(CONDITION){si #ENV{mots}}>
       <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax=art_cat,env} />
    </BOUCLE_cond_categorie>
@@ -36,13 +36,13 @@
    
    [<aside class="notes">
       <div class="grid">
-         <div class="grid__item desk-one-half">
+         <div class="grid__item lap-and-up-two-thirds">
             <h1 class="spip"><:info_notes:></h1>
             (#NOTES)
          </div>
       </div>
    </aside>]
-</div><!-- .grid__item --><div class="grid__item desk-three-tenths push--desk-one-tenth">
+</div><!-- .grid__item --><div class="grid__item lap-and-up-three-tenths push--lap-and-up-one-tenth">
    
    <INCLURE{fond=extra1/#ENV{type-page},env} />
 

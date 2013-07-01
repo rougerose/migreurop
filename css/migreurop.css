@@ -4683,7 +4683,7 @@ input[type="checkbox"]:focus {
 .breadcrumb--categories {
   margin: 0;
   overflow: hidden; }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 769px) {
     .breadcrumb--categories {
       background: #ededed;
       background: -moz-linear-gradient(left, #ededed 0%, #f6f6f6 53%, white 100%);
@@ -4698,7 +4698,7 @@ input[type="checkbox"]:focus {
     font-size: 0.875rem;
     line-height: 1.71429;
     display: block; }
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 769px) {
       .breadcrumb--categories > li {
         display: inline; }
         .breadcrumb--categories > li.on + li > a {
@@ -4708,7 +4708,7 @@ input[type="checkbox"]:focus {
           padding-right: 0; } }
     .breadcrumb--categories > li a {
       margin-left: 15px; }
-      @media only screen and (min-width: 1024px) {
+      @media only screen and (min-width: 769px) {
         .breadcrumb--categories > li a {
           float: left;
           position: relative;
@@ -4722,12 +4722,12 @@ input[type="checkbox"]:focus {
       font-size: 0.75rem;
       line-height: 2;
       color: #d2270e; }
-      @media only screen and (min-width: 1024px) {
+      @media only screen and (min-width: 769px) {
         .breadcrumb--categories > li.on a {
           color: #fff;
           background: #d2270e;
           padding-right: 0; } }
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: 768px) {
     .breadcrumb--categories .sp--alt:after {
       display: none; } }
 
@@ -4741,9 +4741,15 @@ input[type="checkbox"]:focus {
   max-width: 1100px;
   margin: 0 auto;
   padding: 12px 24px; }
+  @media only screen and (max-width: 768px) {
+    .breadcrumb--path {
+      max-width: 640px; } }
   .breadcrumb--path > li {
     text-transform: uppercase;
     margin-right: 5px; }
+    @media only screen and (max-width: 768px) {
+      .breadcrumb--path > li {
+        display: list-item; } }
     .breadcrumb--path > li:before {
       content: "/ ";
       color: #cccccc; }
@@ -4921,6 +4927,7 @@ input[type="checkbox"]:focus {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1;
+  line-height: 1.4;
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #aaa; }
 

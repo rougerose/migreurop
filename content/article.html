@@ -1,6 +1,6 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <article class="self article cf">
-   <div class="grid__item one-whole">
+   <div class="grid__item">
 
       [(#REM) mot-clé portfolio ? ]
       <BOUCLE_mot_portfolio(MOTS){id_article}{id_mot=32}>
@@ -31,8 +31,8 @@
          [(#SOUSTITRE|ou{#SURTITRE}|oui)
          </hgroup>]
       </header>
-   </div><!-- .grid__item one-whole -->
-   <div class="grid__item one-whole desk-six-tenths">
+   </div><!-- .grid__item -->
+   <div class="grid__item lap-and-up-six-tenths">
       <div class="self__body entry-content contenu surlignable">
          [<div class="chapo txt landmark">
             (#CHAPO|image_reduire{600,0})
@@ -52,14 +52,15 @@
 
          [<aside class="notes txt">
             <div class="grid">
-               <div class="grid__item desk-one-half">
+               <div class="grid__item lap-and-up-two-thirds">
                   <h1 class="spip"><:info_notes:></h1>
                   (#NOTES)
                </div>
             </div>
          </aside>]
       </div><!-- .self__body -->
-   </div><!-- .grid__item one-whole desk-six-tenths --><div class="grid__item desk-three-tenths push--desk-one-tenth">
+   </div><!-- .grid__item --><div class="grid__item lap-and-up-three-tenths push--lap-and-up-one-tenth">
+      <hr class="visuallyhidden--lap-and-up spip hr--break" />
       <aside>
          <ul class="meta-publi box--aside">
             <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
@@ -78,6 +79,6 @@
             [(#INCLURE{fond=liste/articles-relation,id_article,lang})]
          </ul>
       </aside>
-   </div><!-- .grid__item desk-three-tenths -->
+   </div><!-- .grid__item -->
 </article><!-- .self -->
 </BOUCLE_article>
