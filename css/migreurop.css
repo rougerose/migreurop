@@ -3781,6 +3781,8 @@ blockquote {
 @media only screen and (min-width: 769px) {
   ol.objets-selection, ol.block-list--media {
     margin-left: 48px; } }
+ol.objets-selection.rubriques article, ol.rubriques.block-list--media article, ol.objets-selection.mots article, ol.mots.block-list--media article, ol.objets-selection.sites article, ol.sites.block-list--media article {
+  border-bottom: 1px solid #ccc; }
 
 .box--aside .objets-selection > li, .box--aside .block-list--media > li {
   margin-bottom: 24px; }
@@ -4366,15 +4368,13 @@ input[type="checkbox"]:focus {
   line-height: 1.2; }
 
 .soustitre {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333;
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #999; }
 
 /* résumé */
-.resume .media, .resume .media-ouverture {
-  margin-bottom: 0; }
 @media only screen and (max-width: 768px) {
   .resume .media__img {
     float: none; } }

@@ -8,16 +8,16 @@
    @include font-size($h4-size);
 }
 .soustitre {
-   @include font-size($h5-size);
+   @include font-size(18px);
    font-family: $condensed-font-family;
    color: #999;
 }
 
 /* résumé */
 .resume {
-   .media {
-      margin-bottom: 0;
-   }
+   // .media {
+   //    margin-bottom: 0;
+   // }
    .media__img {
       @include media-query(palm) {
          float: none;

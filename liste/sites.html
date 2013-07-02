@@ -8,7 +8,7 @@
 [<h2 class="delta resultats--detail">
    (#GET{selection}|count|singulier_ou_pluriel{migreurop:info_recherche_site,migreurop:info_recherche_sites,nb})
 </h2>]
-<ol class="objets-selection liste-items recherche">
+<ol class="objets-selection liste-items sites recherche">
    <BOUCLE_sites(SITES){id_syndic IN #GET{selection}}{pagination 5}>
    [<li class="item">
       (#INCLURE{fond=inclure/site-resume,conteneur=#ENV{conteneur},id_syndic})
