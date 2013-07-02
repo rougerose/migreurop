@@ -14,7 +14,7 @@
             <ul class="objets-selection">
                <BOUCLE_articles(ARTICLES){id_rubrique}{!par date}{0,3}{lang}>
                [<li>
-                  (#INCLURE{fond=inclure/article-resume,conteneur=#ENV{conteneur},id_article})
+                  (#INCLURE{fond=inclure/article-resume,contexte=#ENV{contexte},conteneur=#ENV{conteneur},id_article})
                </li>]
                </BOUCLE_articles>
             </ul>
