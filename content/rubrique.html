@@ -23,13 +23,13 @@
 </article><!-- .self -->
 <div class="grid__item lap-and-up-six-tenths">
    <BOUCLE_cond_categorie(CONDITION){si #ENV{mots}}>
-      <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax=art_cat,env} />
+      <INCLURE{fond=liste/articles-categories,contexte=principal,mots,tri=date,sens=-1,ajax=art_cat,env} />
    </BOUCLE_cond_categorie>
       <BOUCLE_articles(ARTICLES){id_rubrique}{0,1}>
-      <INCLURE{fond=inclure/rubrique-articles,env} />
+      <INCLURE{fond=inclure/rubrique-articles,contexte=principal,env} />
       </BOUCLE_articles>
       <BOUCLE_sous_rubriques(RUBRIQUES){id_parent}{par num titre, titre}>
-      <INCLURE{fond=inclure/rubrique-sousrubriques,id_rubrique,env} />
+      <INCLURE{fond=inclure/rubrique-sousrubriques,id_rubrique,contexte=principal,env} />
       </BOUCLE_sous_rubriques>
       <//B_articles>
    <//B_cond_categorie>

@@ -5,7 +5,7 @@
    <ul class="objets-selection">
       <BOUCLE_articles(ARTICLES){id_rubrique?}{id_mot?}{lang}{tri #ENV{tri,titre},#ENV{sens,1}}{pagination #ENV{pagination,20}}>
       [<li>
-         (#INCLURE{fond=inclure/article-resume,conteneur=#ENV{conteneur},id_article})
+         (#INCLURE{fond=inclure/article-resume,contexte=#ENV{contexte},conteneur=#ENV{conteneur},id_article})
       </li>]
       </BOUCLE_articles>
    </ul>

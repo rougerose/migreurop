@@ -3,6 +3,7 @@
 
    $GLOBALS[$GLOBALS['idx_lang']] = array(
       // A
+      'all_articles' => 'Tous les articles',
 
       // B
       'by' => 'Par',
@@ -77,6 +78,7 @@
       'sort_keyword' => 'Trier par mot-clé',
 
       // T
+      'top_news' => 'À la une',
       'top_page' => 'Haut de page',
       'translations' => 'Traductions disponibles'
    );
