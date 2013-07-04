@@ -78,6 +78,8 @@
          .traduction {
             text-transform: uppercase;
             .loz {
+               // margin: $base-spacing-unit/4;
+               margin: 0 3px;
                background-color: #ccc;
                @include vendor(transition, background-color 0.35s ease-in-out 0.2s);
                &:hover {

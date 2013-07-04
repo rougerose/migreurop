@@ -4004,25 +4004,26 @@ ol.objets-selection.rubriques article, ol.rubriques.block-list--media article, o
     border-bottom: 2px solid #000; }
   .documents .block-list, .documents .objets-selection, .documents .block-list--media {
     border-top: none; }
-  .documents .media__link {
-    float: left; }
+  .documents.portfolio .media__link {
+    display: inline-block; }
+  .documents.portfolio .media__img {
+    float: none;
+    margin-right: 12px; }
   .documents .media__img {
     margin-bottom: 24px; }
   .documents .media__body {
     margin-left: 0; }
 
 /*  tous les autres documents */
+@media only screen and (min-width: 769px) {
+  .documents.fichiers .media, .documents.fichiers .media-ouverture {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%; } }
 .documents.fichiers .spip_doc_titre,
 .documents.fichiers p {
   margin-bottom: 0; }
 
-/* desk : images dans le portfolio sur 4 colonnes */
-@media (min-width: 1024px) {
-  .documents.portfolio .item_0 {
-    margin-right: 0; }
-
-  .documents.portfolio .item_1 {
-    clear: left; } }
 /*   =FORMS
    ------------------------------------------------------ */
 /*==========  styles communs  ==========*/
@@ -4339,6 +4340,7 @@ input[type="checkbox"]:focus {
 .traduction {
   text-transform: uppercase; }
   .traduction .loz {
+    margin: 0 3px;
     background-color: #ccc;
     -webkit-transition: background-color 0.35s ease-in-out 0.2s;
     -moz-transition: background-color 0.35s ease-in-out 0.2s;
