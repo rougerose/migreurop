@@ -1,5 +1,4 @@
-[(#SET{cartes,#ARRAY})][(#SET{portfolios,#ARRAY})] #SET{mot_rubrique,''}
-<BOUCLE_motcle_rubrique(MOTS){id_rubrique}{id_groupe=14}>#SET{mot_rubrique,#ID_MOT}</BOUCLE_motcle_rubrique>
+[(#SET{cartes,#ARRAY})][(#SET{portfolios,#ARRAY})]
 
 <hr class="visuallyhidden--lap-and-up spip hr--break" />
 [(#REM) Les communiqués de presse ]
@@ -7,7 +6,7 @@
 <div class="box--aside">
    <h1 class="box__title"><:migreurop:communiques_presse:></h1>
    <ul class="objets-selection">
-      <BOUCLE_communiques(ARTICLES){id_mot=61}{!par date}{lang}{0,2}>
+      <BOUCLE_communiques(ARTICLES){id_mot=61}{!par date}{lang}{0,2}{si #ID_RUBRIQUE|!={189}}>
       [<li>
          (#INCLURE{fond=inclure/article-resume,id_article,contexte=extra,conteneur=liste})
       </li>]
@@ -20,7 +19,7 @@
 <B_cartes>
 <div class="box--aside">
    [<h1 class="box__title">(#INFO_TITRE{rubrique,266})</h1>]
-   <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,2}{lang}>
+   <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,2}{lang}{si #ID_SECTEUR|!={382}}>
    [(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={640})]}|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
    </BOUCLE_cartes>
       [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel,id=carouselExtra1})]
