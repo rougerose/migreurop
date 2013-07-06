@@ -76,7 +76,12 @@
          }
       }
          .traduction {
-            text-transform: uppercase;
+            .resume & {
+               text-transform: uppercase;
+            }
+            .lang {
+               font-style: italic;
+            }
             .loz {
                // margin: $base-spacing-unit/4;
                margin: 0 3px;

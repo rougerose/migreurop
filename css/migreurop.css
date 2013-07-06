@@ -4337,21 +4337,23 @@ input[type="checkbox"]:focus {
 .traductions .sprite, .traductions .flex-direction-nav a, .flex-direction-nav .traductions a {
   margin-right: 6px; }
 
-.traduction {
+.resume .traduction {
   text-transform: uppercase; }
-  .traduction .loz {
-    margin: 0 3px;
-    background-color: #ccc;
-    -webkit-transition: background-color 0.35s ease-in-out 0.2s;
-    -moz-transition: background-color 0.35s ease-in-out 0.2s;
-    -ms-transition: background-color 0.35s ease-in-out 0.2s;
-    -o-transition: background-color 0.35s ease-in-out 0.2s;
-    transition: background-color 0.35s ease-in-out 0.2s; }
-    .traduction .loz:hover {
-      background-color: #d2270e;
-      color: #fff; }
-  .traduction .loz--active {
-    background-color: #d2270e; }
+.traduction .lang {
+  font-style: italic; }
+.traduction .loz {
+  margin: 0 3px;
+  background-color: #ccc;
+  -webkit-transition: background-color 0.35s ease-in-out 0.2s;
+  -moz-transition: background-color 0.35s ease-in-out 0.2s;
+  -ms-transition: background-color 0.35s ease-in-out 0.2s;
+  -o-transition: background-color 0.35s ease-in-out 0.2s;
+  transition: background-color 0.35s ease-in-out 0.2s; }
+  .traduction .loz:hover {
+    background-color: #d2270e;
+    color: #fff; }
+.traduction .loz--active {
+  background-color: #d2270e; }
 
 .meta-publi.box--aside,
 .meta-publi.box--aside > li {
