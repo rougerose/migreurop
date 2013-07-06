@@ -5004,6 +5004,10 @@ hr.spip {
   background: linear-gradient(to right, white 0%, black 50%, white 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff',GradientType=1 ); }
 
+hr#documents {
+  background: none;
+  height: 0; }
+
 /* tableaux */
 table.spip {
   font-size: 13px;

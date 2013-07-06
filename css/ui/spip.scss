@@ -30,6 +30,10 @@
       background: linear-gradient(to right, #fff 0%,#000 50%,#fff 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fff',GradientType=1 );
    }
+   hr#documents {
+      background: none;
+      height: 0;
+   }
 
    /* tableaux */
    table.spip {
