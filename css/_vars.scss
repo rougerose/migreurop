@@ -1,118 +1,115 @@
 /*------------------------------------*\
-    $VARS
+    VARS.SCSS
 \*------------------------------------*/
 /**
- * Set up project-specific variables here which are then used throughout your
- * build. These variables are automatically picked up by inuit.css so you should
- * never need to modify any framework code.
+ * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
+ * keep, simply redefine here. This means that if inuit.css, for example, sets
+ * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
+ * that variable in this file. inuit.css ignores its own variables in favour of
+ * using your own, so you can completely modify how inuit.css works without ever
+ * having to alter the framework itself.
  */
+$base-line-height:  24px;
+
+$base-font-family:"PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+$condensed-font-family:"PT Sans Narrow","Helvetica Neue",Helvetica,Arial,sans-serif;
+$mono-font-family: monospace;
+
+// couleurs
+$brand-color: #d2270e;
+$pageFootColor: #738b98;
+$pathColor: #ccc;
 
 
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
+\*------------------------------------*/
 /**
- * Debug mode will visually highlight any potential markup/accessibility quirks
- * in the browser. Set to `true` or `false`.
+ * All of inuit.css’ objects and abstractions are initially turned off by
+ * default. This means that you start any project with as little as possible,
+ * and introducing objects and abstractions is as simple as switching the
+ * following variables to `true`.
  */
-$debug-mode:        false;
+$use-grids:         true;
+$use-flexbox:       false;
+$use-columns:       false;
+$use-nav:           true;
+$use-options:       false;
+$use-pagination:    false;
+$use-breadcrumb:    false;
+$use-media:         true;
+$use-marginalia:    false;
+$use-island:        false;
+$use-block-list:    true;
+$use-matrix:        false;
+$use-split:         false;
+$use-this-or-this:  false;
+$use-link-complex:  false;
+$use-flyout:        false;
+$use-arrows:        true;
+$use-sprite:        true;
+$use-icon-text:     false;
+$use-beautons:      true;
+$use-lozenges:      true;
+$use-rules:         true;
+$use-stats:         false;
+$use-greybox:       false;
 
 
+
+
+
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
 /**
- * Do you want all elements to adopt `box-sizing:border-box;` as per
- * paulirish.com/2012/box-sizing-border-box-ftw ?
+ * Place any variables that should override inuit.css’ defaults here.
  */
-$global-border-box: true;
+$responsive-extra:  true;
+
+// $lap-start:         481px;
+// $desk-start:        961px;
+// $desk-wide-start:   1100px;
+
+$lap-start:         769px;
+$desk-start:        1024px;
+$desk-wide-start:   1100px;
 
 
+
+
+
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
 /**
- * Base stuff
+ * Place any of your own variables that sit on top of inuit.css here.
  */
-$base-font-size:    16px!default;
-$base-line-height:  24px!default;
 
+// couleurs
+$noir-bleu: #1d2326!default;
+$orange: #f89406 !default;
+$grayDarker: #222 !default;
+$grayDark: #333 !default;
+$grayLight: #999 !default;
+$grayLighter: #eee !default;
 
-/**
- * How big would you like round corners to be by default?
- */
-$brand-round:           4px!default;
+// marges
+$base-spacing-unit: $base-line-height;
+$quarter-spacing-unit : $base-spacing-unit/4;
 
-
-/**
- * Responsiveness?
- * Tell inuit.css when breakpoints start, in pixels.
- */
-$responsive:            true!default;
-$lap-start:             481px!default;
-$desk-start:            1024px!default;
-
-
-/**
- * Font-sizes (in pixels). Refer to relevant sections for their implementations.
- */
-$giga-size:             96px!default;
-$mega-size:             72px!default;
-$kilo-size:             48px!default;
-
-$h1-size:               36px!default; // .alpha
-$h2-size:               30px!default; // .beta
-$h3-size:               24px!default; // .gamma
-$h4-size:               20px!default; // .delta
-$h5-size:               16px!default; // .epsilon
-$h6-size:               14px!default; // .zeta
-
-$milli-size:            12px!default;
-$micro-size:            10px!default;
-
-
-/**
- * Brand stuff
- */
- //couleurs
-    $brand-color:       #d2270e !default;
-    $noir-bleu:         #1d2326!default;
-    $rouge-hover:       $brand-color!default;
-    $linkColor:         $brand-color !default;
-    $white :            #fff !default;
-    $orange:            #f89406 !default;
-    $grayDarker:        #222 !default;
-    $grayDark:          #333 !default;
-    $grayLight:         #999 !default;
-    $grayLighter:       #eee !default;
-
-    $pageFootColor:     #738b98 !default;
-
- // fonts
- $brand-face:           "PT Sans", "Helvetica Neue", sans-serif!default;
- $condensed-face:       "PT Sans Narrow", "Helvetica Neue", sans-serif!default;
- $mono-family :         monospace!default;
-
-/**
- * inuit.css will work these next ones out for you.
- *
- * Assign our `$base-line-height` to a new spacing var for more transparency.
- */
-$base-spacing-unit:     $base-line-height!default;
-$half-spacing-unit:     $base-spacing-unit / 2!default;
-$quater-spacing-unit:   $base-spacing-unit / 4!default;
-$line-height-ratio:     $base-line-height / $base-font-size;
-
-/* formulaires */
+// formulaires
 $inputBackground:       #fff!default;
 $inputBorder:           #ccc!default;
 $inputBorderRadius :    3px!default;
 $inputHeight:           $base-line-height + 6px !default;
 
-// Input placeholder text color
-// -------------------------
-$placeholderText:       #ccc !default;
+// boutons
+$btnBackground: #fff !default;
+$btnBackgroundHighlight: darken(#fff, 10%) !default;
+$btnBorder: #ccc !default;
 
-/* path color */
-$pathColor:             #ccc !default;
-
-/* boutons */
-$btnBackground:                     $white !default;
-$btnBackgroundHighlight:            darken($white, 10%) !default;
-$btnBorder:                         #ccc !default;
-
-$btnPrimaryBackground:              $linkColor !default;
+$btnPrimaryBackground:              $brand-color !default;
 $btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
 
 $btnInfoBackground:                 #5bc0de !default;

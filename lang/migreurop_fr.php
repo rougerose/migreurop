@@ -3,6 +3,7 @@
 
    $GLOBALS[$GLOBALS['idx_lang']] = array(
       // A
+      'all_articles' => 'Tous les articles',
 
       // B
       'by' => 'Par',
@@ -14,7 +15,10 @@
       'contact_mail' => 'Par mail',
       'contact_us' => 'Nous contacter',
       'credits' => 'Réalisé avec <a href="http://spip.net">SPIP</a>. Conception graphique par <a href="http://rouge-rose.net">christophe le drean</a>.',
-      
+
+      // G
+      'goto' => 'Aller &agrave;&hellip;',
+
       // H
       'home' => 'Accueil',
 
@@ -34,13 +38,18 @@
 
       // L
       'lastest_news' => 'Dernières actualités',
+      'lastest_articles' => 'Derniers articles',
 
       // M
       'message_404' => 'La page ou le document que vous demandez est introuvable sur le site&hellip;',
       'more' => 'La suite',
 
+      // N
+      'next' => 'Suivant',
+
       // P
       'info_ps' => 'Post-scriptum',
+      'previous' => 'Précédent',
 
       // R
       'info_recherche_article' => '1 article',
@@ -61,12 +70,16 @@
       'info_recherche_pas_de_resultat' => 'Aucun résultat',
 
       // S
+      'section_map' => 'Plan de la rubrique',
       'social_facebook' => 'Facebook',
       'social_follow_us' => 'Nous suivre',
       'social_twitter' => "Twitter",
       'social_mailing_list' => 'Liste de diffusion',
+      'sort_keyword' => 'Trier par mot-clé',
 
       // T
+      'top_news' => 'À la une',
+      'top_page' => 'Haut de page',
       'translations' => 'Traductions disponibles'
    );
 ?>

@@ -1,0 +1,18 @@
+<BOUCLE_nav_rubrique_categories(RUBRIQUES){id_rubrique}>
+[(#REM) récup. du groupe mots-clés de navigation thematique de la rubrique ainsi que le groupe transversal -- id_groupe=12 ]
+<BOUCLE_groupe_rubrique(GROUPES_MOTS){titre==#TITRE}>[(#SET{id_groupe,#ID_GROUPE})]</BOUCLE_groupe_rubrique>
+<B_mots>
+<nav id="sort-keyword" class="breadcrumb-nav--categories">
+   <h1 class="intertitre nav--titre"><:migreurop:sort_keyword:></h1>
+   <ul class="breadcrumb--categories">
+      <li class="#EXPOSE"><a href="[(#URL_RUBRIQUE|ancre_url{sort-keyword})]"[(#EXPOSE|oui) class="sp--alt sp--bc"]>#TITRE </a></li>
+      <BOUCLE_env_mot(MOTS){id_mot IN #ENV{mots}}>
+      <li class="on"><a href="[(#SELF|parametre_url{mots\[\],''}|parametre_url{mots\[\],#ID_MOT}|ancre_url{sort-keyword})]" class="sp--alt sp--bc">#TITRE</a></li>
+      </BOUCLE_env_mot>
+      <BOUCLE_mots(MOTS mots_liens){objet=article}{id_groupe IN #GET{id_groupe},12}{articles.id_rubrique=#ID_RUBRIQUE}>
+      [(#ENV{mots}|find{#ID_MOT}|non)<li><a href="[(#SELF|parametre_url{mots\[\],#ID_MOT}|ancre_url{sort-keyword})]" onclick="ajaxReload('art_cat',{args:{mots\[\]:#ID_MOT}});return(false);">#TITRE</a></li>]
+      </BOUCLE_mots>
+   </ul>
+</nav>
+</B_mots>
+</BOUCLE_nav_rubrique_categories>

@@ -4,14 +4,14 @@
    selection : tableau de la sélection transmis par inclure
 ] #SET{selection,#ENV{selection}}
 <B_rubriques>
+#ANCRE_PAGINATION
 [<h2 class="delta resultats--detail">
    (#GET{selection}|count|singulier_ou_pluriel{migreurop:info_recherche_rubrique,migreurop:info_recherche_rubriques,nb})
 </h2>]
-<ol class="objets-selection liste-items recherche">
-   #ANCRE_PAGINATION
+<ol class="objets-selection liste-items rubriques recherche">
    <BOUCLE_rubriques(RUBRIQUES){id_rubrique IN #GET{selection}}{pagination 5}>
    <li class="item">
-      <article class="hentry simple">
+      <article class="hentry resume simple">
          <header class="header">
             <h1 class="entry-title"><a href="#URL_RUBRIQUE" rel="bookmark">#TITRE</a></h1>
          </header>

@@ -15,6 +15,9 @@
       'contact_us' => 'Contact us',
       'credits' => 'Made with <a href="http://spip.net">SPIP</a>. Design by <a href="http://rouge-rose.net">christophe le drean</a>.',
 
+      // G
+      'goto' => 'Go to&hellip;',
+
       // H
       'home' => 'Accueil',
 
@@ -34,13 +37,18 @@
 
       // L
       'lastest_news' => 'Latest news',
+      'lastest_articles' => 'Lastest articles',
 
       // M
       'message_404' => 'La page ou le document que vous demandez est introuvable sur le site&hellip;',
       'more' => 'La suite',
 
+      // N
+      'next' => 'Next',
+
       // P
       'info_ps' => 'Post-scriptum',
+      'previous' => 'Previous',
 
       // R
       'info_recherche_article' => '1 article',
@@ -61,6 +69,7 @@
       'info_recherche_pas_de_resultat' => 'Aucun résultat',
 
       // S
+      'section_map' => 'Section map',
       'social_facebook' => 'Facebook',
       'social_follow_us' => 'Follow us',
       'social_twitter' => "Twitter",
@@ -68,6 +77,7 @@
 
 
       // T
+      'top_page' => 'Top',
       'translations' => 'Traductions disponibles'
    );
 ?>

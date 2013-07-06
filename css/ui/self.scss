@@ -10,14 +10,16 @@
       }
       .soustitre {
          @include font-size($h3-size);
-         font-family: $condensed-face;
+         line-height: 1.4;
+         font-family: $condensed-font-family;
          color: #aaa;
       }
    }
    .self__titre {
       color: #000;
       margin-bottom: 0;
-      @include font-size(32px);
+      @include font-size(26px);
+      line-height: 1.2;
       font-weight: 700;
    }
    .rubrique .self__titre,
@@ -25,11 +27,13 @@
    .recherche .self__titre span {text-transform: uppercase;}
    .self__body {
       .txt {
-         margin-left: $base-spacing-unit * 2;
+         @include media-query(lap-and-up) {
+            margin-left: $base-spacing-unit * 2;
+         }
       }
    }
       .chapo {
-         color: #252525;
+         color: #222;
          @include font-size(18px);
       }
    .txt a {

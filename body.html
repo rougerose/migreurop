@@ -1,16 +1,16 @@
-<body id="top">
+<body id="top" class="loading">
    <header class="page-head" role="banner">
-      <INCLURE{fond=navs/barrenav,env}>
       <INCLURE{fond=header/#ENV{type-page},env} />
    </header>
-   <div class="container page">
-      <div class="gw">
+   <div class="page-content">
+      <div class="grid">
          <INCLURE{fond=content/#ENV{type-page},env} />
-         <INCLURE{fond=extra1/#ENV{type-page},env} />
-      </div><!-- .gw -->
-   </div><!-- .container -->
+      </div>
+   </div><!-- .page-content -->
+   <INCLURE{fond=nav/nav-principale,env}>
    <INCLURE{fond=breadcrumb/breadcrumb,env} />
    <footer class="page-foot">
       <INCLURE{fond=page-foot/#ENV{type-page},env} />
    </footer>
+   [<script src="(#CHEMIN{javascript/migreurop_public.js})" type="text/javascript" defer></script>]
 </body>

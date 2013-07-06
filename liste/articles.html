@@ -1,11 +1,11 @@
 [(#REM) VARIABLES > selection : tableau de la sélection transmis par inclure
 ] #SET{selection,#ENV{selection}}
 <B_articles>
+#ANCRE_PAGINATION
 [<h2 class="delta resultats--detail">
    (#GET{selection}|count|singulier_ou_pluriel{migreurop:info_recherche_article,migreurop:info_recherche_articles,nb})
 </h2>]
-<ol class="objets-selection liste-items recherche">
-   #ANCRE_PAGINATION
+<ol class="objets-selection liste-items articles recherche">
    <BOUCLE_articles(ARTICLES){lang}{id_article IN #GET{selection}}{!par date}{pagination 5}>
    <li class="[(#LOGO_ARTICLE|oui)oui]">
       #INCLURE{fond=inclure/article-resume,contexte=#ENV{contexte},id_article}

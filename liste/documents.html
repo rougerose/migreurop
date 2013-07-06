@@ -8,7 +8,7 @@
 [<h2 class="delta resultats--detail">
    (#GET{selection}|count|singulier_ou_pluriel{migreurop:info_recherche_document,migreurop:info_recherche_documents,nb})
 </h2>]
-<ol class="objets-selection liste-items recherche">
+<ol class="objets-selection liste-items documents recherche">
    #ANCRE_PAGINATION
    <BOUCLE_documents(DOCUMENTS){id_document IN #GET{selection}}{pagination 5}>
    [(#REM) calcul de l'url ]
@@ -19,7 +19,7 @@
       (#SET{url_doc,#INFO_URL{rubrique,#ID_OBJET}})
    ]</BOUCLE_lien_rubrique>
    <li class="item">
-      <article class="hentry">
+      <article class="hentry resume">
          [(#ENV{contexte}|=={principal}|oui)
          <div class="media">]
             [(#LOGO_DOCUMENT{vignette}|?{

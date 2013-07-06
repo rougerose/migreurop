@@ -10,11 +10,20 @@
          padding: 0;
 
       }
+      &.rubriques,
+      &.mots,
+      &.sites {
+         article {
+            border-bottom: 1px solid #ccc;
+         }
+      }
    }
    ol.objets-selection {
-      margin-left: $base-spacing-unit * 2;
+      @include media-query(lap-and-up) {
+         margin-left: $base-spacing-unit * 2;
+      }
    }
-   .box--aside .objets-selection > li {margin-bottom: $half-spacing-unit;}
+   .box--aside .objets-selection > li {margin-bottom: $base-spacing-unit;}
 
    // block-list--media
    .block-list--media {
@@ -36,4 +45,9 @@
       > .sp-rtl {
          padding-right: 18px;
       }
+   }
+   
+   // Sous-rubriques
+   .liste-sousrubriques {
+      margin-bottom: $base-spacing-unit*3;
    }

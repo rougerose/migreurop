@@ -2,18 +2,40 @@
    ------------------------------------------------------ */
    /* éléments communs. éléments spécifiques voir hentry.scss, self.scss */
    .meta-publi {
-      @extend .nav;
+      @include media-query(lap-and-up) {
+         // @extend .nav ne fonctionne pas, on fait en manuel.
+         list-style: none;
+         margin-left: 0;
+         > li {
+            &,
+            > a {
+               display: inline-block;
+               *display: inline;
+               zoom: 1;
+            }
+         }
+      }
+      @include media-query(palm) {
+         margin-left: 0;
+         list-style: none;
+      }
       .intertitre {
          @include font-size(18px);
          padding-left: 21px;
          margin-left: -21px;
          margin-bottom: 0;
          position: relative;
+         @include media-query(palm) {
+            margin-left: 0;
+         }
+         @include media-query(lap) {
+            margin-left: 0;
+         }
       }
       .liste-items {
          a {
             color: #333;
-            &:hover{color: $rouge-hover;}
+            &:hover{color: $brand-color;}
          }
       }
    }
@@ -34,25 +56,50 @@
             left: 0;
          }
       }
+
       // date publication
       // ------------------
       .updated {
          text-transform: uppercase;
          color: #999;
       }
+
       // auteur
       // -------
       .byline {font-style: italic; color: #999;}
+
       // traductions
       // -------------
-      .box--aside .traductions {
-         @extend %sass-margin-top;
-      }
-         .traduction.on {
-            color: $brand-color;
+      .traductions {
+         .sprite {
+            margin-right: 6px;
          }
-            .lang {
+      }
+         .traduction {
+            .resume & {
                text-transform: uppercase;
-               color: #999;
-               @include font-size(14px);
             }
+            .lang {
+               font-style: italic;
+            }
+            .loz {
+               // margin: $base-spacing-unit/4;
+               margin: 0 3px;
+               background-color: #ccc;
+               @include vendor(transition, background-color 0.35s ease-in-out 0.2s);
+               &:hover {
+                  background-color: $brand-color;
+                  color: #fff;
+               }
+            }
+            .loz--active {
+               background-color: $brand-color;
+            }
+         }
+   .meta-publi.box--aside {
+      &, 
+      > li {
+         border: none;
+         margin-bottom: $base-spacing-unit;
+      }
+   }

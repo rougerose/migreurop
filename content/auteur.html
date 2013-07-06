@@ -1,12 +1,12 @@
 <BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
 <article class="self auteur cf vcard">
-   <div class="g one-whole">
+   <div class="grid__item">
       <header class="landmark">
          <h1 class="self__titre entry-title titre fn">#NOM</h1>
       </header>
    </div><!-- .g one-whole -->
 
-   <div class="g one-whole desk-six-tenths">
+   <div class="grid__item lap-and-up-six-tenths">
       <div class="self__body entry-content contenu surlignable">
          [<div class="texte txt">
             (#BIO)
@@ -16,8 +16,8 @@
          </div>]
 
          [<aside class="notes txt">
-            <div class="gw">
-               <div class="g desk-one-half">
+            <div class="grid">
+               <div class="grid__item lap-and-up-two-thirds">
                   <h1 class="spip"><:info_notes:></h1>
                   (#NOTES)
                </div>
@@ -25,6 +25,6 @@
          </aside>]
          #FORMULAIRE_ECRIRE_AUTEUR
       </div><!-- .self__body -->
-   </div><!-- .g one-whole desk-six-tenths -->
+   </div><!-- .grid__item -->
 </article><!-- .self -->
 </BOUCLE_auteur>

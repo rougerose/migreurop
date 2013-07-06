@@ -4,17 +4,17 @@
 [(#ENV{url}|=={''}|?{#SET{prive,' '}})]
 [(#ENV{url}|match{^#EVAL{_DIR_RESTREINT_ABS}}|?{#SET{prive,' '}})]
 <article class="self login cf">
-   <div class="g one-whole">
+   <div class="grid__item">
       <header class="landmark">
             [<h1 class="self__titre entry-title titre">(#GET{prive}|?{<:login_acces_prive:>,<:lien_connecter:>})</h1>]
       </header>
-   </div><!-- .g one-whole -->
-   <div class="g one-whole desk-six-tenths">
+   </div><!-- .grid__item -->
+   <div class="grid__item lap-and-up-six-tenths">
       <div class="self__body entry-content contenu">
          #MENU_LANG_ECRIRE
 
          [(#FORMULAIRE_LOGIN{#ENV{url}|sinon{#URL_ECRIRE{accueil}}})]
 
       </div><!-- .self__body -->
-   </div><!-- .g one-whole desk-six-tenths -->
+   </div><!-- .grid__item -->
 </article><!-- .self -->

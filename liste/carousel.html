@@ -5,20 +5,19 @@
    contexte:      ouverture (sommaire, rubrique), extra (colonne secondaire), portfolio (article)
    conteneur:     carousel
    type-page:     squelette dans lequel est inclus le carousel
+   id:            id du conteneur
 ][
    (#SET{articles_carousel, #ENV{selection,''}}) ][
    (#SET{contexte,#ENV{contexte,ouverture}}) ][
-   (#SET{type-page,#ENV{type-page,sommaire}}) ]
+   (#SET{type-page,#ENV{type-page,sommaire}}) ][
+   (#SET{id,#ENV{id}}) ]
 
-<div class="carousel[ carousel-(#GET{contexte})][ (#GET{type-page})]" lang="#LANG">
-   <ul class="panels">
+<div [id="(#GET{id})"] class="flexslider carousel[ carousel-(#GET{contexte})][ (#GET{type-page})]" lang="#LANG">
+   <ul class="slides">
       <BOUCLE_carousel(ARTICLES){id_article IN #GET{articles_carousel}}{si #GET{contexte}|match{^ouverture|extra$}}>
-      <li>
-         [(#INCLURE{fond=inclure/article-resume,id_article,env})]
-      </li>
-      </BOUCLE_carousel>
+      [<li>(#INCLURE{fond=inclure/article-resume-carousel,id_article,env})</li>]</BOUCLE_carousel>
       <BOUCLE_portfolio(ARTICLES){id_article ?}{si #GET{contexte}|=={portfolio}}>
          [(#INCLURE{fond=liste/carousel_portfolio,id_article})]
       </BOUCLE_portfolio>
-   </ul><!-- .panels -->
+   </ul><!-- .slides -->
 </div><!-- .carousel -->

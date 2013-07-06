@@ -1,12 +1,11 @@
 #SET{lang_env,fr}
-<div class="container">
-   <div class="gw">
-      <div class="g desk-four-tenths">
+<div class="conteneur">
+   <div class="grid">
+      <div class="grid__item lap-one-half desk-four-tenths">
          <B_langues>
          <BOUCLE_langues(ARTICLES){age < 365}>
          [(#LANG|unique|oui)[(#SET_PUSH{lang-affich,#LANG})]]
          </BOUCLE_langues>
-
          <div id="tabs-news" class="tabs tabs-side tabs-news">
             <ul class="tabs-side__nav tabs__nav">
                <BOUCLE_lang_affich(POUR){tableau #GET{lang-affich}}{par valeur}>[(#VALEUR|=={#LANG}|oui) #SET{lang_env,#VALEUR} ]
@@ -21,47 +20,48 @@
          </div><!-- .tabs -->
          [<script src="(#PRODUIRE{fond=javascript/migreurop_easytabs_news.js,default=tn-#GET{lang_env}})" type="text/javascript" charset="utf-8"></script>]
          </B_langues>
-      </div><!-- g desk-four-tenths -->
-      <div class="g desk-four-tenths">
-         <BOUCLE_qsn(RUBRIQUES){id_rubrique=378}>
-         <h1 class="intertitre">#TITRE</h1>
-         [<p>(#TEXTE|PtoBR) <a href="#URL_RUBRIQUE" class="suite--link"><:migreurop:more:></a></p>]
-         </BOUCLE_qsn>
-      </div><!-- .g desk-four-tenths -->
-
-      <div class="g desk-two-tenths">
-         <h1 class="intertitre"><:migreurop:social_follow_us:></h1>
-         <ul class="liste-items social">
-            <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--tw">
-               <a href="https://twitter.com/#!/Migreurop"><:migreurop:social_twitter:></a>
-            </li>
-            <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--fb">
-               <a href="http://www.facebook.com/pages/Migreurop/128796677138595"><:migreurop:social_facebook:></a>
-            </li>
-            <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--ld">
-               <a href="http://listes.rezo.net/mailman/listinfo/migreurop"><:migreurop:social_mailing_list:></a>
-            </li>
-         </ul>
-         <h1 class="intertitre"><:migreurop:contact_us:></h1>
-         <ul class="liste-items social">
-            <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--mail">
-               <a href="#URL_PAGE{contact}"><:migreurop:contact_mail:></a>
-            </li>
-            <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--address">
-               <a href="#URL_PAGE{contact}"><:migreurop:contact_address:></a>
-            </li>
-         </ul>
-         <a href="#top" class="sp--alt sp--top">Haut de page</a>
-      </div><!-- .g desk-two-tenths -->
-   </div><!-- gw -->
-</div><!-- container -->
+      </div><!-- grid__item --><div class="grid__item lap-one-half desk-six-tenths">
+         <div class="grid">
+            <div class="grid__item desk-one-half">
+               <BOUCLE_qsn(RUBRIQUES){id_rubrique=378}>[(#REM) QUI SOMMES-NOUS ?]
+               <h1 class="intertitre">#TITRE</h1>
+               [<p>(#TEXTE|PtoBR) <a href="#URL_RUBRIQUE" class="suite--link"><:migreurop:more:></a></p>]
+               </BOUCLE_qsn>
+            </div><div class="grid__item desk-one-half">
+               <h1 class="intertitre"><:migreurop:social_follow_us:></h1>
+               <ul class="liste-items social">
+                  <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--tw">
+                     <a href="https://twitter.com/#!/Migreurop"><:migreurop:social_twitter:></a>
+                  </li>
+                  <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--fb">
+                     <a href="http://www.facebook.com/pages/Migreurop/128796677138595"><:migreurop:social_facebook:></a>
+                  </li>
+                  <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--ld">
+                     <a href="http://listes.rezo.net/mailman/listinfo/migreurop"><:migreurop:social_mailing_list:></a>
+                  </li>
+               </ul>
+               <h1 class="intertitre"><:migreurop:contact_us:></h1>
+               <ul class="liste-items social">
+                  <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--mail">
+                     <a href="#URL_PAGE{contact}"><:migreurop:contact_mail:></a>
+                  </li>
+                  <li class="sp[-rtl(#LANG_DIR|=={rtl}|oui)] sp--address">
+                     <a href="#URL_PAGE{contact}"><:migreurop:contact_address:></a>
+                  </li>
+               </ul>
+               <a href="#top" class="sp--alt sp--top"><:migreurop:top_page:></a>
+            </div>
+         </div>
+      </div><!-- .grid__item -->
+   </div><!-- .grid -->
+</div><!-- .conteneur -->
 <div class="signature">
-   <div class="container">
-      <div class="gw">
-         <div class="g one-whole">
+   <div class="conteneur">
+      <div class="grid">
+         <div class="grid__item">
             <p class="credits"><:migreurop:credits:></p>
             <INCLURE{fond=inclure/logo_site,bloc=footer} />
-         </div><!-- .g one-whole -->
-      </div><!-- .gw -->
-   </div><!-- .container -->
-</div><!-- .signature-container -->
+         </div><!-- .grid__item -->
+      </div><!-- .grid -->
+   </div><!-- .conteneur -->
+</div><!-- .signature -->

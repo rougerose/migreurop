@@ -3,53 +3,81 @@
    /* categories thématiques d'une rubrique */
    .breadcrumb-nav--categories {
       margin-bottom: $base-spacing-unit;
-      background: #ededed;
-      background: -moz-linear-gradient(left, rgb(237,237,237) 0%, rgb(246,246,246) 53%, rgb(255,255,255) 100%);
-      background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(237,237,237)), color-stop(53%,rgb(246,246,246)), color-stop(100%,rgb(255,255,255)));
-      background: -webkit-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
-      background: -o-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
-      background: -ms-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
-      background: linear-gradient(to right, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 );
    }
    .breadcrumb--categories {
-      margin-bottom: 0;
+      margin: 0;
       overflow: hidden;
+      @include media-query(lap-and-up) {
+         background: #ededed;
+         background: -moz-linear-gradient(left, rgb(237,237,237) 0%, rgb(246,246,246) 53%, rgb(255,255,255) 100%);
+         background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(237,237,237)), color-stop(53%,rgb(246,246,246)), color-stop(100%,rgb(255,255,255)));
+         background: -webkit-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+         background: -o-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+         background: -ms-linear-gradient(left, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+         background: linear-gradient(to right, rgb(237,237,237) 0%,rgb(246,246,246) 53%,rgb(255,255,255) 100%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=1 );
+      }
       > li {
-         display: inline;
          @include font-size(14px);
-      }
-      a {
-         float: left;
-         position: relative;
-         padding: 3px 7px 3px 7px;
-      }
-      > li.on {
+         display: block;
+         @include media-query(lap-and-up) {
+            display: inline;
+            &.on + li > a {
+               padding-left: 15px;
+            }
+            &:first-child a {padding-left: 6px; padding-right: 0;}
+         }
          a {
-            color: #fff;
-            background: $brand-color;
+            margin-left: 15px;
+            @include media-query(lap-and-up) {
+               float: left;
+               position: relative;
+               padding: 3px 7px 3px 7px;
+               margin-left: 0;
+            }
+         }
+         &.on a {
+            margin-left: 0;
             text-transform: uppercase;
             font-weight: 700;
             @include font-size(12px);
-            padding-right: 0;
+            color: $brand-color;
+            @include media-query(lap-and-up) {
+               color: #fff;
+               background: $brand-color;
+               padding-right: 0;
+            }
          }
       }
-      > li.on + li > a {padding-left: 15px;}
-      > li:first-child a {padding-left: 6px; padding-right: 0;}
+      @include media-query(palm) {
+         .sp--alt:after {
+            display: none;
+         }
+      }
+
    }
 
    /* breadcrumb site */
-   .breadcrumb-container {
+   .breadcrumb {
       border-top: 1px solid #eee;
       border-bottom: 1px solid #ddd;
       background-color: #fefefe;
-      margin-top: $base-spacing-unit*2;
    }
    .breadcrumb--path {
-      margin-bottom: 0;
-      padding: $half-spacing-unit 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: $half-spacing-unit $base-spacing-unit;
+      @include media-query(palm) {
+         max-width: 640px;
+      }
       > li {
          text-transform: uppercase;
+         @include media-query(palm) {
+            display: list-item;
+         }
+         @include media-query(lap-and-up) {
+            
+         }
          margin-right: 5px;
          &:before {
             content:"/ ";

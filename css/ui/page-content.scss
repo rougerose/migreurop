@@ -1,0 +1,20 @@
+/*   =PAGE
+------------------------------------------------------ */
+.page-content {
+   margin-right: auto;
+   margin-left: auto;
+   padding-right:$base-spacing-unit;
+   padding-left:$base-spacing-unit;
+   max-width: 1100px;
+   @include media-query(palm) {
+      max-width: 640px;
+   }
+   .conteneur {
+      @include media-query(palm) {
+         text-align: center;
+         > .grid__item {
+            text-align: left;
+         }
+      }
+   }
+}

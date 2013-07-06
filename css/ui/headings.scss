@@ -5,7 +5,7 @@
    h2.spip, h3.spip, h4.spip, h5.spip, h6.spip,
    .notes h1.spip,
    .documents h1.spip {
-      font-family: $condensed-face;
+      font-family: $condensed-font-family;
       color: #000;
       margin-top:2 * $base-spacing-unit;
       margin-top:(2 * $base-spacing-unit / $base-font-size)*1rem;
@@ -37,5 +37,24 @@
    .intertitre {
       color: #B8220D;
       text-transform: uppercase;
-      font-family: $condensed-face;
+      font-family: $condensed-font-family;
+   }
+   
+   // Sous-rubriques
+   .rubrique--titre {
+      border-bottom: 3px solid $brand-color;
+      padding-bottom: 0.5em;
+      position: relative;
+      @include font-size(22px);
+      text-transform: uppercase;
+      padding-left: 0.6em;
+      &:before {
+         content: '/';
+         color: $pathColor;
+         position: absolute;
+         left: 0.1em;
+      }
+   }
+   .rubrique--descriptif {
+      color: #222;
    }

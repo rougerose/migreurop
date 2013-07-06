@@ -1,165 +1,247 @@
 /*   =CAROUSEL
    ------------------------------------------------------ */
-   .carousel {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-      @extend .landmark;
+/*
+ * FlexSlider : css de base
+ */
+.flex-viewport {
+   max-height: 2000px;
+   @include vendor(transition, all 1s ease);
+}
+// .loading .flex-viewport {
+//    max-height: 300px;
+// }
+/* navigation precedent/suivant */
+.flex-control-nav,
+.flex-direction-nav {
+   margin: 0;
+   list-style: none;
+}
+.flex-direction-nav a {
+   @extend .sprite;
+   height: 48px;
+   width: 48px;
+   text-indent: -9999em;
+   cursor: pointer;
+   opacity: 0.5;
+   position: absolute;
+   top: 50%;
+   @include vendor(transition, opacity 0.5s linear);
+   &:hover {
+      opacity:1;
    }
-   .panels {
-      list-style: none;
-      position: relative;
-      margin-left: 0; margin-bottom: 0;
-      @extend .cf;
-   }
-   .panels > li {
-      position: relative;
-      overflow: hidden;
-   }
-   // styles nécessaires avec le js,
-   // permet d'éviter un fouc au chargement de la page également.
-   .js .panels > li {
-      float: left;
-   }
-   // navigation precedent/suivant
-   .prevnext {
-      width: 100%;
-      position: absolute;
-      z-index: 21;
-      top: 45%;
-   }
-   .prevnext a {
-      height: 48px;
-      width: 48px;
-      text-indent: -9999em;
-      cursor: pointer;
-      opacity: 0.5;
-      position: absolute;
-      top: auto;
-      @include vendor(transition, opacity 0.5s linear);
-      &:hover{opacity:1; top: auto;}
-   }
-   .prevnext .previous {
-      left: 10px;
-      background-position: 0 -32px;
-   }
-   .prevnext .next {
-      right: 10px;
-      background-position: -48px -32px;
-   }
-
-   // navigation par page
-   .pages {
-      position: absolute;
-      bottom: 0; right: 0;
-      z-index: 21;
-      margin-bottom: 0;
-   }
-   .pages > li {
-      margin-right: 5px;
-      text-indent: -9999em;
-   }
-   .pages > li > a {
-      cursor: pointer;
-      display: block;
-      height: 16px;
-      width: 16px;
-      background-color: #ddd;
-      background-color: rgba(255,255,255,0.5);
-      @include vendor(transition, all 0.2s);
-      &:hover{background-color: rgba(255,255,255,0.8);}
-   }
-   .pages .active,
-   .pages .active:hover {
+}
+.flex-prev {
+   left: 10px;
+   background-position: 0 -32px;
+}
+.flex-next {
+   right: 10px;
+   background-position: -48px -32px;
+}
+/* navigation pagination */
+.flex-control-nav {
+   position: absolute;
+   right: 0;
+   bottom: 1em;
+   @extend .nav;
+}
+.flex-control-nav li {
+   margin: 0 6px 0 0;
+   line-height: 1;
+}
+.flex-control-paging a {
+   cursor: pointer;
+   display: block;
+   height: 16px;
+   width: 16px;
+   background-color: #ddd;
+   background-color: rgba(255,255,255,0.75);
+   @include vendor(transition, all 0.2s);
+   @include vendor(border-radius,2px);
+   @include vendor(box-shadow,0 0 3px 1px rgba(0,0,0,0.15));
+   text-indent: -9999em;
+   &:hover {
       background-color: #fff;
-      cursor: default;
    }
+}
+.flex-control-paging .flex-active {
+   background-color: rgba($brand-color,.95);
+   cursor: default;
+}
 
-   // contenu
-   .panels article {position: relative;}
-
-   // images
-   .carousel__img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      @include vendor(box-sizing, border-box);
+@include media-query(palm) {
+   .flex-control-nav {
+      top: 0;
+      bottom: auto;
    }
-
-   /* contexte ouverture (sommaire) et portfolio (article) */
-   .carousel-ouverture,
-   .carousel-ouverture article,
-   .carousel-portfolio {
-      height: 520px;
+   .flex-direction-nav a {
+      height: 32px;
+      width: 32px;
+      top: 30%;
+      opacity: 1;
    }
-   .carousel-ouverture {
-      .panels .wrap {
-         position: absolute;
-         bottom: 0;
-         z-index: 20;
-         margin-left: -$base-spacing-unit;
-         width: 100%;
-         float: left;
-      }
-      .panels .calque {
-         color: #ccc;
-         background-color: $noir-bleu;
-         background-color: rgba($noir-bleu,0.8);
-         padding: $half-spacing-unit;
-         padding-top: $base-spacing-unit;
-         a {
-            color: #fff;
-            &:hover{color: #d10c13;}
+   .flex-prev {
+      background-position: -96px -16px;
+   }
+   .flex-next {
+      background-position: -96px -48px;
+   }
+}
+
+/*
+ * Carousel
+ * ===================================
+ */
+
+   /* Styles communs */
+   .carousel {
+      position: relative;
+      a {
+         &:active,
+         &:focus {
+            outline: none;
          }
       }
-      .calque header {position: relative;}
-      .calque .s {
-         position: absolute; top: 0; right: 0;
-         margin-top: -20px;
+      .slides {
+         @extend .cf;
+         @extend .nav;
+         margin-bottom: 0;
+         > li {
+            display: none;
+            -webkit-backface-visibility: hidden;
+         }
+         article {
+            position: relative;
+         }
+         figure {
+            margin-bottom: 0;
+         }
       }
-      .hentry .entry-title {
-         @include font-size(18px);
+   }
+   .carousel__link {
+      display: block; line-height: 0;
+   }
+   .carousel__img {
+      width: 100%;
+   }
+
+   .no-js .slides > li:first-child {display: block;}
+
+   /* carousel-ouverture */
+   .carousel-ouverture {
+      @extend .landmark;
+      // min-height: 500px;
+      @include media-query(palm) {
+         // min-height: inherit;
+         border: 3px solid #fff;
+         @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,0.2));
       }
+      .wrap {
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 60%;
+         padding: $half-spacing-unit;
+         background-color: rgba($noir-bleu,0.8);
+         @include media-query(portable) {
+            position: static;
+            width: auto;
+            padding-right: 40%;
+            background-color: rgba($noir-bleu,0.95);
+            @include vendor(box-shadow, inset 0 0 3px #000);
+         }
+         @include media-query(palm) {
+            @include vendor(box-shadow,none);
+            padding-right: $half-spacing-unit;
+            background-color: #fff;
+         }
+      }
+      header,
+      .soustitre,
       .meta-publi {
+         margin-bottom: $quarter-spacing-unit;
+      }
+      hgroup {
          margin-bottom: 0;
       }
-   }
-
-   /* contexte extra */
-   .carousel-extra {
-      .panels > li {
-         padding: 0 2px;
+      .entry-title {
+         margin-bottom: 0;
       }
-      .carousel__img {
-         @extend .spip_logos;
+      .soustitre {
+         @inclure font-size(14px);
+      }
+      a[rel="bookmark"],
+      .suite--link {
+         color: #eee;
+         color: rgba(255,255,255,0.9);
+         @include vendor(transition, all 0.35s ease-in-out 0.2s);
+         &:hover {
+            color: $brand-color;
+         }
+         @include media-query(palm) {
+            color: #000;
+            &:hover {
+               color: $brand-color;
+            }
+         }
+      }
+      .entry-content p {
          margin-bottom: $half-spacing-unit;
-         @include vendor(box-sizing, border-box);
-      }
-      .prevnext {
-         top: 15%;
-      }
-      .pages {top: 3%; right: 1%; bottom: auto;}
-      .pages > li > a {height: 12px; width: 12px;}
-      .prevnext a {
-         height: 32px; width: 32px;
-      }
-      .prevnext .previous {background-position: -96px -16px;}
-      .prevnext .next {background-position: -96px -48px;}
-   }
-
-   /* contexte portfolio article */
-   .carousel-portfolio {
-      figcaption {
          color: #fff;
-         background-color: $noir-bleu;
-         background-color: rgba($noir-bleu,0.8);
-         position: absolute;
-         top: 0;
-         width: 100%;
-         padding: $half-spacing-unit/2 $half-spacing-unit;
-         .carousel__legende {
-            margin-bottom: 0;
-            @include font-size(13px);
+         @include media-query(palm) {
+            color: #666;
+         }
+      }
+      .meta-publi {
+         &,
+         > li {
+            border-color: #555;
+            border-color: rgba(#555,0.5);
          }
       }
    }
+   /* carousel-portfolio */
+   .carousel-portfolio {
+      @extend .landmark;
+   }
+
+   /* carousel-extra */
+   .carousel-extra {
+      min-height: 250px;
+      border: 3px solid #fff;
+      @include vendor(box-shadow, 0 1px 3px rgba(0,0,0,0.2));
+      @include media-query(palm) {
+         min-height: inherit;
+      }
+      article {
+         padding: 4px;
+      }
+      header {
+         margin-bottom: 0;
+      }
+      .carousel__img {
+         margin-bottom: $half-spacing-unit;
+      }
+      .meta-publi {
+         margin-bottom: $quarter-spacing-unit;
+      }
+      .flex-direction-nav a {
+         height: 32px;
+         width: 32px;
+         top: 30%;
+      }
+      .flex-prev {
+         background-position: -96px -16px;
+      }
+      .flex-next {
+         background-position: -96px -48px;
+      }
+      .flex-control-nav {
+         top: 6px;
+         bottom: auto;
+      }
+   }
+
+
+
+.no-js .slides > li:first-child {display: block;}

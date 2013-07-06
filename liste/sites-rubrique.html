@@ -2,7 +2,7 @@
 <section>
    #ANCRE_PAGINATION
    [<nav class="pagination haut[ (#ENV{pagination_align})]">(#PAGINATION{li})</nav>]
-   <ul class="objets-selection">
+   <ul class="objets-selection sites">
       <BOUCLE_sites_tous(SITES){id_rubrique}{par nom_site}{pagination #ENV{pagination,10}}>
       [<li class="item">
          (#INCLURE{fond=inclure/site-resume,contexte=#ENV{contexte},id_syndic})

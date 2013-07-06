@@ -23,11 +23,10 @@
          top: 0;
          display: block;
       }
+
    }
-   .s {
-      @extend .s;
-      background-image:url(../img/migreurop-sprite.png);
-   }
+   .sprite {background-image:url(../img/migreurop-sprite.png);}
+
    // tags
    .sp--tags {
       &:before{
@@ -42,7 +41,7 @@
    }
 
    // plan de la rubrique
-   .sp--map {
+   .sprite--map {
       &:before {
          background-position: 0 0;
       }
@@ -113,7 +112,7 @@
       }
    }
    // traductions
-   .s--trad {
+   .sprite--trad {
       background-position: -96px 0;
    }
    .sp--trads {
@@ -122,14 +121,20 @@
       }
    }
    // icone menu dropdown
-   .s--dd {
+   .sprite--dropdown {
       background-position: -128px 0;
+      cursor: pointer;
    }
    // recherche
-   .s--search {
-      background-position: -128px 0;
-      margin-left: 6px;
+   .sprite--search {
+      height: 18px;
+      width: 18px;
+      background-position: -32px -93px;
+      &:hover {
+         background-position: -50px -93px;
+      }
    }
+   .sprite--search-is-active {background-position: -50px -93px;}
    // breadcrumb--categorie
    .sp--bc {
       &:after {

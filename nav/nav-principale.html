@@ -1,0 +1,33 @@
+<nav id="nav-principale" class="nav-principale">
+   <div class="grid">
+      <div class="grid__item">
+         [(#REM) navigation pour ecran sup. à 1023 px ]
+         <ul class="nav desk-nav">
+            <li class="nav__item[ (#ENV{type-page}|=={sommaire}|oui)is-active]"><a href="#URL_SITE_SPIP" class="item"><:migreurop:home:></a></li><BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}><!--
+         --><li id="r#ID_RUBRIQUE" class="nav__item[ (#EXPOSE|oui)is-active]">
+               <a class="item" href="#URL_RUBRIQUE">#TITRE</a><B_sousrubriques>
+               <ul class="nav--stacked nav--dropdown">
+                  <BOUCLE_sousrubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+                  <li id="r#ID_RUBRIQUE" class="nav__item">
+                     <a href="#URL_RUBRIQUE">#TITRE</a>
+                  </li></BOUCLE_sousrubriques><!--
+            --></ul></B_sousrubriques>
+            </li></BOUCLE_secteurs><!--
+         --><li class="nav__item search">
+               <a href="#" class="action sprite sprite--search"><:migreurop:info_recherche_label:></a>
+            </li>
+         </ul><!-- .desk-nav -->
+         [(#REM) navigation pour ecran inf. à 1023 px ]
+         <ul class="nav palm-nav">
+            <li class="nav__item">
+               [(#FORMULAIRE_SELECT_NAV{palm-nav})]
+            </li><!--
+         --><li class="nav__item search">
+               <a href="#" class="action sprite sprite--search"><:migreurop:info_recherche_label:></a>
+            </li>
+         </ul><!-- .palm-nav -->
+         [(#REM) formulaire recherche]
+         [(#FORMULAIRE_RECHERCHE{'',form-search item})]
+      </div><!-- .grid__item -->
+   </div><!-- .grid -->
+</nav>

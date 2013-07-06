@@ -5,15 +5,15 @@
 <BOUCLE_condition_archives(CONDITION){si #GET{archives}|oui}>
 <div id="tabs-rubrique-principal" class="tabs tabs-top tabs-principal">
    <ul class="tabs-top__nav tabs__nav">
-      [(#GET{selection}|oui)<li><a href="#tab-une">A la une</a></li>]
-      <li><a href="#tab-articles">Tous les articles</a></li>
+      [(#GET{selection}|oui)<li><a href="#tab-une"><:migreurop:top_news:></a></li>]
+      <li><a href="#tab-articles"><:migreurop:all_articles:></a></li>
    </ul>
    <div class="tabs-top__body tabs__body">
       [<div id="tab-une">
-         (#GET{selection}|oui) <INCLURE{fond=liste/articles-selection,selection=#GET{selection},ajax,conteneur=principal,pagination=5} />
+         (#GET{selection}|oui) <INCLURE{fond=liste/articles-selection,contexte=#ENV{contexte},selection=#GET{selection},ajax,conteneur=principal,pagination=5} />
       </div>]
       <div id="tab-articles">
-         <INCLURE{fond=liste/articles-resume,env,ajax,conteneur=principal,tri=date,sens=-1,pagination=10} />
+         <INCLURE{fond=liste/articles-resume,env,ajax,contexte=#ENV{contexte},conteneur=principal,tri=date,sens=-1,pagination=10} />
       </div>
    </div><!-- .tabs__body -->
 </div><!-- .tabs -->

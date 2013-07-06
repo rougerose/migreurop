@@ -1,0 +1,45 @@
+/*   =BASE
+   ------------------------------------------------------ */
+html {
+   font-weight:400;
+   color:#444;
+   background-color:#fff;
+}
+body {
+   position: relative;
+}
+
+/* Liens */
+a {
+   color: #000;
+   text-decoration: none;
+   @include vendor(transition, color 0.35s ease-in-out 0.2s);
+   &:visited{}
+   &:hover{
+      color: $brand-color;
+      text-decoration: none;}
+      
+   &:active, &:focus {
+      position: relative; top: 1px;
+   }
+}
+// liens soulignés
+.suite--link,
+#spip_pass {
+   border-bottom: 1px solid $brand-color;
+}
+.suite--link {
+   margin-left: 4px;
+}
+// more
+.more, .less {
+   .txt & {border-bottom: none;}
+}
+
+/* Images http://www.456bereastreet.com/archive/201306/how_to_proportionally_scale_images_that_have_dimension_attributes/ */
+img[width],
+img[height]{
+    max-width:100%;
+    width: auto;
+    height: auto;
+}

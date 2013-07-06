@@ -1,47 +1,50 @@
 <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-[(#SET{couper,#ENV{couper,1}})] [(#SET{secteur-titre,#INFO_TITRE{rubrique,#ID_SECTEUR}})]
-<div class="g one-whole">
+[(#SET{secteur-titre,#INFO_TITRE{rubrique,#ID_SECTEUR}})]
+<div class="grid__item">
    [<div id="ouverture" class="media-ouverture">
-      (#LOGO_RUBRIQUE|inserer_attribut{class,media-ouverture__img})
+      <img src="(#LOGO_RUBRIQUE|image_reduire{1024,512}|extraire_attribut{src})" class="media-ouverture__img" alt="#TITRE">
    </div>]
-   <article id="content" class="self rubrique cf">
-      <header class="mbr">
-         <h1 class="self__titre">#TITRE</h1>
-      </header>
-      <div class="gw">
-         <div class="g one-whole desk-six-tenths">
-            [<div class="self__body">
-               <div class="chapo landmark txt">
-                  (#TEXTE|?{
-                     [(#INCLURE{fond=inclure/rubrique-texte,couper=#GET{couper},ajax=chapo,id_rubrique})]
-                     ,
-                     <br />
-                  })
-               </div>
-            </div><!-- .texte -->]
-         </div><!-- .desk-six-tenths -->
-         <div class="g one-whole desk-three-tenths desk-push--one-tenth">
-            <INCLURE{fond=navs/rubrique__plan,id_rubrique,id_secteur,secteur-titre=#GET{secteur-titre}}>
-         </div><!-- .g one-whole desk-three-tenths -->
-      </div><!-- .gw -->
-      <INCLURE{fond=navs/rubrique__categories,id_rubrique,mots,ajax} />
-   </article><!-- .self -->
-</div><!-- .g one-whole -->
-
-<div class="g one-whole desk-six-tenths">
+</div><!-- .grid__item -->
+<article id="content" class="self rubrique cf">
+   <header class="mbr grid__item">
+      <h1 class="self__titre">#TITRE</h1>
+   </header>
+   <div class="grid__item lap-and-up-six-tenths">
+      [<div class="self__body">
+         <div class="chapo landmark txt">
+            (#TEXTE|sinon{<br />})
+         </div>
+      </div><!-- .self__body -->]
+   </div><!-- .grid__item --><div class="grid__item lap-and-up-three-tenths push--lap-and-up-one-tenth palm-one-half palm-float--right">
+      <INCLURE{fond=nav/rubrique__plan, id_rubrique, id_secteur,secteur-titre=#GET{secteur-titre}}>
+   </div><!-- .grid__item --><div class="grid__item palm-one-half palm-float--left">
+      <INCLURE{fond=nav/rubrique__categories,id_rubrique,mots,ajax} />
+   </div><!-- .grid__item lap-one-half -->
+</article><!-- .self -->
+<div class="grid__item lap-and-up-six-tenths">
    <BOUCLE_cond_categorie(CONDITION){si #ENV{mots}}>
-      <INCLURE{fond=liste/articles-categories,mots,tri=date,sens=-1,ajax=art_cat,env} />
+      <INCLURE{fond=liste/articles-categories,contexte=principal,mots,tri=date,sens=-1,ajax=art_cat,env} />
    </BOUCLE_cond_categorie>
-      <INCLURE{fond=inclure/rubrique-articles,env} />
+      <BOUCLE_articles(ARTICLES){id_rubrique}{0,1}>
+      <INCLURE{fond=inclure/rubrique-articles,contexte=principal,env} />
+      </BOUCLE_articles>
+      <BOUCLE_sous_rubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+      <INCLURE{fond=inclure/rubrique-sousrubriques,id_rubrique,contexte=principal,env} />
+      </BOUCLE_sous_rubriques>
+      <//B_articles>
    <//B_cond_categorie>
-
+   
    [<aside class="notes">
-      <div class="gw">
-         <div class="g desk-one-half">
+      <div class="grid">
+         <div class="grid__item lap-and-up-two-thirds">
             <h1 class="spip"><:info_notes:></h1>
             (#NOTES)
          </div>
       </div>
    </aside>]
-</div><!-- .g one-whole desk-six-tenths -->
+</div><!-- .grid__item --><div class="grid__item lap-and-up-three-tenths push--lap-and-up-one-tenth">
+   
+   <INCLURE{fond=extra1/#ENV{type-page},env} />
+
+</div><!-- .grid__item -->
 </BOUCLE_rubrique>

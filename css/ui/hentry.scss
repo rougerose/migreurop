@@ -1,99 +1,78 @@
 /*   =HENTRY
    ------------------------------------------------------ */
-   // hentry principal
-   .hentry {
-      color: #666;
-      .entry-title {
-         @include font-size($h4-size);
+/* Styles communs */
+.hentry {
+   color: #666;
+}
+.entry-title {
+   @include font-size($h4-size);
+}
+.soustitre {
+   @include font-size(18px);
+   font-family: $condensed-font-family;
+   color: #999;
+}
+
+/* résumé */
+.resume {
+   // .media {
+   //    margin-bottom: 0;
+   // }
+   .media__img {
+      @include media-query(palm) {
+         float: none;
       }
-      .soustitre {
-         @include font-size($h4-size);
-         font-family: $condensed-face;
-      }
-      .meta-publi {
-         border-top: 1px dotted #ccc;
-         border-bottom: 1px solid #ccc;
-         line-height: 2;
-      }
-      .meta-publi > li {
+   }
+   .meta-publi {
+      border-top: 1px dotted #ccc;
+      border-bottom: 1px solid #ccc;
+      line-height: 2;
+      > li {
          @include font-size(12px);
-         margin-right: $quater-spacing-unit;
-         padding-right: $quater-spacing-unit;
+         // line-height: 2;
+         margin-right: $quarter-spacing-unit;
+         padding-right: $quarter-spacing-unit;
          border-right: 1px solid #ccc;
          &:last-child {border-right-width: 0;}
+         @include media-query(palm) {
+            border: none;
+         }
       }
-      .meta-publi a {
-         color: #777;
-         &:hover{color: $rouge-hover;}
-      }
-      // Traductions
-      // ===============
-      // tooltip flyout
-      // ---------------
-      .langues {
-         color: #ccc;
-         background-color: $noir-bleu;
-         padding: $quater-spacing-unit $half-spacing-unit;
-         white-space: nowrap;
-         opacity: 0;
-         @include vendor(transition, all 0.5s ease-in);
-         @include arrow(bottom, left, $noir-bleu);
-      }
-      .flyout--alt:hover .langues {opacity: 1;}
-
-      // surcharges taille fleche
-      .langues:before, .langues:after {
-         border-width: $quater-spacing-unit;
-         margin-left: -$quater-spacing-unit;
-      }
-      // tooltip contenu
-      .langues .zeta {
-         color: #88A3B2;
-         text-transform: uppercase;
-         margin-bottom: 0;
-      }
-      .langues a {
-         color: #fff;
-         font-weight: bold;
-         &:hover {color: $rouge-hover;}
-      }
-      .langues > h3 {font-family: $condensed-face;}
-      .langues > ul {margin-bottom: 0;}
-      .langues > ul > li {margin-right: 5px;}
    }
+}
 
-   // hentry-secondary
-   .hentry-secondary {
+/* hentry-secondary */
+.hentry-secondary {
+   margin-bottom: 0;
+   header {
+      margin-bottom: $half-spacing-unit;
+   }
+   hgroup {
       margin-bottom: 0;
-      header {margin-bottom: $half-spacing-unit;}
-      hgroup {margin-bottom: 0;}
+   }
       .entry-title {
-         @include font-size(16px);
+         @include font-size($h5-size);
          line-height: 1.2;
          margin-bottom: 0;
       }
       .soustitre {
-         @include font-size(14px);
+         @include font-size(15px);
       }
-      .entry-content p {
-         @include font-size(13px);
-         line-height: 1.5;
-         color: #999;
-      }
-      .link--img {
-         display: inline-block;
-         width: 100%;
-      }
-      .meta-publi {margin-bottom: $half-spacing-unit;}
-      .meta-publi .author, .meta-publi .category {display: none;}
-   }
+   .entry-content p {
+      margin-bottom: $half-spacing-unit;
 
-   // hentry simple
-   .hentry.simple {
-      border-bottom: 1px solid #ccc;
+      @include font-size(13px);
+      line-height: 1.5;
    }
-
-   // hentry media
-   .hentry .media > p {
+   .meta-publi {
       margin-bottom: 0;
+      clear: both;
+      > li {
+         @include font-size(11px);
+      }
    }
+   .author,
+   .category {
+      display: none;
+   }
+}
