@@ -10,17 +10,17 @@
          padding: 0;
 
       }
-   }
-   ol.objets-selection {
-      @include media-query(lap-and-up) {
-         margin-left: $base-spacing-unit * 2;
-      }
       &.rubriques,
       &.mots,
       &.sites {
          article {
             border-bottom: 1px solid #ccc;
          }
+      }
+   }
+   ol.objets-selection {
+      @include media-query(lap-and-up) {
+         margin-left: $base-spacing-unit * 2;
       }
    }
    .box--aside .objets-selection > li {margin-bottom: $base-spacing-unit;}

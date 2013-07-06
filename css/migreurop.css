@@ -3777,12 +3777,12 @@ blockquote {
     border-bottom-width: 0;
     margin-bottom: 48px;
     padding: 0; }
+  .objets-selection.rubriques article, .rubriques.block-list--media article, .objets-selection.mots article, .mots.block-list--media article, .objets-selection.sites article, .sites.block-list--media article {
+    border-bottom: 1px solid #ccc; }
 
 @media only screen and (min-width: 769px) {
   ol.objets-selection, ol.block-list--media {
     margin-left: 48px; } }
-ol.objets-selection.rubriques article, ol.rubriques.block-list--media article, ol.objets-selection.mots article, ol.mots.block-list--media article, ol.objets-selection.sites article, ol.sites.block-list--media article {
-  border-bottom: 1px solid #ccc; }
 
 .box--aside .objets-selection > li, .box--aside .block-list--media > li {
   margin-bottom: 24px; }
