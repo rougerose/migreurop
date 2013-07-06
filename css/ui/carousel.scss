@@ -125,6 +125,8 @@
       width: 100%;
    }
 
+   .no-js .slides > li:first-child {display: block;}
+
    /* carousel-ouverture */
    .carousel-ouverture {
       @extend .landmark;

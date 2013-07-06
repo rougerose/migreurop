@@ -4556,6 +4556,9 @@ input[type="checkbox"]:focus {
 .carousel__img {
   width: 100%; }
 
+.no-js .slides > li:first-child {
+  display: block; }
+
 /* carousel-ouverture */
 @media only screen and (max-width: 768px) {
   .carousel-ouverture {
