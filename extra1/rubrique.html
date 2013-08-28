@@ -16,23 +16,19 @@
 </B_communiques>
 
 [(#REM) Les cartes ]
-<B_cartes>
-<div class="box--aside">
+<BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,2}{lang}{si #ID_SECTEUR|!={382}}>[(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={640})]}|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]</BOUCLE_cartes>
+[<div class="box--aside">
    [<h1 class="box__title">(#INFO_TITRE{rubrique,266})</h1>]
-   <BOUCLE_cartes(ARTICLES){id_rubrique=266}{!par date}{0,2}{lang}{si #ID_SECTEUR|!={382}}>
-   [(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={640})]}|oui) #SET_PUSH{cartes,#ID_ARTICLE} ]
-   </BOUCLE_cartes>
+   (#GET{cartes}|?{
       [(#INCLURE{fond=liste/carousel,selection=#GET{cartes},contexte=extra,conteneur=carousel,id=carouselExtra1})]
-</div><!-- .box-aside Cartes -->
-</B_cartes>
+   })
+</div><!-- .box-aside Cartes -->]
 
 [(#REM) Les portfolios ]
-<B_portfolios>
-<div class="box--aside">
+<BOUCLE_portfolios(ARTICLES){id_mot=32}{0,2}{lang}>[(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={640})]}oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]</BOUCLE_portfolios>
+[<div class="box--aside">
    <h1 class="box__title"><:migreurop:portfolios:></h1>
-   <BOUCLE_portfolios(ARTICLES){id_mot=32}{0,2}{lang}>
-   [(#LOGO_ARTICLE|et{[(#LOGO_ARTICLE|largeur|>={640})]}oui) #SET_PUSH{portfolios,#ID_ARTICLE} ]
-   </BOUCLE_portfolios>
+   (#GET{portofolio}|?{
       [(#INCLURE{fond=liste/carousel,selection=#GET{portfolios},contexte=extra,conteneur=carousel,id=carouselExtra2})]
-</div><!-- .box-aside Portfolios -->
-</B_portfolios>
+   })
+</div><!-- .box-aside Portfolios -->]
