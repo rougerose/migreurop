@@ -123,6 +123,10 @@
    }
    .carousel__img {
       width: 100%;
+      opacity: 0.85;
+      &:hover {
+         opacity: 1;
+      }
    }
 
    .no-js .slides > li:first-child {display: block;}

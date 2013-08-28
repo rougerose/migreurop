@@ -1,6 +1,6 @@
 <BOUCLE_nav_rubrique_categories(RUBRIQUES){id_rubrique}>
-[(#REM) récup. du groupe mots-clés de navigation thematique de la rubrique ainsi que le groupe transversal -- id_groupe=12 ]
-<BOUCLE_groupe_rubrique(GROUPES_MOTS){titre==#TITRE}>[(#SET{id_groupe,#ID_GROUPE})]</BOUCLE_groupe_rubrique>
+[(#REM) récup. du groupe mots-clés de navigation thematique de la rubrique ainsi que le groupe transversal -- id_groupe=16 ][(#SET{titre_rubrique,#TITRE})]
+<BOUCLE_groupe_racine(GROUPES_MOTS){id_groupe=15}><BOUCLE_groupe_rubrique(GROUPES_MOTS){id_parent}{titre=#GET{titre_rubrique}}>[(#SET{id_groupe,#ID_GROUPE})]</BOUCLE_groupe_rubrique></BOUCLE_groupe_racine>
 <B_mots>
 <nav id="sort-keyword" class="breadcrumb-nav--categories">
    <h1 class="intertitre nav--titre"><:migreurop:sort_keyword:></h1>
