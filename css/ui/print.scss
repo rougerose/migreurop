@@ -1,0 +1,141 @@
+/* https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+        border: none !important;
+    }
+
+    a[href^="http://"]:after,
+    a[href^="https://"]:after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    // @page {
+    //     margin: 0.5cm;
+    // }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    body {
+        background: #fff;
+        font-size: 12pt;
+    }
+
+    /*==========  page-head  ==========*/
+    .page-head {
+        text-align: center;
+        &.ouverture {
+            position: static;
+        }
+        a {
+            &:after {
+                content: '';
+            }
+        }
+    }
+    .logo {
+        width: 30%;
+    }
+    /*==========  page-content  ==========*/
+    .page-content {
+        margin: 0;
+        margin-left: 10%;
+        margin: 1cm 2cm 1cm 4cm;
+        padding: 0;
+        max-width: auto;
+    }
+
+    /*==========  carousel  ==========*/
+    .carousel {
+        .wrap {
+            position: static;
+            width: 100%;
+            margin-top: 1em;
+        }
+    }
+    /*==========  nav  ==========*/
+
+
+    /*==========  meta-publi  ==========*/
+    .meta-publi {
+        .resume & {
+            border-top: none;
+            > li {
+                border-right: none;
+            }
+        }
+    }
+    .cat--item {
+        &:before {content:'';}
+    }
+
+    /*==========  tabs  ==========*/
+    .tabs__nav {
+        > li {
+            border: none;
+        }
+    }
+    .tabs-top__body {
+        border: none;
+    }
+
+    /*==========  elements cachés  ==========*/
+    .nav-principale,
+    .nav__plan,
+    .breadcrumb,
+    .page-foot,
+    .meta-publi > li.share,
+    .spip-admin-float {
+        display: none;
+    }
+}

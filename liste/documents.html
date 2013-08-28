@@ -23,9 +23,9 @@
          [(#ENV{contexte}|=={principal}|oui)
          <div class="media">]
             [(#LOGO_DOCUMENT{vignette}|?{
-               [<a href="[(#GET{url_doc})]">(#LOGO_DOCUMENT{vignette}|image_reduire{104,0}|inserer_attribut{alt,[(#TITRE|sinon{<migreurop:info_document:> #ID_DOCUMENT})]}|inserer_attribut{class,spip_logos media__img})</a>]
+               [<a href="[(#GET{url_doc})]">(#LOGO_DOCUMENT{vignette}|image_reduire{104,0}|inserer_attribut{alt,[(#TITRE|sinon{<:migreurop:info_document:> #ID_DOCUMENT})]}|inserer_attribut{class,spip_logos media__img})</a>]
                ,
-               [<a href="[(#GET{url_doc})]">(#LOGO_DOCUMENT|image_reduire{104,0}|inserer_attribut{alt,[(#TITRE|sinon{<migreurop:info_document:> #ID_DOCUMENT})]}|inserer_attribut{class,spip_logos media__img})</a>]
+               [<a href="[(#GET{url_doc})]">(#LOGO_DOCUMENT|image_reduire{104,0}|inserer_attribut{alt,[(#TITRE|sinon{<:migreurop:info_document:> #ID_DOCUMENT})]}|inserer_attribut{class,spip_logos media__img})</a>]
             })]
             [(#ENV{contexte}|=={principal}|oui)
             <div class="media__body">]

@@ -4,7 +4,7 @@
  * FlexSlider : css de base
  */
 .flex-viewport {
-   max-height: 2000px;
+   //max-height: 2000px;
    @include vendor(transition, all 1s ease);
 }
 // .loading .flex-viewport {
@@ -241,7 +241,4 @@
          bottom: auto;
       }
    }
-
-
-
 .no-js .slides > li:first-child {display: block;}
