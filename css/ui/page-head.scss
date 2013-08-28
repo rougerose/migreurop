@@ -19,4 +19,7 @@
    /* logo site */
    .logo {
       display: inline-block;
+      @include media-query(palm) {
+         width: 250px;
+      }
    }
