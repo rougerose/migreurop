@@ -34,7 +34,6 @@
       'info_related'                   => 'Sur le même sujet',
       'info_sort_by'                   => 'Trier par',
       'info_themes'                    => 'Thèmes',
-      'info_traductions'               => 'Traductions disponibles',
       
       // L
       'lastest_news'                   => 'Dernières actualités',

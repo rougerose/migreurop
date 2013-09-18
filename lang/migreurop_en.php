@@ -9,7 +9,7 @@
       'by'                             => 'By',
       
       // C
-      'changer_passe'                  => 'Changer votre mot de passe',
+      'changer_passe'                  => 'Change your password',
       'communiques_presse'             => 'Press releases',
       'contact_address'                => 'Our address',
       'contact_mail'                   => 'By mail',
@@ -34,14 +34,13 @@
       'info_related'                   => 'Sur le même sujet',
       'info_sort_by'                   => 'Sort by',
       'info_themes'                    => 'Themes',
-      'info_traductions'               => 'Traductions disponibles',
       
       // L
       'lastest_news'                   => 'Latest news',
       'lastest_articles'               => 'Lastest articles',
       
       // M
-      'message_404'                    => 'La page ou le document que vous demandez est introuvable sur le site&hellip;',
+      'message_404'                    => "The page or the document you're looking for cannot be found on this website&hellip;",
       'more'                           => 'Read more',
       
       // N
@@ -61,22 +60,22 @@
       'info_recherche_mots'            => '@nb@ keywords',
       'info_recherche_rubrique'        => '1 section',
       'info_recherche_rubriques'       => '@nb@ sections',
-      'info_recherche_site'            => '1 web site',
-      'info_recherche_sites'           => '@nb@ web sites',
+      'info_recherche_site'            => '1 website',
+      'info_recherche_sites'           => '@nb@ websites',
       'info_recherche_resultat'        => '1 result',
       'info_recherche_resultats'       => '@nb@ results',
-      'info_recherche_pas_de_resultat' => 'Aucun résultat',
+      'info_recherche_pas_de_resultat' => 'No results',
       
       // S
       'section_map'                    => 'Section map',
       'social_facebook'                => 'Facebook',
       'social_follow_us'               => 'Follow us',
       'social_twitter'                 => "Twitter",
-      'social_mailing_list'            => 'Mailing list',
+      'social_mailing_list'            => 'Lists serving',
       
       
       // T
       'top_page'                       => 'Top',
-      'translations'                   => 'Traductions disponibles'
+      'translations'                   => 'Translations avalaible'
    );
 ?>
